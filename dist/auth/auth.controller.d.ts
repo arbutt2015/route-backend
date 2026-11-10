@@ -4,6 +4,9 @@ import { SignInDto } from "./dto/signIn.dto";
 import { ConfirmSignUpDto } from "./dto/confirm-sign-up.dto";
 import { ConfirmForgotPasswordDto } from "./dto/confirm-forgot-password.dto";
 import { LoggerService } from "src/logger/logger.service";
+import { Request } from "express";
+import { AdmUser } from "../adm-user/adm-user.entity";
+import { ChangePasswordDto } from "./dto/change-password.dto";
 export declare class AuthController {
     private readonly authService;
     private readonly loggerService;
@@ -138,15 +141,10 @@ export declare class AuthController {
         message: string;
         data: any[];
     }>;
-    changePassword(req: any, refreshToken: string, previousPassword: string, proposedPassword: string, userId: number): Promise<{
-        message: string;
-        statusCode: number;
-        data: any[];
-        success: boolean;
-    } | {
+    changePassword(req: Request & {
+        user: AdmUser;
+    }, body: ChangePasswordDto): Promise<{
         message: string;
         data: any;
-        statusCode?: undefined;
-        success?: undefined;
     }>;
 }

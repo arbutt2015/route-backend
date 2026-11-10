@@ -1,4 +1,17 @@
-import { Controller, Post, Body, Put, Req } from "@nestjs/common";
+import {
+  Controller,
+  Post,
+  Body,
+  Put,
+  Req,
+  SetMetadata,
+  ValidationPipe,
+  BadRequestException,
+  UnauthorizedException,
+  InternalServerErrorException,
+  HttpException,
+  HttpStatus,
+} from "@nestjs/common";
 import { AuthService } from "./auth.service";
 import { SignUpDto } from "./dto/signUp.dto";
 import { SignInDto } from "./dto/signIn.dto";
@@ -6,7 +19,11 @@ import { ConfirmSignUpDto } from "./dto/confirm-sign-up.dto";
 import { ConfirmForgotPasswordDto } from "./dto/confirm-forgot-password.dto";
 import { isPublicEmailDomain } from "../common/email-domain-checker..common";
 import { LoggerService } from "src/logger/logger.service";
-import { SkipAuth } from "./skip-auth.decorator";
+import { SkipAuth, SKIP_AUTH_KEY } from "./skip-auth.decorator";
+import { ApiBearerAuth } from "@nestjs/swagger";
+import { Request } from "express";
+import { AdmUser } from "../adm-user/adm-user.entity";
+import { ChangePasswordDto } from "./dto/change-password.dto";
 import { SkipRolesGuard } from "./decorator/skip-role.guard.decorator";
 
 @SkipAuth()
@@ -322,47 +339,62 @@ export class AuthController {
   }
 
   @Put("change-password")
+  @SetMetadata(SKIP_AUTH_KEY, false)
+  @ApiBearerAuth("access-token")
   async changePassword(
-    @Req() req,
-    @Body("refreshToken") refreshToken: string,
-    @Body("previousPassword") previousPassword: string,
-    @Body("proposedPassword") proposedPassword: string,
-    @Body("userId") userId: number,
+    @Req() req: Request & { user: AdmUser },
+    @Body(
+      new ValidationPipe({
+        transform: true,
+        whitelist: true,
+        forbidNonWhitelisted: true,
+      }),
+    )
+    body: ChangePasswordDto,
   ) {
-    try {
-      const authHeader = req.headers["authorization"];
-      if (!authHeader || !authHeader.startsWith("Bearer ")) {
-        return {
-          message: "Authorization token missing or malformed",
-          statusCode: 400,
-          data: [],
-          success: false,
-        };
-      }
-
-      const token = authHeader.split(" ")[1];
-      const data = await this.authService.changePassword(
-        token,
-        previousPassword,
-        proposedPassword,
-        userId,
+    const token = req.headers.authorization?.match(/^Bearer (.+)$/)?.[1];
+    if (!token || !req.user) throw new UnauthorizedException();
+    if (body.previousPassword === body.proposedPassword) {
+      throw new BadRequestException(
+        "New password must differ from the current password.",
       );
-      return {
-        message: "Password changed successfully",
-        data: data,
-      };
+    }
+    try {
+      await this.authService.changePassword(
+        token,
+        body.previousPassword,
+        body.proposedPassword,
+        req.user.userId,
+      );
+      return { message: "Password changed successfully", data: null };
     } catch (error) {
-      this.loggerService.error(error);
       if (error.code === "NotAuthorizedException") {
-        return {
-          message: "Current password is Invalid",
-          data: [],
-          statusCode: 400,
-          success: false,
-        };
+        throw new BadRequestException("Current password is invalid.");
       }
-
-      throw new Error(error.message);
+      if (
+        [
+          "InvalidPasswordException",
+          "PasswordHistoryPolicyViolationException",
+          "InvalidParameterException",
+        ].includes(error.code)
+      ) {
+        throw new BadRequestException(
+          "New password does not meet the password policy.",
+        );
+      }
+      if (
+        ["LimitExceededException", "TooManyRequestsException"].includes(
+          error.code,
+        )
+      ) {
+        throw new HttpException(
+          "Too many attempts. Please try again later.",
+          HttpStatus.TOO_MANY_REQUESTS,
+        );
+      }
+      throw new InternalServerErrorException(
+        "Unable to change password. Please try again later.",
+      );
     }
   }
 }

@@ -22,6 +22,8 @@ const confirm_forgot_password_dto_1 = require("./dto/confirm-forgot-password.dto
 const email_domain_checker__common_1 = require("../common/email-domain-checker..common");
 const logger_service_1 = require("../logger/logger.service");
 const skip_auth_decorator_1 = require("./skip-auth.decorator");
+const swagger_1 = require("@nestjs/swagger");
+const change_password_dto_1 = require("./dto/change-password.dto");
 const skip_role_guard_decorator_1 = require("./decorator/skip-role.guard.decorator");
 let AuthController = class AuthController {
     constructor(authService, loggerService) {
@@ -302,35 +304,32 @@ let AuthController = class AuthController {
             throw new Error(error.message);
         }
     }
-    async changePassword(req, refreshToken, previousPassword, proposedPassword, userId) {
+    async changePassword(req, body) {
+        const token = req.headers.authorization?.match(/^Bearer (.+)$/)?.[1];
+        if (!token || !req.user)
+            throw new common_1.UnauthorizedException();
+        if (body.previousPassword === body.proposedPassword) {
+            throw new common_1.BadRequestException("New password must differ from the current password.");
+        }
         try {
-            const authHeader = req.headers["authorization"];
-            if (!authHeader || !authHeader.startsWith("Bearer ")) {
-                return {
-                    message: "Authorization token missing or malformed",
-                    statusCode: 400,
-                    data: [],
-                    success: false,
-                };
-            }
-            const token = authHeader.split(" ")[1];
-            const data = await this.authService.changePassword(token, previousPassword, proposedPassword, userId);
-            return {
-                message: "Password changed successfully",
-                data: data,
-            };
+            await this.authService.changePassword(token, body.previousPassword, body.proposedPassword, req.user.userId);
+            return { message: "Password changed successfully", data: null };
         }
         catch (error) {
-            this.loggerService.error(error);
             if (error.code === "NotAuthorizedException") {
-                return {
-                    message: "Current password is Invalid",
-                    data: [],
-                    statusCode: 400,
-                    success: false,
-                };
+                throw new common_1.BadRequestException("Current password is invalid.");
             }
-            throw new Error(error.message);
+            if ([
+                "InvalidPasswordException",
+                "PasswordHistoryPolicyViolationException",
+                "InvalidParameterException",
+            ].includes(error.code)) {
+                throw new common_1.BadRequestException("New password does not meet the password policy.");
+            }
+            if (["LimitExceededException", "TooManyRequestsException"].includes(error.code)) {
+                throw new common_1.HttpException("Too many attempts. Please try again later.", common_1.HttpStatus.TOO_MANY_REQUESTS);
+            }
+            throw new common_1.InternalServerErrorException("Unable to change password. Please try again later.");
         }
     }
 };
@@ -400,13 +399,16 @@ __decorate([
 ], AuthController.prototype, "resendConfirmationCode", null);
 __decorate([
     (0, common_1.Put)("change-password"),
+    (0, common_1.SetMetadata)(skip_auth_decorator_1.SKIP_AUTH_KEY, false),
+    (0, swagger_1.ApiBearerAuth)("access-token"),
     __param(0, (0, common_1.Req)()),
-    __param(1, (0, common_1.Body)("refreshToken")),
-    __param(2, (0, common_1.Body)("previousPassword")),
-    __param(3, (0, common_1.Body)("proposedPassword")),
-    __param(4, (0, common_1.Body)("userId")),
+    __param(1, (0, common_1.Body)(new common_1.ValidationPipe({
+        transform: true,
+        whitelist: true,
+        forbidNonWhitelisted: true,
+    }))),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Object, String, String, String, Number]),
+    __metadata("design:paramtypes", [Object, change_password_dto_1.ChangePasswordDto]),
     __metadata("design:returntype", Promise)
 ], AuthController.prototype, "changePassword", null);
 exports.AuthController = AuthController = __decorate([

@@ -1,0 +1,6 @@
+2026-11-10T08:01:44.409Z [[31merror[39m]: [31m{"[__type]":"See error.__type for details.","code":"NotAuthorizedException","message":"Incorrect username or password.","requestId":"3e171d3d-ac39-48b3-b0aa-4ff88cd5a94e","retryDelay":65.38918014114539,"retryable":false,"statusCode":400,"time":"2026-11-10T08:01:44.406Z"}[39m
+{}
+
+2026-11-10T08:01:50.296Z [[31merror[39m]: [31m{"[__type]":"See error.__type for details.","code":"NotAuthorizedException","message":"Incorrect username or password.","requestId":"783a8fc4-126c-4e96-b9fc-ec7b092968af","retryDelay":88.81219806414292,"retryable":false,"statusCode":400,"time":"2026-11-10T08:01:50.296Z"}[39m
+{}
+

@@ -17,10 +17,24 @@ const common_1 = require("@nestjs/common");
 const adm_user_service_1 = require("./adm-user.service");
 const logger_service_1 = require("../logger/logger.service");
 const swagger_1 = require("@nestjs/swagger");
+const update_profile_dto_1 = require("./dto/update-profile.dto");
+const skip_role_guard_decorator_1 = require("../auth/decorator/skip-role.guard.decorator");
 let AdmUserController = class AdmUserController {
     constructor(userService, loggerService) {
         this.userService = userService;
         this.loggerService = loggerService;
+    }
+    async getProfile(req) {
+        return {
+            message: "Profile fetched successfully",
+            data: await this.userService.getProfile(req.user.userId),
+        };
+    }
+    async updateProfile(req, profile) {
+        return {
+            message: "Profile updated successfully",
+            data: await this.userService.updateProfile(req.user.userId, profile),
+        };
     }
     async getAllUsers() {
         try {
@@ -106,6 +120,29 @@ let AdmUserController = class AdmUserController {
     }
 };
 exports.AdmUserController = AdmUserController;
+__decorate([
+    (0, common_1.Get)("me"),
+    (0, skip_role_guard_decorator_1.SkipRolesGuard)(),
+    (0, swagger_1.ApiBearerAuth)("access-token"),
+    __param(0, (0, common_1.Req)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", Promise)
+], AdmUserController.prototype, "getProfile", null);
+__decorate([
+    (0, common_1.Patch)("me"),
+    (0, skip_role_guard_decorator_1.SkipRolesGuard)(),
+    (0, swagger_1.ApiBearerAuth)("access-token"),
+    __param(0, (0, common_1.Req)()),
+    __param(1, (0, common_1.Body)(new common_1.ValidationPipe({
+        transform: true,
+        whitelist: true,
+        forbidNonWhitelisted: true,
+    }))),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object, update_profile_dto_1.UpdateProfileDto]),
+    __metadata("design:returntype", Promise)
+], AdmUserController.prototype, "updateProfile", null);
 __decorate([
     (0, common_1.Get)("get-all"),
     __metadata("design:type", Function),

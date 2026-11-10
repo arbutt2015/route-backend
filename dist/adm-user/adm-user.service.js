@@ -18,6 +18,40 @@ let AdmUserService = class AdmUserService {
         this.userRepo = userRepo;
         this.cognitoService = cognitoService;
     }
+    async getProfile(userId) {
+        const user = await this.userRepo.getUser({ where: { userId } });
+        if (!user)
+            throw new common_1.NotFoundException("User not found");
+        return this.toProfile(user);
+    }
+    async updateProfile(userId, profile) {
+        const [user] = await this.userRepo.updateUserByWhereAndGetData({ where: { userId } }, {
+            firstName: profile.firstName,
+            middleInitial: profile.middleInitial ?? "",
+            lastName: profile.lastName,
+            companyName: profile.companyName,
+            title: profile.title ?? "",
+            phoneNumber: profile.phoneNumber ?? "",
+            dateUpdated: new Date(),
+        }, { where: { userId } });
+        if (!user)
+            throw new common_1.NotFoundException("User not found");
+        return this.toProfile(user);
+    }
+    toProfile(user) {
+        const { userId, email, firstName, middleInitial, lastName, companyName, title, phoneNumber, isPasswordChangeRequired, } = user;
+        return {
+            userId,
+            email,
+            firstName,
+            middleInitial: middleInitial ?? "",
+            lastName,
+            companyName,
+            title: title ?? "",
+            phoneNumber: phoneNumber ?? "",
+            isPasswordChangeRequired,
+        };
+    }
     async getAllUsers(filter, options) {
         return await this.userRepo.getAllUsers(filter, options);
     }
