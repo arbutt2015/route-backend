@@ -1,0 +1,70 @@
+Error fetching secret: MissingRequiredParameter: Missing required key 'SecretId' in params
+    at ParamValidator.fail (D:\Projects\Transconomy\route-backend\node_modules\aws-sdk\lib\param_validator.js:50:37)
+    at ParamValidator.validateStructure (D:\Projects\Transconomy\route-backend\node_modules\aws-sdk\lib\param_validator.js:62:14)
+    at ParamValidator.validateMember (D:\Projects\Transconomy\route-backend\node_modules\aws-sdk\lib\param_validator.js:89:21)
+    at ParamValidator.validate (D:\Projects\Transconomy\route-backend\node_modules\aws-sdk\lib\param_validator.js:34:10)
+    at Request.VALIDATE_PARAMETERS (D:\Projects\Transconomy\route-backend\node_modules\aws-sdk\lib\event_listeners.js:166:42)
+    at Request.callListeners (D:\Projects\Transconomy\route-backend\node_modules\aws-sdk\lib\sequential_executor.js:106:20)
+    at callNextListener (D:\Projects\Transconomy\route-backend\node_modules\aws-sdk\lib\sequential_executor.js:96:12)
+    at D:\Projects\Transconomy\route-backend\node_modules\aws-sdk\lib\event_listeners.js:120:11
+    at finish (D:\Projects\Transconomy\route-backend\node_modules\aws-sdk\lib\config.js:396:7)
+    at D:\Projects\Transconomy\route-backend\node_modules\aws-sdk\lib\config.js:414:9 {
+  code: 'MissingRequiredParameter',
+  time: 2026-11-06T12:51:58.648Z
+}
+Error fetching secret: MissingRequiredParameter: Missing required key 'SecretId' in params
+    at ParamValidator.fail (D:\Projects\Transconomy\route-backend\node_modules\aws-sdk\lib\param_validator.js:50:37)
+    at ParamValidator.validateStructure (D:\Projects\Transconomy\route-backend\node_modules\aws-sdk\lib\param_validator.js:62:14)
+    at ParamValidator.validateMember (D:\Projects\Transconomy\route-backend\node_modules\aws-sdk\lib\param_validator.js:89:21)
+    at ParamValidator.validate (D:\Projects\Transconomy\route-backend\node_modules\aws-sdk\lib\param_validator.js:34:10)
+    at Request.VALIDATE_PARAMETERS (D:\Projects\Transconomy\route-backend\node_modules\aws-sdk\lib\event_listeners.js:166:42)
+    at Request.callListeners (D:\Projects\Transconomy\route-backend\node_modules\aws-sdk\lib\sequential_executor.js:106:20)
+    at callNextListener (D:\Projects\Transconomy\route-backend\node_modules\aws-sdk\lib\sequential_executor.js:96:12)
+    at D:\Projects\Transconomy\route-backend\node_modules\aws-sdk\lib\event_listeners.js:120:11
+    at finish (D:\Projects\Transconomy\route-backend\node_modules\aws-sdk\lib\config.js:396:7)
+    at D:\Projects\Transconomy\route-backend\node_modules\aws-sdk\lib\config.js:414:9 {
+  code: 'MissingRequiredParameter',
+  time: 2026-11-06T12:51:58.681Z
+}
+Error fetching secret: MissingRequiredParameter: Missing required key 'SecretId' in params
+    at ParamValidator.fail (D:\Projects\Transconomy\route-backend\node_modules\aws-sdk\lib\param_validator.js:50:37)
+    at ParamValidator.validateStructure (D:\Projects\Transconomy\route-backend\node_modules\aws-sdk\lib\param_validator.js:62:14)
+    at ParamValidator.validateMember (D:\Projects\Transconomy\route-backend\node_modules\aws-sdk\lib\param_validator.js:89:21)
+    at ParamValidator.validate (D:\Projects\Transconomy\route-backend\node_modules\aws-sdk\lib\param_validator.js:34:10)
+    at Request.VALIDATE_PARAMETERS (D:\Projects\Transconomy\route-backend\node_modules\aws-sdk\lib\event_listeners.js:166:42)
+    at Request.callListeners (D:\Projects\Transconomy\route-backend\node_modules\aws-sdk\lib\sequential_executor.js:106:20)
+    at callNextListener (D:\Projects\Transconomy\route-backend\node_modules\aws-sdk\lib\sequential_executor.js:96:12)
+    at D:\Projects\Transconomy\route-backend\node_modules\aws-sdk\lib\event_listeners.js:120:11
+    at finish (D:\Projects\Transconomy\route-backend\node_modules\aws-sdk\lib\config.js:396:7)
+    at D:\Projects\Transconomy\route-backend\node_modules\aws-sdk\lib\config.js:414:9 {
+  code: 'MissingRequiredParameter',
+  time: 2026-11-06T12:51:58.682Z
+}
+(node:36380) NOTE: The AWS SDK for JavaScript (v2) has reached end-of-support.
+It will no longer receive updates or releases.
+
+Please migrate your code to use AWS SDK for JavaScript (v3).
+For more information, check the blog post at https://a.co/cUPnyil
+(Use `node --trace-warnings ...` to show where the warning was created)
+[31m[Nest] 36380  - [39m11/06/2026, 5:51:59 PM [31m  ERROR[39m [38;5;3m[TypeOrmModule] [39m[31mUnable to connect to the database (read_only). Retrying (1)...[39m
+ConnectionError: Failed to connect to undefined:1433 - getaddrinfo ENOTFOUND undefined
+    at D:\Projects\Transconomy\route-backend\node_modules\mssql\lib\tedious\connection-pool.js:85:17
+    at Connection.onConnect (D:\Projects\Transconomy\route-backend\node_modules\tedious\lib\connection.js:838:9)
+    at Object.onceWrapper (node:events:623:26)
+    at Connection.emit (node:events:508:28)
+    at Connection.emit (node:domain:489:12)
+    at Connection.emit (D:\Projects\Transconomy\route-backend\node_modules\tedious\lib\connection.js:959:18)
+    at Connection.socketError (D:\Projects\Transconomy\route-backend\node_modules\tedious\lib\connection.js:1340:12)
+    at D:\Projects\Transconomy\route-backend\node_modules\tedious\lib\connection.js:1133:14
+    at process.processTicksAndRejections (node:internal/process/task_queues:84:11)
+[31m[Nest] 36380  - [39m11/06/2026, 5:51:59 PM [31m  ERROR[39m [38;5;3m[TypeOrmModule] [39m[31mUnable to connect to the database (read_and_write). Retrying (1)...[39m
+ConnectionError: Failed to connect to undefined:1433 - getaddrinfo ENOTFOUND undefined
+    at D:\Projects\Transconomy\route-backend\node_modules\mssql\lib\tedious\connection-pool.js:85:17
+    at Connection.onConnect (D:\Projects\Transconomy\route-backend\node_modules\tedious\lib\connection.js:838:9)
+    at Object.onceWrapper (node:events:623:26)
+    at Connection.emit (node:events:508:28)
+    at Connection.emit (node:domain:489:12)
+    at Connection.emit (D:\Projects\Transconomy\route-backend\node_modules\tedious\lib\connection.js:959:18)
+    at Connection.socketError (D:\Projects\Transconomy\route-backend\node_modules\tedious\lib\connection.js:1340:12)
+    at D:\Projects\Transconomy\route-backend\node_modules\tedious\lib\connection.js:1133:14
+    at process.processTicksAndRejections (node:internal/process/task_queues:84:11)

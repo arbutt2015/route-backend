@@ -1,0 +1,264 @@
+(node:41828) NOTE: The AWS SDK for JavaScript (v2) has reached end-of-support.
+It will no longer receive updates or releases.
+
+Please migrate your code to use AWS SDK for JavaScript (v3).
+For more information, check the blog post at https://a.co/cUPnyil
+(Use `node --trace-warnings ...` to show where the warning was created)
+Error fetching secret: ResourceNotFoundException: Secrets Manager can't find the specified secret.
+    at Request.extractError (D:\Projects\Transconomy\route-backend\node_modules\aws-sdk\lib\protocol\json.js:80:27)
+    at Request.callListeners (D:\Projects\Transconomy\route-backend\node_modules\aws-sdk\lib\sequential_executor.js:106:20)
+    at Request.emit (D:\Projects\Transconomy\route-backend\node_modules\aws-sdk\lib\sequential_executor.js:78:10)
+    at Request.emit (D:\Projects\Transconomy\route-backend\node_modules\aws-sdk\lib\request.js:686:14)
+    at Request.transition (D:\Projects\Transconomy\route-backend\node_modules\aws-sdk\lib\request.js:22:10)
+    at AcceptorStateMachine.runTo (D:\Projects\Transconomy\route-backend\node_modules\aws-sdk\lib\state_machine.js:14:12)
+    at D:\Projects\Transconomy\route-backend\node_modules\aws-sdk\lib\state_machine.js:26:10
+    at Request.<anonymous> (D:\Projects\Transconomy\route-backend\node_modules\aws-sdk\lib\request.js:38:9)
+    at Request.<anonymous> (D:\Projects\Transconomy\route-backend\node_modules\aws-sdk\lib\request.js:688:12)
+    at Request.callListeners (D:\Projects\Transconomy\route-backend\node_modules\aws-sdk\lib\sequential_executor.js:116:18) {
+  code: 'ResourceNotFoundException',
+  '[__type]': 'See error.__type for details.',
+  '[Message]': 'See error.Message for details.',
+  time: 2026-11-06T12:52:50.886Z,
+  requestId: 'e0691f32-cef7-4871-885a-a84000848c1a',
+  statusCode: 400,
+  retryable: false,
+  retryDelay: 63.44329814023926
+}
+Error fetching secret: ResourceNotFoundException: Secrets Manager can't find the specified secret.
+    at Request.extractError (D:\Projects\Transconomy\route-backend\node_modules\aws-sdk\lib\protocol\json.js:80:27)
+    at Request.callListeners (D:\Projects\Transconomy\route-backend\node_modules\aws-sdk\lib\sequential_executor.js:106:20)
+    at Request.emit (D:\Projects\Transconomy\route-backend\node_modules\aws-sdk\lib\sequential_executor.js:78:10)
+    at Request.emit (D:\Projects\Transconomy\route-backend\node_modules\aws-sdk\lib\request.js:686:14)
+    at Request.transition (D:\Projects\Transconomy\route-backend\node_modules\aws-sdk\lib\request.js:22:10)
+    at AcceptorStateMachine.runTo (D:\Projects\Transconomy\route-backend\node_modules\aws-sdk\lib\state_machine.js:14:12)
+    at D:\Projects\Transconomy\route-backend\node_modules\aws-sdk\lib\state_machine.js:26:10
+    at Request.<anonymous> (D:\Projects\Transconomy\route-backend\node_modules\aws-sdk\lib\request.js:38:9)
+    at Request.<anonymous> (D:\Projects\Transconomy\route-backend\node_modules\aws-sdk\lib\request.js:688:12)
+    at Request.callListeners (D:\Projects\Transconomy\route-backend\node_modules\aws-sdk\lib\sequential_executor.js:116:18) {
+  code: 'ResourceNotFoundException',
+  '[__type]': 'See error.__type for details.',
+  '[Message]': 'See error.Message for details.',
+  time: 2026-11-06T12:52:51.583Z,
+  requestId: 'f4038ecd-9315-432e-8b43-58dc6180eb3a',
+  statusCode: 400,
+  retryable: false,
+  retryDelay: 59.025182557023
+}
+Error fetching secret: ResourceNotFoundException: Secrets Manager can't find the specified secret.
+    at Request.extractError (D:\Projects\Transconomy\route-backend\node_modules\aws-sdk\lib\protocol\json.js:80:27)
+    at Request.callListeners (D:\Projects\Transconomy\route-backend\node_modules\aws-sdk\lib\sequential_executor.js:106:20)
+    at Request.emit (D:\Projects\Transconomy\route-backend\node_modules\aws-sdk\lib\sequential_executor.js:78:10)
+    at Request.emit (D:\Projects\Transconomy\route-backend\node_modules\aws-sdk\lib\request.js:686:14)
+    at Request.transition (D:\Projects\Transconomy\route-backend\node_modules\aws-sdk\lib\request.js:22:10)
+    at AcceptorStateMachine.runTo (D:\Projects\Transconomy\route-backend\node_modules\aws-sdk\lib\state_machine.js:14:12)
+    at D:\Projects\Transconomy\route-backend\node_modules\aws-sdk\lib\state_machine.js:26:10
+    at Request.<anonymous> (D:\Projects\Transconomy\route-backend\node_modules\aws-sdk\lib\request.js:38:9)
+    at Request.<anonymous> (D:\Projects\Transconomy\route-backend\node_modules\aws-sdk\lib\request.js:688:12)
+    at Request.callListeners (D:\Projects\Transconomy\route-backend\node_modules\aws-sdk\lib\sequential_executor.js:116:18) {
+  code: 'ResourceNotFoundException',
+  '[__type]': 'See error.__type for details.',
+  '[Message]': 'See error.Message for details.',
+  time: 2026-11-06T12:52:52.291Z,
+  requestId: '403fac83-2624-4cf6-965e-402b87181423',
+  statusCode: 400,
+  retryable: false,
+  retryDelay: 17.013575089836642
+}
+[31m[Nest] 41828  - [39m11/06/2026, 5:52:53 PM [31m  ERROR[39m [38;5;3m[TypeOrmModule] [39m[31mUnable to connect to the database (read_only). Retrying (1)...[39m
+ConnectionError: Failed to connect to undefined:1433 - getaddrinfo ENOTFOUND undefined
+    at D:\Projects\Transconomy\route-backend\node_modules\mssql\lib\tedious\connection-pool.js:85:17
+    at Connection.onConnect (D:\Projects\Transconomy\route-backend\node_modules\tedious\lib\connection.js:838:9)
+    at Object.onceWrapper (node:events:623:26)
+    at Connection.emit (node:events:508:28)
+    at Connection.emit (node:domain:489:12)
+    at Connection.emit (D:\Projects\Transconomy\route-backend\node_modules\tedious\lib\connection.js:959:18)
+    at Connection.socketError (D:\Projects\Transconomy\route-backend\node_modules\tedious\lib\connection.js:1340:12)
+    at D:\Projects\Transconomy\route-backend\node_modules\tedious\lib\connection.js:1133:14
+    at process.processTicksAndRejections (node:internal/process/task_queues:84:11)
+[31m[Nest] 41828  - [39m11/06/2026, 5:52:53 PM [31m  ERROR[39m [38;5;3m[TypeOrmModule] [39m[31mUnable to connect to the database (read_and_write). Retrying (1)...[39m
+ConnectionError: Failed to connect to undefined:1433 - getaddrinfo ENOTFOUND undefined
+    at D:\Projects\Transconomy\route-backend\node_modules\mssql\lib\tedious\connection-pool.js:85:17
+    at Connection.onConnect (D:\Projects\Transconomy\route-backend\node_modules\tedious\lib\connection.js:838:9)
+    at Object.onceWrapper (node:events:623:26)
+    at Connection.emit (node:events:508:28)
+    at Connection.emit (node:domain:489:12)
+    at Connection.emit (D:\Projects\Transconomy\route-backend\node_modules\tedious\lib\connection.js:959:18)
+    at Connection.socketError (D:\Projects\Transconomy\route-backend\node_modules\tedious\lib\connection.js:1340:12)
+    at D:\Projects\Transconomy\route-backend\node_modules\tedious\lib\connection.js:1133:14
+    at process.processTicksAndRejections (node:internal/process/task_queues:84:11)
+[31m[Nest] 41828  - [39m11/06/2026, 5:52:58 PM [31m  ERROR[39m [38;5;3m[TypeOrmModule] [39m[31mUnable to connect to the database (read_and_write). Retrying (2)...[39m
+ConnectionError: Failed to connect to undefined:1433 - getaddrinfo ENOTFOUND undefined
+    at D:\Projects\Transconomy\route-backend\node_modules\mssql\lib\tedious\connection-pool.js:85:17
+    at Connection.onConnect (D:\Projects\Transconomy\route-backend\node_modules\tedious\lib\connection.js:838:9)
+    at Object.onceWrapper (node:events:623:26)
+    at Connection.emit (node:events:508:28)
+    at Connection.emit (node:domain:489:12)
+    at Connection.emit (D:\Projects\Transconomy\route-backend\node_modules\tedious\lib\connection.js:959:18)
+    at Connection.socketError (D:\Projects\Transconomy\route-backend\node_modules\tedious\lib\connection.js:1340:12)
+    at D:\Projects\Transconomy\route-backend\node_modules\tedious\lib\connection.js:1133:14
+    at process.processTicksAndRejections (node:internal/process/task_queues:84:11)
+[31m[Nest] 41828  - [39m11/06/2026, 5:52:58 PM [31m  ERROR[39m [38;5;3m[TypeOrmModule] [39m[31mUnable to connect to the database (read_only). Retrying (2)...[39m
+ConnectionError: Failed to connect to undefined:1433 - getaddrinfo ENOTFOUND undefined
+    at D:\Projects\Transconomy\route-backend\node_modules\mssql\lib\tedious\connection-pool.js:85:17
+    at Connection.onConnect (D:\Projects\Transconomy\route-backend\node_modules\tedious\lib\connection.js:838:9)
+    at Object.onceWrapper (node:events:623:26)
+    at Connection.emit (node:events:508:28)
+    at Connection.emit (node:domain:489:12)
+    at Connection.emit (D:\Projects\Transconomy\route-backend\node_modules\tedious\lib\connection.js:959:18)
+    at Connection.socketError (D:\Projects\Transconomy\route-backend\node_modules\tedious\lib\connection.js:1340:12)
+    at D:\Projects\Transconomy\route-backend\node_modules\tedious\lib\connection.js:1133:14
+    at process.processTicksAndRejections (node:internal/process/task_queues:84:11)
+[31m[Nest] 41828  - [39m11/06/2026, 5:53:02 PM [31m  ERROR[39m [38;5;3m[TypeOrmModule] [39m[31mUnable to connect to the database (read_and_write). Retrying (3)...[39m
+ConnectionError: Failed to connect to undefined:1433 - getaddrinfo ENOTFOUND undefined
+    at D:\Projects\Transconomy\route-backend\node_modules\mssql\lib\tedious\connection-pool.js:85:17
+    at Connection.onConnect (D:\Projects\Transconomy\route-backend\node_modules\tedious\lib\connection.js:838:9)
+    at Object.onceWrapper (node:events:623:26)
+    at Connection.emit (node:events:508:28)
+    at Connection.emit (node:domain:489:12)
+    at Connection.emit (D:\Projects\Transconomy\route-backend\node_modules\tedious\lib\connection.js:959:18)
+    at Connection.socketError (D:\Projects\Transconomy\route-backend\node_modules\tedious\lib\connection.js:1340:12)
+    at D:\Projects\Transconomy\route-backend\node_modules\tedious\lib\connection.js:1133:14
+    at process.processTicksAndRejections (node:internal/process/task_queues:84:11)
+[31m[Nest] 41828  - [39m11/06/2026, 5:53:02 PM [31m  ERROR[39m [38;5;3m[TypeOrmModule] [39m[31mUnable to connect to the database (read_only). Retrying (3)...[39m
+ConnectionError: Failed to connect to undefined:1433 - getaddrinfo ENOTFOUND undefined
+    at D:\Projects\Transconomy\route-backend\node_modules\mssql\lib\tedious\connection-pool.js:85:17
+    at Connection.onConnect (D:\Projects\Transconomy\route-backend\node_modules\tedious\lib\connection.js:838:9)
+    at Object.onceWrapper (node:events:623:26)
+    at Connection.emit (node:events:508:28)
+    at Connection.emit (node:domain:489:12)
+    at Connection.emit (D:\Projects\Transconomy\route-backend\node_modules\tedious\lib\connection.js:959:18)
+    at Connection.socketError (D:\Projects\Transconomy\route-backend\node_modules\tedious\lib\connection.js:1340:12)
+    at D:\Projects\Transconomy\route-backend\node_modules\tedious\lib\connection.js:1133:14
+    at process.processTicksAndRejections (node:internal/process/task_queues:84:11)
+[31m[Nest] 41828  - [39m11/06/2026, 5:53:07 PM [31m  ERROR[39m [38;5;3m[TypeOrmModule] [39m[31mUnable to connect to the database (read_and_write). Retrying (4)...[39m
+ConnectionError: Failed to connect to undefined:1433 - getaddrinfo ENOTFOUND undefined
+    at D:\Projects\Transconomy\route-backend\node_modules\mssql\lib\tedious\connection-pool.js:85:17
+    at Connection.onConnect (D:\Projects\Transconomy\route-backend\node_modules\tedious\lib\connection.js:838:9)
+    at Object.onceWrapper (node:events:623:26)
+    at Connection.emit (node:events:508:28)
+    at Connection.emit (node:domain:489:12)
+    at Connection.emit (D:\Projects\Transconomy\route-backend\node_modules\tedious\lib\connection.js:959:18)
+    at Connection.socketError (D:\Projects\Transconomy\route-backend\node_modules\tedious\lib\connection.js:1340:12)
+    at D:\Projects\Transconomy\route-backend\node_modules\tedious\lib\connection.js:1133:14
+    at process.processTicksAndRejections (node:internal/process/task_queues:84:11)
+[31m[Nest] 41828  - [39m11/06/2026, 5:53:07 PM [31m  ERROR[39m [38;5;3m[TypeOrmModule] [39m[31mUnable to connect to the database (read_only). Retrying (4)...[39m
+ConnectionError: Failed to connect to undefined:1433 - getaddrinfo ENOTFOUND undefined
+    at D:\Projects\Transconomy\route-backend\node_modules\mssql\lib\tedious\connection-pool.js:85:17
+    at Connection.onConnect (D:\Projects\Transconomy\route-backend\node_modules\tedious\lib\connection.js:838:9)
+    at Object.onceWrapper (node:events:623:26)
+    at Connection.emit (node:events:508:28)
+    at Connection.emit (node:domain:489:12)
+    at Connection.emit (D:\Projects\Transconomy\route-backend\node_modules\tedious\lib\connection.js:959:18)
+    at Connection.socketError (D:\Projects\Transconomy\route-backend\node_modules\tedious\lib\connection.js:1340:12)
+    at D:\Projects\Transconomy\route-backend\node_modules\tedious\lib\connection.js:1133:14
+    at process.processTicksAndRejections (node:internal/process/task_queues:84:11)
+[31m[Nest] 41828  - [39m11/06/2026, 5:53:11 PM [31m  ERROR[39m [38;5;3m[TypeOrmModule] [39m[31mUnable to connect to the database (read_and_write). Retrying (5)...[39m
+ConnectionError: Failed to connect to undefined:1433 - getaddrinfo ENOTFOUND undefined
+    at D:\Projects\Transconomy\route-backend\node_modules\mssql\lib\tedious\connection-pool.js:85:17
+    at Connection.onConnect (D:\Projects\Transconomy\route-backend\node_modules\tedious\lib\connection.js:838:9)
+    at Object.onceWrapper (node:events:623:26)
+    at Connection.emit (node:events:508:28)
+    at Connection.emit (node:domain:489:12)
+    at Connection.emit (D:\Projects\Transconomy\route-backend\node_modules\tedious\lib\connection.js:959:18)
+    at Connection.socketError (D:\Projects\Transconomy\route-backend\node_modules\tedious\lib\connection.js:1340:12)
+    at D:\Projects\Transconomy\route-backend\node_modules\tedious\lib\connection.js:1133:14
+    at process.processTicksAndRejections (node:internal/process/task_queues:84:11)
+[31m[Nest] 41828  - [39m11/06/2026, 5:53:11 PM [31m  ERROR[39m [38;5;3m[TypeOrmModule] [39m[31mUnable to connect to the database (read_only). Retrying (5)...[39m
+ConnectionError: Failed to connect to undefined:1433 - getaddrinfo ENOTFOUND undefined
+    at D:\Projects\Transconomy\route-backend\node_modules\mssql\lib\tedious\connection-pool.js:85:17
+    at Connection.onConnect (D:\Projects\Transconomy\route-backend\node_modules\tedious\lib\connection.js:838:9)
+    at Object.onceWrapper (node:events:623:26)
+    at Connection.emit (node:events:508:28)
+    at Connection.emit (node:domain:489:12)
+    at Connection.emit (D:\Projects\Transconomy\route-backend\node_modules\tedious\lib\connection.js:959:18)
+    at Connection.socketError (D:\Projects\Transconomy\route-backend\node_modules\tedious\lib\connection.js:1340:12)
+    at D:\Projects\Transconomy\route-backend\node_modules\tedious\lib\connection.js:1133:14
+    at process.processTicksAndRejections (node:internal/process/task_queues:84:11)
+[31m[Nest] 41828  - [39m11/06/2026, 5:53:16 PM [31m  ERROR[39m [38;5;3m[TypeOrmModule] [39m[31mUnable to connect to the database (read_only). Retrying (6)...[39m
+ConnectionError: Failed to connect to undefined:1433 - getaddrinfo ENOTFOUND undefined
+    at D:\Projects\Transconomy\route-backend\node_modules\mssql\lib\tedious\connection-pool.js:85:17
+    at Connection.onConnect (D:\Projects\Transconomy\route-backend\node_modules\tedious\lib\connection.js:838:9)
+    at Object.onceWrapper (node:events:623:26)
+    at Connection.emit (node:events:508:28)
+    at Connection.emit (node:domain:489:12)
+    at Connection.emit (D:\Projects\Transconomy\route-backend\node_modules\tedious\lib\connection.js:959:18)
+    at Connection.socketError (D:\Projects\Transconomy\route-backend\node_modules\tedious\lib\connection.js:1340:12)
+    at D:\Projects\Transconomy\route-backend\node_modules\tedious\lib\connection.js:1133:14
+    at process.processTicksAndRejections (node:internal/process/task_queues:84:11)
+[31m[Nest] 41828  - [39m11/06/2026, 5:53:16 PM [31m  ERROR[39m [38;5;3m[TypeOrmModule] [39m[31mUnable to connect to the database (read_and_write). Retrying (6)...[39m
+ConnectionError: Failed to connect to undefined:1433 - getaddrinfo ENOTFOUND undefined
+    at D:\Projects\Transconomy\route-backend\node_modules\mssql\lib\tedious\connection-pool.js:85:17
+    at Connection.onConnect (D:\Projects\Transconomy\route-backend\node_modules\tedious\lib\connection.js:838:9)
+    at Object.onceWrapper (node:events:623:26)
+    at Connection.emit (node:events:508:28)
+    at Connection.emit (node:domain:489:12)
+    at Connection.emit (D:\Projects\Transconomy\route-backend\node_modules\tedious\lib\connection.js:959:18)
+    at Connection.socketError (D:\Projects\Transconomy\route-backend\node_modules\tedious\lib\connection.js:1340:12)
+    at D:\Projects\Transconomy\route-backend\node_modules\tedious\lib\connection.js:1133:14
+    at process.processTicksAndRejections (node:internal/process/task_queues:84:11)
+[31m[Nest] 41828  - [39m11/06/2026, 5:53:20 PM [31m  ERROR[39m [38;5;3m[TypeOrmModule] [39m[31mUnable to connect to the database (read_only). Retrying (7)...[39m
+ConnectionError: Failed to connect to undefined:1433 - getaddrinfo ENOTFOUND undefined
+    at D:\Projects\Transconomy\route-backend\node_modules\mssql\lib\tedious\connection-pool.js:85:17
+    at Connection.onConnect (D:\Projects\Transconomy\route-backend\node_modules\tedious\lib\connection.js:838:9)
+    at Object.onceWrapper (node:events:623:26)
+    at Connection.emit (node:events:508:28)
+    at Connection.emit (node:domain:489:12)
+    at Connection.emit (D:\Projects\Transconomy\route-backend\node_modules\tedious\lib\connection.js:959:18)
+    at Connection.socketError (D:\Projects\Transconomy\route-backend\node_modules\tedious\lib\connection.js:1340:12)
+    at D:\Projects\Transconomy\route-backend\node_modules\tedious\lib\connection.js:1133:14
+    at process.processTicksAndRejections (node:internal/process/task_queues:84:11)
+[31m[Nest] 41828  - [39m11/06/2026, 5:53:20 PM [31m  ERROR[39m [38;5;3m[TypeOrmModule] [39m[31mUnable to connect to the database (read_and_write). Retrying (7)...[39m
+ConnectionError: Failed to connect to undefined:1433 - getaddrinfo ENOTFOUND undefined
+    at D:\Projects\Transconomy\route-backend\node_modules\mssql\lib\tedious\connection-pool.js:85:17
+    at Connection.onConnect (D:\Projects\Transconomy\route-backend\node_modules\tedious\lib\connection.js:838:9)
+    at Object.onceWrapper (node:events:623:26)
+    at Connection.emit (node:events:508:28)
+    at Connection.emit (node:domain:489:12)
+    at Connection.emit (D:\Projects\Transconomy\route-backend\node_modules\tedious\lib\connection.js:959:18)
+    at Connection.socketError (D:\Projects\Transconomy\route-backend\node_modules\tedious\lib\connection.js:1340:12)
+    at D:\Projects\Transconomy\route-backend\node_modules\tedious\lib\connection.js:1133:14
+    at process.processTicksAndRejections (node:internal/process/task_queues:84:11)
+[31m[Nest] 41828  - [39m11/06/2026, 5:53:25 PM [31m  ERROR[39m [38;5;3m[TypeOrmModule] [39m[31mUnable to connect to the database (read_and_write). Retrying (8)...[39m
+ConnectionError: Failed to connect to undefined:1433 - getaddrinfo ENOTFOUND undefined
+    at D:\Projects\Transconomy\route-backend\node_modules\mssql\lib\tedious\connection-pool.js:85:17
+    at Connection.onConnect (D:\Projects\Transconomy\route-backend\node_modules\tedious\lib\connection.js:838:9)
+    at Object.onceWrapper (node:events:623:26)
+    at Connection.emit (node:events:508:28)
+    at Connection.emit (node:domain:489:12)
+    at Connection.emit (D:\Projects\Transconomy\route-backend\node_modules\tedious\lib\connection.js:959:18)
+    at Connection.socketError (D:\Projects\Transconomy\route-backend\node_modules\tedious\lib\connection.js:1340:12)
+    at D:\Projects\Transconomy\route-backend\node_modules\tedious\lib\connection.js:1133:14
+    at process.processTicksAndRejections (node:internal/process/task_queues:84:11)
+[31m[Nest] 41828  - [39m11/06/2026, 5:53:25 PM [31m  ERROR[39m [38;5;3m[TypeOrmModule] [39m[31mUnable to connect to the database (read_only). Retrying (8)...[39m
+ConnectionError: Failed to connect to undefined:1433 - getaddrinfo ENOTFOUND undefined
+    at D:\Projects\Transconomy\route-backend\node_modules\mssql\lib\tedious\connection-pool.js:85:17
+    at Connection.onConnect (D:\Projects\Transconomy\route-backend\node_modules\tedious\lib\connection.js:838:9)
+    at Object.onceWrapper (node:events:623:26)
+    at Connection.emit (node:events:508:28)
+    at Connection.emit (node:domain:489:12)
+    at Connection.emit (D:\Projects\Transconomy\route-backend\node_modules\tedious\lib\connection.js:959:18)
+    at Connection.socketError (D:\Projects\Transconomy\route-backend\node_modules\tedious\lib\connection.js:1340:12)
+    at D:\Projects\Transconomy\route-backend\node_modules\tedious\lib\connection.js:1133:14
+    at process.processTicksAndRejections (node:internal/process/task_queues:84:11)
+[31m[Nest] 41828  - [39m11/06/2026, 5:53:28 PM [31m  ERROR[39m [38;5;3m[TypeOrmModule] [39m[31mUnable to connect to the database (read_only). Retrying (9)...[39m
+ConnectionError: Failed to connect to undefined:1433 - getaddrinfo ENOTFOUND undefined
+    at D:\Projects\Transconomy\route-backend\node_modules\mssql\lib\tedious\connection-pool.js:85:17
+    at Connection.onConnect (D:\Projects\Transconomy\route-backend\node_modules\tedious\lib\connection.js:838:9)
+    at Object.onceWrapper (node:events:623:26)
+    at Connection.emit (node:events:508:28)
+    at Connection.emit (node:domain:489:12)
+    at Connection.emit (D:\Projects\Transconomy\route-backend\node_modules\tedious\lib\connection.js:959:18)
+    at Connection.socketError (D:\Projects\Transconomy\route-backend\node_modules\tedious\lib\connection.js:1340:12)
+    at D:\Projects\Transconomy\route-backend\node_modules\tedious\lib\connection.js:1133:14
+    at process.processTicksAndRejections (node:internal/process/task_queues:84:11)
+[31m[Nest] 41828  - [39m11/06/2026, 5:53:28 PM [31m  ERROR[39m [38;5;3m[ExceptionHandler] [39m[31mFailed to connect to undefined:1433 - getaddrinfo ENOTFOUND undefined[39m
+ConnectionError: Failed to connect to undefined:1433 - getaddrinfo ENOTFOUND undefined
+    at D:\Projects\Transconomy\route-backend\node_modules\mssql\lib\tedious\connection-pool.js:85:17
+    at Connection.onConnect (D:\Projects\Transconomy\route-backend\node_modules\tedious\lib\connection.js:838:9)
+    at Object.onceWrapper (node:events:623:26)
+    at Connection.emit (node:events:508:28)
+    at Connection.emit (node:domain:489:12)
+    at Connection.emit (D:\Projects\Transconomy\route-backend\node_modules\tedious\lib\connection.js:959:18)
+    at Connection.socketError (D:\Projects\Transconomy\route-backend\node_modules\tedious\lib\connection.js:1340:12)
+    at D:\Projects\Transconomy\route-backend\node_modules\tedious\lib\connection.js:1133:14
+    at process.processTicksAndRejections (node:internal/process/task_queues:84:11)
