@@ -10,15 +10,28 @@ export declare class ProjectController {
         message: string;
         data: {
             project: {
-                projectId: any;
-                projectName: any;
-                projectNumber: any;
-                isEnableLens: any;
-                isEnablePlanner: any;
-                isEnableAnalytics: any;
-                viewerEnabled: any;
-                roadViewEnabled: any;
+                projectId: number;
+                projectNumber: string;
+                projectName: string;
+                agencyName: string;
+                projectS3BucketFolderPath: string;
+                geoJsonS3FilePath: string;
+                boundingBox: any[];
+                regions: any[];
+                projectKmlGeoJson: string;
+                isExportable: boolean;
+                projectDataExportUrl: string;
+                isEnableLens: boolean;
+                isEnablePlanner: boolean;
+                isEnableAnalytics: boolean;
+                roadViewEnabled: boolean;
+                viewerEnabled: boolean;
             };
+            projectUserRoleId: number;
+            roleId: number;
+            isEnableLens: boolean;
+            isEnablePlanner: boolean;
+            isEnableAnalytics: boolean;
         }[];
         statusCode: number;
     }>;

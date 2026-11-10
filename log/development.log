@@ -275,3 +275,136 @@
 
 
 2026-11-10T10:15:15.040Z [[34minfo[39m]: [34mNest application successfully started[39m
+2026-11-10T10:15:29.487Z [[34minfo[39m]: [34m[11/10/2026, 3:15:29 PM] Request: POST /api/auth/signin[39m
+2026-11-10T10:15:43.432Z [[34minfo[39m]: [34m[11/10/2026, 3:15:43 PM] Request: GET /api/users/me[39m
+2026-11-10T10:15:45.124Z [[34minfo[39m]: [34m[11/10/2026, 3:15:45 PM] Request: GET /api/users/me[39m
+2026-11-10T10:15:50.116Z [[34minfo[39m]: [34m[11/10/2026, 3:15:50 PM] Request: PATCH /api/users/me[39m
+2026-11-10T10:15:56.694Z [[34minfo[39m]: [34m[11/10/2026, 3:15:56 PM] Request: GET /api/users/me[39m
+2026-11-10T10:15:57.614Z [[34minfo[39m]: [34m[11/10/2026, 3:15:57 PM] Request: GET /api/users/me[39m
+2026-11-10T10:16:31.884Z [[34minfo[39m]: [34m[11/10/2026, 3:16:31 PM] Request: PUT /api/auth/change-password[39m
+2026-11-10T10:16:35.633Z [[34minfo[39m]: [34mPassword changed successfully.[39m
+
+
+2026-11-10T10:16:51.473Z [[34minfo[39m]: [34m[11/10/2026, 3:16:51 PM] Request: PUT /api/auth/change-password[39m
+2026-11-10T10:16:53.087Z [[34minfo[39m]: [34mPassword changed successfully.[39m
+
+
+2026-11-10T10:17:01.610Z [[34minfo[39m]: [34m[11/10/2026, 3:17:01 PM] Request: PATCH /api/users/me[39m
+2026-11-10T10:17:06.076Z [[34minfo[39m]: [34m[11/10/2026, 3:17:06 PM] Request: GET /api/users/me[39m
+2026-11-10T10:17:07.125Z [[34minfo[39m]: [34m[11/10/2026, 3:17:07 PM] Request: GET /api/users/me[39m
+2026-11-10T10:17:13.087Z [[34minfo[39m]: [34m[11/10/2026, 3:17:13 PM] Request: PATCH /api/users/me[39m
+2026-11-10T10:17:20.211Z [[34minfo[39m]: [34m[11/10/2026, 3:17:20 PM] Request: POST /api/client-domains/get-by-domain-url?domainUrl=http%3A%2F%2Flocalhost%3A5173[39m
+2026-11-10T10:17:20.219Z [[34minfo[39m]: [34m[11/10/2026, 3:17:20 PM] Request: POST /api/client-domains/get-by-domain-url?domainUrl=http%3A%2F%2Flocalhost%3A5173[39m
+2026-11-10T10:17:28.906Z [[34minfo[39m]: [34m[11/10/2026, 3:17:28 PM] Request: POST /api/auth/check-domain[39m
+2026-11-10T10:17:46.969Z [[34minfo[39m]: [34m[11/10/2026, 3:17:46 PM] Request: POST /api/auth/check-domain[39m
+2026-11-10T10:18:28.137Z [[34minfo[39m]: [34m[11/10/2026, 3:18:28 PM] Request: POST /api/auth/signup[39m
+2026-11-10T10:18:52.497Z [[34minfo[39m]: [34m[11/10/2026, 3:18:52 PM] Request: POST /api/auth/confirm-sign-up[39m
+2026-11-10T10:18:53.665Z [[34minfo[39m]: [34mUser confirmed successfully.[39m
+
+
+2026-11-10T10:18:54.842Z [[34minfo[39m]: [34mUser email verified successfully.[39m
+
+
+2026-11-10T10:19:00.507Z [[34minfo[39m]: [34m[11/10/2026, 3:19:00 PM] Request: POST /api/auth/signin[39m
+2026-11-10T10:34:55.614Z [[34minfo[39m]: [34m[11/10/2026, 3:34:55 PM] Request: POST /api/client-domains/get-by-domain-url?domainUrl=http%3A%2F%2Flocalhost%3A5173[39m
+2026-11-10T10:34:55.620Z [[34minfo[39m]: [34m[11/10/2026, 3:34:55 PM] Request: POST /api/client-domains/get-by-domain-url?domainUrl=http%3A%2F%2Flocalhost%3A5173[39m
+2026-11-10T10:34:59.266Z [[34minfo[39m]: [34m[11/10/2026, 3:34:59 PM] Request: POST /api/client-domains/get-by-domain-url?domainUrl=http%3A%2F%2Flocalhost%3A5173[39m
+2026-11-10T10:34:59.283Z [[34minfo[39m]: [34m[11/10/2026, 3:34:59 PM] Request: POST /api/client-domains/get-by-domain-url?domainUrl=http%3A%2F%2Flocalhost%3A5173[39m
+2026-11-10T10:36:50.620Z [[34minfo[39m]: [34m[11/10/2026, 3:36:50 PM] Request: POST /api/auth/signin[39m
+2026-11-10T10:37:04.836Z [[34minfo[39m]: [34m[11/10/2026, 3:37:04 PM] Request: GET /api/users/me[39m
+2026-11-10T10:37:06.476Z [[34minfo[39m]: [34m[11/10/2026, 3:37:06 PM] Request: GET /api/users/me[39m
+2026-11-10T10:38:31.562Z [[34minfo[39m]: [34m[11/10/2026, 3:38:31 PM] Request: POST /api/client-domains/get-by-domain-url?domainUrl=http%3A%2F%2Flocalhost%3A5173[39m
+2026-11-10T10:38:31.564Z [[34minfo[39m]: [34m[11/10/2026, 3:38:31 PM] Request: POST /api/client-domains/get-by-domain-url?domainUrl=http%3A%2F%2Flocalhost%3A5173[39m
+2026-11-10T10:38:38.127Z [[34minfo[39m]: [34m[11/10/2026, 3:38:38 PM] Request: POST /api/auth/check-domain[39m
+2026-11-10T10:38:43.374Z [[34minfo[39m]: [34m[11/10/2026, 3:38:43 PM] Request: POST /api/auth/check-domain[39m
+2026-11-10T10:39:03.270Z [[34minfo[39m]: [34m[11/10/2026, 3:39:03 PM] Request: POST /api/auth/signin[39m
+2026-11-10T10:41:54.582Z [[34minfo[39m]: [34m[11/10/2026, 3:41:54 PM] Request: POST /api/client-domains/get-by-domain-url?domainUrl=http%3A%2F%2Flocalhost%3A5173[39m
+2026-11-10T10:41:54.587Z [[34minfo[39m]: [34m[11/10/2026, 3:41:54 PM] Request: POST /api/client-domains/get-by-domain-url?domainUrl=http%3A%2F%2Flocalhost%3A5173[39m
+2026-11-10T11:27:51.107Z [[34minfo[39m]: [34m[11/10/2026, 4:27:51 PM] Request: POST /api/client-domains/get-by-domain-url?domainUrl=http%3A%2F%2Flocalhost%3A5173[39m
+2026-11-10T11:27:51.110Z [[34minfo[39m]: [34m[11/10/2026, 4:27:51 PM] Request: POST /api/client-domains/get-by-domain-url?domainUrl=http%3A%2F%2Flocalhost%3A5173[39m
+2026-11-10T11:29:17.567Z [[34minfo[39m]: [34m[11/10/2026, 4:29:17 PM] Request: POST /api/client-domains/get-by-domain-url?domainUrl=http%3A%2F%2Flocalhost%3A5173[39m
+2026-11-10T11:29:17.576Z [[34minfo[39m]: [34m[11/10/2026, 4:29:17 PM] Request: POST /api/client-domains/get-by-domain-url?domainUrl=http%3A%2F%2Flocalhost%3A5173[39m
+2026-11-10T11:31:15.350Z [[34minfo[39m]: [34m[11/10/2026, 4:31:15 PM] Request: POST /api/client-domains/get-by-domain-url?domainUrl=http%3A%2F%2Flocalhost%3A5173[39m
+2026-11-10T11:31:15.353Z [[34minfo[39m]: [34m[11/10/2026, 4:31:15 PM] Request: POST /api/client-domains/get-by-domain-url?domainUrl=http%3A%2F%2Flocalhost%3A5173[39m
+2026-11-10T11:31:40.912Z [[34minfo[39m]: [34m[11/10/2026, 4:31:40 PM] Request: POST /api/client-domains/get-by-domain-url?domainUrl=http%3A%2F%2Flocalhost%3A5173[39m
+2026-11-10T11:31:40.913Z [[34minfo[39m]: [34m[11/10/2026, 4:31:40 PM] Request: POST /api/client-domains/get-by-domain-url?domainUrl=http%3A%2F%2Flocalhost%3A5173[39m
+2026-11-10T11:34:24.863Z [[34minfo[39m]: [34m[11/10/2026, 4:34:24 PM] Request: POST /api/client-domains/get-by-domain-url?domainUrl=http%3A%2F%2Flocalhost%3A5173[39m
+2026-11-10T11:34:24.865Z [[34minfo[39m]: [34m[11/10/2026, 4:34:24 PM] Request: POST /api/client-domains/get-by-domain-url?domainUrl=http%3A%2F%2Flocalhost%3A5173[39m
+2026-11-10T11:34:38.099Z [[34minfo[39m]: [34m[11/10/2026, 4:34:38 PM] Request: POST /api/client-domains/get-by-domain-url?domainUrl=http%3A%2F%2Flocalhost%3A5173[39m
+2026-11-10T11:34:38.103Z [[34minfo[39m]: [34m[11/10/2026, 4:34:38 PM] Request: POST /api/client-domains/get-by-domain-url?domainUrl=http%3A%2F%2Flocalhost%3A5173[39m
+2026-11-10T11:36:05.751Z [[34minfo[39m]: [34m[11/10/2026, 4:36:05 PM] Request: POST /api/client-domains/get-by-domain-url?domainUrl=http%3A%2F%2Flocalhost%3A5173[39m
+2026-11-10T11:36:05.753Z [[34minfo[39m]: [34m[11/10/2026, 4:36:05 PM] Request: POST /api/client-domains/get-by-domain-url?domainUrl=http%3A%2F%2Flocalhost%3A5173[39m
+2026-11-10T11:36:19.080Z [[34minfo[39m]: [34m[11/10/2026, 4:36:19 PM] Request: POST /api/client-domains/get-by-domain-url?domainUrl=http%3A%2F%2Flocalhost%3A5173[39m
+2026-11-10T11:36:19.083Z [[34minfo[39m]: [34m[11/10/2026, 4:36:19 PM] Request: POST /api/client-domains/get-by-domain-url?domainUrl=http%3A%2F%2Flocalhost%3A5173[39m
+2026-11-10T11:36:35.505Z [[34minfo[39m]: [34m[11/10/2026, 4:36:35 PM] Request: POST /api/client-domains/get-by-domain-url?domainUrl=http%3A%2F%2Flocalhost%3A5173[39m
+2026-11-10T11:36:35.507Z [[34minfo[39m]: [34m[11/10/2026, 4:36:35 PM] Request: POST /api/client-domains/get-by-domain-url?domainUrl=http%3A%2F%2Flocalhost%3A5173[39m
+2026-11-10T11:36:41.027Z [[34minfo[39m]: [34m[11/10/2026, 4:36:41 PM] Request: POST /api/client-domains/get-by-domain-url?domainUrl=http%3A%2F%2Flocalhost%3A5173[39m
+2026-11-10T11:36:41.029Z [[34minfo[39m]: [34m[11/10/2026, 4:36:41 PM] Request: POST /api/client-domains/get-by-domain-url?domainUrl=http%3A%2F%2Flocalhost%3A5173[39m
+2026-11-10T11:36:50.576Z [[34minfo[39m]: [34m[11/10/2026, 4:36:50 PM] Request: POST /api/client-domains/get-by-domain-url?domainUrl=http%3A%2F%2Flocalhost%3A5173[39m
+2026-11-10T11:36:50.578Z [[34minfo[39m]: [34m[11/10/2026, 4:36:50 PM] Request: POST /api/client-domains/get-by-domain-url?domainUrl=http%3A%2F%2Flocalhost%3A5173[39m
+2026-11-10T11:38:48.814Z [[34minfo[39m]: [34m[11/10/2026, 4:38:48 PM] Request: POST /api/client-domains/get-by-domain-url?domainUrl=http%3A%2F%2Flocalhost%3A5173[39m
+2026-11-10T11:38:48.816Z [[34minfo[39m]: [34m[11/10/2026, 4:38:48 PM] Request: POST /api/client-domains/get-by-domain-url?domainUrl=http%3A%2F%2Flocalhost%3A5173[39m
+2026-11-10T11:42:43.372Z [[34minfo[39m]: [34m[11/10/2026, 4:42:43 PM] Request: POST /api/auth/refresh-token[39m
+2026-11-10T11:42:43.379Z [[34minfo[39m]: [34m[11/10/2026, 4:42:43 PM] Request: POST /api/client-domains/get-by-domain-url?domainUrl=http%3A%2F%2Flocalhost%3A5173[39m
+2026-11-10T11:42:43.382Z [[34minfo[39m]: [34m[11/10/2026, 4:42:43 PM] Request: POST /api/client-domains/get-by-domain-url?domainUrl=http%3A%2F%2Flocalhost%3A5173[39m
+2026-11-10T12:05:47.678Z [[34minfo[39m]: [34mJwtStrategy initialized[39m
+
+
+2026-11-10T12:05:47.702Z [[34minfo[39m]: [34mAuthController {/api/auth}:[39m
+2026-11-10T12:05:47.704Z [[34minfo[39m]: [34mMapped {/api/auth/signup, POST} route[39m
+2026-11-10T12:05:47.705Z [[34minfo[39m]: [34mMapped {/api/auth/signin, POST} route[39m
+2026-11-10T12:05:47.705Z [[34minfo[39m]: [34mMapped {/api/auth/refresh-token, POST} route[39m
+2026-11-10T12:05:47.706Z [[34minfo[39m]: [34mMapped {/api/auth/check-domain, POST} route[39m
+2026-11-10T12:05:47.706Z [[34minfo[39m]: [34mMapped {/api/auth/confirm-sign-up, POST} route[39m
+2026-11-10T12:05:47.707Z [[34minfo[39m]: [34mMapped {/api/auth/assign-demo-project, POST} route[39m
+2026-11-10T12:05:47.707Z [[34minfo[39m]: [34mMapped {/api/auth/forgot-password, POST} route[39m
+2026-11-10T12:05:47.708Z [[34minfo[39m]: [34mMapped {/api/auth/confirm-forgot-password, PUT} route[39m
+2026-11-10T12:05:47.709Z [[34minfo[39m]: [34mMapped {/api/auth/resend-code, POST} route[39m
+2026-11-10T12:05:47.709Z [[34minfo[39m]: [34mMapped {/api/auth/change-password, PUT} route[39m
+2026-11-10T12:05:47.710Z [[34minfo[39m]: [34mAdmModuleController {/api/label}:[39m
+2026-11-10T12:05:47.710Z [[34minfo[39m]: [34mAdmUserController {/api/users}:[39m
+2026-11-10T12:05:47.710Z [[34minfo[39m]: [34mMapped {/api/users/me, GET} route[39m
+2026-11-10T12:05:47.710Z [[34minfo[39m]: [34mMapped {/api/users/me, PATCH} route[39m
+2026-11-10T12:05:47.711Z [[34minfo[39m]: [34mMapped {/api/users/get-all, GET} route[39m
+2026-11-10T12:05:47.711Z [[34minfo[39m]: [34mMapped {/api/users/get-sd-users, GET} route[39m
+2026-11-10T12:05:47.711Z [[34minfo[39m]: [34mMapped {/api/users/get-user-by-id, GET} route[39m
+2026-11-10T12:05:47.711Z [[34minfo[39m]: [34mMapped {/api/users/update-user-by-id, PATCH} route[39m
+2026-11-10T12:05:47.712Z [[34minfo[39m]: [34mMapped {/api/users/:id, DELETE} route[39m
+2026-11-10T12:05:47.712Z [[34minfo[39m]: [34mAdmProjectUserRoleController {/api/project-user-role}:[39m
+2026-11-10T12:05:47.713Z [[34minfo[39m]: [34mMapped {/api/project-user-role, GET} route[39m
+2026-11-10T12:05:47.713Z [[34minfo[39m]: [34mMapped {/api/project-user-role/add-update, POST} route[39m
+2026-11-10T12:05:47.713Z [[34minfo[39m]: [34mMapped {/api/project-user-role/delete, DELETE} route[39m
+2026-11-10T12:05:47.713Z [[34minfo[39m]: [34mMapped {/api/project-user-role/get-users-by-project-role-id, GET} route[39m
+2026-11-10T12:05:47.713Z [[34minfo[39m]: [34mAdmRoleController {/api/role}:[39m
+2026-11-10T12:05:47.714Z [[34minfo[39m]: [34mMapped {/api/role/role-by-id, GET} route[39m
+2026-11-10T12:05:47.714Z [[34minfo[39m]: [34mMapped {/api/role/getAll, GET} route[39m
+2026-11-10T12:05:47.714Z [[34minfo[39m]: [34mMapped {/api/role/create-update, POST} route[39m
+2026-11-10T12:05:47.714Z [[34minfo[39m]: [34mMapped {/api/role/delete, DELETE} route[39m
+2026-11-10T12:05:47.714Z [[34minfo[39m]: [34mAdmRoleFeatureController {/api/role-feature}:[39m
+2026-11-10T12:05:47.715Z [[34minfo[39m]: [34mMapped {/api/role-feature, GET} route[39m
+2026-11-10T12:05:47.715Z [[34minfo[39m]: [34mMapped {/api/role-feature/create, POST} route[39m
+2026-11-10T12:05:47.715Z [[34minfo[39m]: [34mMapped {/api/role-feature/get-by-project, GET} route[39m
+2026-11-10T12:05:47.716Z [[34minfo[39m]: [34mProjectController {/api/project}:[39m
+2026-11-10T12:05:47.716Z [[34minfo[39m]: [34mMapped {/api/project/get-assigned-project, GET} route[39m
+2026-11-10T12:05:47.716Z [[34minfo[39m]: [34mMapped {/api/project/get-all, GET} route[39m
+2026-11-10T12:05:47.716Z [[34minfo[39m]: [34mMapped {/api/project/get-all-active-inactive, GET} route[39m
+2026-11-10T12:05:47.716Z [[34minfo[39m]: [34mMapped {/api/project/get-project-by-id, GET} route[39m
+2026-11-10T12:05:47.717Z [[34minfo[39m]: [34mMapped {/api/project/download-file, GET} route[39m
+2026-11-10T12:05:47.717Z [[34minfo[39m]: [34mMapped {/api/project/create, POST} route[39m
+2026-11-10T12:05:47.717Z [[34minfo[39m]: [34mMapped {/api/project/update-download-status, PUT} route[39m
+2026-11-10T12:05:47.717Z [[34minfo[39m]: [34mMapped {/api/project/update-is-active-status, PUT} route[39m
+2026-11-10T12:05:47.718Z [[34minfo[39m]: [34mMapped {/api/project/update, PUT} route[39m
+2026-11-10T12:05:47.718Z [[34minfo[39m]: [34mMapped {/api/project/upload-file, POST} route[39m
+2026-11-10T12:05:47.718Z [[34minfo[39m]: [34mMapped {/api/project/update-bounding-box, POST} route[39m
+2026-11-10T12:05:47.718Z [[34minfo[39m]: [34mMapped {/api/project/update-workstations/:projectId, PUT} route[39m
+2026-11-10T12:05:47.719Z [[34minfo[39m]: [34mAdmFeatureController {/api/asset-type}:[39m
+2026-11-10T12:05:49.320Z [[34minfo[39m]: [34mserver start.....http//:localhost:5001[39m
+
+
+2026-11-10T12:05:49.321Z [[34minfo[39m]: [34mNest application successfully started[39m
+2026-11-10T12:05:57.441Z [[34minfo[39m]: [34m[11/10/2026, 5:05:57 PM] Request: POST /api/client-domains/get-by-domain-url?domainUrl=http%3A%2F%2Flocalhost%3A5173[39m
+2026-11-10T12:05:57.448Z [[34minfo[39m]: [34m[11/10/2026, 5:05:57 PM] Request: POST /api/client-domains/get-by-domain-url?domainUrl=http%3A%2F%2Flocalhost%3A5173[39m
+2026-11-10T12:06:00.558Z [[34minfo[39m]: [34m[11/10/2026, 5:06:00 PM] Request: POST /api/client-domains/get-by-domain-url?domainUrl=http%3A%2F%2Flocalhost%3A5173[39m
+2026-11-10T12:06:00.561Z [[34minfo[39m]: [34m[11/10/2026, 5:06:00 PM] Request: POST /api/client-domains/get-by-domain-url?domainUrl=http%3A%2F%2Flocalhost%3A5173[39m
+2026-11-10T12:06:01.983Z [[34minfo[39m]: [34m[11/10/2026, 5:06:01 PM] Request: POST /api/auth/signin[39m
+2026-11-10T12:06:08.695Z [[34minfo[39m]: [34m[11/10/2026, 5:06:08 PM] Request: POST /api/auth/signin[39m

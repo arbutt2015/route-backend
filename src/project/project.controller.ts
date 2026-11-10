@@ -29,7 +29,60 @@ export class ProjectController {
   @Get("get-assigned-project")
   async getAllAssignProject(@User("userId") userId: any) {
     try {
-      const response = await this.projectService.getAllProjectByEmail(userId);
+      // TODO: replace hardcoded demo projects with
+      // this.projectService.getAllProjectByEmail(userId) once project data exists
+      const response = [
+        {
+          project: {
+            projectId: 1,
+            projectNumber: "T0001",
+            projectName: "Coastal Survey",
+            agencyName: "",
+            projectS3BucketFolderPath: "",
+            geoJsonS3FilePath: "",
+            boundingBox: [],
+            regions: [],
+            projectKmlGeoJson: "",
+            isExportable: false,
+            projectDataExportUrl: "",
+            isEnableLens: false,
+            isEnablePlanner: false,
+            isEnableAnalytics: false,
+            roadViewEnabled: false,
+            viewerEnabled: false,
+          },
+          projectUserRoleId: 1,
+          roleId: 1,
+          isEnableLens: false,
+          isEnablePlanner: false,
+          isEnableAnalytics: false,
+        },
+        {
+          project: {
+            projectId: 2,
+            projectNumber: "T0002",
+            projectName: "Mountain Pine",
+            agencyName: "",
+            projectS3BucketFolderPath: "",
+            geoJsonS3FilePath: "",
+            boundingBox: [],
+            regions: [],
+            projectKmlGeoJson: "",
+            isExportable: false,
+            projectDataExportUrl: "",
+            isEnableLens: false,
+            isEnablePlanner: false,
+            isEnableAnalytics: false,
+            roadViewEnabled: false,
+            viewerEnabled: false,
+          },
+          projectUserRoleId: 2,
+          roleId: 1,
+          isEnableLens: false,
+          isEnablePlanner: false,
+          isEnableAnalytics: false,
+        },
+      ];
       return {
         message: "Assigned projects retrieved successfully",
         data: response,
