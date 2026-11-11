@@ -408,3 +408,281 @@
 2026-11-10T12:06:00.561Z [[34minfo[39m]: [34m[11/10/2026, 5:06:00 PM] Request: POST /api/client-domains/get-by-domain-url?domainUrl=http%3A%2F%2Flocalhost%3A5173[39m
 2026-11-10T12:06:01.983Z [[34minfo[39m]: [34m[11/10/2026, 5:06:01 PM] Request: POST /api/auth/signin[39m
 2026-11-10T12:06:08.695Z [[34minfo[39m]: [34m[11/10/2026, 5:06:08 PM] Request: POST /api/auth/signin[39m
+2026-11-10T12:11:47.850Z [[34minfo[39m]: [34mJwtStrategy initialized[39m
+
+
+2026-11-10T12:11:47.938Z [[34minfo[39m]: [34mAuthController {/api/auth}:[39m
+2026-11-10T12:11:47.944Z [[34minfo[39m]: [34mMapped {/api/auth/signup, POST} route[39m
+2026-11-10T12:11:47.946Z [[34minfo[39m]: [34mMapped {/api/auth/signin, POST} route[39m
+2026-11-10T12:11:47.947Z [[34minfo[39m]: [34mMapped {/api/auth/refresh-token, POST} route[39m
+2026-11-10T12:11:47.948Z [[34minfo[39m]: [34mMapped {/api/auth/check-domain, POST} route[39m
+2026-11-10T12:11:47.949Z [[34minfo[39m]: [34mMapped {/api/auth/confirm-sign-up, POST} route[39m
+2026-11-10T12:11:47.950Z [[34minfo[39m]: [34mMapped {/api/auth/assign-demo-project, POST} route[39m
+2026-11-10T12:11:47.952Z [[34minfo[39m]: [34mMapped {/api/auth/forgot-password, POST} route[39m
+2026-11-10T12:11:47.953Z [[34minfo[39m]: [34mMapped {/api/auth/confirm-forgot-password, PUT} route[39m
+2026-11-10T12:11:47.954Z [[34minfo[39m]: [34mMapped {/api/auth/resend-code, POST} route[39m
+2026-11-10T12:11:47.955Z [[34minfo[39m]: [34mMapped {/api/auth/change-password, PUT} route[39m
+2026-11-10T12:11:47.956Z [[34minfo[39m]: [34mAdmModuleController {/api/label}:[39m
+2026-11-10T12:11:47.957Z [[34minfo[39m]: [34mAdmUserController {/api/users}:[39m
+2026-11-10T12:11:47.958Z [[34minfo[39m]: [34mMapped {/api/users/me, GET} route[39m
+2026-11-10T12:11:47.958Z [[34minfo[39m]: [34mMapped {/api/users/me, PATCH} route[39m
+2026-11-10T12:11:47.959Z [[34minfo[39m]: [34mMapped {/api/users/get-all, GET} route[39m
+2026-11-10T12:11:47.960Z [[34minfo[39m]: [34mMapped {/api/users/get-sd-users, GET} route[39m
+2026-11-10T12:11:47.960Z [[34minfo[39m]: [34mMapped {/api/users/get-user-by-id, GET} route[39m
+2026-11-10T12:11:47.961Z [[34minfo[39m]: [34mMapped {/api/users/update-user-by-id, PATCH} route[39m
+2026-11-10T12:11:47.962Z [[34minfo[39m]: [34mMapped {/api/users/:id, DELETE} route[39m
+2026-11-10T12:11:47.962Z [[34minfo[39m]: [34mAdmProjectUserRoleController {/api/project-user-role}:[39m
+2026-11-10T12:11:47.964Z [[34minfo[39m]: [34mMapped {/api/project-user-role, GET} route[39m
+2026-11-10T12:11:47.964Z [[34minfo[39m]: [34mMapped {/api/project-user-role/add-update, POST} route[39m
+2026-11-10T12:11:47.965Z [[34minfo[39m]: [34mMapped {/api/project-user-role/delete, DELETE} route[39m
+2026-11-10T12:11:47.966Z [[34minfo[39m]: [34mMapped {/api/project-user-role/get-users-by-project-role-id, GET} route[39m
+2026-11-10T12:11:47.966Z [[34minfo[39m]: [34mAdmRoleController {/api/role}:[39m
+2026-11-10T12:11:47.967Z [[34minfo[39m]: [34mMapped {/api/role/role-by-id, GET} route[39m
+2026-11-10T12:11:47.968Z [[34minfo[39m]: [34mMapped {/api/role/getAll, GET} route[39m
+2026-11-10T12:11:47.968Z [[34minfo[39m]: [34mMapped {/api/role/create-update, POST} route[39m
+2026-11-10T12:11:47.969Z [[34minfo[39m]: [34mMapped {/api/role/delete, DELETE} route[39m
+2026-11-10T12:11:47.969Z [[34minfo[39m]: [34mAdmRoleFeatureController {/api/role-feature}:[39m
+2026-11-10T12:11:47.970Z [[34minfo[39m]: [34mMapped {/api/role-feature, GET} route[39m
+2026-11-10T12:11:47.971Z [[34minfo[39m]: [34mMapped {/api/role-feature/create, POST} route[39m
+2026-11-10T12:11:47.971Z [[34minfo[39m]: [34mMapped {/api/role-feature/get-by-project, GET} route[39m
+2026-11-10T12:11:47.972Z [[34minfo[39m]: [34mProjectController {/api/project}:[39m
+2026-11-10T12:11:47.972Z [[34minfo[39m]: [34mMapped {/api/project/get-assigned-project, GET} route[39m
+2026-11-10T12:11:47.974Z [[34minfo[39m]: [34mMapped {/api/project/get-all, GET} route[39m
+2026-11-10T12:11:47.974Z [[34minfo[39m]: [34mMapped {/api/project/get-all-active-inactive, GET} route[39m
+2026-11-10T12:11:47.976Z [[34minfo[39m]: [34mMapped {/api/project/get-project-by-id, GET} route[39m
+2026-11-10T12:11:47.977Z [[34minfo[39m]: [34mMapped {/api/project/download-file, GET} route[39m
+2026-11-10T12:11:47.978Z [[34minfo[39m]: [34mMapped {/api/project/create, POST} route[39m
+2026-11-10T12:11:47.978Z [[34minfo[39m]: [34mMapped {/api/project/update-download-status, PUT} route[39m
+2026-11-10T12:11:47.979Z [[34minfo[39m]: [34mMapped {/api/project/update-is-active-status, PUT} route[39m
+2026-11-10T12:11:47.979Z [[34minfo[39m]: [34mMapped {/api/project/update, PUT} route[39m
+2026-11-10T12:11:47.980Z [[34minfo[39m]: [34mMapped {/api/project/upload-file, POST} route[39m
+2026-11-10T12:11:47.981Z [[34minfo[39m]: [34mMapped {/api/project/update-bounding-box, POST} route[39m
+2026-11-10T12:11:47.982Z [[34minfo[39m]: [34mMapped {/api/project/update-workstations/:projectId, PUT} route[39m
+2026-11-10T12:11:47.982Z [[34minfo[39m]: [34mAdmFeatureController {/api/asset-type}:[39m
+2026-11-10T12:11:49.598Z [[34minfo[39m]: [34mserver start.....http//:localhost:5001[39m
+
+
+2026-11-10T12:11:49.602Z [[34minfo[39m]: [34mNest application successfully started[39m
+2026-11-10T12:12:36.186Z [[34minfo[39m]: [34m[11/10/2026, 5:12:36 PM] Request: POST /api/client-domains/get-by-domain-url?domainUrl=http%3A%2F%2Flocalhost%3A5173[39m
+2026-11-10T12:12:36.196Z [[34minfo[39m]: [34m[11/10/2026, 5:12:36 PM] Request: POST /api/client-domains/get-by-domain-url?domainUrl=http%3A%2F%2Flocalhost%3A5173[39m
+2026-11-10T12:25:57.750Z [[34minfo[39m]: [34m[11/10/2026, 5:25:57 PM] Request: POST /api/client-domains/get-by-domain-url?domainUrl=http%3A%2F%2Flocalhost%3A5173[39m
+2026-11-10T12:25:57.754Z [[34minfo[39m]: [34m[11/10/2026, 5:25:57 PM] Request: POST /api/client-domains/get-by-domain-url?domainUrl=http%3A%2F%2Flocalhost%3A5173[39m
+2026-11-10T12:26:08.904Z [[34minfo[39m]: [34m[11/10/2026, 5:26:08 PM] Request: POST /api/client-domains/get-by-domain-url?domainUrl=http%3A%2F%2Flocalhost%3A5173[39m
+2026-11-10T12:26:08.906Z [[34minfo[39m]: [34m[11/10/2026, 5:26:08 PM] Request: POST /api/client-domains/get-by-domain-url?domainUrl=http%3A%2F%2Flocalhost%3A5173[39m
+2026-11-10T12:26:10.195Z [[34minfo[39m]: [34m[11/10/2026, 5:26:10 PM] Request: POST /api/auth/signin[39m
+2026-11-10T12:26:13.343Z [[34minfo[39m]: [34m[11/10/2026, 5:26:13 PM] Request: GET /api/project/get-assigned-project[39m
+2026-11-10T12:26:14.611Z [[34minfo[39m]: [34m[11/10/2026, 5:26:14 PM] Request: GET /api/project/get-assigned-project[39m
+2026-11-10T12:26:40.617Z [[34minfo[39m]: [34m[11/10/2026, 5:26:40 PM] Request: POST /api/client-domains/get-by-domain-url?domainUrl=http%3A%2F%2Flocalhost%3A5173[39m
+2026-11-10T12:26:40.618Z [[34minfo[39m]: [34m[11/10/2026, 5:26:40 PM] Request: POST /api/client-domains/get-by-domain-url?domainUrl=http%3A%2F%2Flocalhost%3A5173[39m
+2026-11-10T12:26:41.772Z [[34minfo[39m]: [34m[11/10/2026, 5:26:41 PM] Request: POST /api/auth/signin[39m
+2026-11-10T12:26:49.049Z [[34minfo[39m]: [34m[11/10/2026, 5:26:49 PM] Request: POST /api/client-domains/get-by-domain-url?domainUrl=http%3A%2F%2Flocalhost%3A5173[39m
+2026-11-10T12:26:49.051Z [[34minfo[39m]: [34m[11/10/2026, 5:26:49 PM] Request: POST /api/client-domains/get-by-domain-url?domainUrl=http%3A%2F%2Flocalhost%3A5173[39m
+2026-11-10T12:26:52.209Z [[34minfo[39m]: [34m[11/10/2026, 5:26:52 PM] Request: POST /api/client-domains/get-by-domain-url?domainUrl=http%3A%2F%2Flocalhost%3A5173[39m
+2026-11-10T12:26:52.212Z [[34minfo[39m]: [34m[11/10/2026, 5:26:52 PM] Request: POST /api/client-domains/get-by-domain-url?domainUrl=http%3A%2F%2Flocalhost%3A5173[39m
+2026-11-10T12:26:54.011Z [[34minfo[39m]: [34m[11/10/2026, 5:26:54 PM] Request: POST /api/auth/signin[39m
+2026-11-10T12:29:33.619Z [[34minfo[39m]: [34m[11/10/2026, 5:29:33 PM] Request: POST /api/client-domains/get-by-domain-url?domainUrl=http%3A%2F%2Flocalhost%3A5173[39m
+2026-11-10T12:56:53.046Z [[34minfo[39m]: [34m[11/10/2026, 5:56:53 PM] Request: POST /api/client-domains/get-by-domain-url?domainUrl=http%3A%2F%2Flocalhost%3A5173[39m
+2026-11-10T12:56:53.048Z [[34minfo[39m]: [34m[11/10/2026, 5:56:53 PM] Request: POST /api/client-domains/get-by-domain-url?domainUrl=http%3A%2F%2Flocalhost%3A5173[39m
+2026-11-10T12:56:55.748Z [[34minfo[39m]: [34m[11/10/2026, 5:56:55 PM] Request: POST /api/client-domains/get-by-domain-url?domainUrl=http%3A%2F%2Flocalhost%3A5173[39m
+2026-11-10T12:56:55.750Z [[34minfo[39m]: [34m[11/10/2026, 5:56:55 PM] Request: POST /api/client-domains/get-by-domain-url?domainUrl=http%3A%2F%2Flocalhost%3A5173[39m
+2026-11-10T12:56:56.961Z [[34minfo[39m]: [34m[11/10/2026, 5:56:56 PM] Request: POST /api/auth/signin[39m
+2026-11-10T12:57:00.270Z [[34minfo[39m]: [34m[11/10/2026, 5:57:00 PM] Request: GET /api/project/get-assigned-project[39m
+2026-11-10T12:57:01.497Z [[34minfo[39m]: [34m[11/10/2026, 5:57:01 PM] Request: GET /api/project/get-assigned-project[39m
+2026-11-10T12:57:01.932Z [[34minfo[39m]: [34m[11/10/2026, 5:57:01 PM] Request: GET /api/project/get-assigned-project[39m
+2026-11-10T12:57:07.300Z [[34minfo[39m]: [34m[11/10/2026, 5:57:07 PM] Request: POST /api/client-domains/get-by-domain-url?domainUrl=http%3A%2F%2Flocalhost%3A5173[39m
+2026-11-10T12:57:07.301Z [[34minfo[39m]: [34m[11/10/2026, 5:57:07 PM] Request: POST /api/client-domains/get-by-domain-url?domainUrl=http%3A%2F%2Flocalhost%3A5173[39m
+2026-11-10T12:57:08.472Z [[34minfo[39m]: [34m[11/10/2026, 5:57:08 PM] Request: POST /api/auth/signin[39m
+2026-11-10T12:57:09.873Z [[34minfo[39m]: [34m[11/10/2026, 5:57:09 PM] Request: GET /api/project/get-assigned-project[39m
+2026-11-10T12:57:10.439Z [[34minfo[39m]: [34m[11/10/2026, 5:57:10 PM] Request: GET /api/project/get-assigned-project[39m
+2026-11-10T12:57:10.920Z [[34minfo[39m]: [34m[11/10/2026, 5:57:10 PM] Request: GET /api/project/get-assigned-project[39m
+2026-11-10T12:57:20.160Z [[34minfo[39m]: [34m[11/10/2026, 5:57:20 PM] Request: GET /api/project/get-assigned-project[39m
+2026-11-10T12:57:20.682Z [[34minfo[39m]: [34m[11/10/2026, 5:57:20 PM] Request: GET /api/project/get-assigned-project[39m
+2026-11-10T12:57:23.784Z [[34minfo[39m]: [34m[11/10/2026, 5:57:23 PM] Request: GET /api/project/get-assigned-project[39m
+2026-11-10T12:57:24.217Z [[34minfo[39m]: [34m[11/10/2026, 5:57:24 PM] Request: GET /api/project/get-assigned-project[39m
+2026-11-10T13:01:07.648Z [[34minfo[39m]: [34m[11/10/2026, 6:01:07 PM] Request: GET /api/project/get-assigned-project[39m
+2026-11-10T13:01:09.879Z [[34minfo[39m]: [34m[11/10/2026, 6:01:09 PM] Request: GET /api/project/get-assigned-project[39m
+2026-11-10T13:01:10.392Z [[34minfo[39m]: [34m[11/10/2026, 6:01:10 PM] Request: GET /api/project/get-assigned-project[39m
+2026-11-10T13:01:10.840Z [[34minfo[39m]: [34m[11/10/2026, 6:01:10 PM] Request: GET /api/project/get-assigned-project[39m
+2026-11-10T13:05:29.164Z [[34minfo[39m]: [34mJwtStrategy initialized[39m
+
+
+2026-11-10T13:05:29.250Z [[34minfo[39m]: [34mAuthController {/api/auth}:[39m
+2026-11-10T13:05:29.257Z [[34minfo[39m]: [34mMapped {/api/auth/signup, POST} route[39m
+2026-11-10T13:05:29.259Z [[34minfo[39m]: [34mMapped {/api/auth/signin, POST} route[39m
+2026-11-10T13:05:29.260Z [[34minfo[39m]: [34mMapped {/api/auth/refresh-token, POST} route[39m
+2026-11-10T13:05:29.261Z [[34minfo[39m]: [34mMapped {/api/auth/check-domain, POST} route[39m
+2026-11-10T13:05:29.262Z [[34minfo[39m]: [34mMapped {/api/auth/confirm-sign-up, POST} route[39m
+2026-11-10T13:05:29.263Z [[34minfo[39m]: [34mMapped {/api/auth/assign-demo-project, POST} route[39m
+2026-11-10T13:05:29.264Z [[34minfo[39m]: [34mMapped {/api/auth/forgot-password, POST} route[39m
+2026-11-10T13:05:29.265Z [[34minfo[39m]: [34mMapped {/api/auth/confirm-forgot-password, PUT} route[39m
+2026-11-10T13:05:29.267Z [[34minfo[39m]: [34mMapped {/api/auth/resend-code, POST} route[39m
+2026-11-10T13:05:29.268Z [[34minfo[39m]: [34mMapped {/api/auth/change-password, PUT} route[39m
+2026-11-10T13:05:29.269Z [[34minfo[39m]: [34mAdmModuleController {/api/label}:[39m
+2026-11-10T13:05:29.269Z [[34minfo[39m]: [34mAdmUserController {/api/users}:[39m
+2026-11-10T13:05:29.271Z [[34minfo[39m]: [34mMapped {/api/users/me, GET} route[39m
+2026-11-10T13:05:29.272Z [[34minfo[39m]: [34mMapped {/api/users/me, PATCH} route[39m
+2026-11-10T13:05:29.273Z [[34minfo[39m]: [34mMapped {/api/users/get-all, GET} route[39m
+2026-11-10T13:05:29.274Z [[34minfo[39m]: [34mMapped {/api/users/get-sd-users, GET} route[39m
+2026-11-10T13:05:29.275Z [[34minfo[39m]: [34mMapped {/api/users/get-user-by-id, GET} route[39m
+2026-11-10T13:05:29.276Z [[34minfo[39m]: [34mMapped {/api/users/update-user-by-id, PATCH} route[39m
+2026-11-10T13:05:29.277Z [[34minfo[39m]: [34mMapped {/api/users/:id, DELETE} route[39m
+2026-11-10T13:05:29.277Z [[34minfo[39m]: [34mAdmProjectUserRoleController {/api/project-user-role}:[39m
+2026-11-10T13:05:29.278Z [[34minfo[39m]: [34mMapped {/api/project-user-role, GET} route[39m
+2026-11-10T13:05:29.279Z [[34minfo[39m]: [34mMapped {/api/project-user-role/add-update, POST} route[39m
+2026-11-10T13:05:29.280Z [[34minfo[39m]: [34mMapped {/api/project-user-role/delete, DELETE} route[39m
+2026-11-10T13:05:29.283Z [[34minfo[39m]: [34mMapped {/api/project-user-role/get-users-by-project-role-id, GET} route[39m
+2026-11-10T13:05:29.283Z [[34minfo[39m]: [34mAdmRoleController {/api/role}:[39m
+2026-11-10T13:05:29.284Z [[34minfo[39m]: [34mMapped {/api/role/role-by-id, GET} route[39m
+2026-11-10T13:05:29.284Z [[34minfo[39m]: [34mMapped {/api/role/getAll, GET} route[39m
+2026-11-10T13:05:29.285Z [[34minfo[39m]: [34mMapped {/api/role/create-update, POST} route[39m
+2026-11-10T13:05:29.285Z [[34minfo[39m]: [34mMapped {/api/role/delete, DELETE} route[39m
+2026-11-10T13:05:29.286Z [[34minfo[39m]: [34mAdmRoleFeatureController {/api/role-feature}:[39m
+2026-11-10T13:05:29.288Z [[34minfo[39m]: [34mMapped {/api/role-feature, GET} route[39m
+2026-11-10T13:05:29.289Z [[34minfo[39m]: [34mMapped {/api/role-feature/create, POST} route[39m
+2026-11-10T13:05:29.290Z [[34minfo[39m]: [34mMapped {/api/role-feature/get-by-project, GET} route[39m
+2026-11-10T13:05:29.290Z [[34minfo[39m]: [34mProjectController {/api/project}:[39m
+2026-11-10T13:05:29.291Z [[34minfo[39m]: [34mMapped {/api/project/get-assigned-project, GET} route[39m
+2026-11-10T13:05:29.291Z [[34minfo[39m]: [34mMapped {/api/project/get-all, GET} route[39m
+2026-11-10T13:05:29.292Z [[34minfo[39m]: [34mMapped {/api/project/get-all-active-inactive, GET} route[39m
+2026-11-10T13:05:29.293Z [[34minfo[39m]: [34mMapped {/api/project/get-project-by-id, GET} route[39m
+2026-11-10T13:05:29.295Z [[34minfo[39m]: [34mMapped {/api/project/download-file, GET} route[39m
+2026-11-10T13:05:29.296Z [[34minfo[39m]: [34mMapped {/api/project/create, POST} route[39m
+2026-11-10T13:05:29.297Z [[34minfo[39m]: [34mMapped {/api/project/update-download-status, PUT} route[39m
+2026-11-10T13:05:29.297Z [[34minfo[39m]: [34mMapped {/api/project/update-is-active-status, PUT} route[39m
+2026-11-10T13:05:29.298Z [[34minfo[39m]: [34mMapped {/api/project/update, PUT} route[39m
+2026-11-10T13:05:29.298Z [[34minfo[39m]: [34mMapped {/api/project/upload-file, POST} route[39m
+2026-11-10T13:05:29.299Z [[34minfo[39m]: [34mMapped {/api/project/update-bounding-box, POST} route[39m
+2026-11-10T13:05:29.300Z [[34minfo[39m]: [34mMapped {/api/project/update-workstations/:projectId, PUT} route[39m
+2026-11-10T13:05:29.301Z [[34minfo[39m]: [34mAdmFeatureController {/api/asset-type}:[39m
+2026-11-10T13:05:30.873Z [[34minfo[39m]: [34mserver start.....http//:localhost:5001[39m
+
+
+2026-11-10T13:05:30.877Z [[34minfo[39m]: [34mNest application successfully started[39m
+2026-11-10T13:05:49.991Z [[34minfo[39m]: [34m[11/10/2026, 6:05:49 PM] Request: GET /api/project/get-assigned-project[39m
+2026-11-10T13:05:51.150Z [[34minfo[39m]: [34m[11/10/2026, 6:05:51 PM] Request: GET /api/project/get-assigned-project[39m
+2026-11-10T13:06:05.208Z [[34minfo[39m]: [34m[11/10/2026, 6:06:05 PM] Request: GET /api/project/get-assigned-project[39m
+2026-11-10T13:06:05.638Z [[34minfo[39m]: [34m[11/10/2026, 6:06:05 PM] Request: GET /api/project/get-assigned-project[39m
+2026-11-10T13:06:23.750Z [[34minfo[39m]: [34m[11/10/2026, 6:06:23 PM] Request: GET /api/project/get-assigned-project[39m
+2026-11-10T13:06:24.185Z [[34minfo[39m]: [34m[11/10/2026, 6:06:24 PM] Request: GET /api/project/get-assigned-project[39m
+2026-11-10T13:06:35.464Z [[34minfo[39m]: [34m[11/10/2026, 6:06:35 PM] Request: GET /api/project/get-assigned-project[39m
+2026-11-10T13:06:35.925Z [[34minfo[39m]: [34m[11/10/2026, 6:06:35 PM] Request: GET /api/project/get-assigned-project[39m
+2026-11-10T13:07:03.718Z [[34minfo[39m]: [34m[11/10/2026, 6:07:03 PM] Request: GET /api/project/get-assigned-project[39m
+2026-11-10T13:07:04.157Z [[34minfo[39m]: [34m[11/10/2026, 6:07:04 PM] Request: GET /api/project/get-assigned-project[39m
+2026-11-10T13:08:06.134Z [[34minfo[39m]: [34m[11/10/2026, 6:08:06 PM] Request: POST /api/client-domains/get-by-domain-url?domainUrl=http%3A%2F%2Flocalhost%3A5173[39m
+2026-11-10T13:08:06.139Z [[34minfo[39m]: [34m[11/10/2026, 6:08:06 PM] Request: POST /api/client-domains/get-by-domain-url?domainUrl=http%3A%2F%2Flocalhost%3A5173[39m
+2026-11-10T13:08:07.291Z [[34minfo[39m]: [34m[11/10/2026, 6:08:07 PM] Request: POST /api/auth/signin[39m
+2026-11-10T13:08:10.374Z [[34minfo[39m]: [34m[11/10/2026, 6:08:10 PM] Request: GET /api/project/get-assigned-project[39m
+2026-11-10T13:08:10.884Z [[34minfo[39m]: [34m[11/10/2026, 6:08:10 PM] Request: GET /api/project/get-assigned-project[39m
+2026-11-10T13:08:11.344Z [[34minfo[39m]: [34m[11/10/2026, 6:08:11 PM] Request: GET /api/project/get-assigned-project[39m
+2026-11-10T13:08:21.992Z [[34minfo[39m]: [34m[11/10/2026, 6:08:21 PM] Request: GET /api/project/get-assigned-project[39m
+2026-11-10T13:08:22.440Z [[34minfo[39m]: [34m[11/10/2026, 6:08:22 PM] Request: GET /api/project/get-assigned-project[39m
+2026-11-10T13:08:40.319Z [[34minfo[39m]: [34m[11/10/2026, 6:08:40 PM] Request: GET /api/project/get-assigned-project[39m
+2026-11-10T13:08:40.766Z [[34minfo[39m]: [34m[11/10/2026, 6:08:40 PM] Request: GET /api/project/get-assigned-project[39m
+2026-11-10T13:11:01.555Z [[34minfo[39m]: [34mJwtStrategy initialized[39m
+
+
+2026-11-10T13:11:01.975Z [[34minfo[39m]: [34mAuthController {/api/auth}:[39m
+2026-11-10T13:11:01.988Z [[34minfo[39m]: [34mMapped {/api/auth/signup, POST} route[39m
+2026-11-10T13:11:01.993Z [[34minfo[39m]: [34mMapped {/api/auth/signin, POST} route[39m
+2026-11-10T13:11:01.994Z [[34minfo[39m]: [34mMapped {/api/auth/refresh-token, POST} route[39m
+2026-11-10T13:11:01.998Z [[34minfo[39m]: [34mMapped {/api/auth/check-domain, POST} route[39m
+2026-11-10T13:11:02.005Z [[34minfo[39m]: [34mMapped {/api/auth/confirm-sign-up, POST} route[39m
+2026-11-10T13:11:02.006Z [[34minfo[39m]: [34mMapped {/api/auth/assign-demo-project, POST} route[39m
+2026-11-10T13:11:02.008Z [[34minfo[39m]: [34mMapped {/api/auth/forgot-password, POST} route[39m
+2026-11-10T13:11:02.009Z [[34minfo[39m]: [34mMapped {/api/auth/confirm-forgot-password, PUT} route[39m
+2026-11-10T13:11:02.011Z [[34minfo[39m]: [34mMapped {/api/auth/resend-code, POST} route[39m
+2026-11-10T13:11:02.013Z [[34minfo[39m]: [34mMapped {/api/auth/change-password, PUT} route[39m
+2026-11-10T13:11:02.014Z [[34minfo[39m]: [34mAdmModuleController {/api/label}:[39m
+2026-11-10T13:11:02.014Z [[34minfo[39m]: [34mAdmUserController {/api/users}:[39m
+2026-11-10T13:11:02.015Z [[34minfo[39m]: [34mMapped {/api/users/me, GET} route[39m
+2026-11-10T13:11:02.016Z [[34minfo[39m]: [34mMapped {/api/users/me, PATCH} route[39m
+2026-11-10T13:11:02.021Z [[34minfo[39m]: [34mMapped {/api/users/get-all, GET} route[39m
+2026-11-10T13:11:02.021Z [[34minfo[39m]: [34mMapped {/api/users/get-sd-users, GET} route[39m
+2026-11-10T13:11:02.022Z [[34minfo[39m]: [34mMapped {/api/users/get-user-by-id, GET} route[39m
+2026-11-10T13:11:02.022Z [[34minfo[39m]: [34mMapped {/api/users/update-user-by-id, PATCH} route[39m
+2026-11-10T13:11:02.025Z [[34minfo[39m]: [34mMapped {/api/users/:id, DELETE} route[39m
+2026-11-10T13:11:02.026Z [[34minfo[39m]: [34mAdmProjectUserRoleController {/api/project-user-role}:[39m
+2026-11-10T13:11:02.028Z [[34minfo[39m]: [34mMapped {/api/project-user-role, GET} route[39m
+2026-11-10T13:11:02.029Z [[34minfo[39m]: [34mMapped {/api/project-user-role/add-update, POST} route[39m
+2026-11-10T13:11:02.029Z [[34minfo[39m]: [34mMapped {/api/project-user-role/delete, DELETE} route[39m
+2026-11-10T13:11:02.032Z [[34minfo[39m]: [34mMapped {/api/project-user-role/get-users-by-project-role-id, GET} route[39m
+2026-11-10T13:11:02.036Z [[34minfo[39m]: [34mAdmRoleController {/api/role}:[39m
+2026-11-10T13:11:02.040Z [[34minfo[39m]: [34mMapped {/api/role/role-by-id, GET} route[39m
+2026-11-10T13:11:02.041Z [[34minfo[39m]: [34mMapped {/api/role/getAll, GET} route[39m
+2026-11-10T13:11:02.042Z [[34minfo[39m]: [34mMapped {/api/role/create-update, POST} route[39m
+2026-11-10T13:11:02.043Z [[34minfo[39m]: [34mMapped {/api/role/delete, DELETE} route[39m
+2026-11-10T13:11:02.046Z [[34minfo[39m]: [34mAdmRoleFeatureController {/api/role-feature}:[39m
+2026-11-10T13:11:02.053Z [[34minfo[39m]: [34mMapped {/api/role-feature, GET} route[39m
+2026-11-10T13:11:02.055Z [[34minfo[39m]: [34mMapped {/api/role-feature/create, POST} route[39m
+2026-11-10T13:11:02.056Z [[34minfo[39m]: [34mMapped {/api/role-feature/get-by-project, GET} route[39m
+2026-11-10T13:11:02.057Z [[34minfo[39m]: [34mProjectController {/api/project}:[39m
+2026-11-10T13:11:02.060Z [[34minfo[39m]: [34mMapped {/api/project/get-assigned-project, GET} route[39m
+2026-11-10T13:11:02.062Z [[34minfo[39m]: [34mMapped {/api/project/get-all, GET} route[39m
+2026-11-10T13:11:02.063Z [[34minfo[39m]: [34mMapped {/api/project/get-all-active-inactive, GET} route[39m
+2026-11-10T13:11:02.064Z [[34minfo[39m]: [34mMapped {/api/project/get-project-by-id, GET} route[39m
+2026-11-10T13:11:02.067Z [[34minfo[39m]: [34mMapped {/api/project/download-file, GET} route[39m
+2026-11-10T13:11:02.070Z [[34minfo[39m]: [34mMapped {/api/project/create, POST} route[39m
+2026-11-10T13:11:02.071Z [[34minfo[39m]: [34mMapped {/api/project/update-download-status, PUT} route[39m
+2026-11-10T13:11:02.071Z [[34minfo[39m]: [34mMapped {/api/project/update-is-active-status, PUT} route[39m
+2026-11-10T13:11:02.074Z [[34minfo[39m]: [34mMapped {/api/project/update, PUT} route[39m
+2026-11-10T13:11:02.077Z [[34minfo[39m]: [34mMapped {/api/project/upload-file, POST} route[39m
+2026-11-10T13:11:02.084Z [[34minfo[39m]: [34mMapped {/api/project/update-bounding-box, POST} route[39m
+2026-11-10T13:11:02.089Z [[34minfo[39m]: [34mMapped {/api/project/update-workstations/:projectId, PUT} route[39m
+2026-11-10T13:11:02.089Z [[34minfo[39m]: [34mAdmFeatureController {/api/asset-type}:[39m
+2026-11-10T13:11:03.757Z [[34minfo[39m]: [34mserver start.....http//:localhost:5001[39m
+
+
+2026-11-10T13:11:03.765Z [[34minfo[39m]: [34mNest application successfully started[39m
+2026-11-10T13:11:42.493Z [[34minfo[39m]: [34m[11/10/2026, 6:11:42 PM] Request: POST /api/client-domains/get-by-domain-url?domainUrl=http%3A%2F%2Flocalhost%3A5173[39m
+2026-11-10T13:11:42.501Z [[34minfo[39m]: [34m[11/10/2026, 6:11:42 PM] Request: POST /api/client-domains/get-by-domain-url?domainUrl=http%3A%2F%2Flocalhost%3A5173[39m
+2026-11-10T13:11:43.794Z [[34minfo[39m]: [34m[11/10/2026, 6:11:43 PM] Request: POST /api/auth/signin[39m
+2026-11-10T13:11:47.196Z [[34minfo[39m]: [34m[11/10/2026, 6:11:47 PM] Request: GET /api/project/get-assigned-project[39m
+2026-11-10T13:11:48.462Z [[34minfo[39m]: [34m[11/10/2026, 6:11:48 PM] Request: GET /api/project/get-assigned-project[39m
+2026-11-10T13:11:48.897Z [[34minfo[39m]: [34m[11/10/2026, 6:11:48 PM] Request: GET /api/project/get-assigned-project[39m
+2026-11-10T13:12:38.751Z [[34minfo[39m]: [34m[11/10/2026, 6:12:38 PM] Request: POST /api/client-domains/get-by-domain-url?domainUrl=http%3A%2F%2Flocalhost%3A5173[39m
+2026-11-10T13:12:38.754Z [[34minfo[39m]: [34m[11/10/2026, 6:12:38 PM] Request: POST /api/client-domains/get-by-domain-url?domainUrl=http%3A%2F%2Flocalhost%3A5173[39m
+2026-11-10T13:12:40.539Z [[34minfo[39m]: [34m[11/10/2026, 6:12:40 PM] Request: POST /api/auth/signin[39m
+2026-11-10T13:12:43.627Z [[34minfo[39m]: [34m[11/10/2026, 6:12:43 PM] Request: GET /api/project/get-assigned-project[39m
+2026-11-10T13:12:44.130Z [[34minfo[39m]: [34m[11/10/2026, 6:12:44 PM] Request: GET /api/project/get-assigned-project[39m
+2026-11-10T13:12:44.579Z [[34minfo[39m]: [34m[11/10/2026, 6:12:44 PM] Request: GET /api/project/get-assigned-project[39m
+2026-11-10T13:13:49.993Z [[34minfo[39m]: [34m[11/10/2026, 6:13:49 PM] Request: GET /api/project/get-assigned-project[39m
+2026-11-10T13:13:52.044Z [[34minfo[39m]: [34m[11/10/2026, 6:13:52 PM] Request: GET /api/project/get-assigned-project[39m
+2026-11-10T13:13:53.935Z [[34minfo[39m]: [34m[11/10/2026, 6:13:53 PM] Request: POST /api/client-domains/get-by-domain-url?domainUrl=http%3A%2F%2Flocalhost%3A5173[39m
+2026-11-10T13:13:53.937Z [[34minfo[39m]: [34m[11/10/2026, 6:13:53 PM] Request: POST /api/client-domains/get-by-domain-url?domainUrl=http%3A%2F%2Flocalhost%3A5173[39m
+2026-11-10T13:13:56.364Z [[34minfo[39m]: [34m[11/10/2026, 6:13:56 PM] Request: POST /api/client-domains/get-by-domain-url?domainUrl=http%3A%2F%2Flocalhost%3A5173[39m
+2026-11-10T13:13:56.367Z [[34minfo[39m]: [34m[11/10/2026, 6:13:56 PM] Request: POST /api/client-domains/get-by-domain-url?domainUrl=http%3A%2F%2Flocalhost%3A5173[39m
+2026-11-10T13:13:57.810Z [[34minfo[39m]: [34m[11/10/2026, 6:13:57 PM] Request: POST /api/auth/signin[39m
+2026-11-10T13:13:59.351Z [[34minfo[39m]: [34m[11/10/2026, 6:13:59 PM] Request: GET /api/project/get-assigned-project[39m
+2026-11-10T13:13:59.831Z [[34minfo[39m]: [34m[11/10/2026, 6:13:59 PM] Request: GET /api/project/get-assigned-project[39m
+2026-11-10T13:14:00.251Z [[34minfo[39m]: [34m[11/10/2026, 6:14:00 PM] Request: GET /api/project/get-assigned-project[39m
+2026-11-10T13:14:04.668Z [[34minfo[39m]: [34m[11/10/2026, 6:14:04 PM] Request: GET /api/project/get-assigned-project[39m
+2026-11-10T13:14:05.101Z [[34minfo[39m]: [34m[11/10/2026, 6:14:05 PM] Request: GET /api/project/get-assigned-project[39m
+2026-11-10T13:15:26.421Z [[34minfo[39m]: [34m[11/10/2026, 6:15:26 PM] Request: GET /api/project/get-assigned-project[39m
+2026-11-10T13:15:28.571Z [[34minfo[39m]: [34m[11/10/2026, 6:15:28 PM] Request: GET /api/project/get-assigned-project[39m
+2026-11-10T13:16:05.045Z [[34minfo[39m]: [34m[11/10/2026, 6:16:05 PM] Request: POST /api/client-domains/get-by-domain-url?domainUrl=http%3A%2F%2Flocalhost%3A5173[39m
+2026-11-10T13:16:05.048Z [[34minfo[39m]: [34m[11/10/2026, 6:16:05 PM] Request: POST /api/client-domains/get-by-domain-url?domainUrl=http%3A%2F%2Flocalhost%3A5173[39m
+2026-11-10T13:16:05.116Z [[34minfo[39m]: [34m[11/10/2026, 6:16:05 PM] Request: GET /api/project/get-assigned-project[39m
+2026-11-10T13:16:07.296Z [[34minfo[39m]: [34m[11/10/2026, 6:16:07 PM] Request: GET /api/project/get-assigned-project[39m
+2026-11-10T13:16:10.434Z [[34minfo[39m]: [34m[11/10/2026, 6:16:10 PM] Request: GET /api/project/get-assigned-project[39m
+2026-11-10T13:16:10.895Z [[34minfo[39m]: [34m[11/10/2026, 6:16:10 PM] Request: GET /api/project/get-assigned-project[39m
+2026-11-10T13:17:03.508Z [[34minfo[39m]: [34m[11/10/2026, 6:17:03 PM] Request: GET /api/project/get-assigned-project[39m
+2026-11-10T13:17:05.656Z [[34minfo[39m]: [34m[11/10/2026, 6:17:05 PM] Request: GET /api/project/get-assigned-project[39m
+2026-11-10T13:22:35.544Z [[34minfo[39m]: [34m[11/10/2026, 6:22:35 PM] Request: GET /api/project/get-assigned-project[39m
+2026-11-10T13:22:38.472Z [[34minfo[39m]: [34m[11/10/2026, 6:22:38 PM] Request: GET /api/project/get-assigned-project[39m
+2026-11-10T13:27:13.503Z [[34minfo[39m]: [34m[11/10/2026, 6:27:13 PM] Request: GET /api/project/get-assigned-project[39m
+2026-11-10T13:27:15.633Z [[34minfo[39m]: [34m[11/10/2026, 6:27:15 PM] Request: GET /api/project/get-assigned-project[39m
+2026-11-11T05:24:36.908Z [[34minfo[39m]: [34m[11/11/2026, 10:24:36 AM] Request: POST /api/auth/refresh-token[39m
+2026-11-11T05:24:36.917Z [[34minfo[39m]: [34m[11/11/2026, 10:24:36 AM] Request: POST /api/client-domains/get-by-domain-url?domainUrl=http%3A%2F%2Flocalhost%3A5173[39m
+2026-11-11T05:24:36.935Z [[34minfo[39m]: [34m[11/11/2026, 10:24:36 AM] Request: POST /api/client-domains/get-by-domain-url?domainUrl=http%3A%2F%2Flocalhost%3A5173[39m
+2026-11-11T05:43:11.272Z [[34minfo[39m]: [34m[11/11/2026, 10:43:11 AM] Request: GET /api/project/get-assigned-project[39m
+2026-11-11T05:43:14.627Z [[34minfo[39m]: [34m[11/11/2026, 10:43:14 AM] Request: GET /api/project/get-assigned-project[39m
+2026-11-11T05:43:22.208Z [[34minfo[39m]: [34m[11/11/2026, 10:43:22 AM] Request: POST /api/client-domains/get-by-domain-url?domainUrl=http%3A%2F%2Flocalhost%3A5173[39m
+2026-11-11T05:43:22.211Z [[34minfo[39m]: [34m[11/11/2026, 10:43:22 AM] Request: POST /api/client-domains/get-by-domain-url?domainUrl=http%3A%2F%2Flocalhost%3A5173[39m
+2026-11-11T05:59:50.996Z [[34minfo[39m]: [34m[11/11/2026, 10:59:50 AM] Request: POST /api/client-domains/get-by-domain-url?domainUrl=http%3A%2F%2Flocalhost%3A5173[39m
+2026-11-11T05:59:51.000Z [[34minfo[39m]: [34m[11/11/2026, 10:59:51 AM] Request: POST /api/client-domains/get-by-domain-url?domainUrl=http%3A%2F%2Flocalhost%3A5173[39m
+2026-11-11T05:59:55.451Z [[34minfo[39m]: [34m[11/11/2026, 10:59:55 AM] Request: POST /api/auth/signin[39m
+2026-11-11T05:59:58.684Z [[34minfo[39m]: [34m[11/11/2026, 10:59:58 AM] Request: GET /api/project/get-assigned-project[39m
+2026-11-11T05:59:59.997Z [[34minfo[39m]: [34m[11/11/2026, 10:59:59 AM] Request: GET /api/project/get-assigned-project[39m
+2026-11-11T06:00:00.469Z [[34minfo[39m]: [34m[11/11/2026, 11:00:00 AM] Request: GET /api/project/get-assigned-project[39m
+2026-11-11T06:00:11.489Z [[34minfo[39m]: [34m[11/11/2026, 11:00:11 AM] Request: GET /api/project/get-assigned-project[39m
+2026-11-11T06:00:11.962Z [[34minfo[39m]: [34m[11/11/2026, 11:00:11 AM] Request: GET /api/project/get-assigned-project[39m

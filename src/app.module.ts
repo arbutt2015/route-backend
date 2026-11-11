@@ -106,11 +106,11 @@ import { ServeStaticModule } from "@nestjs/serve-static";
         const configService = new ConfigService();
         return {
           type: "mssql",
-          host: configService.get<string>("SQL_HOST_READ_ONLY"),
-          port: Number(configService.get<string>("SQL_PORT_READ_ONLY")),
-          username: configService.get<string>("SQL_USER_READ_ONLY"),
-          password: configService.get<string>("SQL_PASSWORD_READ_ONLY"),
-          database: configService.get<string>("SQL_DATABASE_READ_ONLY"),
+          host: configService.get<string>("SQL_HOST"),
+          port: Number(configService.get<string>("SQL_PORT")),
+          username: configService.get<string>("SQL_USER"),
+          password: configService.get<string>("SQL_PASSWORD"),
+          database: configService.get<string>("SQL_DATABASE"),
           entities: [__dirname + "/**/*.entity{.ts,.js}"],
           options: {
             requestTimeout: 180000,

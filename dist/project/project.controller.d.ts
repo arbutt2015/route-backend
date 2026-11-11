@@ -13,6 +13,8 @@ export declare class ProjectController {
                 projectId: number;
                 projectNumber: string;
                 projectName: string;
+                description: string;
+                routeCode: string;
                 agencyName: string;
                 projectS3BucketFolderPath: string;
                 geoJsonS3FilePath: string;

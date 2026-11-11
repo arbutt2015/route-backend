@@ -23,10 +23,8 @@ let ConfigurationsService = class ConfigurationsService {
     async loadConfigurations() {
         const dbSecretName = this.configurations.get("SECRET_NAME");
         const dbConfig = this.configurations.get("SECRET_NAME_DB");
-        const dbConfigRead = this.configurations.get("SECRET_NAME_DB_READ_ONLY");
         const awsConfig = await this.getSecretValue(dbSecretName);
         const dbInfo = await this.getSecretValue(dbConfig);
-        const dbConfigReadOnly = await this.getSecretValue(dbConfigRead);
         this.configs = {
             ...awsConfig,
             SQL_USER: dbInfo?.username,
@@ -34,11 +32,6 @@ let ConfigurationsService = class ConfigurationsService {
             SQL_HOST: dbInfo?.host,
             SQL_PORT: dbInfo?.port,
             SQL_DATABASE: dbInfo?.dbInstanceIdentifier,
-            SQL_USER_READ_ONLY: dbConfigReadOnly?.username,
-            SQL_PASSWORD_READ_ONLY: dbConfigReadOnly?.password,
-            SQL_HOST_READ_ONLY: dbConfigReadOnly?.host,
-            SQL_PORT_READ_ONLY: dbConfigReadOnly?.port,
-            SQL_DATABASE_READ_ONLY: dbConfigReadOnly?.dbInstanceIdentifier,
         };
         await this.setConfigGlobally();
     }
