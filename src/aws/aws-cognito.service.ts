@@ -87,8 +87,14 @@ export class AWSCognitoService {
     };
     await this.cognito.confirmSignUp(params).promise();
     this.loggerService.log("User confirmed successfully.");
-    await this.verifyEmail(email);
-    this.loggerService.log("User email verified successfully.");
+    try {
+      await this.verifyEmail(email);
+      this.loggerService.log("User email verified successfully.");
+    } catch (err) {
+      this.loggerService.warn(
+        `Email attribute verify skipped: ${err?.message}`,
+      );
+    }
     return {
       message: "Email confirmation successful. You can now log in.",
     };

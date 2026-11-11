@@ -2,8 +2,9 @@ import { Body, Controller, Delete, Get, Post, Query } from "@nestjs/common";
 import { AdmProjectUserRoleService } from "./adm-project-user-role.service";
 
 import {
-  CreateProjectUserRoleDto,
-  GetUsersByProjectAndRoleIdDto,
+  CreateProjectUserDto,
+  DeleteProjectUserDto,
+  GetUsersByProjectDto,
 } from "./dto/create-update.dto";
 import { LoggerService } from "src/logger/logger.service";
 
@@ -22,7 +23,7 @@ export class AdmProjectUserRoleController {
           projectId,
         );
       return {
-        message: "Project user role list",
+        message: "Project user list",
         data: response,
         statusCode: 201,
       };
@@ -33,17 +34,14 @@ export class AdmProjectUserRoleController {
   }
 
   @Post("add-update")
-  async createProjectRole(@Body() data: CreateProjectUserRoleDto) {
+  async createProjectRole(@Body() data: CreateProjectUserDto) {
     try {
-      const { projectId: project, userId: user, roleId: role } = data;
       const response = await this.projectUserRoleService.createProjectUserRole({
-        projectUserRoleId: data.projectUserRoleId,
-        project,
-        user,
-        role,
+        projectId: data.projectId,
+        userId: data.userId,
       });
       return {
-        message: "Project Role created successfully",
+        message: "Project user created successfully",
         data: response,
         statusCode: 201,
       };
@@ -54,14 +52,14 @@ export class AdmProjectUserRoleController {
   }
 
   @Delete("delete")
-  async deleteProjectRole(@Body() projectUserRoleId: number) {
+  async deleteProjectRole(@Body() data: DeleteProjectUserDto) {
     try {
-      const response =
-        await this.projectUserRoleService.deleteProjectUserRole(
-          projectUserRoleId,
-        );
+      const response = await this.projectUserRoleService.deleteProjectUserRole(
+        data.projectId,
+        data.userId,
+      );
       return {
-        message: "Project Role deleted successfully",
+        message: "Project user deleted successfully",
         data: response,
         statusCode: 200,
       };
@@ -71,19 +69,14 @@ export class AdmProjectUserRoleController {
     }
   }
 
-  @Get("get-users-by-project-role-id")
-  async getUsersByProjectAndRoleId(
-    @Query() query: GetUsersByProjectAndRoleIdDto,
-  ) {
-    const { projectId, roleCode } = query;
+  @Get("get-users-by-project")
+  async getUsersByProject(@Query() query: GetUsersByProjectDto) {
     try {
-      const response =
-        await this.projectUserRoleService.getUsersByProjectAndRoleId(
-          projectId,
-          roleCode,
-        );
+      const response = await this.projectUserRoleService.getUsersByProject(
+        query.projectId,
+      );
       return {
-        message: "Project user role list",
+        message: "Project user list",
         data: response,
         statusCode: 200,
       };

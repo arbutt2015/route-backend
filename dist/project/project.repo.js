@@ -26,76 +26,6 @@ let ProjectRepo = class ProjectRepo {
     async getOneProjects(filter, options) {
         return await this.geneRepoService.getOne(this.projectRepository, filter, options);
     }
-    async getAllProjectsForCollector(projectId, userId) {
-        return await this.projectRepository
-            .createQueryBuilder("project")
-            .leftJoinAndSelect("project.projectRegions", "projectRegion")
-            .leftJoinAndSelect("projectRegion.projectRegionCollectionKmls", "projectRegionCollectionKmls")
-            .leftJoinAndSelect("projectRegionCollectionKmls.projectRegionAreas", "projectRegionArea")
-            .leftJoinAndSelect("projectRegionArea.collector", "collector")
-            .where("project.projectId = :projectId", { projectId })
-            .andWhere("collector.userId = :userId", { userId })
-            .getOne();
-    }
-    async getProjectById(projectId) {
-        const repository = this.projectRepository;
-        const response = await this.geneRepoService.getOne(repository, { where: { projectId } }, {
-            relations: [
-                "regions",
-                "client",
-                "agency",
-                "projectUsers",
-                "projectUsers.user",
-            ],
-        });
-        if (!response) {
-            return null;
-        }
-        const projectData = {
-            projectId: response.projectId,
-            projectName: response.projectName,
-            projectS3BucketFolderPath: response?.projectS3BucketFolderPath,
-            client: {
-                id: response.client?.clientId,
-                name: response.client?.clientName,
-            },
-            agency: {
-                id: response.agency?.agencyId,
-                name: response.agency?.agencyName,
-            },
-            clientPOC: {
-                userId: response.projectUsers[0]?.userId,
-                email: response.projectUsers[0]?.user?.email,
-            },
-            regions: [
-                ...response.regions.map((region) => ({
-                    id: region?.regionId,
-                    name: region?.regionName,
-                })),
-            ],
-        };
-        return projectData;
-    }
-    async checkProjectNumberExists(projectNumber) {
-        return this.projectRepository
-            .createQueryBuilder("project")
-            .select(["project.projectNumber"])
-            .where("LOWER(project.projectNumber) = LOWER(:projectNumber)", {
-            projectNumber: projectNumber,
-        })
-            .getOne();
-    }
-    async updateDownloadStatus(projectId) {
-        return this.geneRepoService.updateById(this.projectRepository, projectId, {
-            isExportable: false,
-            projectDataExportUrl: null,
-        });
-    }
-    async updateIsActiveStatus(projectId, isActive) {
-        return this.geneRepoService.updateById(this.projectRepository, projectId, {
-            isActive,
-        });
-    }
     async checkProjectNameExists(projectName) {
         return this.projectRepository
             .createQueryBuilder("project")
@@ -105,9 +35,10 @@ let ProjectRepo = class ProjectRepo {
         })
             .getOne();
     }
-    async getDefaultProjectTypeId(filter, options) {
-        const repository = this.projectRepository;
-        return this.geneRepoService.getOne(repository, filter, options);
+    async updateIsActiveStatus(projectId, isActive) {
+        return this.geneRepoService.updateById(this.projectRepository, projectId, {
+            isActive,
+        });
     }
     async createProject(project) {
         return await this.geneRepoService.create(this.projectRepository, project);

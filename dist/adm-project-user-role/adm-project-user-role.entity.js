@@ -13,14 +13,21 @@ exports.AdmProjectUserRole = void 0;
 const typeorm_1 = require("typeorm");
 const project_entity_1 = require("../project/project.entity");
 const adm_user_entity_1 = require("../adm-user/adm-user.entity");
-const adm_role_entity_1 = require("../adm-role/adm-role.entity");
 let AdmProjectUserRole = class AdmProjectUserRole {
 };
 exports.AdmProjectUserRole = AdmProjectUserRole;
 __decorate([
-    (0, typeorm_1.PrimaryGeneratedColumn)({ type: "int", name: "PROJECT_USER_ROLE_ID" }),
+    (0, typeorm_1.PrimaryColumn)({ type: "int", name: "PROJECT_ID" }),
     __metadata("design:type", Number)
-], AdmProjectUserRole.prototype, "projectUserRoleId", void 0);
+], AdmProjectUserRole.prototype, "projectId", void 0);
+__decorate([
+    (0, typeorm_1.PrimaryColumn)({ type: "int", name: "USER_ID" }),
+    __metadata("design:type", Number)
+], AdmProjectUserRole.prototype, "userId", void 0);
+__decorate([
+    (0, typeorm_1.CreateDateColumn)({ type: "datetime2", name: "DATE_CREATED", nullable: true }),
+    __metadata("design:type", Date)
+], AdmProjectUserRole.prototype, "dateCreated", void 0);
 __decorate([
     (0, typeorm_1.ManyToOne)(() => project_entity_1.Project, (project) => project.admProjectUserRoles, {
         onDelete: "CASCADE",
@@ -35,15 +42,7 @@ __decorate([
     (0, typeorm_1.JoinColumn)([{ name: "USER_ID", referencedColumnName: "userId" }]),
     __metadata("design:type", adm_user_entity_1.AdmUser)
 ], AdmProjectUserRole.prototype, "user", void 0);
-__decorate([
-    (0, typeorm_1.ManyToOne)(() => adm_role_entity_1.AdmRole, (admRole) => admRole.admProjectUserRoles, {
-        onDelete: "CASCADE",
-    }),
-    (0, typeorm_1.JoinColumn)([{ name: "ROLE_ID", referencedColumnName: "roleId" }]),
-    __metadata("design:type", adm_role_entity_1.AdmRole)
-], AdmProjectUserRole.prototype, "role", void 0);
 exports.AdmProjectUserRole = AdmProjectUserRole = __decorate([
-    (0, typeorm_1.Index)("PK_ADM_PROJECT_USER_ROLE", ["projectUserRoleId"], { unique: true }),
-    (0, typeorm_1.Entity)("ADM_PROJECT_USER_ROLE", { schema: "dbo" })
+    (0, typeorm_1.Entity)("PROJECT_USER", { schema: "dbo" })
 ], AdmProjectUserRole);
 //# sourceMappingURL=adm-project-user-role.entity.js.map

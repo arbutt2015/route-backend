@@ -88,15 +88,8 @@ let AuthController = class AuthController {
                     message: "Your account is inactive",
                 };
             }
-            if (user?.isVerified === false) {
-                return {
-                    message: "notConfirmed",
-                    data: { type: "UserNotConfirmedException" },
-                    statusCode: 201,
-                    success: false,
-                };
-            }
             const response = await this.authService.signIn(signInDto.email, signInDto.password);
+            const isAdmin = user.userType === auth_service_1.USER_TYPE.SUPER_USER;
             return {
                 success: true,
                 message: "Sign in successful",
@@ -107,13 +100,14 @@ let AuthController = class AuthController {
                         userId: user.userId,
                         email: user.email,
                         firstName: user.firstName,
-                        middleInitial: user.middleInitial,
+                        middleInitial: "",
                         lastName: user.lastName,
-                        usersAccess: user.usersAccess,
-                        createProjectAccess: user.createProjectAccess,
-                        assetsAccess: user.assetsAccess,
-                        companyName: user.companyName,
-                        isPasswordChangeRequired: user.isPasswordChangeRequired,
+                        usersAccess: isAdmin,
+                        createProjectAccess: isAdmin,
+                        assetsAccess: isAdmin,
+                        companyName: user.agency?.agencyName ?? "",
+                        userType: user.userType,
+                        isPasswordChangeRequired: false,
                     },
                 },
             };
@@ -124,7 +118,12 @@ let AuthController = class AuthController {
                 error.message = "The login credentials are invalid. Please try again";
             }
             else if (error.code === "UserNotConfirmedException") {
-                error.message = "User not confirmed";
+                return {
+                    message: "notConfirmed",
+                    data: { type: "UserNotConfirmedException" },
+                    statusCode: 201,
+                    success: false,
+                };
             }
             else {
                 throw new Error(error.message);
@@ -154,25 +153,27 @@ let AuthController = class AuthController {
     async checkDomain(email) {
         try {
             const user = await this.authService.getUserByEmail({ where: { email } }, {
-                select: ["isVerified"],
+                select: ["userId"],
             });
             if (user) {
-                if (user?.isVerified) {
-                    return {
-                        message: "The email address is already registered.",
-                        data: null,
-                        success: false,
-                    };
-                }
                 return {
-                    message: "User is not verified.",
-                    data: { shouldBeVerified: true },
-                    success: true,
+                    message: "The email address is already registered.",
+                    data: null,
+                    success: false,
                 };
             }
             if ((0, email_domain_checker__common_1.isPublicEmailDomain)(email)) {
                 return {
                     message: "You cannot register using a public domain email address.",
+                    data: { shouldBeVerified: false },
+                    statusCode: 400,
+                    success: false,
+                };
+            }
+            const agency = await this.authService.getAgencyByEmailDomain(email);
+            if (!agency) {
+                return {
+                    message: "Your organization is not registered. Please contact your administrator.",
                     data: { shouldBeVerified: false },
                     statusCode: 400,
                     success: false,
@@ -245,14 +246,6 @@ let AuthController = class AuthController {
             if (!data) {
                 return {
                     message: "Email not exist",
-                    data: [],
-                    statusCode: 201,
-                    success: false,
-                };
-            }
-            if (data?.isVerified === false) {
-                return {
-                    message: "Your email is not verified. Please verify your email first.",
                     data: [],
                     statusCode: 201,
                     success: false,

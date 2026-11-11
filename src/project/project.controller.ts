@@ -2,7 +2,6 @@ import {
   Body,
   Controller,
   Get,
-  Param,
   Post,
   Put,
   Query,
@@ -155,7 +154,7 @@ export class ProjectController {
       const response = await this.projectService.downloadFile({
         where: {
           projectId,
-          isExportable: true,
+          isActive: true,
         },
       });
       return {
@@ -171,22 +170,10 @@ export class ProjectController {
 
   @Post("create")
   async createProject(
-    @User("userId") userId: string,
+    @User("userId") userId: number,
     @Body() createProjectDto: CreateProjectDto,
   ) {
     try {
-      const checkProjectNumber =
-        await this.projectService.checkProjectNumberExists(
-          createProjectDto.projectNumber,
-        );
-      if (checkProjectNumber) {
-        return {
-          message: "Project number already exists",
-          data: [],
-          statusCode: 400,
-        };
-      }
-
       const checkProjectName = await this.projectService.checkProjectNameExists(
         createProjectDto.projectName,
       );
@@ -212,19 +199,6 @@ export class ProjectController {
       throw error; // The ResponseInterceptor will handle formatting the error response
     }
   }
-  @Put("update-download-status")
-  async updateDownloadStatus(@Body() body: { projectId: number }) {
-    if (body?.projectId) {
-      const { projectId } = body;
-      const response =
-        await this.projectService.updateDownloadStatus(projectId);
-      return {
-        message: "Project updated successfully",
-        data: response,
-        statusCode: 200,
-      };
-    }
-  }
   @Put("update-is-active-status")
   async updateIsActiveStatus(
     @Body() body: { projectId: number; isActive: boolean },
@@ -245,20 +219,6 @@ export class ProjectController {
   @Put("update")
   async updateProject(@Body() updateProjectDto: UpdateProjectDto) {
     try {
-      if (updateProjectDto.projectNumber) {
-        const checkProjectNumber =
-          await this.projectService.checkProjectNumberExists(
-            updateProjectDto.projectNumber,
-          );
-        if (checkProjectNumber) {
-          return {
-            message: "Project number already exists",
-            data: [],
-            statusCode: 400,
-          };
-        }
-      }
-
       if (updateProjectDto.projectName) {
         const checkProjectName =
           await this.projectService.checkProjectNameExists(
@@ -310,41 +270,6 @@ export class ProjectController {
     } catch (error) {
       this.loggerService.error(error);
       throw error; // The ResponseInterceptor will handle formatting the error response
-    }
-  }
-  @Post("update-bounding-box")
-  async updateBoundingBox() {
-    try {
-      const result =
-        await this.projectService.updateBoundingBoxForAllProjects();
-      return {
-        message: result.message,
-        statusCode: 200,
-      };
-    } catch (error) {
-      this.loggerService.error(error);
-      throw error;
-    }
-  }
-
-  @Put("update-workstations/:projectId")
-  async updateWorkstations(
-    @Param("projectId") projectId: string,
-    @Body() body: { daWorkstation?: string; aiWorkstation?: string },
-  ) {
-    try {
-      const result = await this.projectService.updateWorkstations(
-        +projectId,
-        body,
-      );
-
-      return {
-        message: result.message || "Workstations updated successfully",
-        statusCode: 200,
-      };
-    } catch (error) {
-      this.loggerService.error(error);
-      throw error;
     }
   }
 }

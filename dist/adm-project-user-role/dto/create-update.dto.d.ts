@@ -1,11 +1,12 @@
-export declare class CreateProjectUserRoleDto {
-    projectUserRoleId?: string;
-    projectId: string;
-    userId: string;
-    roleId: string;
-    cognitoId?: string;
-}
-export declare class GetUsersByProjectAndRoleIdDto {
-    roleCode: string;
+export declare class CreateProjectUserDto {
     projectId: number;
+    userId: number;
+}
+export declare class DeleteProjectUserDto {
+    projectId: number;
+    userId: number;
+}
+export declare class GetUsersByProjectDto {
+    projectId: number;
+    userId?: number;
 }

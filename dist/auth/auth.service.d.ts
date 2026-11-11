@@ -3,18 +3,24 @@ import { AdmUserService } from "src/adm-user/adm-user.service";
 import { ConfigService } from "@nestjs/config";
 import { AdmProjectUserRoleService } from "../adm-project-user-role/adm-project-user-role.service";
 import { AWSSESService } from "src/aws/aws-ses.service";
+import { GeneRepoService } from "src/gene-repo/gene-repo.service";
+export declare const USER_TYPE: {
+    readonly AGENCY_USER: 1;
+    readonly AGENCY_ADMIN: 2;
+    readonly SUPER_USER: 3;
+};
 export declare class AuthService {
     private readonly cognitoService;
     private configService;
     private readonly admUserService;
     private projectUserRoleModule;
     private sesService;
-    constructor(cognitoService: AWSCognitoService, configService: ConfigService, admUserService: AdmUserService, projectUserRoleModule: AdmProjectUserRoleService, sesService: AWSSESService);
+    private geneRepoService;
+    constructor(cognitoService: AWSCognitoService, configService: ConfigService, admUserService: AdmUserService, projectUserRoleModule: AdmProjectUserRoleService, sesService: AWSSESService, geneRepoService: GeneRepoService);
     sendEmailToAdmin(email: string, newEmail: string): Promise<void>;
+    getAgencyByEmailDomain(email: string): Promise<any>;
+    private findAgencyIdByEmailDomain;
     createCognitoUser(email: string, firstName: string, middleInitial: string, lastName: string, companyName: string, title: string, phoneNumber: string, password: string, isVerified: boolean, isSdUser?: boolean): Promise<any>;
-    private isCodeUnique;
-    generateCollectorCode(length: number): Promise<string>;
-    private generateRandomCode;
     confirmSignUp(confirmationCod: string, email: string): Promise<any>;
     assignDemoProject(userId: number): Promise<void>;
     isUserActive(email: string): Promise<any>;

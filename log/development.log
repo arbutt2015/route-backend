@@ -686,3 +686,1740 @@
 2026-11-11T06:00:00.469Z [[34minfo[39m]: [34m[11/11/2026, 11:00:00 AM] Request: GET /api/project/get-assigned-project[39m
 2026-11-11T06:00:11.489Z [[34minfo[39m]: [34m[11/11/2026, 11:00:11 AM] Request: GET /api/project/get-assigned-project[39m
 2026-11-11T06:00:11.962Z [[34minfo[39m]: [34m[11/11/2026, 11:00:11 AM] Request: GET /api/project/get-assigned-project[39m
+2026-11-11T10:37:53.736Z [[34minfo[39m]: [34mJwtStrategy initialized[39m
+
+
+2026-11-11T10:37:53.759Z [[34minfo[39m]: [34mAuthController {/api/auth}:[39m
+2026-11-11T10:37:53.761Z [[34minfo[39m]: [34mMapped {/api/auth/signup, POST} route[39m
+2026-11-11T10:37:53.762Z [[34minfo[39m]: [34mMapped {/api/auth/signin, POST} route[39m
+2026-11-11T10:37:53.762Z [[34minfo[39m]: [34mMapped {/api/auth/refresh-token, POST} route[39m
+2026-11-11T10:37:53.762Z [[34minfo[39m]: [34mMapped {/api/auth/check-domain, POST} route[39m
+2026-11-11T10:37:53.763Z [[34minfo[39m]: [34mMapped {/api/auth/confirm-sign-up, POST} route[39m
+2026-11-11T10:37:53.763Z [[34minfo[39m]: [34mMapped {/api/auth/assign-demo-project, POST} route[39m
+2026-11-11T10:37:53.764Z [[34minfo[39m]: [34mMapped {/api/auth/forgot-password, POST} route[39m
+2026-11-11T10:37:53.764Z [[34minfo[39m]: [34mMapped {/api/auth/confirm-forgot-password, PUT} route[39m
+2026-11-11T10:37:53.764Z [[34minfo[39m]: [34mMapped {/api/auth/resend-code, POST} route[39m
+2026-11-11T10:37:53.765Z [[34minfo[39m]: [34mMapped {/api/auth/change-password, PUT} route[39m
+2026-11-11T10:37:53.765Z [[34minfo[39m]: [34mAdmModuleController {/api/label}:[39m
+2026-11-11T10:37:53.765Z [[34minfo[39m]: [34mAdmUserController {/api/users}:[39m
+2026-11-11T10:37:53.766Z [[34minfo[39m]: [34mMapped {/api/users/me, GET} route[39m
+2026-11-11T10:37:53.766Z [[34minfo[39m]: [34mMapped {/api/users/me, PATCH} route[39m
+2026-11-11T10:37:53.766Z [[34minfo[39m]: [34mMapped {/api/users/get-all, GET} route[39m
+2026-11-11T10:37:53.767Z [[34minfo[39m]: [34mMapped {/api/users/get-sd-users, GET} route[39m
+2026-11-11T10:37:53.767Z [[34minfo[39m]: [34mMapped {/api/users/get-user-by-id, GET} route[39m
+2026-11-11T10:37:53.767Z [[34minfo[39m]: [34mMapped {/api/users/update-user-by-id, PATCH} route[39m
+2026-11-11T10:37:53.768Z [[34minfo[39m]: [34mMapped {/api/users/:id, DELETE} route[39m
+2026-11-11T10:37:53.768Z [[34minfo[39m]: [34mAdmProjectUserRoleController {/api/project-user-role}:[39m
+2026-11-11T10:37:53.769Z [[34minfo[39m]: [34mMapped {/api/project-user-role, GET} route[39m
+2026-11-11T10:37:53.769Z [[34minfo[39m]: [34mMapped {/api/project-user-role/add-update, POST} route[39m
+2026-11-11T10:37:53.769Z [[34minfo[39m]: [34mMapped {/api/project-user-role/delete, DELETE} route[39m
+2026-11-11T10:37:53.770Z [[34minfo[39m]: [34mMapped {/api/project-user-role/get-users-by-project-role-id, GET} route[39m
+2026-11-11T10:37:53.770Z [[34minfo[39m]: [34mAdmRoleController {/api/role}:[39m
+2026-11-11T10:37:53.770Z [[34minfo[39m]: [34mMapped {/api/role/role-by-id, GET} route[39m
+2026-11-11T10:37:53.770Z [[34minfo[39m]: [34mMapped {/api/role/getAll, GET} route[39m
+2026-11-11T10:37:53.771Z [[34minfo[39m]: [34mMapped {/api/role/create-update, POST} route[39m
+2026-11-11T10:37:53.771Z [[34minfo[39m]: [34mMapped {/api/role/delete, DELETE} route[39m
+2026-11-11T10:37:53.771Z [[34minfo[39m]: [34mAdmRoleFeatureController {/api/role-feature}:[39m
+2026-11-11T10:37:53.771Z [[34minfo[39m]: [34mMapped {/api/role-feature, GET} route[39m
+2026-11-11T10:37:53.772Z [[34minfo[39m]: [34mMapped {/api/role-feature/create, POST} route[39m
+2026-11-11T10:37:53.772Z [[34minfo[39m]: [34mMapped {/api/role-feature/get-by-project, GET} route[39m
+2026-11-11T10:37:53.772Z [[34minfo[39m]: [34mProjectController {/api/project}:[39m
+2026-11-11T10:37:53.773Z [[34minfo[39m]: [34mMapped {/api/project/get-assigned-project, GET} route[39m
+2026-11-11T10:37:53.773Z [[34minfo[39m]: [34mMapped {/api/project/get-all, GET} route[39m
+2026-11-11T10:37:53.773Z [[34minfo[39m]: [34mMapped {/api/project/get-all-active-inactive, GET} route[39m
+2026-11-11T10:37:53.773Z [[34minfo[39m]: [34mMapped {/api/project/get-project-by-id, GET} route[39m
+2026-11-11T10:37:53.773Z [[34minfo[39m]: [34mMapped {/api/project/download-file, GET} route[39m
+2026-11-11T10:37:53.774Z [[34minfo[39m]: [34mMapped {/api/project/create, POST} route[39m
+2026-11-11T10:37:53.774Z [[34minfo[39m]: [34mMapped {/api/project/update-download-status, PUT} route[39m
+2026-11-11T10:37:53.775Z [[34minfo[39m]: [34mMapped {/api/project/update-is-active-status, PUT} route[39m
+2026-11-11T10:37:53.775Z [[34minfo[39m]: [34mMapped {/api/project/update, PUT} route[39m
+2026-11-11T10:37:53.776Z [[34minfo[39m]: [34mMapped {/api/project/upload-file, POST} route[39m
+2026-11-11T10:37:53.776Z [[34minfo[39m]: [34mMapped {/api/project/update-bounding-box, POST} route[39m
+2026-11-11T10:37:53.776Z [[34minfo[39m]: [34mMapped {/api/project/update-workstations/:projectId, PUT} route[39m
+2026-11-11T10:37:53.776Z [[34minfo[39m]: [34mAdmFeatureController {/api/asset-type}:[39m
+2026-11-11T11:00:08.205Z [[34minfo[39m]: [34mJwtStrategy initialized[39m
+
+
+2026-11-11T11:00:08.236Z [[34minfo[39m]: [34mAuthController {/api/auth}:[39m
+2026-11-11T11:00:08.238Z [[34minfo[39m]: [34mMapped {/api/auth/signup, POST} route[39m
+2026-11-11T11:00:08.238Z [[34minfo[39m]: [34mMapped {/api/auth/signin, POST} route[39m
+2026-11-11T11:00:08.239Z [[34minfo[39m]: [34mMapped {/api/auth/refresh-token, POST} route[39m
+2026-11-11T11:00:08.239Z [[34minfo[39m]: [34mMapped {/api/auth/check-domain, POST} route[39m
+2026-11-11T11:00:08.240Z [[34minfo[39m]: [34mMapped {/api/auth/confirm-sign-up, POST} route[39m
+2026-11-11T11:00:08.240Z [[34minfo[39m]: [34mMapped {/api/auth/assign-demo-project, POST} route[39m
+2026-11-11T11:00:08.241Z [[34minfo[39m]: [34mMapped {/api/auth/forgot-password, POST} route[39m
+2026-11-11T11:00:08.241Z [[34minfo[39m]: [34mMapped {/api/auth/confirm-forgot-password, PUT} route[39m
+2026-11-11T11:00:08.242Z [[34minfo[39m]: [34mMapped {/api/auth/resend-code, POST} route[39m
+2026-11-11T11:00:08.243Z [[34minfo[39m]: [34mMapped {/api/auth/change-password, PUT} route[39m
+2026-11-11T11:00:08.243Z [[34minfo[39m]: [34mAdmModuleController {/api/label}:[39m
+2026-11-11T11:00:08.243Z [[34minfo[39m]: [34mAdmUserController {/api/users}:[39m
+2026-11-11T11:00:08.243Z [[34minfo[39m]: [34mMapped {/api/users/me, GET} route[39m
+2026-11-11T11:00:08.244Z [[34minfo[39m]: [34mMapped {/api/users/me, PATCH} route[39m
+2026-11-11T11:00:08.244Z [[34minfo[39m]: [34mMapped {/api/users/get-all, GET} route[39m
+2026-11-11T11:00:08.244Z [[34minfo[39m]: [34mMapped {/api/users/get-sd-users, GET} route[39m
+2026-11-11T11:00:08.244Z [[34minfo[39m]: [34mMapped {/api/users/get-user-by-id, GET} route[39m
+2026-11-11T11:00:08.244Z [[34minfo[39m]: [34mMapped {/api/users/update-user-by-id, PATCH} route[39m
+2026-11-11T11:00:08.245Z [[34minfo[39m]: [34mMapped {/api/users/:id, DELETE} route[39m
+2026-11-11T11:00:08.245Z [[34minfo[39m]: [34mAdmProjectUserRoleController {/api/project-user-role}:[39m
+2026-11-11T11:00:08.245Z [[34minfo[39m]: [34mMapped {/api/project-user-role, GET} route[39m
+2026-11-11T11:00:08.246Z [[34minfo[39m]: [34mMapped {/api/project-user-role/add-update, POST} route[39m
+2026-11-11T11:00:08.246Z [[34minfo[39m]: [34mMapped {/api/project-user-role/delete, DELETE} route[39m
+2026-11-11T11:00:08.246Z [[34minfo[39m]: [34mMapped {/api/project-user-role/get-users-by-project-role-id, GET} route[39m
+2026-11-11T11:00:08.246Z [[34minfo[39m]: [34mAdmRoleController {/api/role}:[39m
+2026-11-11T11:00:08.247Z [[34minfo[39m]: [34mMapped {/api/role/role-by-id, GET} route[39m
+2026-11-11T11:00:08.247Z [[34minfo[39m]: [34mMapped {/api/role/getAll, GET} route[39m
+2026-11-11T11:00:08.247Z [[34minfo[39m]: [34mMapped {/api/role/create-update, POST} route[39m
+2026-11-11T11:00:08.247Z [[34minfo[39m]: [34mMapped {/api/role/delete, DELETE} route[39m
+2026-11-11T11:00:08.248Z [[34minfo[39m]: [34mAdmRoleFeatureController {/api/role-feature}:[39m
+2026-11-11T11:00:08.248Z [[34minfo[39m]: [34mMapped {/api/role-feature, GET} route[39m
+2026-11-11T11:00:08.248Z [[34minfo[39m]: [34mMapped {/api/role-feature/create, POST} route[39m
+2026-11-11T11:00:08.249Z [[34minfo[39m]: [34mMapped {/api/role-feature/get-by-project, GET} route[39m
+2026-11-11T11:00:08.249Z [[34minfo[39m]: [34mProjectController {/api/project}:[39m
+2026-11-11T11:00:08.249Z [[34minfo[39m]: [34mMapped {/api/project/get-assigned-project, GET} route[39m
+2026-11-11T11:00:08.250Z [[34minfo[39m]: [34mMapped {/api/project/get-all, GET} route[39m
+2026-11-11T11:00:08.250Z [[34minfo[39m]: [34mMapped {/api/project/get-all-active-inactive, GET} route[39m
+2026-11-11T11:00:08.250Z [[34minfo[39m]: [34mMapped {/api/project/get-project-by-id, GET} route[39m
+2026-11-11T11:00:08.250Z [[34minfo[39m]: [34mMapped {/api/project/download-file, GET} route[39m
+2026-11-11T11:00:08.251Z [[34minfo[39m]: [34mMapped {/api/project/create, POST} route[39m
+2026-11-11T11:00:08.251Z [[34minfo[39m]: [34mMapped {/api/project/update-download-status, PUT} route[39m
+2026-11-11T11:00:08.251Z [[34minfo[39m]: [34mMapped {/api/project/update-is-active-status, PUT} route[39m
+2026-11-11T11:00:08.252Z [[34minfo[39m]: [34mMapped {/api/project/update, PUT} route[39m
+2026-11-11T11:00:08.252Z [[34minfo[39m]: [34mMapped {/api/project/upload-file, POST} route[39m
+2026-11-11T11:00:08.252Z [[34minfo[39m]: [34mMapped {/api/project/update-bounding-box, POST} route[39m
+2026-11-11T11:00:08.252Z [[34minfo[39m]: [34mMapped {/api/project/update-workstations/:projectId, PUT} route[39m
+2026-11-11T11:00:08.252Z [[34minfo[39m]: [34mAdmFeatureController {/api/asset-type}:[39m
+2026-11-11T11:09:13.298Z [[34minfo[39m]: [34mJwtStrategy initialized[39m
+
+
+2026-11-11T11:09:13.328Z [[34minfo[39m]: [34mAuthController {/api/auth}:[39m
+2026-11-11T11:09:13.330Z [[34minfo[39m]: [34mMapped {/api/auth/signup, POST} route[39m
+2026-11-11T11:09:13.330Z [[34minfo[39m]: [34mMapped {/api/auth/signin, POST} route[39m
+2026-11-11T11:09:13.331Z [[34minfo[39m]: [34mMapped {/api/auth/refresh-token, POST} route[39m
+2026-11-11T11:09:13.331Z [[34minfo[39m]: [34mMapped {/api/auth/check-domain, POST} route[39m
+2026-11-11T11:09:13.331Z [[34minfo[39m]: [34mMapped {/api/auth/confirm-sign-up, POST} route[39m
+2026-11-11T11:09:13.332Z [[34minfo[39m]: [34mMapped {/api/auth/assign-demo-project, POST} route[39m
+2026-11-11T11:09:13.332Z [[34minfo[39m]: [34mMapped {/api/auth/forgot-password, POST} route[39m
+2026-11-11T11:09:13.332Z [[34minfo[39m]: [34mMapped {/api/auth/confirm-forgot-password, PUT} route[39m
+2026-11-11T11:09:13.333Z [[34minfo[39m]: [34mMapped {/api/auth/resend-code, POST} route[39m
+2026-11-11T11:09:13.334Z [[34minfo[39m]: [34mMapped {/api/auth/change-password, PUT} route[39m
+2026-11-11T11:09:13.334Z [[34minfo[39m]: [34mAdmUserController {/api/users}:[39m
+2026-11-11T11:09:13.334Z [[34minfo[39m]: [34mMapped {/api/users/me, GET} route[39m
+2026-11-11T11:09:13.335Z [[34minfo[39m]: [34mMapped {/api/users/me, PATCH} route[39m
+2026-11-11T11:09:13.335Z [[34minfo[39m]: [34mMapped {/api/users/get-all, GET} route[39m
+2026-11-11T11:09:13.336Z [[34minfo[39m]: [34mMapped {/api/users/get-sd-users, GET} route[39m
+2026-11-11T11:09:13.336Z [[34minfo[39m]: [34mMapped {/api/users/get-user-by-id, GET} route[39m
+2026-11-11T11:09:13.336Z [[34minfo[39m]: [34mMapped {/api/users/update-user-by-id, PATCH} route[39m
+2026-11-11T11:09:13.337Z [[34minfo[39m]: [34mMapped {/api/users/:id, DELETE} route[39m
+2026-11-11T11:09:13.337Z [[34minfo[39m]: [34mAdmProjectUserRoleController {/api/project-user-role}:[39m
+2026-11-11T11:09:13.337Z [[34minfo[39m]: [34mMapped {/api/project-user-role, GET} route[39m
+2026-11-11T11:09:13.337Z [[34minfo[39m]: [34mMapped {/api/project-user-role/add-update, POST} route[39m
+2026-11-11T11:09:13.338Z [[34minfo[39m]: [34mMapped {/api/project-user-role/delete, DELETE} route[39m
+2026-11-11T11:09:13.338Z [[34minfo[39m]: [34mMapped {/api/project-user-role/get-users-by-project, GET} route[39m
+2026-11-11T11:09:13.338Z [[34minfo[39m]: [34mProjectController {/api/project}:[39m
+2026-11-11T11:09:13.338Z [[34minfo[39m]: [34mMapped {/api/project/get-assigned-project, GET} route[39m
+2026-11-11T11:09:13.339Z [[34minfo[39m]: [34mMapped {/api/project/get-all, GET} route[39m
+2026-11-11T11:09:13.339Z [[34minfo[39m]: [34mMapped {/api/project/get-all-active-inactive, GET} route[39m
+2026-11-11T11:09:13.339Z [[34minfo[39m]: [34mMapped {/api/project/get-project-by-id, GET} route[39m
+2026-11-11T11:09:13.339Z [[34minfo[39m]: [34mMapped {/api/project/download-file, GET} route[39m
+2026-11-11T11:09:13.340Z [[34minfo[39m]: [34mMapped {/api/project/create, POST} route[39m
+2026-11-11T11:09:13.340Z [[34minfo[39m]: [34mMapped {/api/project/update-is-active-status, PUT} route[39m
+2026-11-11T11:09:13.340Z [[34minfo[39m]: [34mMapped {/api/project/update, PUT} route[39m
+2026-11-11T11:09:13.340Z [[34minfo[39m]: [34mMapped {/api/project/upload-file, POST} route[39m
+2026-11-11T11:09:14.162Z [[34minfo[39m]: [34mserver start.....http//:localhost:5001[39m
+
+
+2026-11-11T11:09:14.164Z [[34minfo[39m]: [34mNest application successfully started[39m
+2026-11-11T11:14:01.568Z [[34minfo[39m]: [34mJwtStrategy initialized[39m
+
+
+2026-11-11T11:14:01.604Z [[34minfo[39m]: [34mAuthController {/api/auth}:[39m
+2026-11-11T11:14:01.610Z [[34minfo[39m]: [34mMapped {/api/auth/signup, POST} route[39m
+2026-11-11T11:14:01.611Z [[34minfo[39m]: [34mMapped {/api/auth/signin, POST} route[39m
+2026-11-11T11:14:01.611Z [[34minfo[39m]: [34mMapped {/api/auth/refresh-token, POST} route[39m
+2026-11-11T11:14:01.612Z [[34minfo[39m]: [34mMapped {/api/auth/check-domain, POST} route[39m
+2026-11-11T11:14:01.613Z [[34minfo[39m]: [34mMapped {/api/auth/confirm-sign-up, POST} route[39m
+2026-11-11T11:14:01.613Z [[34minfo[39m]: [34mMapped {/api/auth/assign-demo-project, POST} route[39m
+2026-11-11T11:14:01.614Z [[34minfo[39m]: [34mMapped {/api/auth/forgot-password, POST} route[39m
+2026-11-11T11:14:01.614Z [[34minfo[39m]: [34mMapped {/api/auth/confirm-forgot-password, PUT} route[39m
+2026-11-11T11:14:01.615Z [[34minfo[39m]: [34mMapped {/api/auth/resend-code, POST} route[39m
+2026-11-11T11:14:01.615Z [[34minfo[39m]: [34mMapped {/api/auth/change-password, PUT} route[39m
+2026-11-11T11:14:01.616Z [[34minfo[39m]: [34mAdmUserController {/api/users}:[39m
+2026-11-11T11:14:01.616Z [[34minfo[39m]: [34mMapped {/api/users/me, GET} route[39m
+2026-11-11T11:14:01.617Z [[34minfo[39m]: [34mMapped {/api/users/me, PATCH} route[39m
+2026-11-11T11:14:01.617Z [[34minfo[39m]: [34mMapped {/api/users/get-all, GET} route[39m
+2026-11-11T11:14:01.618Z [[34minfo[39m]: [34mMapped {/api/users/get-sd-users, GET} route[39m
+2026-11-11T11:14:01.618Z [[34minfo[39m]: [34mMapped {/api/users/get-user-by-id, GET} route[39m
+2026-11-11T11:14:01.618Z [[34minfo[39m]: [34mMapped {/api/users/update-user-by-id, PATCH} route[39m
+2026-11-11T11:14:01.619Z [[34minfo[39m]: [34mMapped {/api/users/:id, DELETE} route[39m
+2026-11-11T11:14:01.620Z [[34minfo[39m]: [34mAdmProjectUserRoleController {/api/project-user-role}:[39m
+2026-11-11T11:14:01.620Z [[34minfo[39m]: [34mMapped {/api/project-user-role, GET} route[39m
+2026-11-11T11:14:01.620Z [[34minfo[39m]: [34mMapped {/api/project-user-role/add-update, POST} route[39m
+2026-11-11T11:14:01.621Z [[34minfo[39m]: [34mMapped {/api/project-user-role/delete, DELETE} route[39m
+2026-11-11T11:14:01.621Z [[34minfo[39m]: [34mMapped {/api/project-user-role/get-users-by-project, GET} route[39m
+2026-11-11T11:14:01.621Z [[34minfo[39m]: [34mProjectController {/api/project}:[39m
+2026-11-11T11:14:01.622Z [[34minfo[39m]: [34mMapped {/api/project/get-assigned-project, GET} route[39m
+2026-11-11T11:14:01.622Z [[34minfo[39m]: [34mMapped {/api/project/get-all, GET} route[39m
+2026-11-11T11:14:01.623Z [[34minfo[39m]: [34mMapped {/api/project/get-all-active-inactive, GET} route[39m
+2026-11-11T11:14:01.624Z [[34minfo[39m]: [34mMapped {/api/project/get-project-by-id, GET} route[39m
+2026-11-11T11:14:01.624Z [[34minfo[39m]: [34mMapped {/api/project/download-file, GET} route[39m
+2026-11-11T11:14:01.624Z [[34minfo[39m]: [34mMapped {/api/project/create, POST} route[39m
+2026-11-11T11:14:01.625Z [[34minfo[39m]: [34mMapped {/api/project/update-is-active-status, PUT} route[39m
+2026-11-11T11:14:01.625Z [[34minfo[39m]: [34mMapped {/api/project/update, PUT} route[39m
+2026-11-11T11:14:01.626Z [[34minfo[39m]: [34mMapped {/api/project/upload-file, POST} route[39m
+2026-11-11T11:14:02.328Z [[34minfo[39m]: [34mserver start.....http//:localhost:5001[39m
+
+
+2026-11-11T11:14:02.329Z [[34minfo[39m]: [34mNest application successfully started[39m
+2026-11-11T11:14:34.327Z [[34minfo[39m]: [34m[11/11/2026, 4:14:34 PM] Request: POST /api/client-domains/get-by-domain-url?domainUrl=http%3A%2F%2Flocalhost%3A5173[39m
+2026-11-11T11:14:34.336Z [[34minfo[39m]: [34m[11/11/2026, 4:14:34 PM] Request: POST /api/client-domains/get-by-domain-url?domainUrl=http%3A%2F%2Flocalhost%3A5173[39m
+2026-11-11T11:14:36.898Z [[34minfo[39m]: [34m[11/11/2026, 4:14:36 PM] Request: POST /api/auth/signin[39m
+2026-11-11T11:14:51.037Z [[34minfo[39m]: [34m[11/11/2026, 4:14:51 PM] Request: POST /api/auth/check-domain[39m
+2026-11-11T11:15:03.115Z [[34minfo[39m]: [34m[11/11/2026, 4:15:03 PM] Request: POST /api/auth/check-domain[39m
+2026-11-11T11:19:33.659Z [[34minfo[39m]: [34m[11/11/2026, 4:19:33 PM] Request: POST /api/client-domains/get-by-domain-url?domainUrl=http%3A%2F%2Flocalhost%3A5173[39m
+2026-11-11T11:19:33.663Z [[34minfo[39m]: [34m[11/11/2026, 4:19:33 PM] Request: POST /api/client-domains/get-by-domain-url?domainUrl=http%3A%2F%2Flocalhost%3A5173[39m
+2026-11-11T11:21:04.383Z [[34minfo[39m]: [34m[11/11/2026, 4:21:04 PM] Request: POST /api/auth/check-domain[39m
+2026-11-11T11:22:06.369Z [[34minfo[39m]: [34m[11/11/2026, 4:22:06 PM] Request: POST /api/auth/check-domain[39m
+2026-11-11T11:22:25.873Z [[34minfo[39m]: [34m[11/11/2026, 4:22:25 PM] Request: POST /api/auth/check-domain[39m
+2026-11-11T12:27:28.851Z [[34minfo[39m]: [34mJwtStrategy initialized[39m
+
+
+2026-11-11T12:27:28.911Z [[34minfo[39m]: [34mAuthController {/api/auth}:[39m
+2026-11-11T12:27:28.917Z [[34minfo[39m]: [34mMapped {/api/auth/signup, POST} route[39m
+2026-11-11T12:27:28.919Z [[34minfo[39m]: [34mMapped {/api/auth/signin, POST} route[39m
+2026-11-11T12:27:28.920Z [[34minfo[39m]: [34mMapped {/api/auth/refresh-token, POST} route[39m
+2026-11-11T12:27:28.921Z [[34minfo[39m]: [34mMapped {/api/auth/check-domain, POST} route[39m
+2026-11-11T12:27:28.922Z [[34minfo[39m]: [34mMapped {/api/auth/confirm-sign-up, POST} route[39m
+2026-11-11T12:27:28.923Z [[34minfo[39m]: [34mMapped {/api/auth/assign-demo-project, POST} route[39m
+2026-11-11T12:27:28.923Z [[34minfo[39m]: [34mMapped {/api/auth/forgot-password, POST} route[39m
+2026-11-11T12:27:28.924Z [[34minfo[39m]: [34mMapped {/api/auth/confirm-forgot-password, PUT} route[39m
+2026-11-11T12:27:28.925Z [[34minfo[39m]: [34mMapped {/api/auth/resend-code, POST} route[39m
+2026-11-11T12:27:28.926Z [[34minfo[39m]: [34mMapped {/api/auth/change-password, PUT} route[39m
+2026-11-11T12:27:28.926Z [[34minfo[39m]: [34mAdmUserController {/api/users}:[39m
+2026-11-11T12:27:28.928Z [[34minfo[39m]: [34mMapped {/api/users/me, GET} route[39m
+2026-11-11T12:27:28.929Z [[34minfo[39m]: [34mMapped {/api/users/me, PATCH} route[39m
+2026-11-11T12:27:28.929Z [[34minfo[39m]: [34mMapped {/api/users/get-all, GET} route[39m
+2026-11-11T12:27:28.930Z [[34minfo[39m]: [34mMapped {/api/users/get-sd-users, GET} route[39m
+2026-11-11T12:27:28.931Z [[34minfo[39m]: [34mMapped {/api/users/get-user-by-id, GET} route[39m
+2026-11-11T12:27:28.931Z [[34minfo[39m]: [34mMapped {/api/users/update-user-by-id, PATCH} route[39m
+2026-11-11T12:27:28.932Z [[34minfo[39m]: [34mMapped {/api/users/:id, DELETE} route[39m
+2026-11-11T12:27:28.933Z [[34minfo[39m]: [34mAdmProjectUserRoleController {/api/project-user-role}:[39m
+2026-11-11T12:27:28.933Z [[34minfo[39m]: [34mMapped {/api/project-user-role, GET} route[39m
+2026-11-11T12:27:28.934Z [[34minfo[39m]: [34mMapped {/api/project-user-role/add-update, POST} route[39m
+2026-11-11T12:27:28.935Z [[34minfo[39m]: [34mMapped {/api/project-user-role/delete, DELETE} route[39m
+2026-11-11T12:27:28.935Z [[34minfo[39m]: [34mMapped {/api/project-user-role/get-users-by-project, GET} route[39m
+2026-11-11T12:27:28.936Z [[34minfo[39m]: [34mProjectController {/api/project}:[39m
+2026-11-11T12:27:28.937Z [[34minfo[39m]: [34mMapped {/api/project/get-assigned-project, GET} route[39m
+2026-11-11T12:27:28.937Z [[34minfo[39m]: [34mMapped {/api/project/get-all, GET} route[39m
+2026-11-11T12:27:28.938Z [[34minfo[39m]: [34mMapped {/api/project/get-all-active-inactive, GET} route[39m
+2026-11-11T12:27:28.938Z [[34minfo[39m]: [34mMapped {/api/project/get-project-by-id, GET} route[39m
+2026-11-11T12:27:28.939Z [[34minfo[39m]: [34mMapped {/api/project/download-file, GET} route[39m
+2026-11-11T12:27:28.940Z [[34minfo[39m]: [34mMapped {/api/project/create, POST} route[39m
+2026-11-11T12:27:28.940Z [[34minfo[39m]: [34mMapped {/api/project/update-is-active-status, PUT} route[39m
+2026-11-11T12:27:28.941Z [[34minfo[39m]: [34mMapped {/api/project/update, PUT} route[39m
+2026-11-11T12:27:28.941Z [[34minfo[39m]: [34mMapped {/api/project/upload-file, POST} route[39m
+2026-11-11T12:27:29.646Z [[34minfo[39m]: [34mserver start.....http//:localhost:5001[39m
+
+
+2026-11-11T12:27:29.648Z [[34minfo[39m]: [34mNest application successfully started[39m
+2026-11-11T12:28:05.859Z [[34minfo[39m]: [34m[11/11/2026, 5:28:05 PM] Request: POST /api/auth/signup[39m
+2026-11-11T12:29:47.292Z [[34minfo[39m]: [34m[11/11/2026, 5:29:47 PM] Request: POST /api/auth/signin[39m
+2026-11-11T12:29:50.674Z [[31merror[39m]: [31m{"[__type]":"See error.__type for details.","code":"InvalidParameterException","message":"USER_PASSWORD_AUTH flow not enabled for this client","requestId":"b24ae81d-6eed-4a9b-8416-7ddbdaa694b1","retryDelay":8.676317952640645,"retryable":false,"statusCode":400,"time":"2026-11-11T12:29:50.664Z"}[39m
+{}
+
+2026-11-11T12:29:50.681Z [[31merror[39m]: [31mUSER_PASSWORD_AUTH flow not enabled for this client[39m
+{
+ "context": "ExceptionsHandler"
+}
+2026-11-11T12:29:54.775Z [[34minfo[39m]: [34m[11/11/2026, 5:29:54 PM] Request: POST /api/auth/signin[39m
+2026-11-11T12:29:58.523Z [[31merror[39m]: [31m{"[__type]":"See error.__type for details.","code":"InvalidParameterException","message":"USER_PASSWORD_AUTH flow not enabled for this client","requestId":"a06ed71e-84f8-4130-93e3-f0ec5fd4b14e","retryDelay":82.78435783191,"retryable":false,"statusCode":400,"time":"2026-11-11T12:29:58.522Z"}[39m
+{}
+
+2026-11-11T12:29:58.525Z [[31merror[39m]: [31mUSER_PASSWORD_AUTH flow not enabled for this client[39m
+{
+ "context": "ExceptionsHandler"
+}
+2026-11-11T12:30:14.650Z [[34minfo[39m]: [34m[11/11/2026, 5:30:14 PM] Request: POST /api/auth/signin[39m
+2026-11-11T12:30:16.487Z [[31merror[39m]: [31m{"[__type]":"See error.__type for details.","code":"InvalidParameterException","message":"USER_PASSWORD_AUTH flow not enabled for this client","requestId":"bf6ac34d-b113-4767-8828-366857d40c2a","retryDelay":1.978263295957039,"retryable":false,"statusCode":400,"time":"2026-11-11T12:30:16.486Z"}[39m
+{}
+
+2026-11-11T12:30:16.491Z [[31merror[39m]: [31mUSER_PASSWORD_AUTH flow not enabled for this client[39m
+{
+ "context": "ExceptionsHandler"
+}
+2026-11-11T12:30:45.832Z [[34minfo[39m]: [34m[11/11/2026, 5:30:45 PM] Request: POST /api/auth/confirm-sign-up[39m
+2026-11-11T12:30:46.818Z [[34minfo[39m]: [34mUser confirmed successfully.[39m
+
+
+2026-11-11T12:30:46.828Z [[31merror[39m]: [31mMissing required key 'UserPoolId' in params[39m
+{
+ "context": "ExceptionsHandler"
+}
+2026-11-11T12:30:46.823Z [[31merror[39m]: [31m{"code":"MissingRequiredParameter","message":"Missing required key 'UserPoolId' in params","time":"2026-11-11T12:30:46.823Z"}[39m
+{}
+
+2026-11-11T12:30:51.414Z [[34minfo[39m]: [34m[11/11/2026, 5:30:51 PM] Request: POST /api/auth/confirm-sign-up[39m
+2026-11-11T12:30:52.213Z [[31merror[39m]: [31m{"[__type]":"See error.__type for details.","code":"ExpiredCodeException","message":"Invalid code provided, please request a code again.","requestId":"0cae2e7d-1977-46b2-a0c1-521409b9bba8","retryDelay":26.58920972246318,"retryable":false,"statusCode":400,"time":"2026-11-11T12:30:52.212Z"}[39m
+{}
+
+2026-11-11T12:30:56.341Z [[34minfo[39m]: [34m[11/11/2026, 5:30:56 PM] Request: POST /api/auth/resend-code[39m
+2026-11-11T12:31:22.902Z [[34minfo[39m]: [34m[11/11/2026, 5:31:22 PM] Request: POST /api/auth/confirm-sign-up[39m
+2026-11-11T12:31:23.733Z [[31merror[39m]: [31m{"[__type]":"See error.__type for details.","code":"NotAuthorizedException","message":"User cannot be confirmed. Current status is CONFIRMED","requestId":"c773f556-39b4-40a2-9b9b-1f9ac523340d","retryDelay":94.34386121664127,"retryable":false,"statusCode":400,"time":"2026-11-11T12:31:23.732Z"}[39m
+{}
+
+2026-11-11T12:32:19.997Z [[34minfo[39m]: [34m[11/11/2026, 5:32:19 PM] Request: GET /api/auth/confirm-sign-up[39m
+2026-11-11T12:33:32.828Z [[34minfo[39m]: [34mJwtStrategy initialized[39m
+
+
+2026-11-11T12:33:32.915Z [[34minfo[39m]: [34mAuthController {/api/auth}:[39m
+2026-11-11T12:33:32.921Z [[34minfo[39m]: [34mMapped {/api/auth/signup, POST} route[39m
+2026-11-11T12:33:32.924Z [[34minfo[39m]: [34mMapped {/api/auth/signin, POST} route[39m
+2026-11-11T12:33:32.925Z [[34minfo[39m]: [34mMapped {/api/auth/refresh-token, POST} route[39m
+2026-11-11T12:33:32.926Z [[34minfo[39m]: [34mMapped {/api/auth/check-domain, POST} route[39m
+2026-11-11T12:33:32.927Z [[34minfo[39m]: [34mMapped {/api/auth/confirm-sign-up, POST} route[39m
+2026-11-11T12:33:32.928Z [[34minfo[39m]: [34mMapped {/api/auth/assign-demo-project, POST} route[39m
+2026-11-11T12:33:32.929Z [[34minfo[39m]: [34mMapped {/api/auth/forgot-password, POST} route[39m
+2026-11-11T12:33:32.932Z [[34minfo[39m]: [34mMapped {/api/auth/confirm-forgot-password, PUT} route[39m
+2026-11-11T12:33:32.934Z [[34minfo[39m]: [34mMapped {/api/auth/resend-code, POST} route[39m
+2026-11-11T12:33:32.935Z [[34minfo[39m]: [34mMapped {/api/auth/change-password, PUT} route[39m
+2026-11-11T12:33:32.936Z [[34minfo[39m]: [34mAdmUserController {/api/users}:[39m
+2026-11-11T12:33:32.937Z [[34minfo[39m]: [34mMapped {/api/users/me, GET} route[39m
+2026-11-11T12:33:32.939Z [[34minfo[39m]: [34mMapped {/api/users/me, PATCH} route[39m
+2026-11-11T12:33:32.940Z [[34minfo[39m]: [34mMapped {/api/users/get-all, GET} route[39m
+2026-11-11T12:33:32.940Z [[34minfo[39m]: [34mMapped {/api/users/get-sd-users, GET} route[39m
+2026-11-11T12:33:32.941Z [[34minfo[39m]: [34mMapped {/api/users/get-user-by-id, GET} route[39m
+2026-11-11T12:33:32.942Z [[34minfo[39m]: [34mMapped {/api/users/update-user-by-id, PATCH} route[39m
+2026-11-11T12:33:32.942Z [[34minfo[39m]: [34mMapped {/api/users/:id, DELETE} route[39m
+2026-11-11T12:33:32.943Z [[34minfo[39m]: [34mAdmProjectUserRoleController {/api/project-user-role}:[39m
+2026-11-11T12:33:32.944Z [[34minfo[39m]: [34mMapped {/api/project-user-role, GET} route[39m
+2026-11-11T12:33:32.946Z [[34minfo[39m]: [34mMapped {/api/project-user-role/add-update, POST} route[39m
+2026-11-11T12:33:32.947Z [[34minfo[39m]: [34mMapped {/api/project-user-role/delete, DELETE} route[39m
+2026-11-11T12:33:32.947Z [[34minfo[39m]: [34mMapped {/api/project-user-role/get-users-by-project, GET} route[39m
+2026-11-11T12:33:32.948Z [[34minfo[39m]: [34mProjectController {/api/project}:[39m
+2026-11-11T12:33:32.949Z [[34minfo[39m]: [34mMapped {/api/project/get-assigned-project, GET} route[39m
+2026-11-11T12:33:32.950Z [[34minfo[39m]: [34mMapped {/api/project/get-all, GET} route[39m
+2026-11-11T12:33:32.951Z [[34minfo[39m]: [34mMapped {/api/project/get-all-active-inactive, GET} route[39m
+2026-11-11T12:33:32.954Z [[34minfo[39m]: [34mMapped {/api/project/get-project-by-id, GET} route[39m
+2026-11-11T12:33:32.954Z [[34minfo[39m]: [34mMapped {/api/project/download-file, GET} route[39m
+2026-11-11T12:33:32.955Z [[34minfo[39m]: [34mMapped {/api/project/create, POST} route[39m
+2026-11-11T12:33:32.956Z [[34minfo[39m]: [34mMapped {/api/project/update-is-active-status, PUT} route[39m
+2026-11-11T12:33:32.958Z [[34minfo[39m]: [34mMapped {/api/project/update, PUT} route[39m
+2026-11-11T12:33:32.959Z [[34minfo[39m]: [34mMapped {/api/project/upload-file, POST} route[39m
+2026-11-11T12:33:33.663Z [[34minfo[39m]: [34mserver start.....http//:localhost:5001[39m
+
+
+2026-11-11T12:33:33.667Z [[34minfo[39m]: [34mNest application successfully started[39m
+2026-11-11T12:40:04.533Z [[34minfo[39m]: [34m[11/11/2026, 5:40:04 PM] Request: POST /api/auth/signin[39m
+2026-11-11T12:40:08.092Z [[31merror[39m]: [31m{"[__type]":"See error.__type for details.","code":"InvalidParameterException","message":"USER_PASSWORD_AUTH flow not enabled for this client","requestId":"34a29a0c-61d3-4761-8b5c-9831c14081a5","retryDelay":7.6147809600990435,"retryable":false,"statusCode":400,"time":"2026-11-11T12:40:08.090Z"}[39m
+{}
+
+2026-11-11T12:40:08.100Z [[31merror[39m]: [31mUSER_PASSWORD_AUTH flow not enabled for this client[39m
+{
+ "context": "ExceptionsHandler"
+}
+2026-11-11T12:40:12.264Z [[34minfo[39m]: [34m[11/11/2026, 5:40:12 PM] Request: POST /api/auth/signin[39m
+2026-11-11T12:40:14.291Z [[31merror[39m]: [31m{"[__type]":"See error.__type for details.","code":"InvalidParameterException","message":"USER_PASSWORD_AUTH flow not enabled for this client","requestId":"21116de9-1fce-48fb-aed9-4e64f4a17d5a","retryDelay":82.54215544898416,"retryable":false,"statusCode":400,"time":"2026-11-11T12:40:14.290Z"}[39m
+{}
+
+2026-11-11T12:40:14.292Z [[31merror[39m]: [31mUSER_PASSWORD_AUTH flow not enabled for this client[39m
+{
+ "context": "ExceptionsHandler"
+}
+2026-11-11T12:48:12.027Z [[34minfo[39m]: [34m[11/11/2026, 5:48:12 PM] Request: POST /api/auth/signup[39m
+2026-11-11T12:48:15.527Z [[31merror[39m]: [31m{"[__type]":"See error.__type for details.","code":"UsernameExistsException","message":"User already exists","requestId":"ead27863-d0ae-4dd9-96dc-763e12d23e19","retryDelay":1.9734712895187356,"retryable":false,"statusCode":400,"time":"2026-11-11T12:48:15.526Z"}[39m
+{}
+
+2026-11-11T12:48:18.555Z [[34minfo[39m]: [34m[11/11/2026, 5:48:18 PM] Request: POST /api/auth/signup[39m
+2026-11-11T12:48:20.147Z [[31merror[39m]: [31m{"[__type]":"See error.__type for details.","code":"UsernameExistsException","message":"User already exists","requestId":"a60cebaa-a278-4847-8fe7-dd72dc47aae1","retryDelay":59.584478232617855,"retryable":false,"statusCode":400,"time":"2026-11-11T12:48:20.147Z"}[39m
+{}
+
+2026-11-11T12:52:18.208Z [[34minfo[39m]: [34m[11/11/2026, 5:52:18 PM] Request: POST /api/auth/check-domain[39m
+2026-11-11T12:53:00.636Z [[34minfo[39m]: [34m[11/11/2026, 5:53:00 PM] Request: POST /api/auth/signup[39m
+2026-11-11T12:53:37.051Z [[34minfo[39m]: [34m[11/11/2026, 5:53:37 PM] Request: POST /api/auth/confirm-sign-up[39m
+2026-11-11T12:53:38.085Z [[34minfo[39m]: [34mUser confirmed successfully.[39m
+
+
+2026-11-11T12:53:38.091Z [[33mwarn[39m]: [33mEmail attribute verify skipped: Missing required key 'UserPoolId' in params[39m
+{}
+
+2026-11-11T12:53:44.924Z [[34minfo[39m]: [34m[11/11/2026, 5:53:44 PM] Request: POST /api/auth/signin[39m
+2026-11-11T12:53:48.156Z [[31merror[39m]: [31m{"[__type]":"See error.__type for details.","code":"InvalidParameterException","message":"USER_PASSWORD_AUTH flow not enabled for this client","requestId":"c2a7ca27-7a11-4eb5-bb4b-4c2d660c690a","retryDelay":27.4138076073955,"retryable":false,"statusCode":400,"time":"2026-11-11T12:53:48.156Z"}[39m
+{}
+
+2026-11-11T12:53:48.160Z [[31merror[39m]: [31mUSER_PASSWORD_AUTH flow not enabled for this client[39m
+{
+ "context": "ExceptionsHandler"
+}
+2026-11-11T12:53:52.555Z [[34minfo[39m]: [34m[11/11/2026, 5:53:52 PM] Request: POST /api/auth/signin[39m
+2026-11-11T12:53:54.463Z [[31merror[39m]: [31m{"[__type]":"See error.__type for details.","code":"InvalidParameterException","message":"USER_PASSWORD_AUTH flow not enabled for this client","requestId":"9b1c2eb4-2770-4173-80af-378711850feb","retryDelay":71.49233117851901,"retryable":false,"statusCode":400,"time":"2026-11-11T12:53:54.462Z"}[39m
+{}
+
+2026-11-11T12:53:54.466Z [[31merror[39m]: [31mUSER_PASSWORD_AUTH flow not enabled for this client[39m
+{
+ "context": "ExceptionsHandler"
+}
+2026-11-11T12:54:05.032Z [[34minfo[39m]: [34m[11/11/2026, 5:54:05 PM] Request: POST /api/auth/check-domain[39m
+2026-11-11T12:54:11.766Z [[34minfo[39m]: [34m[11/11/2026, 5:54:11 PM] Request: POST /api/auth/check-domain[39m
+2026-11-11T12:54:32.931Z [[34minfo[39m]: [34m[11/11/2026, 5:54:32 PM] Request: POST /api/auth/signup[39m
+2026-11-11T12:55:38.463Z [[34minfo[39m]: [34m[11/11/2026, 5:55:38 PM] Request: POST /api/auth/signin[39m
+2026-11-11T12:55:41.821Z [[31merror[39m]: [31m{"[__type]":"See error.__type for details.","code":"InvalidParameterException","message":"USER_PASSWORD_AUTH flow not enabled for this client","requestId":"0df65db2-028c-4c9f-8f55-4aa156ec0f44","retryDelay":74.20494914373653,"retryable":false,"statusCode":400,"time":"2026-11-11T12:55:41.820Z"}[39m
+{}
+
+2026-11-11T12:55:41.823Z [[31merror[39m]: [31mUSER_PASSWORD_AUTH flow not enabled for this client[39m
+{
+ "context": "ExceptionsHandler"
+}
+2026-11-11T12:55:54.753Z [[34minfo[39m]: [34m[11/11/2026, 5:55:54 PM] Request: POST /api/auth/signin[39m
+2026-11-11T12:55:57.083Z [[31merror[39m]: [31m{"[__type]":"See error.__type for details.","code":"InvalidParameterException","message":"USER_PASSWORD_AUTH flow not enabled for this client","requestId":"05ab9dd2-368c-43c4-a5e0-e8a5c95f88b8","retryDelay":74.36478979297083,"retryable":false,"statusCode":400,"time":"2026-11-11T12:55:57.083Z"}[39m
+{}
+
+2026-11-11T12:55:57.086Z [[31merror[39m]: [31mUSER_PASSWORD_AUTH flow not enabled for this client[39m
+{
+ "context": "ExceptionsHandler"
+}
+2026-11-11T13:03:51.330Z [[34minfo[39m]: [34m[11/11/2026, 6:03:51 PM] Request: POST /api/auth/signin[39m
+2026-11-11T13:03:55.069Z [[34minfo[39m]: [34m[11/11/2026, 6:03:55 PM] Request: GET /api/project/get-assigned-project[39m
+2026-11-11T13:03:58.630Z [[34minfo[39m]: [34m[11/11/2026, 6:03:58 PM] Request: POST /api/auth/signin[39m
+2026-11-11T13:04:01.028Z [[34minfo[39m]: [34m[11/11/2026, 6:04:01 PM] Request: GET /api/project/get-assigned-project[39m
+2026-11-11T13:04:09.401Z [[34minfo[39m]: [34m[11/11/2026, 6:04:09 PM] Request: POST /api/auth/signin[39m
+2026-11-11T13:04:11.547Z [[34minfo[39m]: [34m[11/11/2026, 6:04:11 PM] Request: GET /api/project/get-assigned-project[39m
+2026-11-11T13:04:21.797Z [[34minfo[39m]: [34m[11/11/2026, 6:04:21 PM] Request: POST /api/auth/signin[39m
+2026-11-11T13:04:23.973Z [[34minfo[39m]: [34m[11/11/2026, 6:04:23 PM] Request: GET /api/project/get-assigned-project[39m
+2026-11-11T13:06:09.568Z [[34minfo[39m]: [34mJwtStrategy initialized[39m
+
+
+2026-11-11T13:06:09.601Z [[34minfo[39m]: [34mAuthController {/api/auth}:[39m
+2026-11-11T13:06:09.603Z [[34minfo[39m]: [34mMapped {/api/auth/signup, POST} route[39m
+2026-11-11T13:06:09.603Z [[34minfo[39m]: [34mMapped {/api/auth/signin, POST} route[39m
+2026-11-11T13:06:09.604Z [[34minfo[39m]: [34mMapped {/api/auth/refresh-token, POST} route[39m
+2026-11-11T13:06:09.604Z [[34minfo[39m]: [34mMapped {/api/auth/check-domain, POST} route[39m
+2026-11-11T13:06:09.604Z [[34minfo[39m]: [34mMapped {/api/auth/confirm-sign-up, POST} route[39m
+2026-11-11T13:06:09.605Z [[34minfo[39m]: [34mMapped {/api/auth/assign-demo-project, POST} route[39m
+2026-11-11T13:06:09.605Z [[34minfo[39m]: [34mMapped {/api/auth/forgot-password, POST} route[39m
+2026-11-11T13:06:09.606Z [[34minfo[39m]: [34mMapped {/api/auth/confirm-forgot-password, PUT} route[39m
+2026-11-11T13:06:09.607Z [[34minfo[39m]: [34mMapped {/api/auth/resend-code, POST} route[39m
+2026-11-11T13:06:09.607Z [[34minfo[39m]: [34mMapped {/api/auth/change-password, PUT} route[39m
+2026-11-11T13:06:09.607Z [[34minfo[39m]: [34mAdmUserController {/api/users}:[39m
+2026-11-11T13:06:09.608Z [[34minfo[39m]: [34mMapped {/api/users/me, GET} route[39m
+2026-11-11T13:06:09.608Z [[34minfo[39m]: [34mMapped {/api/users/me, PATCH} route[39m
+2026-11-11T13:06:09.608Z [[34minfo[39m]: [34mMapped {/api/users/get-all, GET} route[39m
+2026-11-11T13:06:09.609Z [[34minfo[39m]: [34mMapped {/api/users/get-sd-users, GET} route[39m
+2026-11-11T13:06:09.609Z [[34minfo[39m]: [34mMapped {/api/users/get-user-by-id, GET} route[39m
+2026-11-11T13:06:09.609Z [[34minfo[39m]: [34mMapped {/api/users/update-user-by-id, PATCH} route[39m
+2026-11-11T13:06:09.610Z [[34minfo[39m]: [34mMapped {/api/users/:id, DELETE} route[39m
+2026-11-11T13:06:09.610Z [[34minfo[39m]: [34mAdmProjectUserRoleController {/api/project-user-role}:[39m
+2026-11-11T13:06:09.610Z [[34minfo[39m]: [34mMapped {/api/project-user-role, GET} route[39m
+2026-11-11T13:06:09.610Z [[34minfo[39m]: [34mMapped {/api/project-user-role/add-update, POST} route[39m
+2026-11-11T13:06:09.611Z [[34minfo[39m]: [34mMapped {/api/project-user-role/delete, DELETE} route[39m
+2026-11-11T13:06:09.611Z [[34minfo[39m]: [34mMapped {/api/project-user-role/get-users-by-project, GET} route[39m
+2026-11-11T13:06:09.611Z [[34minfo[39m]: [34mProjectController {/api/project}:[39m
+2026-11-11T13:06:09.612Z [[34minfo[39m]: [34mMapped {/api/project/get-assigned-project, GET} route[39m
+2026-11-11T13:06:09.612Z [[34minfo[39m]: [34mMapped {/api/project/get-all, GET} route[39m
+2026-11-11T13:06:09.612Z [[34minfo[39m]: [34mMapped {/api/project/get-all-active-inactive, GET} route[39m
+2026-11-11T13:06:09.613Z [[34minfo[39m]: [34mMapped {/api/project/get-project-by-id, GET} route[39m
+2026-11-11T13:06:09.613Z [[34minfo[39m]: [34mMapped {/api/project/download-file, GET} route[39m
+2026-11-11T13:06:09.614Z [[34minfo[39m]: [34mMapped {/api/project/create, POST} route[39m
+2026-11-11T13:06:09.614Z [[34minfo[39m]: [34mMapped {/api/project/update-is-active-status, PUT} route[39m
+2026-11-11T13:06:09.614Z [[34minfo[39m]: [34mMapped {/api/project/update, PUT} route[39m
+2026-11-11T13:06:09.615Z [[34minfo[39m]: [34mMapped {/api/project/upload-file, POST} route[39m
+2026-11-11T13:06:10.342Z [[34minfo[39m]: [34mserver start.....http//:localhost:5001[39m
+
+
+2026-11-11T13:06:10.344Z [[34minfo[39m]: [34mNest application successfully started[39m
+2026-11-11T13:06:19.691Z [[34minfo[39m]: [34m[11/11/2026, 6:06:19 PM] Request: POST /api/auth/signin[39m
+2026-11-11T13:06:21.979Z [[34minfo[39m]: [34m[11/11/2026, 6:06:21 PM] Request: GET /api/project/get-assigned-project[39m
+2026-11-11T13:07:49.122Z [[34minfo[39m]: [34mJwtStrategy initialized[39m
+
+
+2026-11-11T13:07:49.143Z [[34minfo[39m]: [34mAuthController {/api/auth}:[39m
+2026-11-11T13:08:03.167Z [[34minfo[39m]: [34mJwtStrategy initialized[39m
+
+
+2026-11-11T13:08:03.200Z [[34minfo[39m]: [34mAuthController {/api/auth}:[39m
+2026-11-11T13:08:03.204Z [[34minfo[39m]: [34mMapped {/api/auth/signup, POST} route[39m
+2026-11-11T13:08:03.205Z [[34minfo[39m]: [34mMapped {/api/auth/signin, POST} route[39m
+2026-11-11T13:08:03.205Z [[34minfo[39m]: [34mMapped {/api/auth/refresh-token, POST} route[39m
+2026-11-11T13:08:03.206Z [[34minfo[39m]: [34mMapped {/api/auth/check-domain, POST} route[39m
+2026-11-11T13:08:03.207Z [[34minfo[39m]: [34mMapped {/api/auth/confirm-sign-up, POST} route[39m
+2026-11-11T13:08:03.207Z [[34minfo[39m]: [34mMapped {/api/auth/assign-demo-project, POST} route[39m
+2026-11-11T13:08:03.208Z [[34minfo[39m]: [34mMapped {/api/auth/forgot-password, POST} route[39m
+2026-11-11T13:08:03.208Z [[34minfo[39m]: [34mMapped {/api/auth/confirm-forgot-password, PUT} route[39m
+2026-11-11T13:08:03.209Z [[34minfo[39m]: [34mMapped {/api/auth/resend-code, POST} route[39m
+2026-11-11T13:08:03.209Z [[34minfo[39m]: [34mMapped {/api/auth/change-password, PUT} route[39m
+2026-11-11T13:08:03.209Z [[34minfo[39m]: [34mAdmUserController {/api/users}:[39m
+2026-11-11T13:08:03.210Z [[34minfo[39m]: [34mMapped {/api/users/me, GET} route[39m
+2026-11-11T13:08:03.210Z [[34minfo[39m]: [34mMapped {/api/users/me, PATCH} route[39m
+2026-11-11T13:08:03.210Z [[34minfo[39m]: [34mMapped {/api/users/get-all, GET} route[39m
+2026-11-11T13:08:03.211Z [[34minfo[39m]: [34mMapped {/api/users/get-sd-users, GET} route[39m
+2026-11-11T13:08:03.211Z [[34minfo[39m]: [34mMapped {/api/users/get-user-by-id, GET} route[39m
+2026-11-11T13:08:03.211Z [[34minfo[39m]: [34mMapped {/api/users/update-user-by-id, PATCH} route[39m
+2026-11-11T13:08:03.212Z [[34minfo[39m]: [34mMapped {/api/users/:id, DELETE} route[39m
+2026-11-11T13:08:03.212Z [[34minfo[39m]: [34mAdmProjectUserRoleController {/api/project-user-role}:[39m
+2026-11-11T13:08:03.212Z [[34minfo[39m]: [34mMapped {/api/project-user-role, GET} route[39m
+2026-11-11T13:08:03.213Z [[34minfo[39m]: [34mMapped {/api/project-user-role/add-update, POST} route[39m
+2026-11-11T13:08:03.213Z [[34minfo[39m]: [34mMapped {/api/project-user-role/delete, DELETE} route[39m
+2026-11-11T13:08:03.213Z [[34minfo[39m]: [34mMapped {/api/project-user-role/get-users-by-project, GET} route[39m
+2026-11-11T13:08:03.214Z [[34minfo[39m]: [34mProjectController {/api/project}:[39m
+2026-11-11T13:08:03.214Z [[34minfo[39m]: [34mMapped {/api/project/get-assigned-project, GET} route[39m
+2026-11-11T13:08:03.214Z [[34minfo[39m]: [34mMapped {/api/project/get-all, GET} route[39m
+2026-11-11T13:08:03.214Z [[34minfo[39m]: [34mMapped {/api/project/get-all-active-inactive, GET} route[39m
+2026-11-11T13:08:03.215Z [[34minfo[39m]: [34mMapped {/api/project/get-project-by-id, GET} route[39m
+2026-11-11T13:08:03.215Z [[34minfo[39m]: [34mMapped {/api/project/download-file, GET} route[39m
+2026-11-11T13:08:03.215Z [[34minfo[39m]: [34mMapped {/api/project/create, POST} route[39m
+2026-11-11T13:08:03.215Z [[34minfo[39m]: [34mMapped {/api/project/update-is-active-status, PUT} route[39m
+2026-11-11T13:08:03.216Z [[34minfo[39m]: [34mMapped {/api/project/update, PUT} route[39m
+2026-11-11T13:08:03.216Z [[34minfo[39m]: [34mMapped {/api/project/upload-file, POST} route[39m
+2026-11-11T13:08:03.925Z [[34minfo[39m]: [34mserver start.....http//:localhost:5001[39m
+
+
+2026-11-11T13:08:03.927Z [[34minfo[39m]: [34mNest application successfully started[39m
+2026-11-11T13:08:55.198Z [[34minfo[39m]: [34m[11/11/2026, 6:08:55 PM] Request: POST /api/auth/signin[39m
+2026-11-11T13:08:58.834Z [[34minfo[39m]: [34m[11/11/2026, 6:08:58 PM] Request: GET /api/project/get-assigned-project[39m
+2026-11-11T13:09:56.956Z [[34minfo[39m]: [34m[11/11/2026, 6:09:56 PM] Request: POST /api/auth/signin[39m
+2026-11-11T13:10:00.356Z [[34minfo[39m]: [34m[11/11/2026, 6:10:00 PM] Request: GET /api/project/get-assigned-project[39m
+2026-11-11T13:11:32.395Z [[34minfo[39m]: [34mJwtStrategy initialized[39m
+
+
+2026-11-11T13:11:32.434Z [[34minfo[39m]: [34mAuthController {/api/auth}:[39m
+2026-11-11T13:11:32.437Z [[34minfo[39m]: [34mMapped {/api/auth/signup, POST} route[39m
+2026-11-11T13:11:32.438Z [[34minfo[39m]: [34mMapped {/api/auth/signin, POST} route[39m
+2026-11-11T13:11:32.438Z [[34minfo[39m]: [34mMapped {/api/auth/refresh-token, POST} route[39m
+2026-11-11T13:11:32.439Z [[34minfo[39m]: [34mMapped {/api/auth/check-domain, POST} route[39m
+2026-11-11T13:11:32.439Z [[34minfo[39m]: [34mMapped {/api/auth/confirm-sign-up, POST} route[39m
+2026-11-11T13:11:32.440Z [[34minfo[39m]: [34mMapped {/api/auth/assign-demo-project, POST} route[39m
+2026-11-11T13:11:32.440Z [[34minfo[39m]: [34mMapped {/api/auth/forgot-password, POST} route[39m
+2026-11-11T13:11:32.441Z [[34minfo[39m]: [34mMapped {/api/auth/confirm-forgot-password, PUT} route[39m
+2026-11-11T13:11:32.441Z [[34minfo[39m]: [34mMapped {/api/auth/resend-code, POST} route[39m
+2026-11-11T13:11:32.442Z [[34minfo[39m]: [34mMapped {/api/auth/change-password, PUT} route[39m
+2026-11-11T13:11:32.442Z [[34minfo[39m]: [34mAdmUserController {/api/users}:[39m
+2026-11-11T13:11:32.442Z [[34minfo[39m]: [34mMapped {/api/users/me, GET} route[39m
+2026-11-11T13:11:32.442Z [[34minfo[39m]: [34mMapped {/api/users/me, PATCH} route[39m
+2026-11-11T13:11:32.442Z [[34minfo[39m]: [34mMapped {/api/users/get-all, GET} route[39m
+2026-11-11T13:11:32.442Z [[34minfo[39m]: [34mMapped {/api/users/get-sd-users, GET} route[39m
+2026-11-11T13:11:32.442Z [[34minfo[39m]: [34mMapped {/api/users/get-user-by-id, GET} route[39m
+2026-11-11T13:11:32.442Z [[34minfo[39m]: [34mMapped {/api/users/update-user-by-id, PATCH} route[39m
+2026-11-11T13:11:32.443Z [[34minfo[39m]: [34mMapped {/api/users/:id, DELETE} route[39m
+2026-11-11T13:11:32.443Z [[34minfo[39m]: [34mAdmProjectUserRoleController {/api/project-user-role}:[39m
+2026-11-11T13:11:32.443Z [[34minfo[39m]: [34mMapped {/api/project-user-role, GET} route[39m
+2026-11-11T13:11:32.443Z [[34minfo[39m]: [34mMapped {/api/project-user-role/add-update, POST} route[39m
+2026-11-11T13:11:32.443Z [[34minfo[39m]: [34mMapped {/api/project-user-role/delete, DELETE} route[39m
+2026-11-11T13:11:32.444Z [[34minfo[39m]: [34mMapped {/api/project-user-role/get-users-by-project, GET} route[39m
+2026-11-11T13:11:32.444Z [[34minfo[39m]: [34mProjectController {/api/project}:[39m
+2026-11-11T13:11:32.444Z [[34minfo[39m]: [34mMapped {/api/project/get-assigned-project, GET} route[39m
+2026-11-11T13:11:32.444Z [[34minfo[39m]: [34mMapped {/api/project/get-all, GET} route[39m
+2026-11-11T13:11:32.445Z [[34minfo[39m]: [34mMapped {/api/project/get-all-active-inactive, GET} route[39m
+2026-11-11T13:11:32.445Z [[34minfo[39m]: [34mMapped {/api/project/get-project-by-id, GET} route[39m
+2026-11-11T13:11:32.445Z [[34minfo[39m]: [34mMapped {/api/project/download-file, GET} route[39m
+2026-11-11T13:11:32.445Z [[34minfo[39m]: [34mMapped {/api/project/create, POST} route[39m
+2026-11-11T13:11:32.445Z [[34minfo[39m]: [34mMapped {/api/project/update-is-active-status, PUT} route[39m
+2026-11-11T13:11:32.445Z [[34minfo[39m]: [34mMapped {/api/project/update, PUT} route[39m
+2026-11-11T13:11:32.445Z [[34minfo[39m]: [34mMapped {/api/project/upload-file, POST} route[39m
+2026-11-11T13:11:33.142Z [[34minfo[39m]: [34mserver start.....http//:localhost:5001[39m
+
+
+2026-11-11T13:11:33.143Z [[34minfo[39m]: [34mNest application successfully started[39m
+2026-11-11T13:13:11.896Z [[34minfo[39m]: [34mJwtStrategy initialized[39m
+
+
+2026-11-11T13:13:11.919Z [[34minfo[39m]: [34mAuthController {/api/auth}:[39m
+2026-11-11T13:13:11.921Z [[34minfo[39m]: [34mMapped {/api/auth/signup, POST} route[39m
+2026-11-11T13:13:11.922Z [[34minfo[39m]: [34mMapped {/api/auth/signin, POST} route[39m
+2026-11-11T13:13:11.922Z [[34minfo[39m]: [34mMapped {/api/auth/refresh-token, POST} route[39m
+2026-11-11T13:13:11.922Z [[34minfo[39m]: [34mMapped {/api/auth/check-domain, POST} route[39m
+2026-11-11T13:13:11.923Z [[34minfo[39m]: [34mMapped {/api/auth/confirm-sign-up, POST} route[39m
+2026-11-11T13:13:11.923Z [[34minfo[39m]: [34mMapped {/api/auth/assign-demo-project, POST} route[39m
+2026-11-11T13:13:11.923Z [[34minfo[39m]: [34mMapped {/api/auth/forgot-password, POST} route[39m
+2026-11-11T13:13:11.923Z [[34minfo[39m]: [34mMapped {/api/auth/confirm-forgot-password, PUT} route[39m
+2026-11-11T13:13:11.924Z [[34minfo[39m]: [34mMapped {/api/auth/resend-code, POST} route[39m
+2026-11-11T13:13:11.924Z [[34minfo[39m]: [34mMapped {/api/auth/change-password, PUT} route[39m
+2026-11-11T13:13:11.924Z [[34minfo[39m]: [34mAdmUserController {/api/users}:[39m
+2026-11-11T13:13:11.924Z [[34minfo[39m]: [34mMapped {/api/users/me, GET} route[39m
+2026-11-11T13:13:11.925Z [[34minfo[39m]: [34mMapped {/api/users/me, PATCH} route[39m
+2026-11-11T13:13:11.925Z [[34minfo[39m]: [34mMapped {/api/users/get-all, GET} route[39m
+2026-11-11T13:13:11.925Z [[34minfo[39m]: [34mMapped {/api/users/get-sd-users, GET} route[39m
+2026-11-11T13:13:11.925Z [[34minfo[39m]: [34mMapped {/api/users/get-user-by-id, GET} route[39m
+2026-11-11T13:13:11.925Z [[34minfo[39m]: [34mMapped {/api/users/update-user-by-id, PATCH} route[39m
+2026-11-11T13:13:11.925Z [[34minfo[39m]: [34mMapped {/api/users/:id, DELETE} route[39m
+2026-11-11T13:13:11.925Z [[34minfo[39m]: [34mAdmProjectUserRoleController {/api/project-user-role}:[39m
+2026-11-11T13:13:11.925Z [[34minfo[39m]: [34mMapped {/api/project-user-role, GET} route[39m
+2026-11-11T13:13:11.926Z [[34minfo[39m]: [34mMapped {/api/project-user-role/add-update, POST} route[39m
+2026-11-11T13:13:11.926Z [[34minfo[39m]: [34mMapped {/api/project-user-role/delete, DELETE} route[39m
+2026-11-11T13:13:11.926Z [[34minfo[39m]: [34mMapped {/api/project-user-role/get-users-by-project, GET} route[39m
+2026-11-11T13:13:11.926Z [[34minfo[39m]: [34mProjectController {/api/project}:[39m
+2026-11-11T13:13:11.926Z [[34minfo[39m]: [34mMapped {/api/project/get-assigned-project, GET} route[39m
+2026-11-11T13:13:11.926Z [[34minfo[39m]: [34mMapped {/api/project/get-all, GET} route[39m
+2026-11-11T13:13:11.926Z [[34minfo[39m]: [34mMapped {/api/project/get-all-active-inactive, GET} route[39m
+2026-11-11T13:13:11.927Z [[34minfo[39m]: [34mMapped {/api/project/get-project-by-id, GET} route[39m
+2026-11-11T13:13:11.927Z [[34minfo[39m]: [34mMapped {/api/project/download-file, GET} route[39m
+2026-11-11T13:13:11.927Z [[34minfo[39m]: [34mMapped {/api/project/create, POST} route[39m
+2026-11-11T13:13:11.927Z [[34minfo[39m]: [34mMapped {/api/project/update-is-active-status, PUT} route[39m
+2026-11-11T13:13:11.927Z [[34minfo[39m]: [34mMapped {/api/project/update, PUT} route[39m
+2026-11-11T13:13:11.927Z [[34minfo[39m]: [34mMapped {/api/project/upload-file, POST} route[39m
+2026-11-11T13:13:12.603Z [[34minfo[39m]: [34mserver start.....http//:localhost:5001[39m
+
+
+2026-11-11T13:13:12.604Z [[34minfo[39m]: [34mNest application successfully started[39m
+2026-11-11T13:13:14.887Z [[34minfo[39m]: [34m[11/11/2026, 6:13:14 PM] Request: POST /api/auth/signin[39m
+2026-11-11T13:13:17.212Z [[34minfo[39m]: [34m[11/11/2026, 6:13:17 PM] Request: GET /api/project/get-assigned-project[39m
+2026-11-11T13:13:25.965Z [[34minfo[39m]: [34m[11/11/2026, 6:13:25 PM] Request: POST /api/auth/signin[39m
+2026-11-11T13:13:28.043Z [[34minfo[39m]: [34m[11/11/2026, 6:13:28 PM] Request: GET /api/project/get-assigned-project[39m
+2026-11-11T13:13:35.264Z [[34minfo[39m]: [34m[11/11/2026, 6:13:35 PM] Request: POST /api/auth/signin[39m
+2026-11-11T13:13:37.419Z [[34minfo[39m]: [34m[11/11/2026, 6:13:37 PM] Request: GET /api/project/get-assigned-project[39m
+2026-11-11T13:14:17.340Z [[34minfo[39m]: [34m[11/11/2026, 6:14:17 PM] Request: POST /api/auth/signin[39m
+2026-11-11T13:14:21.130Z [[34minfo[39m]: [34m[11/11/2026, 6:14:21 PM] Request: GET /api/project/get-assigned-project[39m
+2026-11-11T13:15:02.645Z [[34minfo[39m]: [34m[11/11/2026, 6:15:02 PM] Request: POST /api/auth/signin[39m
+2026-11-11T13:15:06.255Z [[34minfo[39m]: [34m[11/11/2026, 6:15:06 PM] Request: GET /api/project/get-assigned-project[39m
+2026-11-11T13:16:50.583Z [[34minfo[39m]: [34m[11/11/2026, 6:16:50 PM] Request: POST /api/auth/signin[39m
+2026-11-11T13:16:54.682Z [[34minfo[39m]: [34m[11/11/2026, 6:16:54 PM] Request: GET /api/project/get-assigned-project[39m
+2026-11-11T13:17:02.059Z [[34minfo[39m]: [34mJwtStrategy initialized[39m
+
+
+2026-11-11T13:17:02.090Z [[34minfo[39m]: [34mAuthController {/api/auth}:[39m
+2026-11-11T13:17:02.093Z [[34minfo[39m]: [34mMapped {/api/auth/signup, POST} route[39m
+2026-11-11T13:17:02.094Z [[34minfo[39m]: [34mMapped {/api/auth/signin, POST} route[39m
+2026-11-11T13:17:02.094Z [[34minfo[39m]: [34mMapped {/api/auth/refresh-token, POST} route[39m
+2026-11-11T13:17:02.094Z [[34minfo[39m]: [34mMapped {/api/auth/check-domain, POST} route[39m
+2026-11-11T13:17:02.095Z [[34minfo[39m]: [34mMapped {/api/auth/confirm-sign-up, POST} route[39m
+2026-11-11T13:17:02.095Z [[34minfo[39m]: [34mMapped {/api/auth/assign-demo-project, POST} route[39m
+2026-11-11T13:17:02.095Z [[34minfo[39m]: [34mMapped {/api/auth/forgot-password, POST} route[39m
+2026-11-11T13:17:02.096Z [[34minfo[39m]: [34mMapped {/api/auth/confirm-forgot-password, PUT} route[39m
+2026-11-11T13:17:02.097Z [[34minfo[39m]: [34mMapped {/api/auth/resend-code, POST} route[39m
+2026-11-11T13:17:02.098Z [[34minfo[39m]: [34mMapped {/api/auth/change-password, PUT} route[39m
+2026-11-11T13:17:02.098Z [[34minfo[39m]: [34mAdmUserController {/api/users}:[39m
+2026-11-11T13:17:02.099Z [[34minfo[39m]: [34mMapped {/api/users/me, GET} route[39m
+2026-11-11T13:17:02.099Z [[34minfo[39m]: [34mMapped {/api/users/me, PATCH} route[39m
+2026-11-11T13:17:02.099Z [[34minfo[39m]: [34mMapped {/api/users/get-all, GET} route[39m
+2026-11-11T13:17:02.100Z [[34minfo[39m]: [34mMapped {/api/users/get-sd-users, GET} route[39m
+2026-11-11T13:17:02.100Z [[34minfo[39m]: [34mMapped {/api/users/get-user-by-id, GET} route[39m
+2026-11-11T13:17:02.100Z [[34minfo[39m]: [34mMapped {/api/users/update-user-by-id, PATCH} route[39m
+2026-11-11T13:17:02.101Z [[34minfo[39m]: [34mMapped {/api/users/:id, DELETE} route[39m
+2026-11-11T13:17:02.101Z [[34minfo[39m]: [34mAdmProjectUserRoleController {/api/project-user-role}:[39m
+2026-11-11T13:17:02.101Z [[34minfo[39m]: [34mMapped {/api/project-user-role, GET} route[39m
+2026-11-11T13:17:02.101Z [[34minfo[39m]: [34mMapped {/api/project-user-role/add-update, POST} route[39m
+2026-11-11T13:17:02.102Z [[34minfo[39m]: [34mMapped {/api/project-user-role/delete, DELETE} route[39m
+2026-11-11T13:17:02.102Z [[34minfo[39m]: [34mMapped {/api/project-user-role/get-users-by-project, GET} route[39m
+2026-11-11T13:17:02.102Z [[34minfo[39m]: [34mProjectController {/api/project}:[39m
+2026-11-11T13:17:02.103Z [[34minfo[39m]: [34mMapped {/api/project/get-assigned-project, GET} route[39m
+2026-11-11T13:17:02.103Z [[34minfo[39m]: [34mMapped {/api/project/get-all, GET} route[39m
+2026-11-11T13:17:02.104Z [[34minfo[39m]: [34mMapped {/api/project/get-all-active-inactive, GET} route[39m
+2026-11-11T13:17:02.104Z [[34minfo[39m]: [34mMapped {/api/project/get-project-by-id, GET} route[39m
+2026-11-11T13:17:02.105Z [[34minfo[39m]: [34mMapped {/api/project/download-file, GET} route[39m
+2026-11-11T13:17:02.105Z [[34minfo[39m]: [34mMapped {/api/project/create, POST} route[39m
+2026-11-11T13:17:02.106Z [[34minfo[39m]: [34mMapped {/api/project/update-is-active-status, PUT} route[39m
+2026-11-11T13:17:02.106Z [[34minfo[39m]: [34mMapped {/api/project/update, PUT} route[39m
+2026-11-11T13:17:02.107Z [[34minfo[39m]: [34mMapped {/api/project/upload-file, POST} route[39m
+2026-11-11T13:17:02.804Z [[34minfo[39m]: [34mserver start.....http//:localhost:5001[39m
+
+
+2026-11-11T13:17:02.806Z [[34minfo[39m]: [34mNest application successfully started[39m
+2026-11-11T13:17:33.817Z [[34minfo[39m]: [34m[11/11/2026, 6:17:33 PM] Request: POST /api/auth/signin[39m
+2026-11-11T13:17:37.441Z [[34minfo[39m]: [34m[11/11/2026, 6:17:37 PM] Request: GET /api/project/get-assigned-project[39m
+2026-11-11T13:18:15.049Z [[34minfo[39m]: [34m[11/11/2026, 6:18:15 PM] Request: POST /api/auth/signin[39m
+2026-11-11T13:18:18.657Z [[34minfo[39m]: [34m[11/11/2026, 6:18:18 PM] Request: GET /api/project/get-assigned-project[39m
+2026-11-11T13:18:20.422Z [[34minfo[39m]: [34mJwtStrategy initialized[39m
+
+
+2026-11-11T13:18:20.472Z [[34minfo[39m]: [34mAuthController {/api/auth}:[39m
+2026-11-11T13:18:20.478Z [[34minfo[39m]: [34mMapped {/api/auth/signup, POST} route[39m
+2026-11-11T13:18:20.479Z [[34minfo[39m]: [34mMapped {/api/auth/signin, POST} route[39m
+2026-11-11T13:18:20.479Z [[34minfo[39m]: [34mMapped {/api/auth/refresh-token, POST} route[39m
+2026-11-11T13:18:20.480Z [[34minfo[39m]: [34mMapped {/api/auth/check-domain, POST} route[39m
+2026-11-11T13:18:20.481Z [[34minfo[39m]: [34mMapped {/api/auth/confirm-sign-up, POST} route[39m
+2026-11-11T13:18:20.481Z [[34minfo[39m]: [34mMapped {/api/auth/assign-demo-project, POST} route[39m
+2026-11-11T13:18:20.482Z [[34minfo[39m]: [34mMapped {/api/auth/forgot-password, POST} route[39m
+2026-11-11T13:18:20.483Z [[34minfo[39m]: [34mMapped {/api/auth/confirm-forgot-password, PUT} route[39m
+2026-11-11T13:18:20.484Z [[34minfo[39m]: [34mMapped {/api/auth/resend-code, POST} route[39m
+2026-11-11T13:18:20.484Z [[34minfo[39m]: [34mMapped {/api/auth/change-password, PUT} route[39m
+2026-11-11T13:18:20.485Z [[34minfo[39m]: [34mAdmUserController {/api/users}:[39m
+2026-11-11T13:18:20.485Z [[34minfo[39m]: [34mMapped {/api/users/me, GET} route[39m
+2026-11-11T13:18:20.486Z [[34minfo[39m]: [34mMapped {/api/users/me, PATCH} route[39m
+2026-11-11T13:18:20.486Z [[34minfo[39m]: [34mMapped {/api/users/get-all, GET} route[39m
+2026-11-11T13:18:20.487Z [[34minfo[39m]: [34mMapped {/api/users/get-sd-users, GET} route[39m
+2026-11-11T13:18:20.487Z [[34minfo[39m]: [34mMapped {/api/users/get-user-by-id, GET} route[39m
+2026-11-11T13:18:20.488Z [[34minfo[39m]: [34mMapped {/api/users/update-user-by-id, PATCH} route[39m
+2026-11-11T13:18:20.488Z [[34minfo[39m]: [34mMapped {/api/users/:id, DELETE} route[39m
+2026-11-11T13:18:20.489Z [[34minfo[39m]: [34mAdmProjectUserRoleController {/api/project-user-role}:[39m
+2026-11-11T13:18:20.490Z [[34minfo[39m]: [34mMapped {/api/project-user-role, GET} route[39m
+2026-11-11T13:18:20.491Z [[34minfo[39m]: [34mMapped {/api/project-user-role/add-update, POST} route[39m
+2026-11-11T13:18:20.491Z [[34minfo[39m]: [34mMapped {/api/project-user-role/delete, DELETE} route[39m
+2026-11-11T13:18:20.492Z [[34minfo[39m]: [34mMapped {/api/project-user-role/get-users-by-project, GET} route[39m
+2026-11-11T13:18:20.492Z [[34minfo[39m]: [34mProjectController {/api/project}:[39m
+2026-11-11T13:18:20.493Z [[34minfo[39m]: [34mMapped {/api/project/get-assigned-project, GET} route[39m
+2026-11-11T13:18:20.494Z [[34minfo[39m]: [34mMapped {/api/project/get-all, GET} route[39m
+2026-11-11T13:18:20.494Z [[34minfo[39m]: [34mMapped {/api/project/get-all-active-inactive, GET} route[39m
+2026-11-11T13:18:20.495Z [[34minfo[39m]: [34mMapped {/api/project/get-project-by-id, GET} route[39m
+2026-11-11T13:18:20.495Z [[34minfo[39m]: [34mMapped {/api/project/download-file, GET} route[39m
+2026-11-11T13:18:20.496Z [[34minfo[39m]: [34mMapped {/api/project/create, POST} route[39m
+2026-11-11T13:18:20.496Z [[34minfo[39m]: [34mMapped {/api/project/update-is-active-status, PUT} route[39m
+2026-11-11T13:18:20.497Z [[34minfo[39m]: [34mMapped {/api/project/update, PUT} route[39m
+2026-11-11T13:18:20.498Z [[34minfo[39m]: [34mMapped {/api/project/upload-file, POST} route[39m
+2026-11-11T13:18:21.202Z [[34minfo[39m]: [34mserver start.....http//:localhost:5001[39m
+
+
+2026-11-11T13:18:21.203Z [[34minfo[39m]: [34mNest application successfully started[39m
+2026-11-11T13:20:00.534Z [[34minfo[39m]: [34mJwtStrategy initialized[39m
+
+
+2026-11-11T13:20:00.564Z [[34minfo[39m]: [34mAuthController {/api/auth}:[39m
+2026-11-11T13:20:00.566Z [[34minfo[39m]: [34mMapped {/api/auth/signup, POST} route[39m
+2026-11-11T13:20:00.567Z [[34minfo[39m]: [34mMapped {/api/auth/signin, POST} route[39m
+2026-11-11T13:20:00.568Z [[34minfo[39m]: [34mMapped {/api/auth/refresh-token, POST} route[39m
+2026-11-11T13:20:00.569Z [[34minfo[39m]: [34mMapped {/api/auth/check-domain, POST} route[39m
+2026-11-11T13:20:00.569Z [[34minfo[39m]: [34mMapped {/api/auth/confirm-sign-up, POST} route[39m
+2026-11-11T13:20:00.570Z [[34minfo[39m]: [34mMapped {/api/auth/assign-demo-project, POST} route[39m
+2026-11-11T13:20:00.570Z [[34minfo[39m]: [34mMapped {/api/auth/forgot-password, POST} route[39m
+2026-11-11T13:20:00.571Z [[34minfo[39m]: [34mMapped {/api/auth/confirm-forgot-password, PUT} route[39m
+2026-11-11T13:20:00.571Z [[34minfo[39m]: [34mMapped {/api/auth/resend-code, POST} route[39m
+2026-11-11T13:20:00.572Z [[34minfo[39m]: [34mMapped {/api/auth/change-password, PUT} route[39m
+2026-11-11T13:20:00.572Z [[34minfo[39m]: [34mAdmUserController {/api/users}:[39m
+2026-11-11T13:20:00.572Z [[34minfo[39m]: [34mMapped {/api/users/me, GET} route[39m
+2026-11-11T13:20:00.572Z [[34minfo[39m]: [34mMapped {/api/users/me, PATCH} route[39m
+2026-11-11T13:20:00.573Z [[34minfo[39m]: [34mMapped {/api/users/get-all, GET} route[39m
+2026-11-11T13:20:00.573Z [[34minfo[39m]: [34mMapped {/api/users/get-sd-users, GET} route[39m
+2026-11-11T13:20:00.573Z [[34minfo[39m]: [34mMapped {/api/users/get-user-by-id, GET} route[39m
+2026-11-11T13:20:00.574Z [[34minfo[39m]: [34mMapped {/api/users/update-user-by-id, PATCH} route[39m
+2026-11-11T13:20:00.574Z [[34minfo[39m]: [34mMapped {/api/users/:id, DELETE} route[39m
+2026-11-11T13:20:00.574Z [[34minfo[39m]: [34mAdmProjectUserRoleController {/api/project-user-role}:[39m
+2026-11-11T13:20:00.575Z [[34minfo[39m]: [34mMapped {/api/project-user-role, GET} route[39m
+2026-11-11T13:20:00.575Z [[34minfo[39m]: [34mMapped {/api/project-user-role/add-update, POST} route[39m
+2026-11-11T13:20:00.575Z [[34minfo[39m]: [34mMapped {/api/project-user-role/delete, DELETE} route[39m
+2026-11-11T13:20:00.575Z [[34minfo[39m]: [34mMapped {/api/project-user-role/get-users-by-project, GET} route[39m
+2026-11-11T13:20:00.576Z [[34minfo[39m]: [34mProjectController {/api/project}:[39m
+2026-11-11T13:20:00.576Z [[34minfo[39m]: [34mMapped {/api/project/get-assigned-project, GET} route[39m
+2026-11-11T13:20:00.576Z [[34minfo[39m]: [34mMapped {/api/project/get-all, GET} route[39m
+2026-11-11T13:20:00.576Z [[34minfo[39m]: [34mMapped {/api/project/get-all-active-inactive, GET} route[39m
+2026-11-11T13:20:00.577Z [[34minfo[39m]: [34mMapped {/api/project/get-project-by-id, GET} route[39m
+2026-11-11T13:20:00.577Z [[34minfo[39m]: [34mMapped {/api/project/download-file, GET} route[39m
+2026-11-11T13:20:00.577Z [[34minfo[39m]: [34mMapped {/api/project/create, POST} route[39m
+2026-11-11T13:20:00.577Z [[34minfo[39m]: [34mMapped {/api/project/update-is-active-status, PUT} route[39m
+2026-11-11T13:20:00.578Z [[34minfo[39m]: [34mMapped {/api/project/update, PUT} route[39m
+2026-11-11T13:20:00.578Z [[34minfo[39m]: [34mMapped {/api/project/upload-file, POST} route[39m
+2026-11-11T13:20:01.274Z [[34minfo[39m]: [34mserver start.....http//:localhost:5001[39m
+
+
+2026-11-11T13:20:01.276Z [[34minfo[39m]: [34mNest application successfully started[39m
+2026-11-11T13:20:08.517Z [[34minfo[39m]: [34m[11/11/2026, 6:20:08 PM] Request: POST /api/auth/signin[39m
+2026-11-11T13:20:10.887Z [[34minfo[39m]: [34m[11/11/2026, 6:20:10 PM] Request: GET /api/project/get-assigned-project[39m
+2026-11-11T13:21:29.524Z [[34minfo[39m]: [34mJwtStrategy initialized[39m
+
+
+2026-11-11T13:21:29.551Z [[34minfo[39m]: [34mAuthController {/api/auth}:[39m
+2026-11-11T13:21:29.553Z [[34minfo[39m]: [34mMapped {/api/auth/signup, POST} route[39m
+2026-11-11T13:21:29.554Z [[34minfo[39m]: [34mMapped {/api/auth/signin, POST} route[39m
+2026-11-11T13:21:29.554Z [[34minfo[39m]: [34mMapped {/api/auth/refresh-token, POST} route[39m
+2026-11-11T13:21:29.555Z [[34minfo[39m]: [34mMapped {/api/auth/check-domain, POST} route[39m
+2026-11-11T13:21:29.555Z [[34minfo[39m]: [34mMapped {/api/auth/confirm-sign-up, POST} route[39m
+2026-11-11T13:21:29.556Z [[34minfo[39m]: [34mMapped {/api/auth/assign-demo-project, POST} route[39m
+2026-11-11T13:21:29.556Z [[34minfo[39m]: [34mMapped {/api/auth/forgot-password, POST} route[39m
+2026-11-11T13:21:29.556Z [[34minfo[39m]: [34mMapped {/api/auth/confirm-forgot-password, PUT} route[39m
+2026-11-11T13:21:29.557Z [[34minfo[39m]: [34mMapped {/api/auth/resend-code, POST} route[39m
+2026-11-11T13:21:29.557Z [[34minfo[39m]: [34mMapped {/api/auth/change-password, PUT} route[39m
+2026-11-11T13:21:29.557Z [[34minfo[39m]: [34mAdmUserController {/api/users}:[39m
+2026-11-11T13:21:29.558Z [[34minfo[39m]: [34mMapped {/api/users/me, GET} route[39m
+2026-11-11T13:21:29.558Z [[34minfo[39m]: [34mMapped {/api/users/me, PATCH} route[39m
+2026-11-11T13:21:29.558Z [[34minfo[39m]: [34mMapped {/api/users/get-all, GET} route[39m
+2026-11-11T13:21:29.558Z [[34minfo[39m]: [34mMapped {/api/users/get-sd-users, GET} route[39m
+2026-11-11T13:21:29.558Z [[34minfo[39m]: [34mMapped {/api/users/get-user-by-id, GET} route[39m
+2026-11-11T13:21:29.559Z [[34minfo[39m]: [34mMapped {/api/users/update-user-by-id, PATCH} route[39m
+2026-11-11T13:21:29.559Z [[34minfo[39m]: [34mMapped {/api/users/:id, DELETE} route[39m
+2026-11-11T13:21:29.559Z [[34minfo[39m]: [34mAdmProjectUserRoleController {/api/project-user-role}:[39m
+2026-11-11T13:21:29.559Z [[34minfo[39m]: [34mMapped {/api/project-user-role, GET} route[39m
+2026-11-11T13:21:29.559Z [[34minfo[39m]: [34mMapped {/api/project-user-role/add-update, POST} route[39m
+2026-11-11T13:21:29.559Z [[34minfo[39m]: [34mMapped {/api/project-user-role/delete, DELETE} route[39m
+2026-11-11T13:21:29.560Z [[34minfo[39m]: [34mMapped {/api/project-user-role/get-users-by-project, GET} route[39m
+2026-11-11T13:21:29.560Z [[34minfo[39m]: [34mProjectController {/api/project}:[39m
+2026-11-11T13:21:29.560Z [[34minfo[39m]: [34mMapped {/api/project/get-assigned-project, GET} route[39m
+2026-11-11T13:21:29.560Z [[34minfo[39m]: [34mMapped {/api/project/get-all, GET} route[39m
+2026-11-11T13:21:29.560Z [[34minfo[39m]: [34mMapped {/api/project/get-all-active-inactive, GET} route[39m
+2026-11-11T13:21:29.560Z [[34minfo[39m]: [34mMapped {/api/project/get-project-by-id, GET} route[39m
+2026-11-11T13:21:29.561Z [[34minfo[39m]: [34mMapped {/api/project/download-file, GET} route[39m
+2026-11-11T13:21:29.561Z [[34minfo[39m]: [34mMapped {/api/project/create, POST} route[39m
+2026-11-11T13:21:29.561Z [[34minfo[39m]: [34mMapped {/api/project/update-is-active-status, PUT} route[39m
+2026-11-11T13:21:29.561Z [[34minfo[39m]: [34mMapped {/api/project/update, PUT} route[39m
+2026-11-11T13:21:29.562Z [[34minfo[39m]: [34mMapped {/api/project/upload-file, POST} route[39m
+2026-11-11T13:21:29.575Z [[34minfo[39m]: [34mJwtStrategy initialized[39m
+
+
+2026-11-11T13:21:29.620Z [[34minfo[39m]: [34mAuthController {/api/auth}:[39m
+2026-11-11T13:21:29.623Z [[34minfo[39m]: [34mMapped {/api/auth/signup, POST} route[39m
+2026-11-11T13:21:29.623Z [[34minfo[39m]: [34mMapped {/api/auth/signin, POST} route[39m
+2026-11-11T13:21:29.624Z [[34minfo[39m]: [34mMapped {/api/auth/refresh-token, POST} route[39m
+2026-11-11T13:21:29.625Z [[34minfo[39m]: [34mMapped {/api/auth/check-domain, POST} route[39m
+2026-11-11T13:21:29.626Z [[34minfo[39m]: [34mMapped {/api/auth/confirm-sign-up, POST} route[39m
+2026-11-11T13:21:29.626Z [[34minfo[39m]: [34mMapped {/api/auth/assign-demo-project, POST} route[39m
+2026-11-11T13:21:29.626Z [[34minfo[39m]: [34mMapped {/api/auth/forgot-password, POST} route[39m
+2026-11-11T13:21:29.627Z [[34minfo[39m]: [34mMapped {/api/auth/confirm-forgot-password, PUT} route[39m
+2026-11-11T13:21:29.627Z [[34minfo[39m]: [34mMapped {/api/auth/resend-code, POST} route[39m
+2026-11-11T13:21:29.628Z [[34minfo[39m]: [34mMapped {/api/auth/change-password, PUT} route[39m
+2026-11-11T13:21:29.628Z [[34minfo[39m]: [34mAdmUserController {/api/users}:[39m
+2026-11-11T13:21:29.628Z [[34minfo[39m]: [34mMapped {/api/users/me, GET} route[39m
+2026-11-11T13:21:29.629Z [[34minfo[39m]: [34mMapped {/api/users/me, PATCH} route[39m
+2026-11-11T13:21:29.629Z [[34minfo[39m]: [34mMapped {/api/users/get-all, GET} route[39m
+2026-11-11T13:21:29.630Z [[34minfo[39m]: [34mMapped {/api/users/get-sd-users, GET} route[39m
+2026-11-11T13:21:29.630Z [[34minfo[39m]: [34mMapped {/api/users/get-user-by-id, GET} route[39m
+2026-11-11T13:21:29.630Z [[34minfo[39m]: [34mMapped {/api/users/update-user-by-id, PATCH} route[39m
+2026-11-11T13:21:29.631Z [[34minfo[39m]: [34mMapped {/api/users/:id, DELETE} route[39m
+2026-11-11T13:21:29.632Z [[34minfo[39m]: [34mAdmProjectUserRoleController {/api/project-user-role}:[39m
+2026-11-11T13:21:29.632Z [[34minfo[39m]: [34mMapped {/api/project-user-role, GET} route[39m
+2026-11-11T13:21:29.632Z [[34minfo[39m]: [34mMapped {/api/project-user-role/add-update, POST} route[39m
+2026-11-11T13:21:29.633Z [[34minfo[39m]: [34mMapped {/api/project-user-role/delete, DELETE} route[39m
+2026-11-11T13:21:29.633Z [[34minfo[39m]: [34mMapped {/api/project-user-role/get-users-by-project, GET} route[39m
+2026-11-11T13:21:29.633Z [[34minfo[39m]: [34mProjectController {/api/project}:[39m
+2026-11-11T13:21:29.634Z [[34minfo[39m]: [34mMapped {/api/project/get-assigned-project, GET} route[39m
+2026-11-11T13:21:29.634Z [[34minfo[39m]: [34mMapped {/api/project/get-all, GET} route[39m
+2026-11-11T13:21:29.634Z [[34minfo[39m]: [34mMapped {/api/project/get-all-active-inactive, GET} route[39m
+2026-11-11T13:21:29.634Z [[34minfo[39m]: [34mMapped {/api/project/get-project-by-id, GET} route[39m
+2026-11-11T13:21:29.635Z [[34minfo[39m]: [34mMapped {/api/project/download-file, GET} route[39m
+2026-11-11T13:21:29.635Z [[34minfo[39m]: [34mMapped {/api/project/create, POST} route[39m
+2026-11-11T13:21:29.635Z [[34minfo[39m]: [34mMapped {/api/project/update-is-active-status, PUT} route[39m
+2026-11-11T13:21:29.635Z [[34minfo[39m]: [34mMapped {/api/project/update, PUT} route[39m
+2026-11-11T13:21:29.636Z [[34minfo[39m]: [34mMapped {/api/project/upload-file, POST} route[39m
+2026-11-11T13:21:30.265Z [[34minfo[39m]: [34mserver start.....http//:localhost:5001[39m
+
+
+2026-11-11T13:21:30.266Z [[34minfo[39m]: [34mNest application successfully started[39m
+2026-11-11T13:21:30.341Z [[34minfo[39m]: [34mserver start.....http//:localhost:5001[39m
+
+
+2026-11-11T13:21:30.342Z [[34minfo[39m]: [34mNest application successfully started[39m
+2026-11-11T13:22:09.903Z [[34minfo[39m]: [34m[11/11/2026, 6:22:09 PM] Request: POST /api/auth/check-domain[39m
+2026-11-11T13:24:42.913Z [[34minfo[39m]: [34mJwtStrategy initialized[39m
+
+
+2026-11-11T13:24:42.959Z [[34minfo[39m]: [34mAuthController {/api/auth}:[39m
+2026-11-11T13:24:42.962Z [[34minfo[39m]: [34mMapped {/api/auth/signup, POST} route[39m
+2026-11-11T13:24:42.963Z [[34minfo[39m]: [34mMapped {/api/auth/signin, POST} route[39m
+2026-11-11T13:24:42.963Z [[34minfo[39m]: [34mMapped {/api/auth/refresh-token, POST} route[39m
+2026-11-11T13:24:42.964Z [[34minfo[39m]: [34mMapped {/api/auth/check-domain, POST} route[39m
+2026-11-11T13:24:42.964Z [[34minfo[39m]: [34mMapped {/api/auth/confirm-sign-up, POST} route[39m
+2026-11-11T13:24:42.964Z [[34minfo[39m]: [34mMapped {/api/auth/assign-demo-project, POST} route[39m
+2026-11-11T13:24:42.964Z [[34minfo[39m]: [34mMapped {/api/auth/forgot-password, POST} route[39m
+2026-11-11T13:24:42.965Z [[34minfo[39m]: [34mMapped {/api/auth/confirm-forgot-password, PUT} route[39m
+2026-11-11T13:24:42.965Z [[34minfo[39m]: [34mMapped {/api/auth/resend-code, POST} route[39m
+2026-11-11T13:24:42.966Z [[34minfo[39m]: [34mMapped {/api/auth/change-password, PUT} route[39m
+2026-11-11T13:24:42.966Z [[34minfo[39m]: [34mAdmUserController {/api/users}:[39m
+2026-11-11T13:24:42.966Z [[34minfo[39m]: [34mMapped {/api/users/me, GET} route[39m
+2026-11-11T13:24:42.966Z [[34minfo[39m]: [34mMapped {/api/users/me, PATCH} route[39m
+2026-11-11T13:24:42.966Z [[34minfo[39m]: [34mMapped {/api/users/get-all, GET} route[39m
+2026-11-11T13:24:42.967Z [[34minfo[39m]: [34mMapped {/api/users/get-sd-users, GET} route[39m
+2026-11-11T13:24:42.967Z [[34minfo[39m]: [34mMapped {/api/users/get-user-by-id, GET} route[39m
+2026-11-11T13:24:42.967Z [[34minfo[39m]: [34mMapped {/api/users/update-user-by-id, PATCH} route[39m
+2026-11-11T13:24:42.968Z [[34minfo[39m]: [34mMapped {/api/users/:id, DELETE} route[39m
+2026-11-11T13:24:42.968Z [[34minfo[39m]: [34mAdmProjectUserRoleController {/api/project-user-role}:[39m
+2026-11-11T13:24:42.969Z [[34minfo[39m]: [34mMapped {/api/project-user-role, GET} route[39m
+2026-11-11T13:24:42.970Z [[34minfo[39m]: [34mMapped {/api/project-user-role/add-update, POST} route[39m
+2026-11-11T13:24:42.970Z [[34minfo[39m]: [34mMapped {/api/project-user-role/delete, DELETE} route[39m
+2026-11-11T13:24:42.971Z [[34minfo[39m]: [34mMapped {/api/project-user-role/get-users-by-project, GET} route[39m
+2026-11-11T13:24:42.971Z [[34minfo[39m]: [34mProjectController {/api/project}:[39m
+2026-11-11T13:24:42.972Z [[34minfo[39m]: [34mMapped {/api/project/get-assigned-project, GET} route[39m
+2026-11-11T13:24:42.972Z [[34minfo[39m]: [34mMapped {/api/project/get-all, GET} route[39m
+2026-11-11T13:24:42.972Z [[34minfo[39m]: [34mMapped {/api/project/get-all-active-inactive, GET} route[39m
+2026-11-11T13:24:42.972Z [[34minfo[39m]: [34mMapped {/api/project/get-project-by-id, GET} route[39m
+2026-11-11T13:24:42.973Z [[34minfo[39m]: [34mMapped {/api/project/download-file, GET} route[39m
+2026-11-11T13:24:42.973Z [[34minfo[39m]: [34mMapped {/api/project/create, POST} route[39m
+2026-11-11T13:24:42.973Z [[34minfo[39m]: [34mMapped {/api/project/update-is-active-status, PUT} route[39m
+2026-11-11T13:24:42.973Z [[34minfo[39m]: [34mMapped {/api/project/update, PUT} route[39m
+2026-11-11T13:24:42.974Z [[34minfo[39m]: [34mMapped {/api/project/upload-file, POST} route[39m
+2026-11-11T13:24:43.676Z [[34minfo[39m]: [34mserver start.....http//:localhost:5001[39m
+
+
+2026-11-11T13:24:43.678Z [[34minfo[39m]: [34mNest application successfully started[39m
+2026-11-11T13:24:44.180Z [[34minfo[39m]: [34m[11/11/2026, 6:24:44 PM] Request: POST /api/auth/check-domain[39m
+2026-11-11T13:24:44.225Z [[34minfo[39m]: [34mJwtStrategy initialized[39m
+
+
+2026-11-11T13:24:44.344Z [[34minfo[39m]: [34mAuthController {/api/auth}:[39m
+2026-11-11T13:24:44.349Z [[34minfo[39m]: [34mMapped {/api/auth/signup, POST} route[39m
+2026-11-11T13:24:44.352Z [[34minfo[39m]: [34mMapped {/api/auth/signin, POST} route[39m
+2026-11-11T13:24:44.354Z [[34minfo[39m]: [34mMapped {/api/auth/refresh-token, POST} route[39m
+2026-11-11T13:24:44.355Z [[34minfo[39m]: [34mMapped {/api/auth/check-domain, POST} route[39m
+2026-11-11T13:24:44.356Z [[34minfo[39m]: [34mMapped {/api/auth/confirm-sign-up, POST} route[39m
+2026-11-11T13:24:44.357Z [[34minfo[39m]: [34mMapped {/api/auth/assign-demo-project, POST} route[39m
+2026-11-11T13:24:44.359Z [[34minfo[39m]: [34mMapped {/api/auth/forgot-password, POST} route[39m
+2026-11-11T13:24:44.360Z [[34minfo[39m]: [34mMapped {/api/auth/confirm-forgot-password, PUT} route[39m
+2026-11-11T13:24:44.364Z [[34minfo[39m]: [34mMapped {/api/auth/resend-code, POST} route[39m
+2026-11-11T13:24:44.367Z [[34minfo[39m]: [34mMapped {/api/auth/change-password, PUT} route[39m
+2026-11-11T13:24:44.367Z [[34minfo[39m]: [34mAdmUserController {/api/users}:[39m
+2026-11-11T13:24:44.373Z [[34minfo[39m]: [34mMapped {/api/users/me, GET} route[39m
+2026-11-11T13:24:44.378Z [[34minfo[39m]: [34mMapped {/api/users/me, PATCH} route[39m
+2026-11-11T13:24:44.380Z [[34minfo[39m]: [34mMapped {/api/users/get-all, GET} route[39m
+2026-11-11T13:24:44.381Z [[34minfo[39m]: [34mMapped {/api/users/get-sd-users, GET} route[39m
+2026-11-11T13:24:44.382Z [[34minfo[39m]: [34mMapped {/api/users/get-user-by-id, GET} route[39m
+2026-11-11T13:24:44.383Z [[34minfo[39m]: [34mMapped {/api/users/update-user-by-id, PATCH} route[39m
+2026-11-11T13:24:44.387Z [[34minfo[39m]: [34mMapped {/api/users/:id, DELETE} route[39m
+2026-11-11T13:24:44.388Z [[34minfo[39m]: [34mAdmProjectUserRoleController {/api/project-user-role}:[39m
+2026-11-11T13:24:44.390Z [[34minfo[39m]: [34mMapped {/api/project-user-role, GET} route[39m
+2026-11-11T13:24:44.391Z [[34minfo[39m]: [34mMapped {/api/project-user-role/add-update, POST} route[39m
+2026-11-11T13:24:44.394Z [[34minfo[39m]: [34mMapped {/api/project-user-role/delete, DELETE} route[39m
+2026-11-11T13:24:44.395Z [[34minfo[39m]: [34mMapped {/api/project-user-role/get-users-by-project, GET} route[39m
+2026-11-11T13:24:44.396Z [[34minfo[39m]: [34mProjectController {/api/project}:[39m
+2026-11-11T13:24:44.397Z [[34minfo[39m]: [34mMapped {/api/project/get-assigned-project, GET} route[39m
+2026-11-11T13:24:44.398Z [[34minfo[39m]: [34mMapped {/api/project/get-all, GET} route[39m
+2026-11-11T13:24:44.401Z [[34minfo[39m]: [34mMapped {/api/project/get-all-active-inactive, GET} route[39m
+2026-11-11T13:24:44.402Z [[34minfo[39m]: [34mMapped {/api/project/get-project-by-id, GET} route[39m
+2026-11-11T13:24:44.404Z [[34minfo[39m]: [34mMapped {/api/project/download-file, GET} route[39m
+2026-11-11T13:24:44.405Z [[34minfo[39m]: [34mMapped {/api/project/create, POST} route[39m
+2026-11-11T13:24:44.407Z [[34minfo[39m]: [34mMapped {/api/project/update-is-active-status, PUT} route[39m
+2026-11-11T13:24:44.408Z [[34minfo[39m]: [34mMapped {/api/project/update, PUT} route[39m
+2026-11-11T13:24:44.408Z [[34minfo[39m]: [34mMapped {/api/project/upload-file, POST} route[39m
+2026-11-11T13:24:45.149Z [[34minfo[39m]: [34mserver start.....http//:localhost:5001[39m
+
+
+2026-11-11T13:24:45.152Z [[34minfo[39m]: [34mNest application successfully started[39m
+2026-11-11T13:24:46.093Z [[34minfo[39m]: [34m[11/11/2026, 6:24:46 PM] Request: POST /api/auth/check-domain[39m
+2026-11-11T13:24:50.641Z [[34minfo[39m]: [34m[11/11/2026, 6:24:50 PM] Request: POST /api/auth/check-domain[39m
+2026-11-11T13:24:57.882Z [[34minfo[39m]: [34m[11/11/2026, 6:24:57 PM] Request: POST /api/auth/check-domain[39m
+2026-11-11T13:25:10.493Z [[34minfo[39m]: [34m[11/11/2026, 6:25:10 PM] Request: POST /api/auth/check-domain[39m
+2026-11-11T13:25:14.212Z [[34minfo[39m]: [34m[11/11/2026, 6:25:14 PM] Request: POST /api/auth/check-domain[39m
+2026-11-11T13:25:36.141Z [[34minfo[39m]: [34m[11/11/2026, 6:25:36 PM] Request: POST /api/auth/signup[39m
+2026-11-11T13:26:10.831Z [[34minfo[39m]: [34m[11/11/2026, 6:26:10 PM] Request: POST /api/auth/confirm-sign-up[39m
+2026-11-11T13:26:11.888Z [[34minfo[39m]: [34mUser confirmed successfully.[39m
+
+
+2026-11-11T13:26:12.595Z [[33mwarn[39m]: [33mEmail attribute verify skipped: User: arn:aws:iam::921658961151:user/transconomy-route-reader is not authorized to perform: cognito-idp:AdminUpdateUserAttributes on resource: arn:aws:cognito-idp:us-east-1:921658961151:userpool/us-east-1_hZsbgeD95 because no identity-based policy allows the cognito-idp:AdminUpdateUserAttributes action[39m
+{}
+
+2026-11-11T13:26:17.986Z [[34minfo[39m]: [34m[11/11/2026, 6:26:17 PM] Request: POST /api/auth/signin[39m
+2026-11-11T13:26:21.575Z [[34minfo[39m]: [34m[11/11/2026, 6:26:21 PM] Request: GET /api/project/get-assigned-project[39m
+2026-11-11T13:27:09.699Z [[34minfo[39m]: [34mJwtStrategy initialized[39m
+
+
+2026-11-11T13:27:09.724Z [[34minfo[39m]: [34mAuthController {/api/auth}:[39m
+2026-11-11T13:27:09.726Z [[34minfo[39m]: [34mMapped {/api/auth/signup, POST} route[39m
+2026-11-11T13:27:09.726Z [[34minfo[39m]: [34mMapped {/api/auth/signin, POST} route[39m
+2026-11-11T13:27:09.727Z [[34minfo[39m]: [34mMapped {/api/auth/refresh-token, POST} route[39m
+2026-11-11T13:27:09.727Z [[34minfo[39m]: [34mMapped {/api/auth/check-domain, POST} route[39m
+2026-11-11T13:27:09.728Z [[34minfo[39m]: [34mMapped {/api/auth/confirm-sign-up, POST} route[39m
+2026-11-11T13:27:09.728Z [[34minfo[39m]: [34mMapped {/api/auth/assign-demo-project, POST} route[39m
+2026-11-11T13:27:09.729Z [[34minfo[39m]: [34mMapped {/api/auth/forgot-password, POST} route[39m
+2026-11-11T13:27:09.729Z [[34minfo[39m]: [34mMapped {/api/auth/confirm-forgot-password, PUT} route[39m
+2026-11-11T13:27:09.729Z [[34minfo[39m]: [34mMapped {/api/auth/resend-code, POST} route[39m
+2026-11-11T13:27:09.730Z [[34minfo[39m]: [34mMapped {/api/auth/change-password, PUT} route[39m
+2026-11-11T13:27:09.730Z [[34minfo[39m]: [34mAdmUserController {/api/users}:[39m
+2026-11-11T13:27:09.730Z [[34minfo[39m]: [34mMapped {/api/users/me, GET} route[39m
+2026-11-11T13:27:09.731Z [[34minfo[39m]: [34mMapped {/api/users/me, PATCH} route[39m
+2026-11-11T13:27:09.731Z [[34minfo[39m]: [34mMapped {/api/users/get-all, GET} route[39m
+2026-11-11T13:27:09.731Z [[34minfo[39m]: [34mMapped {/api/users/get-sd-users, GET} route[39m
+2026-11-11T13:27:09.731Z [[34minfo[39m]: [34mMapped {/api/users/get-user-by-id, GET} route[39m
+2026-11-11T13:27:09.731Z [[34minfo[39m]: [34mMapped {/api/users/update-user-by-id, PATCH} route[39m
+2026-11-11T13:27:09.732Z [[34minfo[39m]: [34mMapped {/api/users/:id, DELETE} route[39m
+2026-11-11T13:27:09.732Z [[34minfo[39m]: [34mAdmProjectUserRoleController {/api/project-user-role}:[39m
+2026-11-11T13:27:09.732Z [[34minfo[39m]: [34mMapped {/api/project-user-role, GET} route[39m
+2026-11-11T13:27:09.733Z [[34minfo[39m]: [34mMapped {/api/project-user-role/add-update, POST} route[39m
+2026-11-11T13:27:09.733Z [[34minfo[39m]: [34mMapped {/api/project-user-role/delete, DELETE} route[39m
+2026-11-11T13:27:09.733Z [[34minfo[39m]: [34mMapped {/api/project-user-role/get-users-by-project, GET} route[39m
+2026-11-11T13:27:09.733Z [[34minfo[39m]: [34mProjectController {/api/project}:[39m
+2026-11-11T13:27:09.734Z [[34minfo[39m]: [34mMapped {/api/project/get-assigned-project, GET} route[39m
+2026-11-11T13:27:09.734Z [[34minfo[39m]: [34mMapped {/api/project/get-all, GET} route[39m
+2026-11-11T13:27:09.734Z [[34minfo[39m]: [34mMapped {/api/project/get-all-active-inactive, GET} route[39m
+2026-11-11T13:27:09.735Z [[34minfo[39m]: [34mMapped {/api/project/get-project-by-id, GET} route[39m
+2026-11-11T13:27:09.735Z [[34minfo[39m]: [34mMapped {/api/project/download-file, GET} route[39m
+2026-11-11T13:27:09.735Z [[34minfo[39m]: [34mMapped {/api/project/create, POST} route[39m
+2026-11-11T13:27:09.735Z [[34minfo[39m]: [34mMapped {/api/project/update-is-active-status, PUT} route[39m
+2026-11-11T13:27:09.735Z [[34minfo[39m]: [34mMapped {/api/project/update, PUT} route[39m
+2026-11-11T13:27:09.736Z [[34minfo[39m]: [34mMapped {/api/project/upload-file, POST} route[39m
+2026-11-11T13:27:10.442Z [[34minfo[39m]: [34mserver start.....http//:localhost:5001[39m
+
+
+2026-11-11T13:27:10.444Z [[34minfo[39m]: [34mNest application successfully started[39m
+2026-11-11T13:28:33.608Z [[34minfo[39m]: [34mJwtStrategy initialized[39m
+
+
+2026-11-11T13:28:33.644Z [[34minfo[39m]: [34mAuthController {/api/auth}:[39m
+2026-11-11T13:28:33.648Z [[34minfo[39m]: [34mMapped {/api/auth/signup, POST} route[39m
+2026-11-11T13:28:33.649Z [[34minfo[39m]: [34mMapped {/api/auth/signin, POST} route[39m
+2026-11-11T13:28:33.649Z [[34minfo[39m]: [34mMapped {/api/auth/refresh-token, POST} route[39m
+2026-11-11T13:28:33.650Z [[34minfo[39m]: [34mMapped {/api/auth/check-domain, POST} route[39m
+2026-11-11T13:28:33.650Z [[34minfo[39m]: [34mMapped {/api/auth/confirm-sign-up, POST} route[39m
+2026-11-11T13:28:33.651Z [[34minfo[39m]: [34mMapped {/api/auth/assign-demo-project, POST} route[39m
+2026-11-11T13:28:33.652Z [[34minfo[39m]: [34mMapped {/api/auth/forgot-password, POST} route[39m
+2026-11-11T13:28:33.652Z [[34minfo[39m]: [34mMapped {/api/auth/confirm-forgot-password, PUT} route[39m
+2026-11-11T13:28:33.653Z [[34minfo[39m]: [34mMapped {/api/auth/resend-code, POST} route[39m
+2026-11-11T13:28:33.654Z [[34minfo[39m]: [34mMapped {/api/auth/change-password, PUT} route[39m
+2026-11-11T13:28:33.654Z [[34minfo[39m]: [34mAdmUserController {/api/users}:[39m
+2026-11-11T13:28:33.655Z [[34minfo[39m]: [34mMapped {/api/users/me, GET} route[39m
+2026-11-11T13:28:33.655Z [[34minfo[39m]: [34mMapped {/api/users/me, PATCH} route[39m
+2026-11-11T13:28:33.655Z [[34minfo[39m]: [34mMapped {/api/users/get-all, GET} route[39m
+2026-11-11T13:28:33.656Z [[34minfo[39m]: [34mMapped {/api/users/get-sd-users, GET} route[39m
+2026-11-11T13:28:33.656Z [[34minfo[39m]: [34mMapped {/api/users/get-user-by-id, GET} route[39m
+2026-11-11T13:28:33.657Z [[34minfo[39m]: [34mMapped {/api/users/update-user-by-id, PATCH} route[39m
+2026-11-11T13:28:33.658Z [[34minfo[39m]: [34mMapped {/api/users/:id, DELETE} route[39m
+2026-11-11T13:28:33.658Z [[34minfo[39m]: [34mAdmProjectUserRoleController {/api/project-user-role}:[39m
+2026-11-11T13:28:33.659Z [[34minfo[39m]: [34mMapped {/api/project-user-role, GET} route[39m
+2026-11-11T13:28:33.660Z [[34minfo[39m]: [34mMapped {/api/project-user-role/add-update, POST} route[39m
+2026-11-11T13:28:33.660Z [[34minfo[39m]: [34mMapped {/api/project-user-role/delete, DELETE} route[39m
+2026-11-11T13:28:33.661Z [[34minfo[39m]: [34mMapped {/api/project-user-role/get-users-by-project, GET} route[39m
+2026-11-11T13:28:33.661Z [[34minfo[39m]: [34mProjectController {/api/project}:[39m
+2026-11-11T13:28:33.662Z [[34minfo[39m]: [34mMapped {/api/project/get-assigned-project, GET} route[39m
+2026-11-11T13:28:33.662Z [[34minfo[39m]: [34mMapped {/api/project/get-all, GET} route[39m
+2026-11-11T13:28:33.662Z [[34minfo[39m]: [34mMapped {/api/project/get-all-active-inactive, GET} route[39m
+2026-11-11T13:28:33.663Z [[34minfo[39m]: [34mMapped {/api/project/get-project-by-id, GET} route[39m
+2026-11-11T13:28:33.663Z [[34minfo[39m]: [34mMapped {/api/project/download-file, GET} route[39m
+2026-11-11T13:28:33.664Z [[34minfo[39m]: [34mMapped {/api/project/create, POST} route[39m
+2026-11-11T13:28:33.664Z [[34minfo[39m]: [34mMapped {/api/project/update-is-active-status, PUT} route[39m
+2026-11-11T13:28:33.665Z [[34minfo[39m]: [34mMapped {/api/project/update, PUT} route[39m
+2026-11-11T13:28:33.666Z [[34minfo[39m]: [34mMapped {/api/project/upload-file, POST} route[39m
+2026-11-11T13:28:34.356Z [[34minfo[39m]: [34mserver start.....http//:localhost:5001[39m
+
+
+2026-11-11T13:28:34.359Z [[34minfo[39m]: [34mNest application successfully started[39m
+2026-11-11T13:28:37.569Z [[34minfo[39m]: [34m[11/11/2026, 6:28:37 PM] Request: POST /api/auth/signin[39m
+2026-11-11T13:28:43.614Z [[34minfo[39m]: [34m[11/11/2026, 6:28:43 PM] Request: GET /api/project/get-assigned-project[39m
+2026-11-11T13:28:45.546Z [[34minfo[39m]: [34mJwtStrategy initialized[39m
+
+
+2026-11-11T13:28:45.603Z [[34minfo[39m]: [34mAuthController {/api/auth}:[39m
+2026-11-11T13:28:45.608Z [[34minfo[39m]: [34mMapped {/api/auth/signup, POST} route[39m
+2026-11-11T13:28:45.609Z [[34minfo[39m]: [34mMapped {/api/auth/signin, POST} route[39m
+2026-11-11T13:28:45.610Z [[34minfo[39m]: [34mMapped {/api/auth/refresh-token, POST} route[39m
+2026-11-11T13:28:45.611Z [[34minfo[39m]: [34mMapped {/api/auth/check-domain, POST} route[39m
+2026-11-11T13:28:45.612Z [[34minfo[39m]: [34mMapped {/api/auth/confirm-sign-up, POST} route[39m
+2026-11-11T13:28:45.612Z [[34minfo[39m]: [34mMapped {/api/auth/assign-demo-project, POST} route[39m
+2026-11-11T13:28:45.613Z [[34minfo[39m]: [34mMapped {/api/auth/forgot-password, POST} route[39m
+2026-11-11T13:28:45.613Z [[34minfo[39m]: [34mMapped {/api/auth/confirm-forgot-password, PUT} route[39m
+2026-11-11T13:28:45.614Z [[34minfo[39m]: [34mMapped {/api/auth/resend-code, POST} route[39m
+2026-11-11T13:28:45.614Z [[34minfo[39m]: [34mMapped {/api/auth/change-password, PUT} route[39m
+2026-11-11T13:28:45.615Z [[34minfo[39m]: [34mAdmUserController {/api/users}:[39m
+2026-11-11T13:28:45.615Z [[34minfo[39m]: [34mMapped {/api/users/me, GET} route[39m
+2026-11-11T13:28:45.616Z [[34minfo[39m]: [34mMapped {/api/users/me, PATCH} route[39m
+2026-11-11T13:28:45.616Z [[34minfo[39m]: [34mMapped {/api/users/get-all, GET} route[39m
+2026-11-11T13:28:45.616Z [[34minfo[39m]: [34mMapped {/api/users/get-sd-users, GET} route[39m
+2026-11-11T13:28:45.617Z [[34minfo[39m]: [34mMapped {/api/users/get-user-by-id, GET} route[39m
+2026-11-11T13:28:45.617Z [[34minfo[39m]: [34mMapped {/api/users/update-user-by-id, PATCH} route[39m
+2026-11-11T13:28:45.618Z [[34minfo[39m]: [34mMapped {/api/users/:id, DELETE} route[39m
+2026-11-11T13:28:45.618Z [[34minfo[39m]: [34mAdmProjectUserRoleController {/api/project-user-role}:[39m
+2026-11-11T13:28:45.619Z [[34minfo[39m]: [34mMapped {/api/project-user-role, GET} route[39m
+2026-11-11T13:28:45.619Z [[34minfo[39m]: [34mMapped {/api/project-user-role/add-update, POST} route[39m
+2026-11-11T13:28:45.619Z [[34minfo[39m]: [34mMapped {/api/project-user-role/delete, DELETE} route[39m
+2026-11-11T13:28:45.620Z [[34minfo[39m]: [34mMapped {/api/project-user-role/get-users-by-project, GET} route[39m
+2026-11-11T13:28:45.620Z [[34minfo[39m]: [34mProjectController {/api/project}:[39m
+2026-11-11T13:28:45.621Z [[34minfo[39m]: [34mMapped {/api/project/get-assigned-project, GET} route[39m
+2026-11-11T13:28:45.621Z [[34minfo[39m]: [34mMapped {/api/project/get-all, GET} route[39m
+2026-11-11T13:28:45.621Z [[34minfo[39m]: [34mMapped {/api/project/get-all-active-inactive, GET} route[39m
+2026-11-11T13:28:45.622Z [[34minfo[39m]: [34mMapped {/api/project/get-project-by-id, GET} route[39m
+2026-11-11T13:28:45.622Z [[34minfo[39m]: [34mMapped {/api/project/download-file, GET} route[39m
+2026-11-11T13:28:45.622Z [[34minfo[39m]: [34mMapped {/api/project/create, POST} route[39m
+2026-11-11T13:28:45.623Z [[34minfo[39m]: [34mMapped {/api/project/update-is-active-status, PUT} route[39m
+2026-11-11T13:28:45.623Z [[34minfo[39m]: [34mMapped {/api/project/update, PUT} route[39m
+2026-11-11T13:28:45.624Z [[34minfo[39m]: [34mMapped {/api/project/upload-file, POST} route[39m
+2026-11-11T13:28:46.385Z [[34minfo[39m]: [34mserver start.....http//:localhost:5001[39m
+
+
+2026-11-11T13:28:46.387Z [[34minfo[39m]: [34mNest application successfully started[39m
+2026-11-11T13:30:43.994Z [[34minfo[39m]: [34mJwtStrategy initialized[39m
+
+
+2026-11-11T13:30:44.022Z [[34minfo[39m]: [34mAuthController {/api/auth}:[39m
+2026-11-11T13:30:44.025Z [[34minfo[39m]: [34mMapped {/api/auth/signup, POST} route[39m
+2026-11-11T13:30:44.026Z [[34minfo[39m]: [34mMapped {/api/auth/signin, POST} route[39m
+2026-11-11T13:30:44.026Z [[34minfo[39m]: [34mMapped {/api/auth/refresh-token, POST} route[39m
+2026-11-11T13:30:44.027Z [[34minfo[39m]: [34mMapped {/api/auth/check-domain, POST} route[39m
+2026-11-11T13:30:44.027Z [[34minfo[39m]: [34mMapped {/api/auth/confirm-sign-up, POST} route[39m
+2026-11-11T13:30:44.027Z [[34minfo[39m]: [34mMapped {/api/auth/assign-demo-project, POST} route[39m
+2026-11-11T13:30:44.027Z [[34minfo[39m]: [34mMapped {/api/auth/forgot-password, POST} route[39m
+2026-11-11T13:30:44.028Z [[34minfo[39m]: [34mMapped {/api/auth/confirm-forgot-password, PUT} route[39m
+2026-11-11T13:30:44.028Z [[34minfo[39m]: [34mMapped {/api/auth/resend-code, POST} route[39m
+2026-11-11T13:30:44.029Z [[34minfo[39m]: [34mMapped {/api/auth/change-password, PUT} route[39m
+2026-11-11T13:30:44.029Z [[34minfo[39m]: [34mAdmUserController {/api/users}:[39m
+2026-11-11T13:30:44.029Z [[34minfo[39m]: [34mMapped {/api/users/me, GET} route[39m
+2026-11-11T13:30:44.029Z [[34minfo[39m]: [34mMapped {/api/users/me, PATCH} route[39m
+2026-11-11T13:30:44.029Z [[34minfo[39m]: [34mMapped {/api/users/get-all, GET} route[39m
+2026-11-11T13:30:44.030Z [[34minfo[39m]: [34mMapped {/api/users/get-sd-users, GET} route[39m
+2026-11-11T13:30:44.030Z [[34minfo[39m]: [34mMapped {/api/users/get-user-by-id, GET} route[39m
+2026-11-11T13:30:44.030Z [[34minfo[39m]: [34mMapped {/api/users/update-user-by-id, PATCH} route[39m
+2026-11-11T13:30:44.031Z [[34minfo[39m]: [34mMapped {/api/users/:id, DELETE} route[39m
+2026-11-11T13:30:44.031Z [[34minfo[39m]: [34mAdmProjectUserRoleController {/api/project-user-role}:[39m
+2026-11-11T13:30:44.031Z [[34minfo[39m]: [34mMapped {/api/project-user-role, GET} route[39m
+2026-11-11T13:30:44.032Z [[34minfo[39m]: [34mMapped {/api/project-user-role/add-update, POST} route[39m
+2026-11-11T13:30:44.032Z [[34minfo[39m]: [34mMapped {/api/project-user-role/delete, DELETE} route[39m
+2026-11-11T13:30:44.032Z [[34minfo[39m]: [34mMapped {/api/project-user-role/get-users-by-project, GET} route[39m
+2026-11-11T13:30:44.032Z [[34minfo[39m]: [34mProjectController {/api/project}:[39m
+2026-11-11T13:30:44.032Z [[34minfo[39m]: [34mMapped {/api/project/get-assigned-project, GET} route[39m
+2026-11-11T13:30:44.032Z [[34minfo[39m]: [34mMapped {/api/project/get-all, GET} route[39m
+2026-11-11T13:30:44.033Z [[34minfo[39m]: [34mMapped {/api/project/get-all-active-inactive, GET} route[39m
+2026-11-11T13:30:44.033Z [[34minfo[39m]: [34mMapped {/api/project/get-project-by-id, GET} route[39m
+2026-11-11T13:30:44.033Z [[34minfo[39m]: [34mMapped {/api/project/download-file, GET} route[39m
+2026-11-11T13:30:44.033Z [[34minfo[39m]: [34mMapped {/api/project/create, POST} route[39m
+2026-11-11T13:30:44.033Z [[34minfo[39m]: [34mMapped {/api/project/update-is-active-status, PUT} route[39m
+2026-11-11T13:30:44.034Z [[34minfo[39m]: [34mMapped {/api/project/update, PUT} route[39m
+2026-11-11T13:30:44.034Z [[34minfo[39m]: [34mMapped {/api/project/upload-file, POST} route[39m
+2026-11-11T13:30:44.726Z [[34minfo[39m]: [34mserver start.....http//:localhost:5001[39m
+
+
+2026-11-11T13:30:44.727Z [[34minfo[39m]: [34mNest application successfully started[39m
+2026-11-11T13:30:47.097Z [[34minfo[39m]: [34mJwtStrategy initialized[39m
+
+
+2026-11-11T13:30:47.158Z [[34minfo[39m]: [34mAuthController {/api/auth}:[39m
+2026-11-11T13:30:47.165Z [[34minfo[39m]: [34mMapped {/api/auth/signup, POST} route[39m
+2026-11-11T13:30:47.167Z [[34minfo[39m]: [34mMapped {/api/auth/signin, POST} route[39m
+2026-11-11T13:30:47.168Z [[34minfo[39m]: [34mMapped {/api/auth/refresh-token, POST} route[39m
+2026-11-11T13:30:47.169Z [[34minfo[39m]: [34mMapped {/api/auth/check-domain, POST} route[39m
+2026-11-11T13:30:47.170Z [[34minfo[39m]: [34mMapped {/api/auth/confirm-sign-up, POST} route[39m
+2026-11-11T13:30:47.171Z [[34minfo[39m]: [34mMapped {/api/auth/assign-demo-project, POST} route[39m
+2026-11-11T13:30:47.172Z [[34minfo[39m]: [34mMapped {/api/auth/forgot-password, POST} route[39m
+2026-11-11T13:30:47.173Z [[34minfo[39m]: [34mMapped {/api/auth/confirm-forgot-password, PUT} route[39m
+2026-11-11T13:30:47.174Z [[34minfo[39m]: [34mMapped {/api/auth/resend-code, POST} route[39m
+2026-11-11T13:30:47.175Z [[34minfo[39m]: [34mMapped {/api/auth/change-password, PUT} route[39m
+2026-11-11T13:30:47.175Z [[34minfo[39m]: [34mAdmUserController {/api/users}:[39m
+2026-11-11T13:30:47.178Z [[34minfo[39m]: [34mMapped {/api/users/me, GET} route[39m
+2026-11-11T13:30:47.179Z [[34minfo[39m]: [34mMapped {/api/users/me, PATCH} route[39m
+2026-11-11T13:30:47.180Z [[34minfo[39m]: [34mMapped {/api/users/get-all, GET} route[39m
+2026-11-11T13:30:47.180Z [[34minfo[39m]: [34mMapped {/api/users/get-sd-users, GET} route[39m
+2026-11-11T13:30:47.181Z [[34minfo[39m]: [34mMapped {/api/users/get-user-by-id, GET} route[39m
+2026-11-11T13:30:47.181Z [[34minfo[39m]: [34mMapped {/api/users/update-user-by-id, PATCH} route[39m
+2026-11-11T13:30:47.182Z [[34minfo[39m]: [34mMapped {/api/users/:id, DELETE} route[39m
+2026-11-11T13:30:47.184Z [[34minfo[39m]: [34mAdmProjectUserRoleController {/api/project-user-role}:[39m
+2026-11-11T13:30:47.185Z [[34minfo[39m]: [34mMapped {/api/project-user-role, GET} route[39m
+2026-11-11T13:30:47.186Z [[34minfo[39m]: [34mMapped {/api/project-user-role/add-update, POST} route[39m
+2026-11-11T13:30:47.186Z [[34minfo[39m]: [34mMapped {/api/project-user-role/delete, DELETE} route[39m
+2026-11-11T13:30:47.187Z [[34minfo[39m]: [34mMapped {/api/project-user-role/get-users-by-project, GET} route[39m
+2026-11-11T13:30:47.188Z [[34minfo[39m]: [34mProjectController {/api/project}:[39m
+2026-11-11T13:30:47.188Z [[34minfo[39m]: [34mMapped {/api/project/get-assigned-project, GET} route[39m
+2026-11-11T13:30:47.189Z [[34minfo[39m]: [34mMapped {/api/project/get-all, GET} route[39m
+2026-11-11T13:30:47.190Z [[34minfo[39m]: [34mMapped {/api/project/get-all-active-inactive, GET} route[39m
+2026-11-11T13:30:47.190Z [[34minfo[39m]: [34mMapped {/api/project/get-project-by-id, GET} route[39m
+2026-11-11T13:30:47.191Z [[34minfo[39m]: [34mMapped {/api/project/download-file, GET} route[39m
+2026-11-11T13:30:47.193Z [[34minfo[39m]: [34mMapped {/api/project/create, POST} route[39m
+2026-11-11T13:30:47.193Z [[34minfo[39m]: [34mMapped {/api/project/update-is-active-status, PUT} route[39m
+2026-11-11T13:30:47.194Z [[34minfo[39m]: [34mMapped {/api/project/update, PUT} route[39m
+2026-11-11T13:30:47.194Z [[34minfo[39m]: [34mMapped {/api/project/upload-file, POST} route[39m
+2026-11-11T13:30:47.945Z [[34minfo[39m]: [34mserver start.....http//:localhost:5001[39m
+
+
+2026-11-11T13:30:47.948Z [[34minfo[39m]: [34mNest application successfully started[39m
+2026-11-11T13:31:11.215Z [[34minfo[39m]: [34m[11/11/2026, 6:31:11 PM] Request: POST /api/auth/signin[39m
+2026-11-11T13:31:13.525Z [[34minfo[39m]: [34m[11/11/2026, 6:31:13 PM] Request: GET /api/project/get-assigned-project[39m
+2026-11-11T13:31:39.187Z [[34minfo[39m]: [34mJwtStrategy initialized[39m
+
+
+2026-11-11T13:31:39.225Z [[34minfo[39m]: [34mAuthController {/api/auth}:[39m
+2026-11-11T13:31:39.227Z [[34minfo[39m]: [34mMapped {/api/auth/signup, POST} route[39m
+2026-11-11T13:31:39.228Z [[34minfo[39m]: [34mMapped {/api/auth/signin, POST} route[39m
+2026-11-11T13:31:39.228Z [[34minfo[39m]: [34mMapped {/api/auth/refresh-token, POST} route[39m
+2026-11-11T13:31:39.229Z [[34minfo[39m]: [34mMapped {/api/auth/check-domain, POST} route[39m
+2026-11-11T13:31:39.229Z [[34minfo[39m]: [34mMapped {/api/auth/confirm-sign-up, POST} route[39m
+2026-11-11T13:31:39.230Z [[34minfo[39m]: [34mMapped {/api/auth/assign-demo-project, POST} route[39m
+2026-11-11T13:31:39.230Z [[34minfo[39m]: [34mMapped {/api/auth/forgot-password, POST} route[39m
+2026-11-11T13:31:39.230Z [[34minfo[39m]: [34mMapped {/api/auth/confirm-forgot-password, PUT} route[39m
+2026-11-11T13:31:39.231Z [[34minfo[39m]: [34mMapped {/api/auth/resend-code, POST} route[39m
+2026-11-11T13:31:39.232Z [[34minfo[39m]: [34mMapped {/api/auth/change-password, PUT} route[39m
+2026-11-11T13:31:39.232Z [[34minfo[39m]: [34mAdmUserController {/api/users}:[39m
+2026-11-11T13:31:39.232Z [[34minfo[39m]: [34mMapped {/api/users/me, GET} route[39m
+2026-11-11T13:31:39.232Z [[34minfo[39m]: [34mMapped {/api/users/me, PATCH} route[39m
+2026-11-11T13:31:39.233Z [[34minfo[39m]: [34mMapped {/api/users/get-all, GET} route[39m
+2026-11-11T13:31:39.233Z [[34minfo[39m]: [34mMapped {/api/users/get-sd-users, GET} route[39m
+2026-11-11T13:31:39.233Z [[34minfo[39m]: [34mMapped {/api/users/get-user-by-id, GET} route[39m
+2026-11-11T13:31:39.233Z [[34minfo[39m]: [34mMapped {/api/users/update-user-by-id, PATCH} route[39m
+2026-11-11T13:31:39.233Z [[34minfo[39m]: [34mMapped {/api/users/:id, DELETE} route[39m
+2026-11-11T13:31:39.234Z [[34minfo[39m]: [34mAdmProjectUserRoleController {/api/project-user-role}:[39m
+2026-11-11T13:31:39.234Z [[34minfo[39m]: [34mMapped {/api/project-user-role, GET} route[39m
+2026-11-11T13:31:39.234Z [[34minfo[39m]: [34mMapped {/api/project-user-role/add-update, POST} route[39m
+2026-11-11T13:31:39.235Z [[34minfo[39m]: [34mMapped {/api/project-user-role/delete, DELETE} route[39m
+2026-11-11T13:31:39.235Z [[34minfo[39m]: [34mMapped {/api/project-user-role/get-users-by-project, GET} route[39m
+2026-11-11T13:31:39.235Z [[34minfo[39m]: [34mProjectController {/api/project}:[39m
+2026-11-11T13:31:39.236Z [[34minfo[39m]: [34mMapped {/api/project/get-assigned-project, GET} route[39m
+2026-11-11T13:31:39.236Z [[34minfo[39m]: [34mMapped {/api/project/get-all, GET} route[39m
+2026-11-11T13:31:39.236Z [[34minfo[39m]: [34mMapped {/api/project/get-all-active-inactive, GET} route[39m
+2026-11-11T13:31:39.237Z [[34minfo[39m]: [34mMapped {/api/project/get-project-by-id, GET} route[39m
+2026-11-11T13:31:39.237Z [[34minfo[39m]: [34mMapped {/api/project/download-file, GET} route[39m
+2026-11-11T13:31:39.237Z [[34minfo[39m]: [34mMapped {/api/project/create, POST} route[39m
+2026-11-11T13:31:39.237Z [[34minfo[39m]: [34mMapped {/api/project/update-is-active-status, PUT} route[39m
+2026-11-11T13:31:39.238Z [[34minfo[39m]: [34mMapped {/api/project/update, PUT} route[39m
+2026-11-11T13:31:39.238Z [[34minfo[39m]: [34mMapped {/api/project/upload-file, POST} route[39m
+2026-11-11T13:31:39.929Z [[34minfo[39m]: [34mserver start.....http//:localhost:5001[39m
+
+
+2026-11-11T13:31:39.931Z [[34minfo[39m]: [34mNest application successfully started[39m
+2026-11-11T13:32:35.138Z [[34minfo[39m]: [34mJwtStrategy initialized[39m
+
+
+2026-11-11T13:32:35.168Z [[34minfo[39m]: [34mAuthController {/api/auth}:[39m
+2026-11-11T13:32:35.171Z [[34minfo[39m]: [34mMapped {/api/auth/signup, POST} route[39m
+2026-11-11T13:32:35.171Z [[34minfo[39m]: [34mMapped {/api/auth/signin, POST} route[39m
+2026-11-11T13:32:35.172Z [[34minfo[39m]: [34mMapped {/api/auth/refresh-token, POST} route[39m
+2026-11-11T13:32:35.172Z [[34minfo[39m]: [34mMapped {/api/auth/check-domain, POST} route[39m
+2026-11-11T13:32:35.173Z [[34minfo[39m]: [34mMapped {/api/auth/confirm-sign-up, POST} route[39m
+2026-11-11T13:32:35.173Z [[34minfo[39m]: [34mMapped {/api/auth/assign-demo-project, POST} route[39m
+2026-11-11T13:32:35.174Z [[34minfo[39m]: [34mMapped {/api/auth/forgot-password, POST} route[39m
+2026-11-11T13:32:35.174Z [[34minfo[39m]: [34mMapped {/api/auth/confirm-forgot-password, PUT} route[39m
+2026-11-11T13:32:35.175Z [[34minfo[39m]: [34mMapped {/api/auth/resend-code, POST} route[39m
+2026-11-11T13:32:35.175Z [[34minfo[39m]: [34mMapped {/api/auth/change-password, PUT} route[39m
+2026-11-11T13:32:35.176Z [[34minfo[39m]: [34mAdmUserController {/api/users}:[39m
+2026-11-11T13:32:35.176Z [[34minfo[39m]: [34mMapped {/api/users/me, GET} route[39m
+2026-11-11T13:32:35.177Z [[34minfo[39m]: [34mMapped {/api/users/me, PATCH} route[39m
+2026-11-11T13:32:35.177Z [[34minfo[39m]: [34mMapped {/api/users/get-all, GET} route[39m
+2026-11-11T13:32:35.177Z [[34minfo[39m]: [34mMapped {/api/users/get-sd-users, GET} route[39m
+2026-11-11T13:32:35.178Z [[34minfo[39m]: [34mMapped {/api/users/get-user-by-id, GET} route[39m
+2026-11-11T13:32:35.178Z [[34minfo[39m]: [34mMapped {/api/users/update-user-by-id, PATCH} route[39m
+2026-11-11T13:32:35.178Z [[34minfo[39m]: [34mMapped {/api/users/:id, DELETE} route[39m
+2026-11-11T13:32:35.179Z [[34minfo[39m]: [34mAdmProjectUserRoleController {/api/project-user-role}:[39m
+2026-11-11T13:32:35.179Z [[34minfo[39m]: [34mMapped {/api/project-user-role, GET} route[39m
+2026-11-11T13:32:35.179Z [[34minfo[39m]: [34mMapped {/api/project-user-role/add-update, POST} route[39m
+2026-11-11T13:32:35.180Z [[34minfo[39m]: [34mMapped {/api/project-user-role/delete, DELETE} route[39m
+2026-11-11T13:32:35.180Z [[34minfo[39m]: [34mMapped {/api/project-user-role/get-users-by-project, GET} route[39m
+2026-11-11T13:32:35.180Z [[34minfo[39m]: [34mProjectController {/api/project}:[39m
+2026-11-11T13:32:35.181Z [[34minfo[39m]: [34mMapped {/api/project/get-assigned-project, GET} route[39m
+2026-11-11T13:32:35.181Z [[34minfo[39m]: [34mMapped {/api/project/get-all, GET} route[39m
+2026-11-11T13:32:35.182Z [[34minfo[39m]: [34mMapped {/api/project/get-all-active-inactive, GET} route[39m
+2026-11-11T13:32:35.182Z [[34minfo[39m]: [34mMapped {/api/project/get-project-by-id, GET} route[39m
+2026-11-11T13:32:35.183Z [[34minfo[39m]: [34mMapped {/api/project/download-file, GET} route[39m
+2026-11-11T13:32:35.183Z [[34minfo[39m]: [34mMapped {/api/project/create, POST} route[39m
+2026-11-11T13:32:35.183Z [[34minfo[39m]: [34mMapped {/api/project/update-is-active-status, PUT} route[39m
+2026-11-11T13:32:35.184Z [[34minfo[39m]: [34mMapped {/api/project/update, PUT} route[39m
+2026-11-11T13:32:35.184Z [[34minfo[39m]: [34mMapped {/api/project/upload-file, POST} route[39m
+2026-11-11T13:32:35.871Z [[34minfo[39m]: [34mserver start.....http//:localhost:5001[39m
+
+
+2026-11-11T13:32:35.872Z [[34minfo[39m]: [34mNest application successfully started[39m
+2026-11-11T13:32:38.550Z [[34minfo[39m]: [34m[11/11/2026, 6:32:38 PM] Request: POST /api/auth/signin[39m
+2026-11-11T13:32:40.839Z [[34minfo[39m]: [34m[11/11/2026, 6:32:40 PM] Request: GET /api/project/get-assigned-project[39m
+2026-11-11T13:34:27.061Z [[34minfo[39m]: [34mJwtStrategy initialized[39m
+
+
+2026-11-11T13:34:27.087Z [[34minfo[39m]: [34mAuthController {/api/auth}:[39m
+2026-11-11T13:34:27.090Z [[34minfo[39m]: [34mMapped {/api/auth/signup, POST} route[39m
+2026-11-11T13:34:27.091Z [[34minfo[39m]: [34mMapped {/api/auth/signin, POST} route[39m
+2026-11-11T13:34:27.091Z [[34minfo[39m]: [34mMapped {/api/auth/refresh-token, POST} route[39m
+2026-11-11T13:34:27.092Z [[34minfo[39m]: [34mMapped {/api/auth/check-domain, POST} route[39m
+2026-11-11T13:34:27.092Z [[34minfo[39m]: [34mMapped {/api/auth/confirm-sign-up, POST} route[39m
+2026-11-11T13:34:27.093Z [[34minfo[39m]: [34mMapped {/api/auth/assign-demo-project, POST} route[39m
+2026-11-11T13:34:27.093Z [[34minfo[39m]: [34mMapped {/api/auth/forgot-password, POST} route[39m
+2026-11-11T13:34:27.094Z [[34minfo[39m]: [34mMapped {/api/auth/confirm-forgot-password, PUT} route[39m
+2026-11-11T13:34:27.094Z [[34minfo[39m]: [34mMapped {/api/auth/resend-code, POST} route[39m
+2026-11-11T13:34:27.094Z [[34minfo[39m]: [34mMapped {/api/auth/change-password, PUT} route[39m
+2026-11-11T13:34:27.095Z [[34minfo[39m]: [34mAdmUserController {/api/users}:[39m
+2026-11-11T13:34:27.095Z [[34minfo[39m]: [34mMapped {/api/users/me, GET} route[39m
+2026-11-11T13:34:27.095Z [[34minfo[39m]: [34mMapped {/api/users/me, PATCH} route[39m
+2026-11-11T13:34:27.095Z [[34minfo[39m]: [34mMapped {/api/users/get-all, GET} route[39m
+2026-11-11T13:34:27.095Z [[34minfo[39m]: [34mMapped {/api/users/get-sd-users, GET} route[39m
+2026-11-11T13:34:27.096Z [[34minfo[39m]: [34mMapped {/api/users/get-user-by-id, GET} route[39m
+2026-11-11T13:34:27.096Z [[34minfo[39m]: [34mMapped {/api/users/update-user-by-id, PATCH} route[39m
+2026-11-11T13:34:27.096Z [[34minfo[39m]: [34mMapped {/api/users/:id, DELETE} route[39m
+2026-11-11T13:34:27.096Z [[34minfo[39m]: [34mAdmProjectUserRoleController {/api/project-user-role}:[39m
+2026-11-11T13:34:27.097Z [[34minfo[39m]: [34mMapped {/api/project-user-role, GET} route[39m
+2026-11-11T13:34:27.097Z [[34minfo[39m]: [34mMapped {/api/project-user-role/add-update, POST} route[39m
+2026-11-11T13:34:27.097Z [[34minfo[39m]: [34mMapped {/api/project-user-role/delete, DELETE} route[39m
+2026-11-11T13:34:27.097Z [[34minfo[39m]: [34mMapped {/api/project-user-role/get-users-by-project, GET} route[39m
+2026-11-11T13:34:27.097Z [[34minfo[39m]: [34mProjectController {/api/project}:[39m
+2026-11-11T13:34:27.097Z [[34minfo[39m]: [34mMapped {/api/project/get-assigned-project, GET} route[39m
+2026-11-11T13:34:27.098Z [[34minfo[39m]: [34mMapped {/api/project/get-all, GET} route[39m
+2026-11-11T13:34:27.098Z [[34minfo[39m]: [34mMapped {/api/project/get-all-active-inactive, GET} route[39m
+2026-11-11T13:34:27.098Z [[34minfo[39m]: [34mMapped {/api/project/get-project-by-id, GET} route[39m
+2026-11-11T13:34:27.098Z [[34minfo[39m]: [34mMapped {/api/project/download-file, GET} route[39m
+2026-11-11T13:34:27.098Z [[34minfo[39m]: [34mMapped {/api/project/create, POST} route[39m
+2026-11-11T13:34:27.098Z [[34minfo[39m]: [34mMapped {/api/project/update-is-active-status, PUT} route[39m
+2026-11-11T13:34:27.099Z [[34minfo[39m]: [34mMapped {/api/project/update, PUT} route[39m
+2026-11-11T13:34:27.099Z [[34minfo[39m]: [34mMapped {/api/project/upload-file, POST} route[39m
+2026-11-11T13:34:27.782Z [[34minfo[39m]: [34mserver start.....http//:localhost:5001[39m
+
+
+2026-11-11T13:34:27.783Z [[34minfo[39m]: [34mNest application successfully started[39m
+2026-11-11T13:34:28.561Z [[34minfo[39m]: [34mJwtStrategy initialized[39m
+
+
+2026-11-11T13:34:28.598Z [[34minfo[39m]: [34mAuthController {/api/auth}:[39m
+2026-11-11T13:34:28.602Z [[34minfo[39m]: [34mMapped {/api/auth/signup, POST} route[39m
+2026-11-11T13:34:28.603Z [[34minfo[39m]: [34mMapped {/api/auth/signin, POST} route[39m
+2026-11-11T13:34:28.604Z [[34minfo[39m]: [34mMapped {/api/auth/refresh-token, POST} route[39m
+2026-11-11T13:34:28.605Z [[34minfo[39m]: [34mMapped {/api/auth/check-domain, POST} route[39m
+2026-11-11T13:34:28.606Z [[34minfo[39m]: [34mMapped {/api/auth/confirm-sign-up, POST} route[39m
+2026-11-11T13:34:28.606Z [[34minfo[39m]: [34mMapped {/api/auth/assign-demo-project, POST} route[39m
+2026-11-11T13:34:28.607Z [[34minfo[39m]: [34mMapped {/api/auth/forgot-password, POST} route[39m
+2026-11-11T13:34:28.608Z [[34minfo[39m]: [34mMapped {/api/auth/confirm-forgot-password, PUT} route[39m
+2026-11-11T13:34:28.608Z [[34minfo[39m]: [34mMapped {/api/auth/resend-code, POST} route[39m
+2026-11-11T13:34:28.609Z [[34minfo[39m]: [34mMapped {/api/auth/change-password, PUT} route[39m
+2026-11-11T13:34:28.609Z [[34minfo[39m]: [34mAdmUserController {/api/users}:[39m
+2026-11-11T13:34:28.610Z [[34minfo[39m]: [34mMapped {/api/users/me, GET} route[39m
+2026-11-11T13:34:28.611Z [[34minfo[39m]: [34mMapped {/api/users/me, PATCH} route[39m
+2026-11-11T13:34:28.611Z [[34minfo[39m]: [34mMapped {/api/users/get-all, GET} route[39m
+2026-11-11T13:34:28.612Z [[34minfo[39m]: [34mMapped {/api/users/get-sd-users, GET} route[39m
+2026-11-11T13:34:28.612Z [[34minfo[39m]: [34mMapped {/api/users/get-user-by-id, GET} route[39m
+2026-11-11T13:34:28.613Z [[34minfo[39m]: [34mMapped {/api/users/update-user-by-id, PATCH} route[39m
+2026-11-11T13:34:28.614Z [[34minfo[39m]: [34mMapped {/api/users/:id, DELETE} route[39m
+2026-11-11T13:34:28.614Z [[34minfo[39m]: [34mAdmProjectUserRoleController {/api/project-user-role}:[39m
+2026-11-11T13:34:28.614Z [[34minfo[39m]: [34mMapped {/api/project-user-role, GET} route[39m
+2026-11-11T13:34:28.615Z [[34minfo[39m]: [34mMapped {/api/project-user-role/add-update, POST} route[39m
+2026-11-11T13:34:28.615Z [[34minfo[39m]: [34mMapped {/api/project-user-role/delete, DELETE} route[39m
+2026-11-11T13:34:28.616Z [[34minfo[39m]: [34mMapped {/api/project-user-role/get-users-by-project, GET} route[39m
+2026-11-11T13:34:28.616Z [[34minfo[39m]: [34mProjectController {/api/project}:[39m
+2026-11-11T13:34:28.617Z [[34minfo[39m]: [34mMapped {/api/project/get-assigned-project, GET} route[39m
+2026-11-11T13:34:28.617Z [[34minfo[39m]: [34mMapped {/api/project/get-all, GET} route[39m
+2026-11-11T13:34:28.618Z [[34minfo[39m]: [34mMapped {/api/project/get-all-active-inactive, GET} route[39m
+2026-11-11T13:34:28.618Z [[34minfo[39m]: [34mMapped {/api/project/get-project-by-id, GET} route[39m
+2026-11-11T13:34:28.619Z [[34minfo[39m]: [34mMapped {/api/project/download-file, GET} route[39m
+2026-11-11T13:34:28.619Z [[34minfo[39m]: [34mMapped {/api/project/create, POST} route[39m
+2026-11-11T13:34:28.620Z [[34minfo[39m]: [34mMapped {/api/project/update-is-active-status, PUT} route[39m
+2026-11-11T13:34:28.620Z [[34minfo[39m]: [34mMapped {/api/project/update, PUT} route[39m
+2026-11-11T13:34:28.621Z [[34minfo[39m]: [34mMapped {/api/project/upload-file, POST} route[39m
+2026-11-11T13:34:29.308Z [[34minfo[39m]: [34mserver start.....http//:localhost:5001[39m
+
+
+2026-11-11T13:34:29.310Z [[34minfo[39m]: [34mNest application successfully started[39m
+2026-11-11T13:34:39.748Z [[34minfo[39m]: [34m[11/11/2026, 6:34:39 PM] Request: POST /api/auth/signin[39m
+2026-11-11T13:34:41.943Z [[34minfo[39m]: [34m[11/11/2026, 6:34:41 PM] Request: GET /api/project/get-assigned-project[39m
+2026-11-11T13:35:45.362Z [[34minfo[39m]: [34mJwtStrategy initialized[39m
+
+
+2026-11-11T13:35:45.402Z [[34minfo[39m]: [34mAuthController {/api/auth}:[39m
+2026-11-11T13:35:45.405Z [[34minfo[39m]: [34mMapped {/api/auth/signup, POST} route[39m
+2026-11-11T13:35:45.406Z [[34minfo[39m]: [34mMapped {/api/auth/signin, POST} route[39m
+2026-11-11T13:35:45.407Z [[34minfo[39m]: [34mMapped {/api/auth/refresh-token, POST} route[39m
+2026-11-11T13:35:45.408Z [[34minfo[39m]: [34mMapped {/api/auth/check-domain, POST} route[39m
+2026-11-11T13:35:45.409Z [[34minfo[39m]: [34mMapped {/api/auth/confirm-sign-up, POST} route[39m
+2026-11-11T13:35:45.410Z [[34minfo[39m]: [34mMapped {/api/auth/assign-demo-project, POST} route[39m
+2026-11-11T13:35:45.411Z [[34minfo[39m]: [34mMapped {/api/auth/forgot-password, POST} route[39m
+2026-11-11T13:35:45.412Z [[34minfo[39m]: [34mMapped {/api/auth/confirm-forgot-password, PUT} route[39m
+2026-11-11T13:35:45.413Z [[34minfo[39m]: [34mMapped {/api/auth/resend-code, POST} route[39m
+2026-11-11T13:35:45.413Z [[34minfo[39m]: [34mMapped {/api/auth/change-password, PUT} route[39m
+2026-11-11T13:35:45.414Z [[34minfo[39m]: [34mAdmUserController {/api/users}:[39m
+2026-11-11T13:35:45.415Z [[34minfo[39m]: [34mMapped {/api/users/me, GET} route[39m
+2026-11-11T13:35:45.416Z [[34minfo[39m]: [34mMapped {/api/users/me, PATCH} route[39m
+2026-11-11T13:35:45.417Z [[34minfo[39m]: [34mMapped {/api/users/get-all, GET} route[39m
+2026-11-11T13:35:45.417Z [[34minfo[39m]: [34mMapped {/api/users/get-sd-users, GET} route[39m
+2026-11-11T13:35:45.417Z [[34minfo[39m]: [34mMapped {/api/users/get-user-by-id, GET} route[39m
+2026-11-11T13:35:45.418Z [[34minfo[39m]: [34mMapped {/api/users/update-user-by-id, PATCH} route[39m
+2026-11-11T13:35:45.419Z [[34minfo[39m]: [34mMapped {/api/users/:id, DELETE} route[39m
+2026-11-11T13:35:45.420Z [[34minfo[39m]: [34mAdmProjectUserRoleController {/api/project-user-role}:[39m
+2026-11-11T13:35:45.420Z [[34minfo[39m]: [34mMapped {/api/project-user-role, GET} route[39m
+2026-11-11T13:35:45.421Z [[34minfo[39m]: [34mMapped {/api/project-user-role/add-update, POST} route[39m
+2026-11-11T13:35:45.421Z [[34minfo[39m]: [34mMapped {/api/project-user-role/delete, DELETE} route[39m
+2026-11-11T13:35:45.422Z [[34minfo[39m]: [34mMapped {/api/project-user-role/get-users-by-project, GET} route[39m
+2026-11-11T13:35:45.422Z [[34minfo[39m]: [34mProjectController {/api/project}:[39m
+2026-11-11T13:35:45.423Z [[34minfo[39m]: [34mMapped {/api/project/get-assigned-project, GET} route[39m
+2026-11-11T13:35:45.423Z [[34minfo[39m]: [34mMapped {/api/project/get-all, GET} route[39m
+2026-11-11T13:35:45.424Z [[34minfo[39m]: [34mMapped {/api/project/get-all-active-inactive, GET} route[39m
+2026-11-11T13:35:45.424Z [[34minfo[39m]: [34mMapped {/api/project/get-project-by-id, GET} route[39m
+2026-11-11T13:35:45.424Z [[34minfo[39m]: [34mMapped {/api/project/download-file, GET} route[39m
+2026-11-11T13:35:45.425Z [[34minfo[39m]: [34mMapped {/api/project/create, POST} route[39m
+2026-11-11T13:35:45.425Z [[34minfo[39m]: [34mMapped {/api/project/update-is-active-status, PUT} route[39m
+2026-11-11T13:35:45.426Z [[34minfo[39m]: [34mMapped {/api/project/update, PUT} route[39m
+2026-11-11T13:35:45.427Z [[34minfo[39m]: [34mMapped {/api/project/upload-file, POST} route[39m
+2026-11-11T13:35:46.133Z [[34minfo[39m]: [34mserver start.....http//:localhost:5001[39m
+
+
+2026-11-11T13:35:46.135Z [[34minfo[39m]: [34mNest application successfully started[39m
+2026-11-11T13:35:46.350Z [[34minfo[39m]: [34m[11/11/2026, 6:35:46 PM] Request: POST /api/auth/signin[39m
+2026-11-11T13:35:48.681Z [[34minfo[39m]: [34m[11/11/2026, 6:35:48 PM] Request: GET /api/project/get-assigned-project[39m
+2026-11-11T13:37:57.129Z [[34minfo[39m]: [34mJwtStrategy initialized[39m
+
+
+2026-11-11T13:37:57.162Z [[34minfo[39m]: [34mAuthController {/api/auth}:[39m
+2026-11-11T13:37:57.166Z [[34minfo[39m]: [34mMapped {/api/auth/signup, POST} route[39m
+2026-11-11T13:37:57.166Z [[34minfo[39m]: [34mMapped {/api/auth/signin, POST} route[39m
+2026-11-11T13:37:57.167Z [[34minfo[39m]: [34mMapped {/api/auth/refresh-token, POST} route[39m
+2026-11-11T13:37:57.167Z [[34minfo[39m]: [34mMapped {/api/auth/check-domain, POST} route[39m
+2026-11-11T13:37:57.167Z [[34minfo[39m]: [34mMapped {/api/auth/confirm-sign-up, POST} route[39m
+2026-11-11T13:37:57.168Z [[34minfo[39m]: [34mMapped {/api/auth/assign-demo-project, POST} route[39m
+2026-11-11T13:37:57.168Z [[34minfo[39m]: [34mMapped {/api/auth/forgot-password, POST} route[39m
+2026-11-11T13:37:57.168Z [[34minfo[39m]: [34mMapped {/api/auth/confirm-forgot-password, PUT} route[39m
+2026-11-11T13:37:57.169Z [[34minfo[39m]: [34mMapped {/api/auth/resend-code, POST} route[39m
+2026-11-11T13:37:57.169Z [[34minfo[39m]: [34mMapped {/api/auth/change-password, PUT} route[39m
+2026-11-11T13:37:57.169Z [[34minfo[39m]: [34mAdmUserController {/api/users}:[39m
+2026-11-11T13:37:57.170Z [[34minfo[39m]: [34mMapped {/api/users/me, GET} route[39m
+2026-11-11T13:37:57.170Z [[34minfo[39m]: [34mMapped {/api/users/me, PATCH} route[39m
+2026-11-11T13:37:57.170Z [[34minfo[39m]: [34mMapped {/api/users/get-all, GET} route[39m
+2026-11-11T13:37:57.170Z [[34minfo[39m]: [34mMapped {/api/users/get-sd-users, GET} route[39m
+2026-11-11T13:37:57.170Z [[34minfo[39m]: [34mMapped {/api/users/get-user-by-id, GET} route[39m
+2026-11-11T13:37:57.170Z [[34minfo[39m]: [34mMapped {/api/users/update-user-by-id, PATCH} route[39m
+2026-11-11T13:37:57.171Z [[34minfo[39m]: [34mMapped {/api/users/:id, DELETE} route[39m
+2026-11-11T13:37:57.171Z [[34minfo[39m]: [34mAdmProjectUserRoleController {/api/project-user-role}:[39m
+2026-11-11T13:37:57.171Z [[34minfo[39m]: [34mMapped {/api/project-user-role, GET} route[39m
+2026-11-11T13:37:57.171Z [[34minfo[39m]: [34mMapped {/api/project-user-role/add-update, POST} route[39m
+2026-11-11T13:37:57.171Z [[34minfo[39m]: [34mMapped {/api/project-user-role/delete, DELETE} route[39m
+2026-11-11T13:37:57.171Z [[34minfo[39m]: [34mMapped {/api/project-user-role/get-users-by-project, GET} route[39m
+2026-11-11T13:37:57.172Z [[34minfo[39m]: [34mProjectController {/api/project}:[39m
+2026-11-11T13:37:57.172Z [[34minfo[39m]: [34mMapped {/api/project/get-assigned-project, GET} route[39m
+2026-11-11T13:37:57.172Z [[34minfo[39m]: [34mMapped {/api/project/get-all, GET} route[39m
+2026-11-11T13:37:57.172Z [[34minfo[39m]: [34mMapped {/api/project/get-all-active-inactive, GET} route[39m
+2026-11-11T13:37:57.172Z [[34minfo[39m]: [34mMapped {/api/project/get-project-by-id, GET} route[39m
+2026-11-11T13:37:57.172Z [[34minfo[39m]: [34mMapped {/api/project/download-file, GET} route[39m
+2026-11-11T13:37:57.172Z [[34minfo[39m]: [34mMapped {/api/project/create, POST} route[39m
+2026-11-11T13:37:57.173Z [[34minfo[39m]: [34mMapped {/api/project/update-is-active-status, PUT} route[39m
+2026-11-11T13:37:57.173Z [[34minfo[39m]: [34mMapped {/api/project/update, PUT} route[39m
+2026-11-11T13:37:57.173Z [[34minfo[39m]: [34mMapped {/api/project/upload-file, POST} route[39m
+2026-11-11T13:37:57.855Z [[34minfo[39m]: [34mserver start.....http//:localhost:5001[39m
+
+
+2026-11-11T13:37:57.858Z [[34minfo[39m]: [34mNest application successfully started[39m
+2026-11-11T13:37:59.084Z [[34minfo[39m]: [34mJwtStrategy initialized[39m
+
+
+2026-11-11T13:37:59.124Z [[34minfo[39m]: [34mAuthController {/api/auth}:[39m
+2026-11-11T13:37:59.129Z [[34minfo[39m]: [34mMapped {/api/auth/signup, POST} route[39m
+2026-11-11T13:37:59.130Z [[34minfo[39m]: [34mMapped {/api/auth/signin, POST} route[39m
+2026-11-11T13:37:59.130Z [[34minfo[39m]: [34mMapped {/api/auth/refresh-token, POST} route[39m
+2026-11-11T13:37:59.131Z [[34minfo[39m]: [34mMapped {/api/auth/check-domain, POST} route[39m
+2026-11-11T13:37:59.132Z [[34minfo[39m]: [34mMapped {/api/auth/confirm-sign-up, POST} route[39m
+2026-11-11T13:37:59.133Z [[34minfo[39m]: [34mMapped {/api/auth/assign-demo-project, POST} route[39m
+2026-11-11T13:37:59.134Z [[34minfo[39m]: [34mMapped {/api/auth/forgot-password, POST} route[39m
+2026-11-11T13:37:59.135Z [[34minfo[39m]: [34mMapped {/api/auth/confirm-forgot-password, PUT} route[39m
+2026-11-11T13:37:59.135Z [[34minfo[39m]: [34mMapped {/api/auth/resend-code, POST} route[39m
+2026-11-11T13:37:59.136Z [[34minfo[39m]: [34mMapped {/api/auth/change-password, PUT} route[39m
+2026-11-11T13:37:59.136Z [[34minfo[39m]: [34mAdmUserController {/api/users}:[39m
+2026-11-11T13:37:59.136Z [[34minfo[39m]: [34mMapped {/api/users/me, GET} route[39m
+2026-11-11T13:37:59.137Z [[34minfo[39m]: [34mMapped {/api/users/me, PATCH} route[39m
+2026-11-11T13:37:59.137Z [[34minfo[39m]: [34mMapped {/api/users/get-all, GET} route[39m
+2026-11-11T13:37:59.138Z [[34minfo[39m]: [34mMapped {/api/users/get-sd-users, GET} route[39m
+2026-11-11T13:37:59.138Z [[34minfo[39m]: [34mMapped {/api/users/get-user-by-id, GET} route[39m
+2026-11-11T13:37:59.138Z [[34minfo[39m]: [34mMapped {/api/users/update-user-by-id, PATCH} route[39m
+2026-11-11T13:37:59.138Z [[34minfo[39m]: [34mMapped {/api/users/:id, DELETE} route[39m
+2026-11-11T13:37:59.139Z [[34minfo[39m]: [34mAdmProjectUserRoleController {/api/project-user-role}:[39m
+2026-11-11T13:37:59.139Z [[34minfo[39m]: [34mMapped {/api/project-user-role, GET} route[39m
+2026-11-11T13:37:59.139Z [[34minfo[39m]: [34mMapped {/api/project-user-role/add-update, POST} route[39m
+2026-11-11T13:37:59.140Z [[34minfo[39m]: [34mMapped {/api/project-user-role/delete, DELETE} route[39m
+2026-11-11T13:37:59.140Z [[34minfo[39m]: [34mMapped {/api/project-user-role/get-users-by-project, GET} route[39m
+2026-11-11T13:37:59.141Z [[34minfo[39m]: [34mProjectController {/api/project}:[39m
+2026-11-11T13:37:59.141Z [[34minfo[39m]: [34mMapped {/api/project/get-assigned-project, GET} route[39m
+2026-11-11T13:37:59.142Z [[34minfo[39m]: [34mMapped {/api/project/get-all, GET} route[39m
+2026-11-11T13:37:59.142Z [[34minfo[39m]: [34mMapped {/api/project/get-all-active-inactive, GET} route[39m
+2026-11-11T13:37:59.142Z [[34minfo[39m]: [34mMapped {/api/project/get-project-by-id, GET} route[39m
+2026-11-11T13:37:59.142Z [[34minfo[39m]: [34mMapped {/api/project/download-file, GET} route[39m
+2026-11-11T13:37:59.143Z [[34minfo[39m]: [34mMapped {/api/project/create, POST} route[39m
+2026-11-11T13:37:59.143Z [[34minfo[39m]: [34mMapped {/api/project/update-is-active-status, PUT} route[39m
+2026-11-11T13:37:59.143Z [[34minfo[39m]: [34mMapped {/api/project/update, PUT} route[39m
+2026-11-11T13:37:59.144Z [[34minfo[39m]: [34mMapped {/api/project/upload-file, POST} route[39m
+2026-11-11T13:37:59.841Z [[34minfo[39m]: [34mserver start.....http//:localhost:5001[39m
+
+
+2026-11-11T13:37:59.844Z [[34minfo[39m]: [34mNest application successfully started[39m
+2026-11-11T13:38:41.511Z [[34minfo[39m]: [34mJwtStrategy initialized[39m
+
+
+2026-11-11T13:38:41.539Z [[34minfo[39m]: [34mAuthController {/api/auth}:[39m
+2026-11-11T13:38:41.541Z [[34minfo[39m]: [34mMapped {/api/auth/signup, POST} route[39m
+2026-11-11T13:38:41.542Z [[34minfo[39m]: [34mMapped {/api/auth/signin, POST} route[39m
+2026-11-11T13:38:41.542Z [[34minfo[39m]: [34mMapped {/api/auth/refresh-token, POST} route[39m
+2026-11-11T13:38:41.542Z [[34minfo[39m]: [34mMapped {/api/auth/check-domain, POST} route[39m
+2026-11-11T13:38:41.543Z [[34minfo[39m]: [34mMapped {/api/auth/confirm-sign-up, POST} route[39m
+2026-11-11T13:38:41.543Z [[34minfo[39m]: [34mMapped {/api/auth/assign-demo-project, POST} route[39m
+2026-11-11T13:38:41.544Z [[34minfo[39m]: [34mMapped {/api/auth/forgot-password, POST} route[39m
+2026-11-11T13:38:41.544Z [[34minfo[39m]: [34mMapped {/api/auth/confirm-forgot-password, PUT} route[39m
+2026-11-11T13:38:41.545Z [[34minfo[39m]: [34mMapped {/api/auth/resend-code, POST} route[39m
+2026-11-11T13:38:41.545Z [[34minfo[39m]: [34mMapped {/api/auth/change-password, PUT} route[39m
+2026-11-11T13:38:41.546Z [[34minfo[39m]: [34mAdmUserController {/api/users}:[39m
+2026-11-11T13:38:41.546Z [[34minfo[39m]: [34mMapped {/api/users/me, GET} route[39m
+2026-11-11T13:38:41.546Z [[34minfo[39m]: [34mMapped {/api/users/me, PATCH} route[39m
+2026-11-11T13:38:41.547Z [[34minfo[39m]: [34mMapped {/api/users/get-all, GET} route[39m
+2026-11-11T13:38:41.547Z [[34minfo[39m]: [34mMapped {/api/users/get-sd-users, GET} route[39m
+2026-11-11T13:38:41.547Z [[34minfo[39m]: [34mMapped {/api/users/get-user-by-id, GET} route[39m
+2026-11-11T13:38:41.547Z [[34minfo[39m]: [34mMapped {/api/users/update-user-by-id, PATCH} route[39m
+2026-11-11T13:38:41.547Z [[34minfo[39m]: [34mMapped {/api/users/:id, DELETE} route[39m
+2026-11-11T13:38:41.547Z [[34minfo[39m]: [34mAdmProjectUserRoleController {/api/project-user-role}:[39m
+2026-11-11T13:38:41.548Z [[34minfo[39m]: [34mMapped {/api/project-user-role, GET} route[39m
+2026-11-11T13:38:41.548Z [[34minfo[39m]: [34mMapped {/api/project-user-role/add-update, POST} route[39m
+2026-11-11T13:38:41.548Z [[34minfo[39m]: [34mMapped {/api/project-user-role/delete, DELETE} route[39m
+2026-11-11T13:38:41.548Z [[34minfo[39m]: [34mMapped {/api/project-user-role/get-users-by-project, GET} route[39m
+2026-11-11T13:38:41.548Z [[34minfo[39m]: [34mProjectController {/api/project}:[39m
+2026-11-11T13:38:41.549Z [[34minfo[39m]: [34mMapped {/api/project/get-assigned-project, GET} route[39m
+2026-11-11T13:38:41.549Z [[34minfo[39m]: [34mMapped {/api/project/get-all, GET} route[39m
+2026-11-11T13:38:41.549Z [[34minfo[39m]: [34mMapped {/api/project/get-all-active-inactive, GET} route[39m
+2026-11-11T13:38:41.549Z [[34minfo[39m]: [34mMapped {/api/project/get-project-by-id, GET} route[39m
+2026-11-11T13:38:41.549Z [[34minfo[39m]: [34mMapped {/api/project/download-file, GET} route[39m
+2026-11-11T13:38:41.549Z [[34minfo[39m]: [34mMapped {/api/project/create, POST} route[39m
+2026-11-11T13:38:41.550Z [[34minfo[39m]: [34mMapped {/api/project/update-is-active-status, PUT} route[39m
+2026-11-11T13:38:41.550Z [[34minfo[39m]: [34mMapped {/api/project/update, PUT} route[39m
+2026-11-11T13:38:41.550Z [[34minfo[39m]: [34mMapped {/api/project/upload-file, POST} route[39m
+2026-11-11T13:38:42.228Z [[34minfo[39m]: [34mserver start.....http//:localhost:5001[39m
+
+
+2026-11-11T13:38:42.229Z [[34minfo[39m]: [34mNest application successfully started[39m
+2026-11-11T13:38:43.465Z [[34minfo[39m]: [34m[11/11/2026, 6:38:43 PM] Request: POST /api/auth/signin[39m
+2026-11-11T13:38:45.739Z [[34minfo[39m]: [34m[11/11/2026, 6:38:45 PM] Request: GET /api/project/get-assigned-project[39m
+2026-11-11T13:43:56.171Z [[34minfo[39m]: [34m[11/11/2026, 6:43:56 PM] Request: POST /api/auth/signin[39m
+2026-11-11T13:43:59.956Z [[34minfo[39m]: [34m[11/11/2026, 6:43:59 PM] Request: GET /api/project/get-assigned-project[39m
+2026-11-11T13:46:12.642Z [[34minfo[39m]: [34mJwtStrategy initialized[39m
+
+
+2026-11-11T13:46:12.686Z [[34minfo[39m]: [34mAuthController {/api/auth}:[39m
+2026-11-11T13:46:12.692Z [[34minfo[39m]: [34mMapped {/api/auth/signup, POST} route[39m
+2026-11-11T13:46:12.694Z [[34minfo[39m]: [34mMapped {/api/auth/signin, POST} route[39m
+2026-11-11T13:46:12.695Z [[34minfo[39m]: [34mMapped {/api/auth/refresh-token, POST} route[39m
+2026-11-11T13:46:12.695Z [[34minfo[39m]: [34mMapped {/api/auth/check-domain, POST} route[39m
+2026-11-11T13:46:12.696Z [[34minfo[39m]: [34mMapped {/api/auth/confirm-sign-up, POST} route[39m
+2026-11-11T13:46:12.697Z [[34minfo[39m]: [34mMapped {/api/auth/assign-demo-project, POST} route[39m
+2026-11-11T13:46:12.698Z [[34minfo[39m]: [34mMapped {/api/auth/forgot-password, POST} route[39m
+2026-11-11T13:46:12.698Z [[34minfo[39m]: [34mMapped {/api/auth/confirm-forgot-password, PUT} route[39m
+2026-11-11T13:46:12.698Z [[34minfo[39m]: [34mMapped {/api/auth/resend-code, POST} route[39m
+2026-11-11T13:46:12.699Z [[34minfo[39m]: [34mMapped {/api/auth/change-password, PUT} route[39m
+2026-11-11T13:46:12.700Z [[34minfo[39m]: [34mAdmUserController {/api/users}:[39m
+2026-11-11T13:46:12.700Z [[34minfo[39m]: [34mMapped {/api/users/me, GET} route[39m
+2026-11-11T13:46:12.701Z [[34minfo[39m]: [34mMapped {/api/users/me, PATCH} route[39m
+2026-11-11T13:46:12.701Z [[34minfo[39m]: [34mMapped {/api/users/get-all, GET} route[39m
+2026-11-11T13:46:12.701Z [[34minfo[39m]: [34mMapped {/api/users/get-sd-users, GET} route[39m
+2026-11-11T13:46:12.702Z [[34minfo[39m]: [34mMapped {/api/users/get-user-by-id, GET} route[39m
+2026-11-11T13:46:12.702Z [[34minfo[39m]: [34mMapped {/api/users/update-user-by-id, PATCH} route[39m
+2026-11-11T13:46:12.702Z [[34minfo[39m]: [34mMapped {/api/users/:id, DELETE} route[39m
+2026-11-11T13:46:12.702Z [[34minfo[39m]: [34mAdmProjectUserRoleController {/api/project-user-role}:[39m
+2026-11-11T13:46:12.703Z [[34minfo[39m]: [34mMapped {/api/project-user-role, GET} route[39m
+2026-11-11T13:46:12.703Z [[34minfo[39m]: [34mMapped {/api/project-user-role/add-update, POST} route[39m
+2026-11-11T13:46:12.703Z [[34minfo[39m]: [34mMapped {/api/project-user-role/delete, DELETE} route[39m
+2026-11-11T13:46:12.704Z [[34minfo[39m]: [34mMapped {/api/project-user-role/get-users-by-project, GET} route[39m
+2026-11-11T13:46:12.704Z [[34minfo[39m]: [34mProjectController {/api/project}:[39m
+2026-11-11T13:46:12.704Z [[34minfo[39m]: [34mMapped {/api/project/get-assigned-project, GET} route[39m
+2026-11-11T13:46:12.705Z [[34minfo[39m]: [34mMapped {/api/project/get-all, GET} route[39m
+2026-11-11T13:46:12.705Z [[34minfo[39m]: [34mMapped {/api/project/get-all-active-inactive, GET} route[39m
+2026-11-11T13:46:12.705Z [[34minfo[39m]: [34mMapped {/api/project/get-project-by-id, GET} route[39m
+2026-11-11T13:46:12.705Z [[34minfo[39m]: [34mMapped {/api/project/download-file, GET} route[39m
+2026-11-11T13:46:12.706Z [[34minfo[39m]: [34mMapped {/api/project/create, POST} route[39m
+2026-11-11T13:46:12.706Z [[34minfo[39m]: [34mMapped {/api/project/update-is-active-status, PUT} route[39m
+2026-11-11T13:46:12.706Z [[34minfo[39m]: [34mMapped {/api/project/update, PUT} route[39m
+2026-11-11T13:46:12.707Z [[34minfo[39m]: [34mMapped {/api/project/upload-file, POST} route[39m
+2026-11-11T13:46:13.467Z [[34minfo[39m]: [34mserver start.....http//:localhost:5001[39m
+
+
+2026-11-11T13:46:13.469Z [[34minfo[39m]: [34mNest application successfully started[39m
+2026-11-11T13:47:39.158Z [[34minfo[39m]: [34m[11/11/2026, 6:47:39 PM] Request: POST /api/auth/signin[39m
+2026-11-11T13:47:42.842Z [[34minfo[39m]: [34m[11/11/2026, 6:47:42 PM] Request: GET /api/project/get-assigned-project[39m
+2026-11-11T13:47:44.138Z [[34minfo[39m]: [34m[11/11/2026, 6:47:44 PM] Request: GET /api/project/get-assigned-project[39m
+2026-11-11T13:47:44.600Z [[34minfo[39m]: [34m[11/11/2026, 6:47:44 PM] Request: GET /api/project/get-assigned-project[39m
+2026-11-11T13:48:41.497Z [[34minfo[39m]: [34m[11/11/2026, 6:48:41 PM] Request: GET /api/users/me[39m
+2026-11-11T13:48:44.772Z [[34minfo[39m]: [34m[11/11/2026, 6:48:44 PM] Request: GET /api/users/me[39m
+2026-11-11T13:48:55.952Z [[34minfo[39m]: [34m[11/11/2026, 6:48:55 PM] Request: PATCH /api/users/me[39m
+2026-11-11T13:49:56.696Z [[34minfo[39m]: [34mJwtStrategy initialized[39m
+
+
+2026-11-11T13:49:56.719Z [[34minfo[39m]: [34mAuthController {/api/auth}:[39m
+2026-11-11T13:49:56.720Z [[34minfo[39m]: [34mMapped {/api/auth/signup, POST} route[39m
+2026-11-11T13:49:56.721Z [[34minfo[39m]: [34mMapped {/api/auth/signin, POST} route[39m
+2026-11-11T13:49:56.721Z [[34minfo[39m]: [34mMapped {/api/auth/refresh-token, POST} route[39m
+2026-11-11T13:49:56.721Z [[34minfo[39m]: [34mMapped {/api/auth/check-domain, POST} route[39m
+2026-11-11T13:49:56.722Z [[34minfo[39m]: [34mMapped {/api/auth/confirm-sign-up, POST} route[39m
+2026-11-11T13:49:56.722Z [[34minfo[39m]: [34mMapped {/api/auth/assign-demo-project, POST} route[39m
+2026-11-11T13:49:56.722Z [[34minfo[39m]: [34mMapped {/api/auth/forgot-password, POST} route[39m
+2026-11-11T13:49:56.723Z [[34minfo[39m]: [34mMapped {/api/auth/confirm-forgot-password, PUT} route[39m
+2026-11-11T13:49:56.723Z [[34minfo[39m]: [34mMapped {/api/auth/resend-code, POST} route[39m
+2026-11-11T13:49:56.723Z [[34minfo[39m]: [34mMapped {/api/auth/change-password, PUT} route[39m
+2026-11-11T13:49:56.723Z [[34minfo[39m]: [34mAdmUserController {/api/users}:[39m
+2026-11-11T13:49:56.723Z [[34minfo[39m]: [34mMapped {/api/users/me, GET} route[39m
+2026-11-11T13:49:56.724Z [[34minfo[39m]: [34mMapped {/api/users/me, PATCH} route[39m
+2026-11-11T13:49:56.724Z [[34minfo[39m]: [34mMapped {/api/users/get-all, GET} route[39m
+2026-11-11T13:49:56.724Z [[34minfo[39m]: [34mMapped {/api/users/get-sd-users, GET} route[39m
+2026-11-11T13:49:56.724Z [[34minfo[39m]: [34mMapped {/api/users/get-user-by-id, GET} route[39m
+2026-11-11T13:49:56.724Z [[34minfo[39m]: [34mMapped {/api/users/update-user-by-id, PATCH} route[39m
+2026-11-11T13:49:56.724Z [[34minfo[39m]: [34mMapped {/api/users/:id, DELETE} route[39m
+2026-11-11T13:49:56.724Z [[34minfo[39m]: [34mAdmProjectUserRoleController {/api/project-user-role}:[39m
+2026-11-11T13:49:56.725Z [[34minfo[39m]: [34mMapped {/api/project-user-role, GET} route[39m
+2026-11-11T13:49:56.725Z [[34minfo[39m]: [34mMapped {/api/project-user-role/add-update, POST} route[39m
+2026-11-11T13:49:56.725Z [[34minfo[39m]: [34mMapped {/api/project-user-role/delete, DELETE} route[39m
+2026-11-11T13:49:56.725Z [[34minfo[39m]: [34mMapped {/api/project-user-role/get-users-by-project, GET} route[39m
+2026-11-11T13:49:56.725Z [[34minfo[39m]: [34mProjectController {/api/project}:[39m
+2026-11-11T13:49:56.725Z [[34minfo[39m]: [34mMapped {/api/project/get-assigned-project, GET} route[39m
+2026-11-11T13:49:56.725Z [[34minfo[39m]: [34mMapped {/api/project/get-all, GET} route[39m
+2026-11-11T13:49:56.725Z [[34minfo[39m]: [34mMapped {/api/project/get-all-active-inactive, GET} route[39m
+2026-11-11T13:49:56.725Z [[34minfo[39m]: [34mMapped {/api/project/get-project-by-id, GET} route[39m
+2026-11-11T13:49:56.725Z [[34minfo[39m]: [34mMapped {/api/project/download-file, GET} route[39m
+2026-11-11T13:49:56.726Z [[34minfo[39m]: [34mMapped {/api/project/create, POST} route[39m
+2026-11-11T13:49:56.726Z [[34minfo[39m]: [34mMapped {/api/project/update-is-active-status, PUT} route[39m
+2026-11-11T13:49:56.726Z [[34minfo[39m]: [34mMapped {/api/project/update, PUT} route[39m
+2026-11-11T13:49:56.726Z [[34minfo[39m]: [34mMapped {/api/project/upload-file, POST} route[39m
+2026-11-11T13:49:57.415Z [[34minfo[39m]: [34mserver start.....http//:localhost:5001[39m
+
+
+2026-11-11T13:49:57.418Z [[34minfo[39m]: [34mNest application successfully started[39m
+2026-11-11T13:49:58.440Z [[34minfo[39m]: [34mJwtStrategy initialized[39m
+
+
+2026-11-11T13:49:58.504Z [[34minfo[39m]: [34mAuthController {/api/auth}:[39m
+2026-11-11T13:49:58.508Z [[34minfo[39m]: [34mMapped {/api/auth/signup, POST} route[39m
+2026-11-11T13:49:58.510Z [[34minfo[39m]: [34mMapped {/api/auth/signin, POST} route[39m
+2026-11-11T13:49:58.511Z [[34minfo[39m]: [34mMapped {/api/auth/refresh-token, POST} route[39m
+2026-11-11T13:49:58.512Z [[34minfo[39m]: [34mMapped {/api/auth/check-domain, POST} route[39m
+2026-11-11T13:49:58.512Z [[34minfo[39m]: [34mMapped {/api/auth/confirm-sign-up, POST} route[39m
+2026-11-11T13:49:58.514Z [[34minfo[39m]: [34mMapped {/api/auth/assign-demo-project, POST} route[39m
+2026-11-11T13:49:58.514Z [[34minfo[39m]: [34mMapped {/api/auth/forgot-password, POST} route[39m
+2026-11-11T13:49:58.516Z [[34minfo[39m]: [34mMapped {/api/auth/confirm-forgot-password, PUT} route[39m
+2026-11-11T13:49:58.517Z [[34minfo[39m]: [34mMapped {/api/auth/resend-code, POST} route[39m
+2026-11-11T13:49:58.518Z [[34minfo[39m]: [34mMapped {/api/auth/change-password, PUT} route[39m
+2026-11-11T13:49:58.518Z [[34minfo[39m]: [34mAdmUserController {/api/users}:[39m
+2026-11-11T13:49:58.519Z [[34minfo[39m]: [34mMapped {/api/users/me, GET} route[39m
+2026-11-11T13:49:58.520Z [[34minfo[39m]: [34mMapped {/api/users/me, PATCH} route[39m
+2026-11-11T13:49:58.521Z [[34minfo[39m]: [34mMapped {/api/users/get-all, GET} route[39m
+2026-11-11T13:49:58.522Z [[34minfo[39m]: [34mMapped {/api/users/get-sd-users, GET} route[39m
+2026-11-11T13:49:58.522Z [[34minfo[39m]: [34mMapped {/api/users/get-user-by-id, GET} route[39m
+2026-11-11T13:49:58.523Z [[34minfo[39m]: [34mMapped {/api/users/update-user-by-id, PATCH} route[39m
+2026-11-11T13:49:58.523Z [[34minfo[39m]: [34mMapped {/api/users/:id, DELETE} route[39m
+2026-11-11T13:49:58.524Z [[34minfo[39m]: [34mAdmProjectUserRoleController {/api/project-user-role}:[39m
+2026-11-11T13:49:58.525Z [[34minfo[39m]: [34mMapped {/api/project-user-role, GET} route[39m
+2026-11-11T13:49:58.525Z [[34minfo[39m]: [34mMapped {/api/project-user-role/add-update, POST} route[39m
+2026-11-11T13:49:58.526Z [[34minfo[39m]: [34mMapped {/api/project-user-role/delete, DELETE} route[39m
+2026-11-11T13:49:58.526Z [[34minfo[39m]: [34mMapped {/api/project-user-role/get-users-by-project, GET} route[39m
+2026-11-11T13:49:58.528Z [[34minfo[39m]: [34mProjectController {/api/project}:[39m
+2026-11-11T13:49:58.529Z [[34minfo[39m]: [34mMapped {/api/project/get-assigned-project, GET} route[39m
+2026-11-11T13:49:58.530Z [[34minfo[39m]: [34mMapped {/api/project/get-all, GET} route[39m
+2026-11-11T13:49:58.530Z [[34minfo[39m]: [34mMapped {/api/project/get-all-active-inactive, GET} route[39m
+2026-11-11T13:49:58.531Z [[34minfo[39m]: [34mMapped {/api/project/get-project-by-id, GET} route[39m
+2026-11-11T13:49:58.531Z [[34minfo[39m]: [34mMapped {/api/project/download-file, GET} route[39m
+2026-11-11T13:49:58.532Z [[34minfo[39m]: [34mMapped {/api/project/create, POST} route[39m
+2026-11-11T13:49:58.532Z [[34minfo[39m]: [34mMapped {/api/project/update-is-active-status, PUT} route[39m
+2026-11-11T13:49:58.532Z [[34minfo[39m]: [34mMapped {/api/project/update, PUT} route[39m
+2026-11-11T13:49:58.533Z [[34minfo[39m]: [34mMapped {/api/project/upload-file, POST} route[39m
+2026-11-11T13:49:59.273Z [[34minfo[39m]: [34mserver start.....http//:localhost:5001[39m
+
+
+2026-11-11T13:49:59.276Z [[34minfo[39m]: [34mNest application successfully started[39m
+2026-11-11T13:51:20.676Z [[34minfo[39m]: [34m[11/11/2026, 6:51:20 PM] Request: GET /api/project/get-assigned-project[39m
+2026-11-11T13:51:23.669Z [[34minfo[39m]: [34m[11/11/2026, 6:51:23 PM] Request: GET /api/project/get-assigned-project[39m
+2026-11-11T13:51:50.005Z [[34minfo[39m]: [34mJwtStrategy initialized[39m
+
+
+2026-11-11T13:51:50.027Z [[34minfo[39m]: [34mAuthController {/api/auth}:[39m
+2026-11-11T13:51:50.029Z [[34minfo[39m]: [34mMapped {/api/auth/signup, POST} route[39m
+2026-11-11T13:51:50.029Z [[34minfo[39m]: [34mMapped {/api/auth/signin, POST} route[39m
+2026-11-11T13:51:50.029Z [[34minfo[39m]: [34mMapped {/api/auth/refresh-token, POST} route[39m
+2026-11-11T13:51:50.030Z [[34minfo[39m]: [34mMapped {/api/auth/check-domain, POST} route[39m
+2026-11-11T13:51:50.030Z [[34minfo[39m]: [34mMapped {/api/auth/confirm-sign-up, POST} route[39m
+2026-11-11T13:51:50.030Z [[34minfo[39m]: [34mMapped {/api/auth/assign-demo-project, POST} route[39m
+2026-11-11T13:51:50.030Z [[34minfo[39m]: [34mMapped {/api/auth/forgot-password, POST} route[39m
+2026-11-11T13:51:50.030Z [[34minfo[39m]: [34mMapped {/api/auth/confirm-forgot-password, PUT} route[39m
+2026-11-11T13:51:50.031Z [[34minfo[39m]: [34mMapped {/api/auth/resend-code, POST} route[39m
+2026-11-11T13:51:50.031Z [[34minfo[39m]: [34mMapped {/api/auth/change-password, PUT} route[39m
+2026-11-11T13:51:50.031Z [[34minfo[39m]: [34mAdmUserController {/api/users}:[39m
+2026-11-11T13:51:50.031Z [[34minfo[39m]: [34mMapped {/api/users/me, GET} route[39m
+2026-11-11T13:51:50.031Z [[34minfo[39m]: [34mMapped {/api/users/me, PATCH} route[39m
+2026-11-11T13:51:50.031Z [[34minfo[39m]: [34mMapped {/api/users/get-all, GET} route[39m
+2026-11-11T13:51:50.031Z [[34minfo[39m]: [34mMapped {/api/users/get-sd-users, GET} route[39m
+2026-11-11T13:51:50.031Z [[34minfo[39m]: [34mMapped {/api/users/get-user-by-id, GET} route[39m
+2026-11-11T13:51:50.032Z [[34minfo[39m]: [34mMapped {/api/users/update-user-by-id, PATCH} route[39m
+2026-11-11T13:51:50.032Z [[34minfo[39m]: [34mMapped {/api/users/:id, DELETE} route[39m
+2026-11-11T13:51:50.032Z [[34minfo[39m]: [34mAdmProjectUserRoleController {/api/project-user-role}:[39m
+2026-11-11T13:51:50.032Z [[34minfo[39m]: [34mMapped {/api/project-user-role, GET} route[39m
+2026-11-11T13:51:50.032Z [[34minfo[39m]: [34mMapped {/api/project-user-role/add-update, POST} route[39m
+2026-11-11T13:51:50.032Z [[34minfo[39m]: [34mMapped {/api/project-user-role/delete, DELETE} route[39m
+2026-11-11T13:51:50.032Z [[34minfo[39m]: [34mMapped {/api/project-user-role/get-users-by-project, GET} route[39m
+2026-11-11T13:51:50.032Z [[34minfo[39m]: [34mProjectController {/api/project}:[39m
+2026-11-11T13:51:50.033Z [[34minfo[39m]: [34mMapped {/api/project/get-assigned-project, GET} route[39m
+2026-11-11T13:51:50.033Z [[34minfo[39m]: [34mMapped {/api/project/get-all, GET} route[39m
+2026-11-11T13:51:50.033Z [[34minfo[39m]: [34mMapped {/api/project/get-all-active-inactive, GET} route[39m
+2026-11-11T13:51:50.033Z [[34minfo[39m]: [34mMapped {/api/project/get-project-by-id, GET} route[39m
+2026-11-11T13:51:50.033Z [[34minfo[39m]: [34mMapped {/api/project/download-file, GET} route[39m
+2026-11-11T13:51:50.034Z [[34minfo[39m]: [34mMapped {/api/project/create, POST} route[39m
+2026-11-11T13:51:50.034Z [[34minfo[39m]: [34mMapped {/api/project/update-is-active-status, PUT} route[39m
+2026-11-11T13:51:50.035Z [[34minfo[39m]: [34mMapped {/api/project/update, PUT} route[39m
+2026-11-11T13:51:50.035Z [[34minfo[39m]: [34mMapped {/api/project/upload-file, POST} route[39m
+2026-11-11T13:51:50.715Z [[34minfo[39m]: [34mserver start.....http//:localhost:5001[39m
+
+
+2026-11-11T13:51:50.716Z [[34minfo[39m]: [34mNest application successfully started[39m
+2026-11-11T13:51:51.459Z [[34minfo[39m]: [34mJwtStrategy initialized[39m
+
+
+2026-11-11T13:51:51.522Z [[34minfo[39m]: [34mAuthController {/api/auth}:[39m
+2026-11-11T13:51:51.526Z [[34minfo[39m]: [34mMapped {/api/auth/signup, POST} route[39m
+2026-11-11T13:51:51.529Z [[34minfo[39m]: [34mMapped {/api/auth/signin, POST} route[39m
+2026-11-11T13:51:51.530Z [[34minfo[39m]: [34mMapped {/api/auth/refresh-token, POST} route[39m
+2026-11-11T13:51:51.531Z [[34minfo[39m]: [34mMapped {/api/auth/check-domain, POST} route[39m
+2026-11-11T13:51:51.531Z [[34minfo[39m]: [34mMapped {/api/auth/confirm-sign-up, POST} route[39m
+2026-11-11T13:51:51.532Z [[34minfo[39m]: [34mMapped {/api/auth/assign-demo-project, POST} route[39m
+2026-11-11T13:51:51.533Z [[34minfo[39m]: [34mMapped {/api/auth/forgot-password, POST} route[39m
+2026-11-11T13:51:51.534Z [[34minfo[39m]: [34mMapped {/api/auth/confirm-forgot-password, PUT} route[39m
+2026-11-11T13:51:51.537Z [[34minfo[39m]: [34mMapped {/api/auth/resend-code, POST} route[39m
+2026-11-11T13:51:51.538Z [[34minfo[39m]: [34mMapped {/api/auth/change-password, PUT} route[39m
+2026-11-11T13:51:51.539Z [[34minfo[39m]: [34mAdmUserController {/api/users}:[39m
+2026-11-11T13:51:51.539Z [[34minfo[39m]: [34mMapped {/api/users/me, GET} route[39m
+2026-11-11T13:51:51.540Z [[34minfo[39m]: [34mMapped {/api/users/me, PATCH} route[39m
+2026-11-11T13:51:51.540Z [[34minfo[39m]: [34mMapped {/api/users/get-all, GET} route[39m
+2026-11-11T13:51:51.541Z [[34minfo[39m]: [34mMapped {/api/users/get-sd-users, GET} route[39m
+2026-11-11T13:51:51.543Z [[34minfo[39m]: [34mMapped {/api/users/get-user-by-id, GET} route[39m
+2026-11-11T13:51:51.543Z [[34minfo[39m]: [34mMapped {/api/users/update-user-by-id, PATCH} route[39m
+2026-11-11T13:51:51.544Z [[34minfo[39m]: [34mMapped {/api/users/:id, DELETE} route[39m
+2026-11-11T13:51:51.545Z [[34minfo[39m]: [34mAdmProjectUserRoleController {/api/project-user-role}:[39m
+2026-11-11T13:51:51.545Z [[34minfo[39m]: [34mMapped {/api/project-user-role, GET} route[39m
+2026-11-11T13:51:51.546Z [[34minfo[39m]: [34mMapped {/api/project-user-role/add-update, POST} route[39m
+2026-11-11T13:51:51.546Z [[34minfo[39m]: [34mMapped {/api/project-user-role/delete, DELETE} route[39m
+2026-11-11T13:51:51.547Z [[34minfo[39m]: [34mMapped {/api/project-user-role/get-users-by-project, GET} route[39m
+2026-11-11T13:51:51.547Z [[34minfo[39m]: [34mProjectController {/api/project}:[39m
+2026-11-11T13:51:51.548Z [[34minfo[39m]: [34mMapped {/api/project/get-assigned-project, GET} route[39m
+2026-11-11T13:51:51.551Z [[34minfo[39m]: [34mMapped {/api/project/get-all, GET} route[39m
+2026-11-11T13:51:51.552Z [[34minfo[39m]: [34mMapped {/api/project/get-all-active-inactive, GET} route[39m
+2026-11-11T13:51:51.552Z [[34minfo[39m]: [34mMapped {/api/project/get-project-by-id, GET} route[39m
+2026-11-11T13:51:51.553Z [[34minfo[39m]: [34mMapped {/api/project/download-file, GET} route[39m
+2026-11-11T13:51:51.553Z [[34minfo[39m]: [34mMapped {/api/project/create, POST} route[39m
+2026-11-11T13:51:51.554Z [[34minfo[39m]: [34mMapped {/api/project/update-is-active-status, PUT} route[39m
+2026-11-11T13:51:51.554Z [[34minfo[39m]: [34mMapped {/api/project/update, PUT} route[39m
+2026-11-11T13:51:51.558Z [[34minfo[39m]: [34mMapped {/api/project/upload-file, POST} route[39m
+2026-11-11T13:51:52.258Z [[34minfo[39m]: [34mserver start.....http//:localhost:5001[39m
+
+
+2026-11-11T13:51:52.261Z [[34minfo[39m]: [34mNest application successfully started[39m
+2026-11-11T13:52:18.527Z [[34minfo[39m]: [34mJwtStrategy initialized[39m
+
+
+2026-11-11T13:52:18.544Z [[34minfo[39m]: [34mJwtStrategy initialized[39m
+
+
+2026-11-11T13:52:18.609Z [[34minfo[39m]: [34mAuthController {/api/auth}:[39m
+2026-11-11T13:52:18.623Z [[34minfo[39m]: [34mAuthController {/api/auth}:[39m
+2026-11-11T13:52:18.629Z [[34minfo[39m]: [34mMapped {/api/auth/signup, POST} route[39m
+2026-11-11T13:52:18.630Z [[34minfo[39m]: [34mMapped {/api/auth/signin, POST} route[39m
+2026-11-11T13:52:18.632Z [[34minfo[39m]: [34mMapped {/api/auth/refresh-token, POST} route[39m
+2026-11-11T13:52:18.633Z [[34minfo[39m]: [34mMapped {/api/auth/check-domain, POST} route[39m
+2026-11-11T13:52:18.634Z [[34minfo[39m]: [34mMapped {/api/auth/confirm-sign-up, POST} route[39m
+2026-11-11T13:52:18.634Z [[34minfo[39m]: [34mMapped {/api/auth/assign-demo-project, POST} route[39m
+2026-11-11T13:52:18.636Z [[34minfo[39m]: [34mMapped {/api/auth/forgot-password, POST} route[39m
+2026-11-11T13:52:18.637Z [[34minfo[39m]: [34mMapped {/api/auth/confirm-forgot-password, PUT} route[39m
+2026-11-11T13:52:18.638Z [[34minfo[39m]: [34mMapped {/api/auth/resend-code, POST} route[39m
+2026-11-11T13:52:18.639Z [[34minfo[39m]: [34mMapped {/api/auth/change-password, PUT} route[39m
+2026-11-11T13:52:18.639Z [[34minfo[39m]: [34mAdmUserController {/api/users}:[39m
+2026-11-11T13:52:18.640Z [[34minfo[39m]: [34mMapped {/api/users/me, GET} route[39m
+2026-11-11T13:52:18.640Z [[34minfo[39m]: [34mMapped {/api/users/me, PATCH} route[39m
+2026-11-11T13:52:18.641Z [[34minfo[39m]: [34mMapped {/api/users/get-all, GET} route[39m
+2026-11-11T13:52:18.641Z [[34minfo[39m]: [34mMapped {/api/users/get-sd-users, GET} route[39m
+2026-11-11T13:52:18.641Z [[34minfo[39m]: [34mMapped {/api/users/get-user-by-id, GET} route[39m
+2026-11-11T13:52:18.642Z [[34minfo[39m]: [34mMapped {/api/users/update-user-by-id, PATCH} route[39m
+2026-11-11T13:52:18.643Z [[34minfo[39m]: [34mMapped {/api/users/:id, DELETE} route[39m
+2026-11-11T13:52:18.643Z [[34minfo[39m]: [34mAdmProjectUserRoleController {/api/project-user-role}:[39m
+2026-11-11T13:52:18.644Z [[34minfo[39m]: [34mMapped {/api/project-user-role, GET} route[39m
+2026-11-11T13:52:18.644Z [[34minfo[39m]: [34mMapped {/api/project-user-role/add-update, POST} route[39m
+2026-11-11T13:52:18.645Z [[34minfo[39m]: [34mMapped {/api/project-user-role/delete, DELETE} route[39m
+2026-11-11T13:52:18.645Z [[34minfo[39m]: [34mMapped {/api/project-user-role/get-users-by-project, GET} route[39m
+2026-11-11T13:52:18.646Z [[34minfo[39m]: [34mProjectController {/api/project}:[39m
+2026-11-11T13:52:18.647Z [[34minfo[39m]: [34mMapped {/api/project/get-assigned-project, GET} route[39m
+2026-11-11T13:52:18.647Z [[34minfo[39m]: [34mMapped {/api/project/get-all, GET} route[39m
+2026-11-11T13:52:18.647Z [[34minfo[39m]: [34mMapped {/api/project/get-all-active-inactive, GET} route[39m
+2026-11-11T13:52:18.648Z [[34minfo[39m]: [34mMapped {/api/project/get-project-by-id, GET} route[39m
+2026-11-11T13:52:18.649Z [[34minfo[39m]: [34mMapped {/api/project/download-file, GET} route[39m
+2026-11-11T13:52:18.649Z [[34minfo[39m]: [34mMapped {/api/project/create, POST} route[39m
+2026-11-11T13:52:18.650Z [[34minfo[39m]: [34mMapped {/api/project/update-is-active-status, PUT} route[39m
+2026-11-11T13:52:18.650Z [[34minfo[39m]: [34mMapped {/api/project/update, PUT} route[39m
+2026-11-11T13:52:18.651Z [[34minfo[39m]: [34mMapped {/api/project/upload-file, POST} route[39m
+2026-11-11T13:52:18.616Z [[34minfo[39m]: [34mMapped {/api/auth/signup, POST} route[39m
+2026-11-11T13:52:18.617Z [[34minfo[39m]: [34mMapped {/api/auth/signin, POST} route[39m
+2026-11-11T13:52:18.618Z [[34minfo[39m]: [34mMapped {/api/auth/refresh-token, POST} route[39m
+2026-11-11T13:52:18.619Z [[34minfo[39m]: [34mMapped {/api/auth/check-domain, POST} route[39m
+2026-11-11T13:52:18.620Z [[34minfo[39m]: [34mMapped {/api/auth/confirm-sign-up, POST} route[39m
+2026-11-11T13:52:18.622Z [[34minfo[39m]: [34mMapped {/api/auth/assign-demo-project, POST} route[39m
+2026-11-11T13:52:18.622Z [[34minfo[39m]: [34mMapped {/api/auth/forgot-password, POST} route[39m
+2026-11-11T13:52:18.623Z [[34minfo[39m]: [34mMapped {/api/auth/confirm-forgot-password, PUT} route[39m
+2026-11-11T13:52:18.624Z [[34minfo[39m]: [34mMapped {/api/auth/resend-code, POST} route[39m
+2026-11-11T13:52:18.626Z [[34minfo[39m]: [34mMapped {/api/auth/change-password, PUT} route[39m
+2026-11-11T13:52:18.626Z [[34minfo[39m]: [34mAdmUserController {/api/users}:[39m
+2026-11-11T13:52:18.628Z [[34minfo[39m]: [34mMapped {/api/users/me, GET} route[39m
+2026-11-11T13:52:18.629Z [[34minfo[39m]: [34mMapped {/api/users/me, PATCH} route[39m
+2026-11-11T13:52:18.631Z [[34minfo[39m]: [34mMapped {/api/users/get-all, GET} route[39m
+2026-11-11T13:52:18.633Z [[34minfo[39m]: [34mMapped {/api/users/get-sd-users, GET} route[39m
+2026-11-11T13:52:18.634Z [[34minfo[39m]: [34mMapped {/api/users/get-user-by-id, GET} route[39m
+2026-11-11T13:52:18.635Z [[34minfo[39m]: [34mMapped {/api/users/update-user-by-id, PATCH} route[39m
+2026-11-11T13:52:18.637Z [[34minfo[39m]: [34mMapped {/api/users/:id, DELETE} route[39m
+2026-11-11T13:52:18.638Z [[34minfo[39m]: [34mAdmProjectUserRoleController {/api/project-user-role}:[39m
+2026-11-11T13:52:18.639Z [[34minfo[39m]: [34mMapped {/api/project-user-role, GET} route[39m
+2026-11-11T13:52:18.640Z [[34minfo[39m]: [34mMapped {/api/project-user-role/add-update, POST} route[39m
+2026-11-11T13:52:18.641Z [[34minfo[39m]: [34mMapped {/api/project-user-role/delete, DELETE} route[39m
+2026-11-11T13:52:18.641Z [[34minfo[39m]: [34mMapped {/api/project-user-role/get-users-by-project, GET} route[39m
+2026-11-11T13:52:18.643Z [[34minfo[39m]: [34mProjectController {/api/project}:[39m
+2026-11-11T13:52:18.644Z [[34minfo[39m]: [34mMapped {/api/project/get-assigned-project, GET} route[39m
+2026-11-11T13:52:18.645Z [[34minfo[39m]: [34mMapped {/api/project/get-all, GET} route[39m
+2026-11-11T13:52:18.645Z [[34minfo[39m]: [34mMapped {/api/project/get-all-active-inactive, GET} route[39m
+2026-11-11T13:52:18.646Z [[34minfo[39m]: [34mMapped {/api/project/get-project-by-id, GET} route[39m
+2026-11-11T13:52:18.647Z [[34minfo[39m]: [34mMapped {/api/project/download-file, GET} route[39m
+2026-11-11T13:52:18.648Z [[34minfo[39m]: [34mMapped {/api/project/create, POST} route[39m
+2026-11-11T13:52:18.648Z [[34minfo[39m]: [34mMapped {/api/project/update-is-active-status, PUT} route[39m
+2026-11-11T13:52:18.649Z [[34minfo[39m]: [34mMapped {/api/project/update, PUT} route[39m
+2026-11-11T13:52:18.651Z [[34minfo[39m]: [34mMapped {/api/project/upload-file, POST} route[39m
+2026-11-11T13:52:19.432Z [[34minfo[39m]: [34mserver start.....http//:localhost:5001[39m
+
+
+2026-11-11T13:52:19.436Z [[34minfo[39m]: [34mNest application successfully started[39m
+2026-11-11T13:52:19.463Z [[34minfo[39m]: [34mserver start.....http//:localhost:5001[39m
+
+
+2026-11-11T13:52:19.466Z [[34minfo[39m]: [34mNest application successfully started[39m

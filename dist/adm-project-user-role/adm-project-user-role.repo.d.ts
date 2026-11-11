@@ -3,8 +3,11 @@ export declare class AdmProjectUserRoleRepo {
     private geneRepoService;
     private projectUserRoleRepository;
     constructor(geneRepoService: GeneRepoService);
-    createProjectUserRole(createProjectUserRoleDto: any): Promise<any>;
+    createProjectUserRole(createProjectUserRoleDto: {
+        projectId: number;
+        userId: number;
+    }): Promise<any>;
     getAllProjectUsersRoles(filter?: any, options?: any): Promise<any[]>;
     getAllProjectUsersRole(filter: any, options: any): Promise<any[]>;
-    deleteProjectUserRole(projectUserRoleId: number): Promise<void>;
+    deleteProjectUserRole(projectId: number, userId: number): Promise<void>;
 }

@@ -1,33 +1,31 @@
-import { IsString, IsNotEmpty, IsOptional, IsInt } from "class-validator";
+import { IsNotEmpty, IsInt, IsOptional } from "class-validator";
 
-export class CreateProjectUserRoleDto {
-  @IsString()
-  @IsOptional()
-  projectUserRoleId?: string;
-
-  @IsString()
-  @IsNotEmpty()
-  projectId: string;
-
-  @IsString()
-  @IsNotEmpty()
-  userId: string;
-
-  @IsString()
-  @IsNotEmpty()
-  roleId: string;
-
-  @IsOptional()
-  @IsString()
-  cognitoId?: string;
-}
-
-export class GetUsersByProjectAndRoleIdDto {
-  @IsString()
-  @IsNotEmpty()
-  roleCode: string;
-
+export class CreateProjectUserDto {
   @IsInt()
   @IsNotEmpty()
   projectId: number;
+
+  @IsInt()
+  @IsNotEmpty()
+  userId: number;
+}
+
+export class DeleteProjectUserDto {
+  @IsInt()
+  @IsNotEmpty()
+  projectId: number;
+
+  @IsInt()
+  @IsNotEmpty()
+  userId: number;
+}
+
+export class GetUsersByProjectDto {
+  @IsInt()
+  @IsNotEmpty()
+  projectId: number;
+
+  @IsInt()
+  @IsOptional()
+  userId?: number;
 }

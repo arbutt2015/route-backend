@@ -6,7 +6,6 @@ import { AWSCognitoService } from "../aws/aws-cognito.service";
 import { AuthService } from "./auth.service";
 import { AuthController } from "./auth.controller";
 import { GeneRepoService } from "src/gene-repo/gene-repo.service";
-import { AdmModuleModule } from "src/adm-module/adm-module.module";
 import { AdmUserModule } from "src/adm-user/adm-user.module";
 import { JwtStrategy } from "./jwt-strategy";
 import { JwtAuthGuard } from "./jwt-auth.guard";
@@ -15,7 +14,6 @@ import { AWSSESService } from "src/aws/aws-ses.service";
 
 @Module({
   imports: [
-    AdmModuleModule,
     AdmUserModule,
     ProjectUserRoleModule,
     PassportModule,

@@ -4,3 +4,141 @@
 2026-11-10T08:01:50.296Z [[31merror[39m]: [31m{"[__type]":"See error.__type for details.","code":"NotAuthorizedException","message":"Incorrect username or password.","requestId":"783a8fc4-126c-4e96-b9fc-ec7b092968af","retryDelay":88.81219806414292,"retryable":false,"statusCode":400,"time":"2026-11-10T08:01:50.296Z"}[39m
 {}
 
+2026-11-11T12:29:50.674Z [[31merror[39m]: [31m{"[__type]":"See error.__type for details.","code":"InvalidParameterException","message":"USER_PASSWORD_AUTH flow not enabled for this client","requestId":"b24ae81d-6eed-4a9b-8416-7ddbdaa694b1","retryDelay":8.676317952640645,"retryable":false,"statusCode":400,"time":"2026-11-11T12:29:50.664Z"}[39m
+{}
+
+2026-11-11T12:29:50.681Z [[31merror[39m]: [31mUSER_PASSWORD_AUTH flow not enabled for this client[39m
+{
+ "context": "ExceptionsHandler"
+}
+2026-11-11T12:29:58.523Z [[31merror[39m]: [31m{"[__type]":"See error.__type for details.","code":"InvalidParameterException","message":"USER_PASSWORD_AUTH flow not enabled for this client","requestId":"a06ed71e-84f8-4130-93e3-f0ec5fd4b14e","retryDelay":82.78435783191,"retryable":false,"statusCode":400,"time":"2026-11-11T12:29:58.522Z"}[39m
+{}
+
+2026-11-11T12:29:58.525Z [[31merror[39m]: [31mUSER_PASSWORD_AUTH flow not enabled for this client[39m
+{
+ "context": "ExceptionsHandler"
+}
+2026-11-11T12:30:16.487Z [[31merror[39m]: [31m{"[__type]":"See error.__type for details.","code":"InvalidParameterException","message":"USER_PASSWORD_AUTH flow not enabled for this client","requestId":"bf6ac34d-b113-4767-8828-366857d40c2a","retryDelay":1.978263295957039,"retryable":false,"statusCode":400,"time":"2026-11-11T12:30:16.486Z"}[39m
+{}
+
+2026-11-11T12:30:16.491Z [[31merror[39m]: [31mUSER_PASSWORD_AUTH flow not enabled for this client[39m
+{
+ "context": "ExceptionsHandler"
+}
+2026-11-11T12:30:46.823Z [[31merror[39m]: [31m{"code":"MissingRequiredParameter","message":"Missing required key 'UserPoolId' in params","time":"2026-11-11T12:30:46.823Z"}[39m
+{}
+
+2026-11-11T12:30:46.828Z [[31merror[39m]: [31mMissing required key 'UserPoolId' in params[39m
+{
+ "context": "ExceptionsHandler"
+}
+2026-11-11T12:30:52.213Z [[31merror[39m]: [31m{"[__type]":"See error.__type for details.","code":"ExpiredCodeException","message":"Invalid code provided, please request a code again.","requestId":"0cae2e7d-1977-46b2-a0c1-521409b9bba8","retryDelay":26.58920972246318,"retryable":false,"statusCode":400,"time":"2026-11-11T12:30:52.212Z"}[39m
+{}
+
+2026-11-11T12:31:23.733Z [[31merror[39m]: [31m{"[__type]":"See error.__type for details.","code":"NotAuthorizedException","message":"User cannot be confirmed. Current status is CONFIRMED","requestId":"c773f556-39b4-40a2-9b9b-1f9ac523340d","retryDelay":94.34386121664127,"retryable":false,"statusCode":400,"time":"2026-11-11T12:31:23.732Z"}[39m
+{}
+
+2026-11-11T12:40:08.092Z [[31merror[39m]: [31m{"[__type]":"See error.__type for details.","code":"InvalidParameterException","message":"USER_PASSWORD_AUTH flow not enabled for this client","requestId":"34a29a0c-61d3-4761-8b5c-9831c14081a5","retryDelay":7.6147809600990435,"retryable":false,"statusCode":400,"time":"2026-11-11T12:40:08.090Z"}[39m
+{}
+
+2026-11-11T12:40:08.100Z [[31merror[39m]: [31mUSER_PASSWORD_AUTH flow not enabled for this client[39m
+{
+ "context": "ExceptionsHandler"
+}
+2026-11-11T12:40:14.291Z [[31merror[39m]: [31m{"[__type]":"See error.__type for details.","code":"InvalidParameterException","message":"USER_PASSWORD_AUTH flow not enabled for this client","requestId":"21116de9-1fce-48fb-aed9-4e64f4a17d5a","retryDelay":82.54215544898416,"retryable":false,"statusCode":400,"time":"2026-11-11T12:40:14.290Z"}[39m
+{}
+
+2026-11-11T12:40:14.292Z [[31merror[39m]: [31mUSER_PASSWORD_AUTH flow not enabled for this client[39m
+{
+ "context": "ExceptionsHandler"
+}
+2026-11-11T12:48:15.527Z [[31merror[39m]: [31m{"[__type]":"See error.__type for details.","code":"UsernameExistsException","message":"User already exists","requestId":"ead27863-d0ae-4dd9-96dc-763e12d23e19","retryDelay":1.9734712895187356,"retryable":false,"statusCode":400,"time":"2026-11-11T12:48:15.526Z"}[39m
+{}
+
+2026-11-11T12:48:20.147Z [[31merror[39m]: [31m{"[__type]":"See error.__type for details.","code":"UsernameExistsException","message":"User already exists","requestId":"a60cebaa-a278-4847-8fe7-dd72dc47aae1","retryDelay":59.584478232617855,"retryable":false,"statusCode":400,"time":"2026-11-11T12:48:20.147Z"}[39m
+{}
+
+2026-11-11T12:53:48.156Z [[31merror[39m]: [31m{"[__type]":"See error.__type for details.","code":"InvalidParameterException","message":"USER_PASSWORD_AUTH flow not enabled for this client","requestId":"c2a7ca27-7a11-4eb5-bb4b-4c2d660c690a","retryDelay":27.4138076073955,"retryable":false,"statusCode":400,"time":"2026-11-11T12:53:48.156Z"}[39m
+{}
+
+2026-11-11T12:53:48.160Z [[31merror[39m]: [31mUSER_PASSWORD_AUTH flow not enabled for this client[39m
+{
+ "context": "ExceptionsHandler"
+}
+2026-11-11T12:53:54.463Z [[31merror[39m]: [31m{"[__type]":"See error.__type for details.","code":"InvalidParameterException","message":"USER_PASSWORD_AUTH flow not enabled for this client","requestId":"9b1c2eb4-2770-4173-80af-378711850feb","retryDelay":71.49233117851901,"retryable":false,"statusCode":400,"time":"2026-11-11T12:53:54.462Z"}[39m
+{}
+
+2026-11-11T12:53:54.466Z [[31merror[39m]: [31mUSER_PASSWORD_AUTH flow not enabled for this client[39m
+{
+ "context": "ExceptionsHandler"
+}
+2026-11-11T12:55:41.821Z [[31merror[39m]: [31m{"[__type]":"See error.__type for details.","code":"InvalidParameterException","message":"USER_PASSWORD_AUTH flow not enabled for this client","requestId":"0df65db2-028c-4c9f-8f55-4aa156ec0f44","retryDelay":74.20494914373653,"retryable":false,"statusCode":400,"time":"2026-11-11T12:55:41.820Z"}[39m
+{}
+
+2026-11-11T12:55:41.823Z [[31merror[39m]: [31mUSER_PASSWORD_AUTH flow not enabled for this client[39m
+{
+ "context": "ExceptionsHandler"
+}
+2026-11-11T12:55:57.083Z [[31merror[39m]: [31m{"[__type]":"See error.__type for details.","code":"InvalidParameterException","message":"USER_PASSWORD_AUTH flow not enabled for this client","requestId":"05ab9dd2-368c-43c4-a5e0-e8a5c95f88b8","retryDelay":74.36478979297083,"retryable":false,"statusCode":400,"time":"2026-11-11T12:55:57.083Z"}[39m
+{}
+
+2026-11-11T12:55:57.086Z [[31merror[39m]: [31mUSER_PASSWORD_AUTH flow not enabled for this client[39m
+{
+ "context": "ExceptionsHandler"
+}
+2026-11-11T13:11:33.145Z [[31merror[39m]: [31mError: listen EADDRINUSE: address already in use :::5001[39m
+{
+ "context": "NestApplication"
+}
+2026-11-11T13:17:02.808Z [[31merror[39m]: [31mError: listen EADDRINUSE: address already in use :::5001[39m
+{
+ "context": "NestApplication"
+}
+2026-11-11T13:18:21.206Z [[31merror[39m]: [31mError: listen EADDRINUSE: address already in use :::5001[39m
+{
+ "context": "NestApplication"
+}
+2026-11-11T13:21:30.344Z [[31merror[39m]: [31mError: listen EADDRINUSE: address already in use :::5001[39m
+{
+ "context": "NestApplication"
+}
+2026-11-11T13:24:45.156Z [[31merror[39m]: [31mError: listen EADDRINUSE: address already in use :::5001[39m
+{
+ "context": "NestApplication"
+}
+2026-11-11T13:27:10.446Z [[31merror[39m]: [31mError: listen EADDRINUSE: address already in use :::5001[39m
+{
+ "context": "NestApplication"
+}
+2026-11-11T13:28:46.392Z [[31merror[39m]: [31mError: listen EADDRINUSE: address already in use :::5001[39m
+{
+ "context": "NestApplication"
+}
+2026-11-11T13:30:47.955Z [[31merror[39m]: [31mError: listen EADDRINUSE: address already in use :::5001[39m
+{
+ "context": "NestApplication"
+}
+2026-11-11T13:31:39.932Z [[31merror[39m]: [31mError: listen EADDRINUSE: address already in use :::5001[39m
+{
+ "context": "NestApplication"
+}
+2026-11-11T13:34:29.311Z [[31merror[39m]: [31mError: listen EADDRINUSE: address already in use :::5001[39m
+{
+ "context": "NestApplication"
+}
+2026-11-11T13:37:59.846Z [[31merror[39m]: [31mError: listen EADDRINUSE: address already in use :::5001[39m
+{
+ "context": "NestApplication"
+}
+2026-11-11T13:49:59.280Z [[31merror[39m]: [31mError: listen EADDRINUSE: address already in use :::5001[39m
+{
+ "context": "NestApplication"
+}
+2026-11-11T13:51:52.265Z [[31merror[39m]: [31mError: listen EADDRINUSE: address already in use :::5001[39m
+{
+ "context": "NestApplication"
+}
+2026-11-11T13:52:19.472Z [[31merror[39m]: [31mError: listen EADDRINUSE: address already in use :::5001[39m
+{
+ "context": "NestApplication"
+}

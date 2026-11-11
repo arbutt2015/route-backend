@@ -19,10 +19,6 @@ const config_1 = require("@nestjs/config");
 const logger_middleware_common_1 = require("./common/logger.middleware.common");
 const auth_module_1 = require("./auth/auth.module");
 const adm_user_module_1 = require("./adm-user/adm-user.module");
-const adm_role_module_1 = require("./adm-role/adm-role.module");
-const adm_role_feature_module_1 = require("./adm-role-feature/adm-role-feature.module");
-const adm_feature_module_1 = require("./adm-feature/adm-feature.module");
-const adm_module_module_1 = require("./adm-module/adm-module.module");
 const project_module_1 = require("./project/project.module");
 const adm_project_user_role_module_1 = require("./adm-project-user-role/adm-project-user-role.module");
 const core_1 = require("@nestjs/core");
@@ -34,14 +30,12 @@ const logger_module_1 = require("./logger/logger.module");
 const logger_service_1 = require("./logger/logger.service");
 const response_interceptor_1 = require("./interceptors/response.interceptor");
 const project_service_1 = require("./project/project.service");
-const adm_role_service_1 = require("./adm-role/adm-role.service");
 const path = require("path");
 const serve_static_1 = require("@nestjs/serve-static");
 let AppModule = class AppModule {
-    constructor(logger, configService, admRoleService, projectService) {
+    constructor(logger, configService, projectService) {
         this.logger = logger;
         this.configService = configService;
-        this.admRoleService = admRoleService;
         this.projectService = projectService;
     }
     configure(consumer) {
@@ -52,27 +46,10 @@ let AppModule = class AppModule {
     async onModuleInit() {
         const host = this.configService.get("SERVER_HOST") || "localhost";
         const port = this.configService.get("SERVER_PORT") || 5001;
-        const role = await this.admRoleService.getAllRoles({
-            where: { roleCode: "UR-1" },
+        const projects = await this.projectService.getAllProjects({
+            where: { isActive: true },
         });
-        const roleViewer = await this.admRoleService.getAllRoles({
-            where: { roleCode: "UR-4" },
-        });
-        const project = await this.projectService.getAllProjects({
-            where: { projectNumber: "T00000" },
-        });
-        this.configService.set("DEFAULT_ROLE_ID", 0);
-        this.configService.set("VIEWER_DEFAULT_ROLE_ID", 0);
-        this.configService.set("DEMO_PROJECT_ID", 0);
-        if (role.length > 0) {
-            this.configService.set("DEFAULT_ROLE_ID", role[0]?.roleId);
-        }
-        if (roleViewer.length > 0) {
-            this.configService.set("VIEWER_DEFAULT_ROLE_ID", roleViewer[0]?.roleId);
-        }
-        if (project.length > 0) {
-            this.configService.set("DEMO_PROJECT_ID", project[0]?.projectId);
-        }
+        this.configService.set("DEMO_PROJECT_ID", projects.length > 0 ? projects[0]?.projectId : 0);
         this.logger.log(`server start.....http//:${host}:${port}`);
     }
 };
@@ -169,10 +146,6 @@ exports.AppModule = AppModule = __decorate([
             configurations_module_1.ConfigurationsModule,
             auth_module_1.AuthModule,
             adm_user_module_1.AdmUserModule,
-            adm_role_module_1.AdmRoleModule,
-            adm_role_feature_module_1.AdmRoleFeatureModule,
-            adm_feature_module_1.AdmFeatureModule,
-            adm_module_module_1.AdmModuleModule,
             adm_project_user_role_module_1.ProjectUserRoleModule,
             project_module_1.ProjectModule,
             gene_repo_module_1.GeneRepoModule,
@@ -180,7 +153,6 @@ exports.AppModule = AppModule = __decorate([
     }),
     __metadata("design:paramtypes", [logger_service_1.LoggerService,
         config_1.ConfigService,
-        adm_role_service_1.AdmRoleService,
         project_service_1.ProjectService])
 ], AppModule);
 //# sourceMappingURL=app.module.js.map

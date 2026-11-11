@@ -5,6 +5,7 @@ import { ExtractJwt, Strategy } from "passport-jwt";
 import { ConfigService } from "@nestjs/config";
 import * as jwksRsa from "jwks-rsa";
 import { AdmUserService } from "src/adm-user/adm-user.service";
+import { USER_TYPE } from "./auth.service";
 import { LoggerService } from "src/logger/logger.service";
 
 @Injectable()
@@ -39,10 +40,14 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
     if (!user?.isActive) {
       throw new UnauthorizedException("User  not active ");
     }
+    const isAdmin = user.userType === USER_TYPE.SUPER_USER;
     return {
       cognitoId: payload.sub,
       username: payload?.username,
       ...user,
+      usersAccess: isAdmin,
+      createProjectAccess: isAdmin,
+      assetsAccess: isAdmin,
     };
   }
 }

@@ -12,7 +12,7 @@ import {
   HttpException,
   HttpStatus,
 } from "@nestjs/common";
-import { AuthService } from "./auth.service";
+import { AuthService, USER_TYPE } from "./auth.service";
 import { SignUpDto } from "./dto/signUp.dto";
 import { SignInDto } from "./dto/signIn.dto";
 import { ConfirmSignUpDto } from "./dto/confirm-sign-up.dto";
@@ -102,20 +102,13 @@ export class AuthController {
           message: "Your account is inactive",
         };
       }
-      if (user?.isVerified === false) {
-        return {
-          message: "notConfirmed",
-          data: { type: "UserNotConfirmedException" },
-          statusCode: 201,
-          success: false,
-        };
-      }
 
       const response = await this.authService.signIn(
         signInDto.email,
         signInDto.password,
       );
 
+      const isAdmin = user.userType === USER_TYPE.SUPER_USER;
       return {
         success: true,
         message: "Sign in successful",
@@ -126,13 +119,14 @@ export class AuthController {
             userId: user.userId,
             email: user.email,
             firstName: user.firstName,
-            middleInitial: user.middleInitial,
+            middleInitial: "",
             lastName: user.lastName,
-            usersAccess: user.usersAccess,
-            createProjectAccess: user.createProjectAccess,
-            assetsAccess: user.assetsAccess,
-            companyName: user.companyName,
-            isPasswordChangeRequired: user.isPasswordChangeRequired,
+            usersAccess: isAdmin,
+            createProjectAccess: isAdmin,
+            assetsAccess: isAdmin,
+            companyName: user.agency?.agencyName ?? "",
+            userType: user.userType,
+            isPasswordChangeRequired: false,
           },
         },
       };
@@ -141,7 +135,12 @@ export class AuthController {
       if (error.code === "NotAuthorizedException") {
         error.message = "The login credentials are invalid. Please try again";
       } else if (error.code === "UserNotConfirmedException") {
-        error.message = "User not confirmed";
+        return {
+          message: "notConfirmed",
+          data: { type: "UserNotConfirmedException" },
+          statusCode: 201,
+          success: false,
+        };
       } else {
         throw new Error(error.message);
       }
@@ -176,26 +175,29 @@ export class AuthController {
       const user = await this.authService.getUserByEmail(
         { where: { email } },
         {
-          select: ["isVerified"],
+          select: ["userId"],
         },
       );
       if (user) {
-        if (user?.isVerified) {
-          return {
-            message: "The email address is already registered.",
-            data: null,
-            success: false,
-          };
-        }
         return {
-          message: "User is not verified.",
-          data: { shouldBeVerified: true },
-          success: true,
+          message: "The email address is already registered.",
+          data: null,
+          success: false,
         };
       }
       if (isPublicEmailDomain(email)) {
         return {
           message: "You cannot register using a public domain email address.",
+          data: { shouldBeVerified: false },
+          statusCode: 400,
+          success: false,
+        };
+      }
+      const agency = await this.authService.getAgencyByEmailDomain(email);
+      if (!agency) {
+        return {
+          message:
+            "Your organization is not registered. Please contact your administrator.",
           data: { shouldBeVerified: false },
           statusCode: 400,
           success: false,
@@ -270,15 +272,6 @@ export class AuthController {
       if (!data) {
         return {
           message: "Email not exist",
-          data: [],
-          statusCode: 201,
-          success: false,
-        };
-      }
-      if (data?.isVerified === false) {
-        return {
-          message:
-            "Your email is not verified. Please verify your email first.",
           data: [],
           statusCode: 201,
           success: false,

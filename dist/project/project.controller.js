@@ -147,7 +147,7 @@ let ProjectController = class ProjectController {
             const response = await this.projectService.downloadFile({
                 where: {
                     projectId,
-                    isExportable: true,
+                    isActive: true,
                 },
             });
             return {
@@ -163,14 +163,6 @@ let ProjectController = class ProjectController {
     }
     async createProject(userId, createProjectDto) {
         try {
-            const checkProjectNumber = await this.projectService.checkProjectNumberExists(createProjectDto.projectNumber);
-            if (checkProjectNumber) {
-                return {
-                    message: "Project number already exists",
-                    data: [],
-                    statusCode: 400,
-                };
-            }
             const checkProjectName = await this.projectService.checkProjectNameExists(createProjectDto.projectName);
             if (checkProjectName) {
                 return {
@@ -191,17 +183,6 @@ let ProjectController = class ProjectController {
             throw error;
         }
     }
-    async updateDownloadStatus(body) {
-        if (body?.projectId) {
-            const { projectId } = body;
-            const response = await this.projectService.updateDownloadStatus(projectId);
-            return {
-                message: "Project updated successfully",
-                data: response,
-                statusCode: 200,
-            };
-        }
-    }
     async updateIsActiveStatus(body) {
         if (body?.projectId) {
             const { projectId, isActive } = body;
@@ -215,16 +196,6 @@ let ProjectController = class ProjectController {
     }
     async updateProject(updateProjectDto) {
         try {
-            if (updateProjectDto.projectNumber) {
-                const checkProjectNumber = await this.projectService.checkProjectNumberExists(updateProjectDto.projectNumber);
-                if (checkProjectNumber) {
-                    return {
-                        message: "Project number already exists",
-                        data: [],
-                        statusCode: 400,
-                    };
-                }
-            }
             if (updateProjectDto.projectName) {
                 const checkProjectName = await this.projectService.checkProjectNameExists(updateProjectDto.projectName);
                 if (checkProjectName) {
@@ -262,32 +233,6 @@ let ProjectController = class ProjectController {
                     files: files.map((file) => file.filename),
                 },
                 statusCode: 201,
-            };
-        }
-        catch (error) {
-            this.loggerService.error(error);
-            throw error;
-        }
-    }
-    async updateBoundingBox() {
-        try {
-            const result = await this.projectService.updateBoundingBoxForAllProjects();
-            return {
-                message: result.message,
-                statusCode: 200,
-            };
-        }
-        catch (error) {
-            this.loggerService.error(error);
-            throw error;
-        }
-    }
-    async updateWorkstations(projectId, body) {
-        try {
-            const result = await this.projectService.updateWorkstations(+projectId, body);
-            return {
-                message: result.message || "Workstations updated successfully",
-                statusCode: 200,
             };
         }
         catch (error) {
@@ -335,16 +280,9 @@ __decorate([
     __param(0, (0, user_decorators_1.User)("userId")),
     __param(1, (0, common_1.Body)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [String, create_project_dto_1.CreateProjectDto]),
+    __metadata("design:paramtypes", [Number, create_project_dto_1.CreateProjectDto]),
     __metadata("design:returntype", Promise)
 ], ProjectController.prototype, "createProject", null);
-__decorate([
-    (0, common_1.Put)("update-download-status"),
-    __param(0, (0, common_1.Body)()),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Object]),
-    __metadata("design:returntype", Promise)
-], ProjectController.prototype, "updateDownloadStatus", null);
 __decorate([
     (0, common_1.Put)("update-is-active-status"),
     __param(0, (0, common_1.Body)()),
@@ -367,20 +305,6 @@ __decorate([
     __metadata("design:paramtypes", [Array]),
     __metadata("design:returntype", Promise)
 ], ProjectController.prototype, "uploadFiles", null);
-__decorate([
-    (0, common_1.Post)("update-bounding-box"),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", []),
-    __metadata("design:returntype", Promise)
-], ProjectController.prototype, "updateBoundingBox", null);
-__decorate([
-    (0, common_1.Put)("update-workstations/:projectId"),
-    __param(0, (0, common_1.Param)("projectId")),
-    __param(1, (0, common_1.Body)()),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [String, Object]),
-    __metadata("design:returntype", Promise)
-], ProjectController.prototype, "updateWorkstations", null);
 exports.ProjectController = ProjectController = __decorate([
     (0, common_1.Controller)("project"),
     __metadata("design:paramtypes", [project_service_1.ProjectService,

@@ -23,13 +23,6 @@ export declare class AuthController {
         success: boolean;
     }>;
     signIn(signInDto: SignInDto): Promise<{
-        message: string;
-        data: {
-            type: string;
-        };
-        statusCode: number;
-        success: boolean;
-    } | {
         success: boolean;
         message: string;
         statusCode: number;
@@ -38,13 +31,14 @@ export declare class AuthController {
                 userId: any;
                 email: any;
                 firstName: any;
-                middleInitial: any;
+                middleInitial: string;
                 lastName: any;
-                usersAccess: any;
-                createProjectAccess: any;
-                assetsAccess: any;
+                usersAccess: boolean;
+                createProjectAccess: boolean;
+                assetsAccess: boolean;
                 companyName: any;
-                isPasswordChangeRequired: any;
+                userType: any;
+                isPasswordChangeRequired: boolean;
             };
             access_token: string;
             token_type: string;
@@ -52,6 +46,13 @@ export declare class AuthController {
             refresh_token: string;
             type?: undefined;
         };
+    } | {
+        message: string;
+        data: {
+            type: string;
+        };
+        statusCode: number;
+        success: boolean;
     } | {
         message: any;
         data: any[];
@@ -71,9 +72,7 @@ export declare class AuthController {
     }>;
     checkDomain(email: string): Promise<{
         message: string;
-        data: {
-            shouldBeVerified: boolean;
-        };
+        data: any;
         success: boolean;
         statusCode?: undefined;
     } | {

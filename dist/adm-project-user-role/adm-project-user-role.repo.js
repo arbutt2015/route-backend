@@ -21,7 +21,10 @@ let AdmProjectUserRoleRepo = class AdmProjectUserRoleRepo {
         })();
     }
     async createProjectUserRole(createProjectUserRoleDto) {
-        return await this.geneRepoService.create(this.projectUserRoleRepository, createProjectUserRoleDto);
+        return await this.geneRepoService.create(this.projectUserRoleRepository, {
+            projectId: createProjectUserRoleDto.projectId,
+            userId: createProjectUserRoleDto.userId,
+        });
     }
     async getAllProjectUsersRoles(filter, options) {
         return await this.geneRepoService.getAll(this.projectUserRoleRepository, filter, options);
@@ -29,8 +32,8 @@ let AdmProjectUserRoleRepo = class AdmProjectUserRoleRepo {
     async getAllProjectUsersRole(filter, options) {
         return await this.geneRepoService.getAll(this.projectUserRoleRepository, filter, options);
     }
-    async deleteProjectUserRole(projectUserRoleId) {
-        await this.geneRepoService.deleteById(this.projectUserRoleRepository, projectUserRoleId);
+    async deleteProjectUserRole(projectId, userId) {
+        await this.projectUserRoleRepository.delete({ projectId, userId });
     }
 };
 exports.AdmProjectUserRoleRepo = AdmProjectUserRoleRepo;

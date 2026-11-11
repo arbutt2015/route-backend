@@ -16,6 +16,7 @@ const passport_jwt_1 = require("passport-jwt");
 const config_1 = require("@nestjs/config");
 const jwksRsa = require("jwks-rsa");
 const adm_user_service_1 = require("../adm-user/adm-user.service");
+const auth_service_1 = require("./auth.service");
 const logger_service_1 = require("../logger/logger.service");
 let JwtStrategy = class JwtStrategy extends (0, passport_1.PassportStrategy)(passport_jwt_1.Strategy) {
     constructor(configService, admUserService, loggerService) {
@@ -43,10 +44,14 @@ let JwtStrategy = class JwtStrategy extends (0, passport_1.PassportStrategy)(pas
         if (!user?.isActive) {
             throw new common_1.UnauthorizedException("User  not active ");
         }
+        const isAdmin = user.userType === auth_service_1.USER_TYPE.SUPER_USER;
         return {
             cognitoId: payload.sub,
             username: payload?.username,
             ...user,
+            usersAccess: isAdmin,
+            createProjectAccess: isAdmin,
+            assetsAccess: isAdmin,
         };
     }
 };

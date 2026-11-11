@@ -26,7 +26,7 @@ let AdmProjectUserRoleController = class AdmProjectUserRoleController {
         try {
             const response = await this.projectUserRoleService.getAllProjectUsersRoleWithSpecificFormate(projectId);
             return {
-                message: "Project user role list",
+                message: "Project user list",
                 data: response,
                 statusCode: 201,
             };
@@ -38,15 +38,12 @@ let AdmProjectUserRoleController = class AdmProjectUserRoleController {
     }
     async createProjectRole(data) {
         try {
-            const { projectId: project, userId: user, roleId: role } = data;
             const response = await this.projectUserRoleService.createProjectUserRole({
-                projectUserRoleId: data.projectUserRoleId,
-                project,
-                user,
-                role,
+                projectId: data.projectId,
+                userId: data.userId,
             });
             return {
-                message: "Project Role created successfully",
+                message: "Project user created successfully",
                 data: response,
                 statusCode: 201,
             };
@@ -56,11 +53,11 @@ let AdmProjectUserRoleController = class AdmProjectUserRoleController {
             throw error;
         }
     }
-    async deleteProjectRole(projectUserRoleId) {
+    async deleteProjectRole(data) {
         try {
-            const response = await this.projectUserRoleService.deleteProjectUserRole(projectUserRoleId);
+            const response = await this.projectUserRoleService.deleteProjectUserRole(data.projectId, data.userId);
             return {
-                message: "Project Role deleted successfully",
+                message: "Project user deleted successfully",
                 data: response,
                 statusCode: 200,
             };
@@ -70,12 +67,11 @@ let AdmProjectUserRoleController = class AdmProjectUserRoleController {
             throw error;
         }
     }
-    async getUsersByProjectAndRoleId(query) {
-        const { projectId, roleCode } = query;
+    async getUsersByProject(query) {
         try {
-            const response = await this.projectUserRoleService.getUsersByProjectAndRoleId(projectId, roleCode);
+            const response = await this.projectUserRoleService.getUsersByProject(query.projectId);
             return {
-                message: "Project user role list",
+                message: "Project user list",
                 data: response,
                 statusCode: 200,
             };
@@ -98,23 +94,23 @@ __decorate([
     (0, common_1.Post)("add-update"),
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [create_update_dto_1.CreateProjectUserRoleDto]),
+    __metadata("design:paramtypes", [create_update_dto_1.CreateProjectUserDto]),
     __metadata("design:returntype", Promise)
 ], AdmProjectUserRoleController.prototype, "createProjectRole", null);
 __decorate([
     (0, common_1.Delete)("delete"),
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Number]),
+    __metadata("design:paramtypes", [create_update_dto_1.DeleteProjectUserDto]),
     __metadata("design:returntype", Promise)
 ], AdmProjectUserRoleController.prototype, "deleteProjectRole", null);
 __decorate([
-    (0, common_1.Get)("get-users-by-project-role-id"),
+    (0, common_1.Get)("get-users-by-project"),
     __param(0, (0, common_1.Query)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [create_update_dto_1.GetUsersByProjectAndRoleIdDto]),
+    __metadata("design:paramtypes", [create_update_dto_1.GetUsersByProjectDto]),
     __metadata("design:returntype", Promise)
-], AdmProjectUserRoleController.prototype, "getUsersByProjectAndRoleId", null);
+], AdmProjectUserRoleController.prototype, "getUsersByProject", null);
 exports.AdmProjectUserRoleController = AdmProjectUserRoleController = __decorate([
     (0, common_1.Controller)("project-user-role"),
     __metadata("design:paramtypes", [adm_project_user_role_service_1.AdmProjectUserRoleService,

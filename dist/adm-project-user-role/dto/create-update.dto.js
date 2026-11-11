@@ -9,47 +9,45 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GetUsersByProjectAndRoleIdDto = exports.CreateProjectUserRoleDto = void 0;
+exports.GetUsersByProjectDto = exports.DeleteProjectUserDto = exports.CreateProjectUserDto = void 0;
 const class_validator_1 = require("class-validator");
-class CreateProjectUserRoleDto {
+class CreateProjectUserDto {
 }
-exports.CreateProjectUserRoleDto = CreateProjectUserRoleDto;
-__decorate([
-    (0, class_validator_1.IsString)(),
-    (0, class_validator_1.IsOptional)(),
-    __metadata("design:type", String)
-], CreateProjectUserRoleDto.prototype, "projectUserRoleId", void 0);
-__decorate([
-    (0, class_validator_1.IsString)(),
-    (0, class_validator_1.IsNotEmpty)(),
-    __metadata("design:type", String)
-], CreateProjectUserRoleDto.prototype, "projectId", void 0);
-__decorate([
-    (0, class_validator_1.IsString)(),
-    (0, class_validator_1.IsNotEmpty)(),
-    __metadata("design:type", String)
-], CreateProjectUserRoleDto.prototype, "userId", void 0);
-__decorate([
-    (0, class_validator_1.IsString)(),
-    (0, class_validator_1.IsNotEmpty)(),
-    __metadata("design:type", String)
-], CreateProjectUserRoleDto.prototype, "roleId", void 0);
-__decorate([
-    (0, class_validator_1.IsOptional)(),
-    (0, class_validator_1.IsString)(),
-    __metadata("design:type", String)
-], CreateProjectUserRoleDto.prototype, "cognitoId", void 0);
-class GetUsersByProjectAndRoleIdDto {
-}
-exports.GetUsersByProjectAndRoleIdDto = GetUsersByProjectAndRoleIdDto;
-__decorate([
-    (0, class_validator_1.IsString)(),
-    (0, class_validator_1.IsNotEmpty)(),
-    __metadata("design:type", String)
-], GetUsersByProjectAndRoleIdDto.prototype, "roleCode", void 0);
+exports.CreateProjectUserDto = CreateProjectUserDto;
 __decorate([
     (0, class_validator_1.IsInt)(),
     (0, class_validator_1.IsNotEmpty)(),
     __metadata("design:type", Number)
-], GetUsersByProjectAndRoleIdDto.prototype, "projectId", void 0);
+], CreateProjectUserDto.prototype, "projectId", void 0);
+__decorate([
+    (0, class_validator_1.IsInt)(),
+    (0, class_validator_1.IsNotEmpty)(),
+    __metadata("design:type", Number)
+], CreateProjectUserDto.prototype, "userId", void 0);
+class DeleteProjectUserDto {
+}
+exports.DeleteProjectUserDto = DeleteProjectUserDto;
+__decorate([
+    (0, class_validator_1.IsInt)(),
+    (0, class_validator_1.IsNotEmpty)(),
+    __metadata("design:type", Number)
+], DeleteProjectUserDto.prototype, "projectId", void 0);
+__decorate([
+    (0, class_validator_1.IsInt)(),
+    (0, class_validator_1.IsNotEmpty)(),
+    __metadata("design:type", Number)
+], DeleteProjectUserDto.prototype, "userId", void 0);
+class GetUsersByProjectDto {
+}
+exports.GetUsersByProjectDto = GetUsersByProjectDto;
+__decorate([
+    (0, class_validator_1.IsInt)(),
+    (0, class_validator_1.IsNotEmpty)(),
+    __metadata("design:type", Number)
+], GetUsersByProjectDto.prototype, "projectId", void 0);
+__decorate([
+    (0, class_validator_1.IsInt)(),
+    (0, class_validator_1.IsOptional)(),
+    __metadata("design:type", Number)
+], GetUsersByProjectDto.prototype, "userId", void 0);
 //# sourceMappingURL=create-update.dto.js.map

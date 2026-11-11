@@ -12,7 +12,10 @@ export class AdmUserService {
   ) {}
 
   async getProfile(userId: number) {
-    const user: AdmUser = await this.userRepo.getUser({ where: { userId } });
+    const user: AdmUser = await this.userRepo.getUser(
+      { where: { userId } },
+      { relations: ["agency"] },
+    );
     if (!user) throw new NotFoundException("User not found");
     return this.toProfile(user);
   }
@@ -22,41 +25,31 @@ export class AdmUserService {
       { where: { userId } },
       {
         firstName: profile.firstName,
-        middleInitial: profile.middleInitial ?? "",
         lastName: profile.lastName,
-        companyName: profile.companyName,
         title: profile.title ?? "",
         phoneNumber: profile.phoneNumber ?? "",
         dateUpdated: new Date(),
       },
       { where: { userId } },
+      { relations: ["agency"] },
     );
     if (!user) throw new NotFoundException("User not found");
     return this.toProfile(user);
   }
 
   private toProfile(user: AdmUser) {
-    const {
-      userId,
-      email,
-      firstName,
-      middleInitial,
-      lastName,
-      companyName,
-      title,
-      phoneNumber,
-      isPasswordChangeRequired,
-    } = user;
+    const { userId, email, firstName, lastName, title, phoneNumber, agency } =
+      user;
     return {
       userId,
       email,
       firstName,
-      middleInitial: middleInitial ?? "",
+      middleInitial: "",
       lastName,
-      companyName,
+      companyName: agency?.agencyName ?? "",
       title: title ?? "",
       phoneNumber: phoneNumber ?? "",
-      isPasswordChangeRequired,
+      isPasswordChangeRequired: false,
     };
   }
 
@@ -67,10 +60,8 @@ export class AdmUserService {
   async getSdUsers(filter?: any, options?: any) {
     return await this.userRepo.getSdUsers(filter, options);
   }
-  async createUser(
-    createUser: CreateUser & { isPasswordChangeRequired: boolean },
-  ) {
-    this.userRepo.createUser(createUser);
+  async createUser(createUser: CreateUser) {
+    return this.userRepo.createUser(createUser);
   }
 
   async getUser(filter?: any, options?: any): Promise<any> {
@@ -100,6 +91,8 @@ export class AdmUserService {
       throw new NotFoundException(`User with ID ${userId} not found`);
     }
     await this.userRepo.getDeleteById(userId);
-    await this.cognitoService.deleteUser(user.cognitoId);
+    if (user.cognitoId) {
+      await this.cognitoService.deleteUser(user.cognitoId);
+    }
   }
 }

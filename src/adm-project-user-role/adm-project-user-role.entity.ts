@@ -1,19 +1,23 @@
 import {
+  CreateDateColumn,
   Entity,
-  Index,
   JoinColumn,
   ManyToOne,
-  PrimaryGeneratedColumn,
+  PrimaryColumn,
 } from "typeorm";
 import { Project } from "../project/project.entity";
 import { AdmUser } from "../adm-user/adm-user.entity";
-import { AdmRole } from "../adm-role/adm-role.entity";
 
-@Index("PK_ADM_PROJECT_USER_ROLE", ["projectUserRoleId"], { unique: true })
-@Entity("ADM_PROJECT_USER_ROLE", { schema: "dbo" })
+@Entity("PROJECT_USER", { schema: "dbo" })
 export class AdmProjectUserRole {
-  @PrimaryGeneratedColumn({ type: "int", name: "PROJECT_USER_ROLE_ID" })
-  projectUserRoleId: number;
+  @PrimaryColumn({ type: "int", name: "PROJECT_ID" })
+  projectId: number;
+
+  @PrimaryColumn({ type: "int", name: "USER_ID" })
+  userId: number;
+
+  @CreateDateColumn({ type: "datetime2", name: "DATE_CREATED", nullable: true })
+  dateCreated: Date;
 
   @ManyToOne(() => Project, (project) => project.admProjectUserRoles, {
     onDelete: "CASCADE",
@@ -26,10 +30,4 @@ export class AdmProjectUserRole {
   })
   @JoinColumn([{ name: "USER_ID", referencedColumnName: "userId" }])
   user: AdmUser;
-
-  @ManyToOne(() => AdmRole, (admRole) => admRole.admProjectUserRoles, {
-    onDelete: "CASCADE",
-  })
-  @JoinColumn([{ name: "ROLE_ID", referencedColumnName: "roleId" }])
-  role: AdmRole;
 }

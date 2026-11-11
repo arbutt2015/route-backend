@@ -30,45 +30,40 @@ let AdmProjectUserRoleService = class AdmProjectUserRoleService {
                 },
             },
         }, {
-            relations: ["user", "role"],
+            relations: ["user"],
         });
-        return response.map((projectUserRole) => {
+        return response.map((projectUser) => {
             return {
-                projectUserRoleId: projectUserRole.projectUserRoleId,
-                userId: projectUserRole.user.userId,
-                email: projectUserRole.user.email,
-                firstName: projectUserRole.user.firstName,
-                lastName: projectUserRole.user.lastName,
-                roleId: projectUserRole.role.roleId,
-                roleName: projectUserRole.role.roleName,
+                projectId: projectUser.projectId,
+                userId: projectUser.userId,
+                email: projectUser.user.email,
+                firstName: projectUser.user.firstName,
+                lastName: projectUser.user.lastName,
             };
         });
     }
-    async getUsersByProjectAndRoleId(projectId, roleCode) {
+    async getUsersByProject(projectId) {
         const response = await this.getAllProjectUsersRoles({
             where: {
                 project: {
                     projectId,
                 },
-                role: {
-                    roleCode,
-                },
             },
         }, {
             relations: ["user"],
         });
-        return response.map((projectUserRole) => {
+        return response.map((projectUser) => {
             return {
-                projectUserRoleId: projectUserRole.projectUserRoleId,
-                userId: projectUserRole.user.userId,
-                email: projectUserRole.user.email,
-                firstName: projectUserRole.user.firstName,
-                lastName: projectUserRole.user.lastName,
+                projectId: projectUser.projectId,
+                userId: projectUser.userId,
+                email: projectUser.user.email,
+                firstName: projectUser.user.firstName,
+                lastName: projectUser.user.lastName,
             };
         });
     }
-    async deleteProjectUserRole(projectUserRoleId) {
-        return await this.projectUserRoleRepo.deleteProjectUserRole(projectUserRoleId);
+    async deleteProjectUserRole(projectId, userId) {
+        return await this.projectUserRoleRepo.deleteProjectUserRole(projectId, userId);
     }
     async getProjectByUserId(userId, projectId) {
         return await this.getAllProjectUsersRoles({
@@ -77,25 +72,12 @@ let AdmProjectUserRoleService = class AdmProjectUserRoleService {
                     userId: userId,
                 },
                 project: {
-                    projectId: projectId,
+                    ...(projectId ? { projectId } : {}),
                     isActive: true,
                 },
             },
         }, {
-            select: [
-                "role.roleId",
-                "project.projectId",
-                "project.projectNumber",
-                "project.projectS3BucketFolderPath",
-                "project.projectName",
-            ],
-            relations: [
-                "project",
-                "project.projectRegions",
-                "project.projectRegions.pipelineRegionStatuses",
-                "project.projectRegions.projectRegionCollectionKmls",
-                "role",
-            ],
+            relations: ["project", "project.agency"],
         });
     }
 };

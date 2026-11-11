@@ -1,24 +1,18 @@
 import { AdmProjectUserRole } from "../adm-project-user-role/adm-project-user-role.entity";
+import { Agency } from "../agency/agency.entity";
 export declare class AdmUser {
     userId: number;
+    cognitoId: string | null;
     email: string;
     firstName: string;
-    middleInitial: string | null;
     lastName: string;
-    companyName: string;
-    title: string;
-    collectorCode: string;
-    phoneNumber: string;
+    title: string | null;
+    phoneNumber: string | null;
+    agencyId: number | null;
+    userType: number;
     isActive: boolean;
-    isVerified: boolean;
-    isPasswordChangeRequired: boolean;
     dateCreated: Date;
     dateUpdated: Date;
-    roleType: string;
-    cognitoId: string;
-    usersAccess: boolean;
-    createProjectAccess: boolean;
-    assetsAccess: boolean;
-    isSdUser: boolean;
+    agency: Agency;
     admProjectUserRoles: AdmProjectUserRole[];
 }

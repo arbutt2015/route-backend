@@ -39,7 +39,7 @@ let AdmUserController = class AdmUserController {
     async getAllUsers() {
         try {
             const response = await this.userService.getAllUsers({
-                where: { isVerified: true },
+                where: { isActive: true },
             });
             return {
                 message: "Users fetched successfully",
@@ -55,7 +55,7 @@ let AdmUserController = class AdmUserController {
     async getSdUsers() {
         try {
             const response = await this.userService.getSdUsers({
-                where: { isSdUser: true, isActive: true },
+                where: { userType: 3, isActive: true },
             });
             return {
                 message: "Users fetched successfully",

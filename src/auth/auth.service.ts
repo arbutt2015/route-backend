@@ -5,8 +5,16 @@ import { ConfigService } from "@nestjs/config";
 import { AdmProjectUserRoleService } from "../adm-project-user-role/adm-project-user-role.service";
 import { isPublicEmailDomain } from "src/common/email-domain-checker..common";
 import { AWSSESService } from "src/aws/aws-ses.service";
+import { GeneRepoService } from "src/gene-repo/gene-repo.service";
 import * as fs from "fs";
 import * as path from "path";
+
+export const USER_TYPE = {
+  AGENCY_USER: 1,
+  AGENCY_ADMIN: 2,
+  SUPER_USER: 3,
+} as const;
+
 @Injectable()
 export class AuthService {
   constructor(
@@ -15,6 +23,7 @@ export class AuthService {
     private readonly admUserService: AdmUserService,
     private projectUserRoleModule: AdmProjectUserRoleService,
     private sesService: AWSSESService,
+    private geneRepoService: GeneRepoService,
   ) {}
   async sendEmailToAdmin(email: string, newEmail: string) {
     const subject = "New User Registered";
@@ -34,6 +43,21 @@ export class AuthService {
     template = template.replace(/\[Email\]/g, newEmail);
 
     await this.sesService.sendEmail(email, subject, template, true);
+  }
+
+  async getAgencyByEmailDomain(email: string) {
+    const domain = email.split("@")[1]?.split(".")[0];
+    if (!domain) return null;
+    const agencyRepo = await this.geneRepoService.getRepository("Agency");
+    return await agencyRepo
+      .createQueryBuilder("agency")
+      .where("LOWER(agency.agencyName) = LOWER(:domain)", { domain })
+      .getOne();
+  }
+
+  private async findAgencyIdByEmailDomain(email: string) {
+    const agency = await this.getAgencyByEmailDomain(email);
+    return agency?.agencyId ?? null;
   }
 
   async createCognitoUser(
@@ -68,21 +92,17 @@ export class AuthService {
       );
     }
     const res = await this.cognitoService.signUp(email, password, isVerified);
-    const collectorCode = await this.generateCollectorCode(5);
+    const agencyId = await this.findAgencyIdByEmailDomain(email);
     await this.admUserService.createUser({
       email,
       firstName,
-      middleInitial,
       lastName,
-      companyName,
       title,
       phoneNumber,
       isActive: true,
-      isVerified,
       cognitoId: res?.UserSub,
-      collectorCode,
-      isPasswordChangeRequired: isVerified,
-      isSdUser,
+      agencyId,
+      userType: USER_TYPE.AGENCY_USER,
     });
 
     const groupEmail = this.configService.get("NOTIFICATION_EMAIL_GROUP");
@@ -93,59 +113,24 @@ export class AuthService {
 
     return res;
   }
-  private async isCodeUnique(collectorCode: string): Promise<boolean> {
-    const existingCode = await this.admUserService.getUser({
-      where: { collectorCode },
-    });
-    return !existingCode;
-  }
-
-  async generateCollectorCode(length: number): Promise<string> {
-    let isUnique = false;
-    let newCode: string;
-
-    while (!isUnique) {
-      newCode = this.generateRandomCode(length);
-      isUnique = await this.isCodeUnique(newCode);
-    }
-
-    return newCode;
-  }
-  private generateRandomCode(length: number): string {
-    const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    let result = "";
-    for (let i = 0; i < length; i++) {
-      const randomIndex = Math.floor(Math.random() * characters.length);
-      result += characters[randomIndex];
-    }
-    return result;
-  }
 
   async confirmSignUp(confirmationCod: string, email: string) {
-    const result = await this.cognitoService.confirmSignUp(
-      confirmationCod,
-      email,
-    );
-    await this.admUserService.updateUserByWhereAndGetData(
-      { where: { email } },
-      {
-        isVerified: true,
-      },
-      { where: { email } },
-    );
-
-    return result;
+    return await this.cognitoService.confirmSignUp(confirmationCod, email);
   }
   async assignDemoProject(userId: number) {
+    const demoProjectId = this.configService.get<number>("DEMO_PROJECT_ID");
+    if (!demoProjectId) return;
     await this.projectUserRoleModule.createProjectUserRole({
-      project: this.configService.get("DEMO_PROJECT_ID"),
-      user: userId,
-      role: this.configService.get("VIEWER_DEFAULT_ROLE_ID"),
+      projectId: demoProjectId,
+      userId,
     });
   }
 
   async isUserActive(email: string) {
-    const user = await this.admUserService.getUser({ where: { email } });
+    const user = await this.admUserService.getUser(
+      { where: { email } },
+      { relations: ["agency"] },
+    );
     return user;
   }
   async signIn(email: string, password: string) {
@@ -197,20 +182,11 @@ export class AuthService {
     userId: number,
   ): Promise<any> {
     try {
-      const response = await this.cognitoService.changePassword(
+      return await this.cognitoService.changePassword(
         accessToken,
         previousPassword,
         proposedPassword,
       );
-      if (userId) {
-        await this.admUserService.updateUserByWhereAndGetData(
-          { where: { userId } },
-          {
-            isPasswordChangeRequired: false,
-          },
-        );
-      }
-      return response;
     } catch (error) {
       throw error;
     }

@@ -15,7 +15,6 @@ const aws_cognito_service_1 = require("../aws/aws-cognito.service");
 const auth_service_1 = require("./auth.service");
 const auth_controller_1 = require("./auth.controller");
 const gene_repo_service_1 = require("../gene-repo/gene-repo.service");
-const adm_module_module_1 = require("../adm-module/adm-module.module");
 const adm_user_module_1 = require("../adm-user/adm-user.module");
 const jwt_strategy_1 = require("./jwt-strategy");
 const jwt_auth_guard_1 = require("./jwt-auth.guard");
@@ -27,7 +26,6 @@ exports.AuthModule = AuthModule;
 exports.AuthModule = AuthModule = __decorate([
     (0, common_1.Module)({
         imports: [
-            adm_module_module_1.AdmModuleModule,
             adm_user_module_1.AdmUserModule,
             adm_project_user_role_module_1.ProjectUserRoleModule,
             passport_1.PassportModule,

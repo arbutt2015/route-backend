@@ -17,10 +17,6 @@ exports.CreateProjectDto = CreateProjectDto;
 __decorate([
     (0, class_validator_1.IsString)(),
     __metadata("design:type", String)
-], CreateProjectDto.prototype, "projectNumber", void 0);
-__decorate([
-    (0, class_validator_1.IsString)(),
-    __metadata("design:type", String)
 ], CreateProjectDto.prototype, "projectName", void 0);
 __decorate([
     (0, class_validator_1.IsString)(),
@@ -30,73 +26,10 @@ __decorate([
 __decorate([
     (0, class_validator_1.IsString)(),
     __metadata("design:type", String)
-], CreateProjectDto.prototype, "projectCountry", void 0);
-__decorate([
-    (0, class_validator_1.IsString)(),
-    (0, class_validator_1.IsOptional)(),
-    __metadata("design:type", String)
-], CreateProjectDto.prototype, "projectState", void 0);
-__decorate([
-    (0, class_validator_1.IsString)(),
-    (0, class_validator_1.IsOptional)(),
-    __metadata("design:type", String)
-], CreateProjectDto.prototype, "projectStateCode", void 0);
-__decorate([
-    (0, class_validator_1.IsString)(),
-    __metadata("design:type", String)
 ], CreateProjectDto.prototype, "shapeFileName", void 0);
 __decorate([
-    (0, class_validator_1.IsString)(),
-    __metadata("design:type", String)
-], CreateProjectDto.prototype, "projectCity", void 0);
-__decorate([
-    (0, class_validator_1.IsString)(),
-    __metadata("design:type", String)
-], CreateProjectDto.prototype, "projectStatus", void 0);
-__decorate([
-    (0, class_validator_1.IsString)(),
-    __metadata("design:type", String)
-], CreateProjectDto.prototype, "agencyName", void 0);
-__decorate([
-    (0, class_validator_1.IsString)(),
-    __metadata("design:type", String)
-], CreateProjectDto.prototype, "agencyRepresentativeName", void 0);
-__decorate([
-    (0, class_validator_1.IsEmail)(),
-    __metadata("design:type", String)
-], CreateProjectDto.prototype, "agencyRepresentativeEmail", void 0);
-__decorate([
-    (0, class_validator_1.IsPhoneNumber)(null),
-    __metadata("design:type", String)
-], CreateProjectDto.prototype, "agencyRepresentativePhoneNumber", void 0);
-__decorate([
-    (0, class_validator_1.IsString)(),
+    (0, class_validator_1.IsInt)(),
     (0, class_validator_1.IsOptional)(),
-    __metadata("design:type", String)
-], CreateProjectDto.prototype, "clientName", void 0);
-__decorate([
-    (0, class_validator_1.IsPhoneNumber)(null),
-    (0, class_validator_1.IsOptional)(),
-    __metadata("design:type", String)
-], CreateProjectDto.prototype, "clientRepresentativePhoneNumber", void 0);
-__decorate([
-    (0, class_validator_1.IsEmail)(),
-    (0, class_validator_1.IsOptional)(),
-    __metadata("design:type", String)
-], CreateProjectDto.prototype, "clientRepresentativeEmail", void 0);
-__decorate([
-    (0, class_validator_1.IsString)(),
-    (0, class_validator_1.IsOptional)(),
-    __metadata("design:type", String)
-], CreateProjectDto.prototype, "clientRepresentativeName", void 0);
-__decorate([
-    (0, class_validator_1.IsString)(),
-    (0, class_validator_1.IsOptional)(),
-    __metadata("design:type", String)
-], CreateProjectDto.prototype, "lat", void 0);
-__decorate([
-    (0, class_validator_1.IsString)(),
-    (0, class_validator_1.IsOptional)(),
-    __metadata("design:type", String)
-], CreateProjectDto.prototype, "long", void 0);
+    __metadata("design:type", Number)
+], CreateProjectDto.prototype, "agencyId", void 0);
 //# sourceMappingURL=create-project.dto.js.map

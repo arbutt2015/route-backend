@@ -31,9 +31,7 @@ export declare class AdmUserService {
     private toProfile;
     getAllUsers(filter?: any, options?: any): Promise<any[]>;
     getSdUsers(filter?: any, options?: any): Promise<any[]>;
-    createUser(createUser: CreateUser & {
-        isPasswordChangeRequired: boolean;
-    }): Promise<void>;
+    createUser(createUser: CreateUser): Promise<any>;
     getUser(filter?: any, options?: any): Promise<any>;
     updateUserByWhereAndGetData(updateFilter: any, updateBody: any, option?: any): Promise<any[]>;
     deleteUser(userId: number): Promise<void>;

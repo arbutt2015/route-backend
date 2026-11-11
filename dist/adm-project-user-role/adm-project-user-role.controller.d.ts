@@ -1,5 +1,5 @@
 import { AdmProjectUserRoleService } from "./adm-project-user-role.service";
-import { CreateProjectUserRoleDto, GetUsersByProjectAndRoleIdDto } from "./dto/create-update.dto";
+import { CreateProjectUserDto, DeleteProjectUserDto, GetUsersByProjectDto } from "./dto/create-update.dto";
 import { LoggerService } from "src/logger/logger.service";
 export declare class AdmProjectUserRoleController {
     private readonly projectUserRoleService;
@@ -8,30 +8,28 @@ export declare class AdmProjectUserRoleController {
     getAllProjectRoles(projectId: number): Promise<{
         message: string;
         data: {
-            projectUserRoleId: any;
+            projectId: any;
             userId: any;
             email: any;
             firstName: any;
             lastName: any;
-            roleId: any;
-            roleName: any;
         }[];
         statusCode: number;
     }>;
-    createProjectRole(data: CreateProjectUserRoleDto): Promise<{
+    createProjectRole(data: CreateProjectUserDto): Promise<{
         message: string;
         data: any;
         statusCode: number;
     }>;
-    deleteProjectRole(projectUserRoleId: number): Promise<{
+    deleteProjectRole(data: DeleteProjectUserDto): Promise<{
         message: string;
         data: void;
         statusCode: number;
     }>;
-    getUsersByProjectAndRoleId(query: GetUsersByProjectAndRoleIdDto): Promise<{
+    getUsersByProject(query: GetUsersByProjectDto): Promise<{
         message: string;
         data: {
-            projectUserRoleId: any;
+            projectId: any;
             userId: any;
             email: any;
             firstName: any;

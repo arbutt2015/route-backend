@@ -59,14 +59,7 @@ export declare class ProjectController {
         };
         statusCode: number;
     }>;
-    createProject(userId: string, createProjectDto: CreateProjectDto): Promise<{
-        message: string;
-        data: any;
-        statusCode: number;
-    }>;
-    updateDownloadStatus(body: {
-        projectId: number;
-    }): Promise<{
+    createProject(userId: number, createProjectDto: CreateProjectDto): Promise<{
         message: string;
         data: any;
         statusCode: number;
@@ -93,17 +86,6 @@ export declare class ProjectController {
         data: {
             files: string[];
         };
-        statusCode: number;
-    }>;
-    updateBoundingBox(): Promise<{
-        message: string;
-        statusCode: number;
-    }>;
-    updateWorkstations(projectId: string, body: {
-        daWorkstation?: string;
-        aiWorkstation?: string;
-    }): Promise<{
-        message: any;
         statusCode: number;
     }>;
 }
