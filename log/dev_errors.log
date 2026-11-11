@@ -142,3 +142,11 @@
 {
  "context": "NestApplication"
 }
+2026-11-11T13:56:17.953Z [[31merror[39m]: [31mError: listen EADDRINUSE: address already in use :::5001[39m
+{
+ "context": "NestApplication"
+}
+2026-11-11T13:56:57.433Z [[31merror[39m]: [31mError: listen EADDRINUSE: address already in use :::5001[39m
+{
+ "context": "NestApplication"
+}

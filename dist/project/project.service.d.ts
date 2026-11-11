@@ -18,6 +18,7 @@ export declare class ProjectService {
             projectName: any;
             projectNumber: string;
             description: any;
+            routeCode: string;
             agencyName: any;
             agencyId: any;
             kmlFileUrl: any;

@@ -35,6 +35,7 @@ export class ProjectService {
         projectName: projectUser.project.projectName,
         projectNumber: `T${String(projectUser.project.projectId).padStart(4, "0")}`,
         description: projectUser.project.projectDescription,
+        routeCode: `RT${String(projectUser.project.projectId).padStart(4, "0")}`,
         agencyName: projectUser.project.agency?.agencyName ?? "",
         agencyId: projectUser.project.agencyId,
         kmlFileUrl: projectUser.project.kmlFileUrl,

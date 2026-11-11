@@ -29,62 +29,7 @@ let ProjectController = class ProjectController {
     }
     async getAllAssignProject(userId) {
         try {
-            const response = [
-                {
-                    project: {
-                        projectId: 1,
-                        projectNumber: "T0001",
-                        projectName: "Coastal Survey",
-                        description: "Coastal Survey project description.",
-                        routeCode: "ABC123",
-                        agencyName: "",
-                        projectS3BucketFolderPath: "",
-                        geoJsonS3FilePath: "Scope.geojson",
-                        boundingBox: [],
-                        regions: [],
-                        projectKmlGeoJson: "",
-                        isExportable: false,
-                        projectDataExportUrl: "",
-                        isEnableLens: false,
-                        isEnablePlanner: false,
-                        isEnableAnalytics: false,
-                        roadViewEnabled: false,
-                        viewerEnabled: false,
-                    },
-                    projectUserRoleId: 1,
-                    roleId: 1,
-                    isEnableLens: false,
-                    isEnablePlanner: false,
-                    isEnableAnalytics: false,
-                },
-                {
-                    project: {
-                        projectId: 2,
-                        projectNumber: "T0002",
-                        projectName: "Mountain Pine",
-                        description: "Mountain Pine project description.",
-                        routeCode: "DEF456",
-                        agencyName: "",
-                        projectS3BucketFolderPath: "",
-                        geoJsonS3FilePath: "Scope.geojson",
-                        boundingBox: [],
-                        regions: [],
-                        projectKmlGeoJson: "",
-                        isExportable: false,
-                        projectDataExportUrl: "",
-                        isEnableLens: false,
-                        isEnablePlanner: false,
-                        isEnableAnalytics: false,
-                        roadViewEnabled: false,
-                        viewerEnabled: false,
-                    },
-                    projectUserRoleId: 2,
-                    roleId: 1,
-                    isEnableLens: false,
-                    isEnablePlanner: false,
-                    isEnableAnalytics: false,
-                },
-            ];
+            const response = await this.projectService.getAllProjectByEmail(Number(userId));
             return {
                 message: "Assigned projects retrieved successfully",
                 data: response,
