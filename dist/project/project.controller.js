@@ -87,27 +87,16 @@ let ProjectController = class ProjectController {
             throw error;
         }
     }
-    async downloadFile(projectId) {
-        try {
-            const response = await this.projectService.downloadFile({
-                where: {
-                    projectId,
-                    isActive: true,
-                },
-            });
-            return {
-                message: "Project retrieved successfully",
-                data: response,
-                statusCode: 200,
-            };
-        }
-        catch (error) {
-            this.loggerService.error(error);
-            throw error;
-        }
-    }
     async createProject(userId, createProjectDto) {
         try {
+            const checkProjectNumber = await this.projectService.checkProjectNumberExists(createProjectDto.projectNumber);
+            if (checkProjectNumber) {
+                return {
+                    message: "Project number already exists",
+                    data: [],
+                    statusCode: 400,
+                };
+            }
             const checkProjectName = await this.projectService.checkProjectNameExists(createProjectDto.projectName);
             if (checkProjectName) {
                 return {
@@ -141,6 +130,16 @@ let ProjectController = class ProjectController {
     }
     async updateProject(updateProjectDto) {
         try {
+            if (updateProjectDto.projectNumber) {
+                const checkProjectNumber = await this.projectService.checkProjectNumberExists(updateProjectDto.projectNumber);
+                if (checkProjectNumber) {
+                    return {
+                        message: "Project number already exists",
+                        data: [],
+                        statusCode: 400,
+                    };
+                }
+            }
             if (updateProjectDto.projectName) {
                 const checkProjectName = await this.projectService.checkProjectNameExists(updateProjectDto.projectName);
                 if (checkProjectName) {
@@ -163,15 +162,18 @@ let ProjectController = class ProjectController {
             throw error;
         }
     }
-    async uploadFiles(files) {
+    async uploadFiles(req, files) {
+        console.log(`[upload-file] content-type: ${req?.headers?.["content-type"]} | content-length: ${req?.headers?.["content-length"]} | files: ${files?.length ?? 0} | body keys: ${JSON.stringify(Object.keys(req?.body ?? {}))} | body.file: ${typeof req?.body?.file === "string" ? req.body.file : req?.body?.file}`);
         try {
             if (!files || files.length === 0) {
+                console.log(`[upload-file] request reached handler but files array is empty (multer rejected or field-name mismatch — expected field "file")`);
                 return {
                     message: "No files uploaded",
                     data: [],
                     statusCode: 400,
                 };
             }
+            files.forEach((file) => console.log(`[upload-file] received -> original: ${file.originalname} | saved as: ${constant_type_common_1.UPLOAD_DIR}/${file.filename} | size: ${file.size} bytes`));
             return {
                 message: "Files uploaded successfully",
                 data: {
@@ -214,13 +216,6 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], ProjectController.prototype, "getProjectById", null);
 __decorate([
-    (0, common_1.Get)("download-file"),
-    __param(0, (0, common_1.Query)("projectId")),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Number]),
-    __metadata("design:returntype", Promise)
-], ProjectController.prototype, "downloadFile", null);
-__decorate([
     (0, common_1.Post)("create"),
     __param(0, (0, user_decorators_1.User)("userId")),
     __param(1, (0, common_1.Body)()),
@@ -245,9 +240,10 @@ __decorate([
 __decorate([
     (0, common_1.Post)("upload-file"),
     (0, common_1.UseInterceptors)((0, platform_express_1.FilesInterceptor)("file", 1, (0, fileUpload_common_1.getMulterConfig)([".kml"], constant_type_common_1.UPLOAD_DIR))),
-    __param(0, (0, common_1.UploadedFiles)()),
+    __param(0, (0, common_1.Req)()),
+    __param(1, (0, common_1.UploadedFiles)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Array]),
+    __metadata("design:paramtypes", [Object, Array]),
     __metadata("design:returntype", Promise)
 ], ProjectController.prototype, "uploadFiles", null);
 exports.ProjectController = ProjectController = __decorate([

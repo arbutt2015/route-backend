@@ -49,8 +49,14 @@ export const getMulterConfig = (
     fileFilter: (_req, file, cb) => {
       const extname = path.extname(file.originalname).toLowerCase();
       if (extensionNames.length > 0 && !extensionNames.includes(extname)) {
+        console.log(
+          `[upload-file] REJECTED -> ${file.originalname} | ext: "${extname}" | allowed: ${extensionNames.join(",")} | mimetype: ${file.mimetype}`,
+        );
         cb(new Error("Invalid file type"), false);
       } else {
+        console.log(
+          `[upload-file] fileFilter ok -> ${file.originalname} | ext: "${extname}" | mimetype: ${file.mimetype}`,
+        );
         cb(null, true);
       }
     },

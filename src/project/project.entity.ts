@@ -19,6 +19,9 @@ export class Project {
   @PrimaryGeneratedColumn({ type: "int", name: "PROJECT_ID" })
   projectId: number;
 
+  @Column("varchar", { name: "PROJECT_NUMBER", length: 50 })
+  projectNumber: string;
+
   @Column("nvarchar", { name: "PROJECT_NAME", length: 250 })
   projectName: string;
 
@@ -35,8 +38,8 @@ export class Project {
   @Column("varchar", { name: "GEOJSON_FILE_URL", nullable: true, length: 500 })
   geoJsonFileUrl: string | null;
 
-  @Column("varchar", { name: "COLLECTED_FILE_URL", nullable: true, length: 500 })
-  collectedFileUrl: string | null;
+  // COLLECTED_FILE_URL column was dropped from the DB — do not re-add
+  // unless a new collection/export feature needs it.
 
   @Column("int", { name: "AGENCY_ID", nullable: true })
   agencyId: number | null;

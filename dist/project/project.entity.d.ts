@@ -3,11 +3,11 @@ import { Agency } from "../agency/agency.entity";
 import { AdmUser } from "../adm-user/adm-user.entity";
 export declare class Project {
     projectId: number;
+    projectNumber: string;
     projectName: string;
     projectDescription: string | null;
     kmlFileUrl: string | null;
     geoJsonFileUrl: string | null;
-    collectedFileUrl: string | null;
     agencyId: number | null;
     userId: number | null;
     isActive: boolean;

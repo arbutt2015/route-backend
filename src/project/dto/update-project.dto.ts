@@ -6,6 +6,10 @@ export class UpdateProjectDto {
 
   @IsString()
   @IsOptional()
+  projectNumber?: string;
+
+  @IsString()
+  @IsOptional()
   projectName?: string;
 
   @IsString()

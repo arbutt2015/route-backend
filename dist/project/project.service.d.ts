@@ -16,19 +16,16 @@ export declare class ProjectService {
         project: {
             projectId: any;
             projectName: any;
-            projectNumber: string;
+            projectNumber: any;
             description: any;
             routeCode: string;
             agencyName: any;
             agencyId: any;
             kmlFileUrl: any;
             geoJsonS3FilePath: any;
-            collectedFileUrl: any;
             boundingBox: any[];
             regions: any[];
             projectKmlGeoJson: any;
-            isExportable: boolean;
-            projectDataExportUrl: any;
             isEnableLens: boolean;
             isEnablePlanner: boolean;
             isEnableAnalytics: boolean;
@@ -39,9 +36,6 @@ export declare class ProjectService {
     }[]>;
     getAllProjects(filter?: any, options?: any): Promise<any[]>;
     getOneProjects(filter?: any, options?: any): Promise<any>;
-    downloadFile(filter?: any, options?: any): Promise<{
-        url: string;
-    }>;
     getAllProjectWithSpecificField(): Promise<{
         projectId: any;
         projectName: any;
@@ -51,4 +45,5 @@ export declare class ProjectService {
     updateProject(updateProject: UpdateProjectDto): Promise<any>;
     updateIsActiveStatus(projectId: number, isActive: boolean): Promise<any>;
     checkProjectNameExists(projectName: string): Promise<any>;
+    checkProjectNumberExists(projectNumber: string): Promise<any>;
 }

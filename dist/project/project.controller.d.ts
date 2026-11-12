@@ -12,19 +12,16 @@ export declare class ProjectController {
             project: {
                 projectId: any;
                 projectName: any;
-                projectNumber: string;
+                projectNumber: any;
                 description: any;
                 routeCode: string;
                 agencyName: any;
                 agencyId: any;
                 kmlFileUrl: any;
                 geoJsonS3FilePath: any;
-                collectedFileUrl: any;
                 boundingBox: any[];
                 regions: any[];
                 projectKmlGeoJson: any;
-                isExportable: boolean;
-                projectDataExportUrl: any;
                 isEnableLens: boolean;
                 isEnablePlanner: boolean;
                 isEnableAnalytics: boolean;
@@ -50,13 +47,6 @@ export declare class ProjectController {
         data: any;
         statusCode: number;
     }>;
-    downloadFile(projectId: number): Promise<{
-        message: string;
-        data: {
-            url: string;
-        };
-        statusCode: number;
-    }>;
     createProject(userId: number, createProjectDto: CreateProjectDto): Promise<{
         message: string;
         data: any;
@@ -75,7 +65,7 @@ export declare class ProjectController {
         data: any;
         statusCode: number;
     }>;
-    uploadFiles(files: Express.Multer.File[]): Promise<{
+    uploadFiles(req: any, files: Express.Multer.File[]): Promise<{
         message: string;
         data: any[];
         statusCode: number;

@@ -32,19 +32,16 @@ let ProjectService = class ProjectService {
             project: {
                 projectId: projectUser.project.projectId,
                 projectName: projectUser.project.projectName,
-                projectNumber: `T${String(projectUser.project.projectId).padStart(4, "0")}`,
+                projectNumber: projectUser.project.projectNumber,
                 description: projectUser.project.projectDescription,
                 routeCode: `RT${String(projectUser.project.projectId).padStart(4, "0")}`,
                 agencyName: projectUser.project.agency?.agencyName ?? "",
                 agencyId: projectUser.project.agencyId,
                 kmlFileUrl: projectUser.project.kmlFileUrl,
                 geoJsonS3FilePath: projectUser.project.geoJsonFileUrl,
-                collectedFileUrl: projectUser.project.collectedFileUrl,
                 boundingBox: [],
                 regions: [],
                 projectKmlGeoJson: projectUser.project.geoJsonFileUrl,
-                isExportable: Boolean(projectUser.project.collectedFileUrl),
-                projectDataExportUrl: projectUser.project.collectedFileUrl ?? "",
                 isEnableLens: false,
                 isEnablePlanner: false,
                 isEnableAnalytics: false,
@@ -60,15 +57,6 @@ let ProjectService = class ProjectService {
     async getOneProjects(filter, options) {
         return await this.projectRepo.getOneProjects(filter, options);
     }
-    async downloadFile(filter, options) {
-        const result = await this.getOneProjects(filter, options);
-        if (!result || !result.collectedFileUrl) {
-            return { url: null };
-        }
-        return {
-            url: await this.awsS3Service.getPresignedUrl(result.collectedFileUrl),
-        };
-    }
     async getAllProjectWithSpecificField() {
         const response = await this.getAllProjects({
             where: { isActive: true },
@@ -80,27 +68,37 @@ let ProjectService = class ProjectService {
         }));
     }
     async createProject(createProject, userId) {
-        const fileData = await (0, fileUpload_common_1.readFile)(`${constant_type_common_1.UPLOAD_DIR}/${createProject.shapeFileName}`);
-        const fileResponse = await this.awsS3Service.createDirectoryORFileUpload(`${createProject.projectName}/${createProject.shapeFileName}`, fileData);
+        const localKmlPath = `${constant_type_common_1.UPLOAD_DIR}/${createProject.shapeFileName}`;
+        console.log(`[create-project] START | userId: ${userId} | projectName: "${createProject.projectName}" | temp kml: ${localKmlPath}`);
+        const fileData = await (0, fileUpload_common_1.readFile)(localKmlPath);
+        console.log(`[create-project] temp kml read ok | size: ${fileData?.length ?? 0} bytes`);
+        const kmlS3Key = `${createProject.projectNumber}/${createProject.shapeFileName}`;
+        const fileResponse = await this.awsS3Service.createDirectoryORFileUpload(kmlS3Key, fileData);
+        console.log(`[create-project] KML uploaded -> key: ${kmlS3Key} | Location: ${fileResponse?.Location ?? "FAILED"}`);
         const { kmlGeoJson } = await (0, fileUpload_common_1.convertKmlToGeoJson)(fileData);
         const fileNameWithGeoJsonExtension = (0, fileUpload_common_1.changeFileExtension)(createProject.shapeFileName, "geojson");
-        const fileResponseGeoJson = await this.awsS3Service.createDirectoryORFileUpload(`${createProject.projectName}/kml-geojson-${fileNameWithGeoJsonExtension}`, kmlGeoJson);
-        (0, fileUpload_common_1.deleteFile)(`${constant_type_common_1.UPLOAD_DIR}/${createProject.shapeFileName}`);
+        const geoJsonS3Key = `${createProject.projectNumber}/kml-geojson-${fileNameWithGeoJsonExtension}`;
+        const fileResponseGeoJson = await this.awsS3Service.createDirectoryORFileUpload(geoJsonS3Key, kmlGeoJson);
+        console.log(`[create-project] GeoJSON uploaded -> key: ${geoJsonS3Key} | Location: ${fileResponseGeoJson?.Location ?? "FAILED"}`);
+        (0, fileUpload_common_1.deleteFile)(localKmlPath);
+        console.log(`[create-project] temp kml deleted: ${localKmlPath}`);
         const user = await this.admUserService.getUser({ where: { userId } });
         const project = await this.projectRepo.createProject({
+            projectNumber: createProject.projectNumber,
             projectName: createProject.projectName,
             projectDescription: createProject.projectDescription,
             kmlFileUrl: fileResponse.Location,
             geoJsonFileUrl: fileResponseGeoJson.Location,
-            collectedFileUrl: null,
             agencyId: createProject.agencyId ?? user?.agencyId ?? null,
             userId: userId ?? null,
             isActive: true,
         });
+        console.log(`[create-project] PROJECT row inserted -> projectId: ${project?.projectId} | agencyId: ${project?.agencyId} | userId: ${project?.userId} | isActive: ${project?.isActive}`);
         await this.admProjectUserRoleService.createProjectUserRole({
             projectId: project.projectId,
             userId: userId,
         });
+        console.log(`[create-project] PROJECT_USER row inserted -> (projectId: ${project?.projectId}, userId: ${userId})`);
         return project;
     }
     async updateProject(updateProject) {
@@ -113,13 +111,17 @@ let ProjectService = class ProjectService {
             await this.awsS3Service.deleteObject(existProject?.kmlFileUrl);
             await this.awsS3Service.deleteObject(existProject?.geoJsonFileUrl);
             const fileData = await (0, fileUpload_common_1.readFile)(`${constant_type_common_1.UPLOAD_DIR}/${updateProject.shapeFileName}`);
-            fileResponse = await this.awsS3Service.createDirectoryORFileUpload(`${existProject?.projectName}/${updateProject.shapeFileName}`, fileData);
+            const projectNumber = updateProject?.projectNumber ?? existProject?.projectNumber;
+            fileResponse = await this.awsS3Service.createDirectoryORFileUpload(`${projectNumber}/${updateProject.shapeFileName}`, fileData);
             const { kmlGeoJson } = await (0, fileUpload_common_1.convertKmlToGeoJson)(fileData);
             const fileNameWithGeoJsonExtension = (0, fileUpload_common_1.changeFileExtension)(updateProject.shapeFileName, "geojson");
-            fileResponseGeoJson = await this.awsS3Service.createDirectoryORFileUpload(`${existProject?.projectName}/kml-geojson-${fileNameWithGeoJsonExtension}`, kmlGeoJson);
+            fileResponseGeoJson = await this.awsS3Service.createDirectoryORFileUpload(`${projectNumber}/kml-geojson-${fileNameWithGeoJsonExtension}`, kmlGeoJson);
             (0, fileUpload_common_1.deleteFile)(`${constant_type_common_1.UPLOAD_DIR}/${updateProject.shapeFileName}`);
         }
         const project = await this.projectRepo.updateById(updateProject.projectId, {
+            ...(updateProject.projectNumber
+                ? { projectNumber: updateProject.projectNumber }
+                : {}),
             ...(updateProject.projectName
                 ? { projectName: updateProject.projectName }
                 : {}),
@@ -140,6 +142,9 @@ let ProjectService = class ProjectService {
     }
     async checkProjectNameExists(projectName) {
         return this.projectRepo.checkProjectNameExists(projectName);
+    }
+    async checkProjectNumberExists(projectNumber) {
+        return this.projectRepo.checkProjectNumberExists(projectNumber);
     }
 };
 exports.ProjectService = ProjectService;

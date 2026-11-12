@@ -150,3 +150,31 @@
 {
  "context": "NestApplication"
 }
+2026-11-12T06:54:13.499Z [[31merror[39m]: [31mError: listen EADDRINUSE: address already in use :::5001[39m
+{
+ "context": "NestApplication"
+}
+2026-11-12T06:57:50.748Z [[31merror[39m]: [31mError: listen EADDRINUSE: address already in use :::5001[39m
+{
+ "context": "NestApplication"
+}
+2026-11-12T06:58:49.544Z [[31merror[39m]: [31mError: listen EADDRINUSE: address already in use :::5001[39m
+{
+ "context": "NestApplication"
+}
+2026-11-12T07:36:58.202Z [[31merror[39m]: [31mError: listen EADDRINUSE: address already in use :::5001[39m
+{
+ "context": "NestApplication"
+}
+2026-11-12T07:37:18.865Z [[31merror[39m]: [31mError: listen EADDRINUSE: address already in use :::5001[39m
+{
+ "context": "NestApplication"
+}
+2026-11-12T07:45:02.956Z [[31merror[39m]: [31mError: listen EADDRINUSE: address already in use :::5001[39m
+{
+ "context": "NestApplication"
+}
+2026-11-12T07:45:16.874Z [[31merror[39m]: [31mError: listen EADDRINUSE: address already in use :::5001[39m
+{
+ "context": "NestApplication"
+}

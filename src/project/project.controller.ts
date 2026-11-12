@@ -5,6 +5,7 @@ import {
   Post,
   Put,
   Query,
+  Req,
   UploadedFiles,
   UseInterceptors,
 } from "@nestjs/common";
@@ -93,32 +94,24 @@ export class ProjectController {
     }
   }
 
-  @Get("download-file")
-  async downloadFile(@Query("projectId") projectId: number) {
-    try {
-      const response = await this.projectService.downloadFile({
-        where: {
-          projectId,
-          isActive: true,
-        },
-      });
-      return {
-        message: "Project retrieved successfully",
-        data: response,
-        statusCode: 200,
-      };
-    } catch (error) {
-      this.loggerService.error(error);
-      throw error; // The ResponseInterceptor will handle formatting the error response
-    }
-  }
-
   @Post("create")
   async createProject(
     @User("userId") userId: number,
     @Body() createProjectDto: CreateProjectDto,
   ) {
     try {
+      const checkProjectNumber =
+        await this.projectService.checkProjectNumberExists(
+          createProjectDto.projectNumber,
+        );
+      if (checkProjectNumber) {
+        return {
+          message: "Project number already exists",
+          data: [],
+          statusCode: 400,
+        };
+      }
+
       const checkProjectName = await this.projectService.checkProjectNameExists(
         createProjectDto.projectName,
       );
@@ -164,6 +157,20 @@ export class ProjectController {
   @Put("update")
   async updateProject(@Body() updateProjectDto: UpdateProjectDto) {
     try {
+      if (updateProjectDto.projectNumber) {
+        const checkProjectNumber =
+          await this.projectService.checkProjectNumberExists(
+            updateProjectDto.projectNumber,
+          );
+        if (checkProjectNumber) {
+          return {
+            message: "Project number already exists",
+            data: [],
+            statusCode: 400,
+          };
+        }
+      }
+
       if (updateProjectDto.projectName) {
         const checkProjectName =
           await this.projectService.checkProjectNameExists(
@@ -195,15 +202,29 @@ export class ProjectController {
   @UseInterceptors(
     FilesInterceptor("file", 1, getMulterConfig([".kml"], UPLOAD_DIR)),
   )
-  async uploadFiles(@UploadedFiles() files: Express.Multer.File[]) {
+  async uploadFiles(
+    @Req() req: any,
+    @UploadedFiles() files: Express.Multer.File[],
+  ) {
+    console.log(
+      `[upload-file] content-type: ${req?.headers?.["content-type"]} | content-length: ${req?.headers?.["content-length"]} | files: ${files?.length ?? 0} | body keys: ${JSON.stringify(Object.keys(req?.body ?? {}))} | body.file: ${typeof req?.body?.file === "string" ? req.body.file : req?.body?.file}`,
+    );
     try {
       if (!files || files.length === 0) {
+        console.log(
+          `[upload-file] request reached handler but files array is empty (multer rejected or field-name mismatch — expected field "file")`,
+        );
         return {
           message: "No files uploaded",
           data: [],
           statusCode: 400,
         };
       }
+      files.forEach((file) =>
+        console.log(
+          `[upload-file] received -> original: ${file.originalname} | saved as: ${UPLOAD_DIR}/${file.filename} | size: ${file.size} bytes`,
+        ),
+      );
 
       return {
         message: "Files uploaded successfully",

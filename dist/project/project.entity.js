@@ -22,6 +22,10 @@ __decorate([
     __metadata("design:type", Number)
 ], Project.prototype, "projectId", void 0);
 __decorate([
+    (0, typeorm_1.Column)("varchar", { name: "PROJECT_NUMBER", length: 50 }),
+    __metadata("design:type", String)
+], Project.prototype, "projectNumber", void 0);
+__decorate([
     (0, typeorm_1.Column)("nvarchar", { name: "PROJECT_NAME", length: 250 }),
     __metadata("design:type", String)
 ], Project.prototype, "projectName", void 0);
@@ -41,10 +45,6 @@ __decorate([
     (0, typeorm_1.Column)("varchar", { name: "GEOJSON_FILE_URL", nullable: true, length: 500 }),
     __metadata("design:type", String)
 ], Project.prototype, "geoJsonFileUrl", void 0);
-__decorate([
-    (0, typeorm_1.Column)("varchar", { name: "COLLECTED_FILE_URL", nullable: true, length: 500 }),
-    __metadata("design:type", String)
-], Project.prototype, "collectedFileUrl", void 0);
 __decorate([
     (0, typeorm_1.Column)("int", { name: "AGENCY_ID", nullable: true }),
     __metadata("design:type", Number)

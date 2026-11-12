@@ -17,6 +17,10 @@ exports.CreateProjectDto = CreateProjectDto;
 __decorate([
     (0, class_validator_1.IsString)(),
     __metadata("design:type", String)
+], CreateProjectDto.prototype, "projectNumber", void 0);
+__decorate([
+    (0, class_validator_1.IsString)(),
+    __metadata("design:type", String)
 ], CreateProjectDto.prototype, "projectName", void 0);
 __decorate([
     (0, class_validator_1.IsString)(),

@@ -67,6 +67,7 @@ let AWSS3Service = class AWSS3Service {
         }
     }
     async createDirectoryORFileUpload(folderPath, fileData) {
+        console.log(`[s3-upload] -> bucket: ${this.S3_BUCKET_ROOT_FOLDER} | key: ${folderPath} | body: ${fileData?.length ?? 0} bytes`);
         try {
             const params = {
                 Bucket: this.S3_BUCKET_ROOT_FOLDER,

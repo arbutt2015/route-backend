@@ -35,6 +35,15 @@ let ProjectRepo = class ProjectRepo {
         })
             .getOne();
     }
+    async checkProjectNumberExists(projectNumber) {
+        return this.projectRepository
+            .createQueryBuilder("project")
+            .select(["project.projectNumber"])
+            .where("LOWER(project.projectNumber) = LOWER(:projectNumber)", {
+            projectNumber,
+        })
+            .getOne();
+    }
     async updateIsActiveStatus(projectId, isActive) {
         return this.geneRepoService.updateById(this.projectRepository, projectId, {
             isActive,
