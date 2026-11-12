@@ -1,4 +1,4 @@
-import { IsOptional, IsString, IsInt } from "class-validator";
+import { IsOptional, IsString, IsInt, IsBoolean } from "class-validator";
 
 export class UpdateProjectDto {
   @IsInt()
@@ -23,4 +23,12 @@ export class UpdateProjectDto {
   @IsInt()
   @IsOptional()
   agencyId?: number;
+
+  @IsBoolean()
+  @IsOptional()
+  isLocked?: boolean;
+
+  @IsBoolean()
+  @IsOptional()
+  isDownloaded?: boolean;
 }

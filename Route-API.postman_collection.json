@@ -1,0 +1,309 @@
+{
+  "info": {
+    "name": "Route API",
+    "description": "Route backend API — Cognito auth (web) + collector-auth (mobile). Set base_url, access_token (Cognito), collector_token (collector JWT).",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "base_url", "value": "http://localhost:5001" },
+    { "key": "access_token", "value": "paste-cognito-id-token-here" },
+    { "key": "collector_token", "value": "paste-collector-jwt-here" },
+    { "key": "project_id", "value": "1" },
+    { "key": "collector_code", "value": "SMBFJ" }
+  ],
+  "item": [
+    {
+      "name": "Auth (Web - Cognito)",
+      "item": [
+        {
+          "name": "Sign In",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": { "raw": "{{base_url}}/api/auth/signin", "host": ["{{base_url}}"], "path": ["api", "auth", "signin"] },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"ali.raza@iengineering.com\",\n  \"password\": \"Password@123\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Refresh Token",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": { "raw": "{{base_url}}/api/auth/refresh-token", "host": ["{{base_url}}"], "path": ["api", "auth", "refresh-token"] },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"refreshToken\": \"paste-refresh-token\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Sign Up",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": { "raw": "{{base_url}}/api/auth/signup", "host": ["{{base_url}}"], "path": ["api", "auth", "signup"] },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"user@iengineering.com\",\n  \"password\": \"Password@123\",\n  \"firstName\": \"Test\",\n  \"middleInitial\": \"\",\n  \"lastName\": \"User\",\n  \"companyName\": \"\",\n  \"title\": \"\",\n  \"phoneNumber\": \"\",\n  \"isSdUser\": false\n}"
+            }
+          }
+        },
+        {
+          "name": "Confirm Sign Up",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": { "raw": "{{base_url}}/api/auth/confirm-signup", "host": ["{{base_url}}"], "path": ["api", "auth", "confirm-signup"] },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"user@iengineering.com\",\n  \"confirmationCode\": \"123456\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Resend Confirmation Code",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": { "raw": "{{base_url}}/api/auth/resend-confirmation-code", "host": ["{{base_url}}"], "path": ["api", "auth", "resend-confirmation-code"] },
+            "body": { "mode": "raw", "raw": "{\n  \"email\": \"user@iengineering.com\"\n}" }
+          }
+        },
+        {
+          "name": "Forgot Password",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": { "raw": "{{base_url}}/api/auth/forgot-password", "host": ["{{base_url}}"], "path": ["api", "auth", "forgot-password"] },
+            "body": { "mode": "raw", "raw": "{\n  \"email\": \"user@iengineering.com\"\n}" }
+          }
+        },
+        {
+          "name": "Confirm Forgot Password",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": { "raw": "{{base_url}}/api/auth/confirm-forgot-password", "host": ["{{base_url}}"], "path": ["api", "auth", "confirm-forgot-password"] },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"user@iengineering.com\",\n  \"confirmationCode\": \"123456\",\n  \"newPassword\": \"NewPassword@123\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Change Password",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" },
+              { "key": "Authorization", "value": "Bearer {{access_token}}" }
+            ],
+            "url": { "raw": "{{base_url}}/api/auth/change-password", "host": ["{{base_url}}"], "path": ["api", "auth", "change-password"] },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"previousPassword\": \"Password@123\",\n  \"proposedPassword\": \"NewPassword@123\"\n}"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "User",
+      "item": [
+        {
+          "name": "Get Profile",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{access_token}}" }],
+            "url": { "raw": "{{base_url}}/api/adm-user/get-profile", "host": ["{{base_url}}"], "path": ["api", "adm-user", "get-profile"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Project",
+      "item": [
+        {
+          "name": "Upload KML File",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Authorization", "value": "Bearer {{access_token}}" }],
+            "url": { "raw": "{{base_url}}/api/project/upload-file", "host": ["{{base_url}}"], "path": ["api", "project", "upload-file"] },
+            "body": {
+              "mode": "formdata",
+              "formdata": [{ "key": "file", "type": "file", "src": "/C:/path/to/Scopefile.kml" }]
+            }
+          }
+        },
+        {
+          "name": "Create Project",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" },
+              { "key": "Authorization", "value": "Bearer {{access_token}}" }
+            ],
+            "url": { "raw": "{{base_url}}/api/project/create", "host": ["{{base_url}}"], "path": ["api", "project", "create"] },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"projectName\": \"Islamabad F6\",\n  \"projectNumber\": \"T00001\",\n  \"projectDescription\": \"\",\n  \"shapeFileName\": \"1794482344448-Scccccopefile.kml\",\n  \"agencyId\": 1\n}"
+            }
+          }
+        },
+        {
+          "name": "Update Project",
+          "request": {
+            "method": "PUT",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" },
+              { "key": "Authorization", "value": "Bearer {{access_token}}" }
+            ],
+            "url": { "raw": "{{base_url}}/api/project/update", "host": ["{{base_url}}"], "path": ["api", "project", "update"] },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"projectId\": {{project_id}},\n  \"projectName\": \"Updated name\",\n  \"projectDescription\": \"Updated desc\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Lock / Unlock Project",
+          "request": {
+            "method": "PUT",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" },
+              { "key": "Authorization", "value": "Bearer {{access_token}}" }
+            ],
+            "url": { "raw": "{{base_url}}/api/project/update", "host": ["{{base_url}}"], "path": ["api", "project", "update"] },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"projectId\": {{project_id}},\n  \"isLocked\": true\n}"
+            }
+          }
+        },
+        {
+          "name": "Update Project (replace KML)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" },
+              { "key": "Authorization", "value": "Bearer {{access_token}}" }
+            ],
+            "url": { "raw": "{{base_url}}/api/project/update", "host": ["{{base_url}}"], "path": ["api", "project", "update"] },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"projectId\": {{project_id}},\n  \"shapeFileName\": \"1794482344448-Scccccopefile.kml\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Get Assigned Projects",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{access_token}}" }],
+            "url": { "raw": "{{base_url}}/api/project/get-assigned-project", "host": ["{{base_url}}"], "path": ["api", "project", "get-assigned-project"] }
+          }
+        },
+        {
+          "name": "Get Project By Id",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{access_token}}" }],
+            "url": { "raw": "{{base_url}}/api/project/get-project-by-id?projectId={{project_id}}", "host": ["{{base_url}}"], "path": ["api", "project", "get-project-by-id"], "query": [{ "key": "projectId", "value": "{{project_id}}" }] }
+          }
+        },
+        {
+          "name": "Get Collector Code",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{access_token}}" }],
+            "url": { "raw": "{{base_url}}/api/project/get-collector-code?projectId={{project_id}}", "host": ["{{base_url}}"], "path": ["api", "project", "get-collector-code"], "query": [{ "key": "projectId", "value": "{{project_id}}" }] }
+          }
+        },
+        {
+          "name": "Get All Projects",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{access_token}}" }],
+            "url": { "raw": "{{base_url}}/api/project/get-all", "host": ["{{base_url}}"], "path": ["api", "project", "get-all"] }
+          }
+        },
+        {
+          "name": "Get All Projects (active/inactive)",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{access_token}}" }],
+            "url": { "raw": "{{base_url}}/api/project/get-all-active-inactive", "host": ["{{base_url}}"], "path": ["api", "project", "get-all-active-inactive"] }
+          }
+        },
+        {
+          "name": "Update Project Is-Active Status",
+          "request": {
+            "method": "PUT",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" },
+              { "key": "Authorization", "value": "Bearer {{access_token}}" }
+            ],
+            "url": { "raw": "{{base_url}}/api/project/update-is-active-status", "host": ["{{base_url}}"], "path": ["api", "project", "update-is-active-status"] },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"projectId\": {{project_id}},\n  \"isActive\": false\n}"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Collector Auth (Mobile)",
+      "item": [
+        {
+          "name": "Collector Sign In (by project code)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": { "raw": "{{base_url}}/api/collector-auth/sign-in", "host": ["{{base_url}}"], "path": ["api", "collector-auth", "sign-in"] },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"collectorCode\": \"{{collector_code}}\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Collector Refresh Token",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": { "raw": "{{base_url}}/api/collector-auth/refresh-token", "host": ["{{base_url}}"], "path": ["api", "collector-auth", "refresh-token"] },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"refreshToken\": \"paste-collector-access-token\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Protected Route (test)",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{collector_token}}" }],
+            "url": { "raw": "{{base_url}}/api/collector-auth/protected-route", "host": ["{{base_url}}"], "path": ["api", "collector-auth", "protected-route"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Collector (Mobile)",
+      "item": [
+        {
+          "name": "Get All Project GeoJSON",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{collector_token}}" }],
+            "url": { "raw": "{{base_url}}/api/collector/get-all-project-geo-json?projectId={{project_id}}", "host": ["{{base_url}}"], "path": ["api", "collector", "get-all-project-geo-json"], "query": [{ "key": "projectId", "value": "{{project_id}}" }] }
+          }
+        }
+      ]
+    }
+  ]
+}

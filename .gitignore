@@ -1,0 +1,22 @@
+# compiled output
+/dist
+/node_modules
+
+# env files
+.env
+.env.*
+!.env.example
+
+# runtime / temp
+temp-data-file/
+static-data/
+logs/
+*.log
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+/log

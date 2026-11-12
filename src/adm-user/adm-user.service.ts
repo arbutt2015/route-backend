@@ -38,18 +38,36 @@ export class AdmUserService {
   }
 
   private toProfile(user: AdmUser) {
-    const { userId, email, firstName, lastName, title, phoneNumber, agency } =
-      user;
+    const {
+      userId,
+      email,
+      firstName,
+      lastName,
+      title,
+      phoneNumber,
+      agencyId,
+      userType,
+      isActive,
+      dateCreated,
+      dateUpdated,
+      agency,
+    } = user;
+    const agencyName = agency?.agencyName ?? "";
     return {
       userId,
       email,
       firstName,
-      middleInitial: "",
       lastName,
-      companyName: agency?.agencyName ?? "",
       title: title ?? "",
       phoneNumber: phoneNumber ?? "",
-      isPasswordChangeRequired: false,
+      agencyId,
+      agencyName,
+      // Logical alias of agencyName — the profile form field is named companyName
+      companyName: agencyName,
+      userType,
+      isActive,
+      dateCreated,
+      dateUpdated,
     };
   }
 

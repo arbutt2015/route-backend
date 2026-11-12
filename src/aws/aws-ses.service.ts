@@ -49,6 +49,9 @@ export class AWSSESService {
       await this.ses.sendEmail(params).promise();
       this.loggerService.log(`✅ Email sent successfully to ${toEmail}`);
     } catch (error) {
+      console.log(
+        `[ses] sendEmail FAILED -> to: ${toEmail} | code: ${error?.code ?? "unknown"} | message: ${error?.message ?? error}`,
+      );
       this.loggerService.error(`❌ Error sending email: ${error}`);
     }
   }

@@ -110,6 +110,9 @@ export class AWSS3Service {
       // Return the file's location
       return { Location: result.Location };
     } catch (error) {
+      console.log(
+        `[s3-upload] FAILED -> bucket: ${this.S3_BUCKET_ROOT_FOLDER} | key: ${folderPath} | code: ${error?.code ?? "unknown"} | message: ${error?.message ?? error}`,
+      );
       this.loggerService.error(
         `Error creating or uploading file "${folderPath}" in bucket "${this.S3_BUCKET_ROOT_FOLDER}":`,
         error,
@@ -162,8 +165,9 @@ export class AWSS3Service {
   // Complete multipart upload on S3
 
   async deleteObject(url: string): Promise<void> {
+    if (!url) return;
     const result = this.extractBucketAndKey(url);
-    if (!result) return;
+    if (!result?.Bucket || !result?.Key) return;
     const { Bucket, Key } = result;
     const params = {
       Bucket,
@@ -175,6 +179,9 @@ export class AWSS3Service {
       await this.s3.deleteObject(params).promise();
       this.loggerService.log(`Object deleted from S3: ${url}`);
     } catch (error) {
+      console.log(
+        `[s3-delete] FAILED -> bucket: ${Bucket} | key: ${Key} | code: ${error?.code ?? "unknown"} | message: ${error?.message ?? error}`,
+      );
       this.loggerService.error(
         `Failed to delete object from S3: ${error.message}`,
       );
@@ -239,7 +246,18 @@ export class AWSS3Service {
       Key: Key,
     };
 
-    return await this.s3.getObject(params).promise();
+    try {
+      return await this.s3.getObject(params).promise();
+    } catch (error) {
+      console.log(
+        `[s3-get] FAILED -> bucket: ${Bucket} | key: ${Key} | code: ${error?.code ?? "unknown"} | message: ${error?.message ?? error}`,
+      );
+      this.loggerService.error(
+        `Failed to get object from S3 (${Bucket}/${Key}):`,
+        error,
+      );
+      throw error;
+    }
   }
   async collectorUploadFileS3(
     folderPath: string,
@@ -281,9 +299,9 @@ export class AWSS3Service {
         Bucket: this.S3_BUCKET_ROOT_FOLDER,
         Key: `${folderPath}/${file.originalname}`,
         Body: updatedBuffer,
-        ACL: "public-read",
         ContentType: file.mimetype,
         ContentDisposition: "inline",
+        ACL: "public-read", // Access control for the file
       };
 
       const s3Response = await this.s3.upload(params).promise();
@@ -303,14 +321,18 @@ export class AWSS3Service {
     return fileName || ""; // Return file name or empty string if not found
   }
   // Generate a pre-signed URL for file download
-  async getPresignedUrl(url: string): Promise<string> {
+  async getPresignedUrl(
+    url: string,
+    expiresInSeconds = 3600,
+  ): Promise<string | null> {
+    if (!url) return null;
     const { Bucket, Key } = this.extractBucketAndKey(url);
-    const params = {
-      Bucket: Bucket,
-      Key: Key,
-      Expires: 60 * 5, // URL valid for 5 minutes
-    };
-    return await this.s3.getSignedUrlPromise("getObject", params);
+    if (!Bucket || !Key) return url;
+    return await this.s3.getSignedUrlPromise("getObject", {
+      Bucket,
+      Key,
+      Expires: expiresInSeconds,
+    });
   }
 
   async completeMultipartUpload(

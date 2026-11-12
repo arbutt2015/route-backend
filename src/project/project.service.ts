@@ -1,5 +1,9 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { Injectable } from "@nestjs/common";
+import {
+  BadRequestException,
+  Injectable,
+  NotFoundException,
+} from "@nestjs/common";
 import { ProjectRepo } from "./project.repo";
 import { CreateProjectDto } from "./dto/create-project.dto";
 import { AWSS3Service } from "src/aws/aws-s3.service";
@@ -25,9 +29,53 @@ export class ProjectService {
     private readonly loggerService: LoggerService,
   ) {}
 
+  private async isCollectorCodeUnique(collectorCode: string): Promise<boolean> {
+    const existing = await this.getOneProjects({
+      where: { collectorCode },
+    });
+    return !existing;
+  }
+
+  private generateRandomCode(length: number): string {
+    const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    let result = "";
+    for (let i = 0; i < length; i++) {
+      const randomIndex = Math.floor(Math.random() * characters.length);
+      result += characters[randomIndex];
+    }
+    return result;
+  }
+
+  async generateCollectorCode(length = 5): Promise<string> {
+    let newCode = "";
+    let isUnique = false;
+    while (!isUnique) {
+      newCode = this.generateRandomCode(length);
+      isUnique = await this.isCollectorCodeUnique(newCode);
+    }
+    return newCode;
+  }
+
+  private async ensureCollectorCode(project: any): Promise<string | null> {
+    if (project?.collectorCode) return project.collectorCode;
+    const collectorCode = await this.generateCollectorCode(5);
+    await this.projectRepo.updateById(project.projectId, { collectorCode });
+    return collectorCode;
+  }
+
   async getAllProjectByEmail(userId: number) {
     const results =
       await this.admProjectUserRoleService.getProjectByUserId(userId);
+
+    // Lazily backfill collector codes for projects created before the
+    // COLLECTOR_CODE column existed (same mint-once semantics as creation).
+    await Promise.all(
+      results.map((projectUser) =>
+        this.ensureCollectorCode(projectUser.project).then((code) => {
+          projectUser.project.collectorCode = code;
+        }),
+      ),
+    );
 
     return results.map((projectUser) => ({
       project: {
@@ -35,19 +83,17 @@ export class ProjectService {
         projectName: projectUser.project.projectName,
         projectNumber: projectUser.project.projectNumber,
         description: projectUser.project.projectDescription,
-        routeCode: `RT${String(projectUser.project.projectId).padStart(4, "0")}`,
+        collectorCode: projectUser.project.collectorCode,
         agencyName: projectUser.project.agency?.agencyName ?? "",
         agencyId: projectUser.project.agencyId,
         kmlFileUrl: projectUser.project.kmlFileUrl,
         geoJsonS3FilePath: projectUser.project.geoJsonFileUrl,
-        boundingBox: [],
-        regions: [],
-        projectKmlGeoJson: projectUser.project.geoJsonFileUrl,
-        isEnableLens: false,
-        isEnablePlanner: false,
-        isEnableAnalytics: false,
-        roadViewEnabled: false,
-        viewerEnabled: true,
+        userId: projectUser.project.userId,
+        isLocked: projectUser.project.isLocked,
+        isDownloaded: projectUser.project.isDownloaded,
+        isActive: projectUser.project.isActive,
+        dateCreated: projectUser.project.dateCreated,
+        dateUpdated: projectUser.project.dateUpdated,
       },
       projectUserId: projectUser.userId,
     }));
@@ -84,7 +130,8 @@ export class ProjectService {
       `[create-project] temp kml read ok | size: ${fileData?.length ?? 0} bytes`,
     );
 
-    const kmlS3Key = `${createProject.projectNumber}/${createProject.shapeFileName}`;
+    const s3FileName = createProject.shapeFileName.replace(/^(\d+-)+/, "");
+    const kmlS3Key = `${createProject.projectNumber}/${s3FileName}`;
     const fileResponse: any =
       await this.awsS3Service.createDirectoryORFileUpload(kmlS3Key, fileData);
     console.log(
@@ -96,10 +143,10 @@ export class ProjectService {
     // (deferred feature — currently the map does not load project geometry).
     const { kmlGeoJson } = await convertKmlToGeoJson(fileData);
     const fileNameWithGeoJsonExtension = changeFileExtension(
-      createProject.shapeFileName,
+      s3FileName,
       "geojson",
     );
-    const geoJsonS3Key = `${createProject.projectNumber}/kml-geojson-${fileNameWithGeoJsonExtension}`;
+    const geoJsonS3Key = `${createProject.projectNumber}/${fileNameWithGeoJsonExtension}`;
     const fileResponseGeoJson: any =
       await this.awsS3Service.createDirectoryORFileUpload(
         geoJsonS3Key,
@@ -114,12 +161,15 @@ export class ProjectService {
 
     const user = await this.admUserService.getUser({ where: { userId } });
 
+    const collectorCode = await this.generateCollectorCode(5);
+
     const project = await this.projectRepo.createProject({
       projectNumber: createProject.projectNumber,
+      collectorCode,
       projectName: createProject.projectName,
       projectDescription: createProject.projectDescription,
-      kmlFileUrl: fileResponse.Location,
-      geoJsonFileUrl: fileResponseGeoJson.Location,
+      kmlFileUrl: fileResponse?.Location,
+      geoJsonFileUrl: fileResponseGeoJson?.Location,
       agencyId: createProject.agencyId ?? user?.agencyId ?? null,
       userId: userId ?? null,
       isActive: true,
@@ -148,35 +198,55 @@ export class ProjectService {
       })
     )[0];
 
+    if (existProject?.isDownloaded && updateProject.isLocked === false) {
+      throw new BadRequestException(
+        "This project was downloaded in the mobile app and can no longer be unlocked.",
+      );
+    }
+    if (existProject?.isLocked && updateProject.isLocked !== false) {
+      throw new BadRequestException(
+        "This project is locked and cannot be edited.",
+      );
+    }
+
     if (updateProject?.shapeFileName) {
-      // Delete old files
+      // Delete old shape files
       await this.awsS3Service.deleteObject(existProject?.kmlFileUrl);
       await this.awsS3Service.deleteObject(existProject?.geoJsonFileUrl);
 
+      const localKmlPath = `${UPLOAD_DIR}/${updateProject.shapeFileName}`;
+
       // Read and upload new shape file
-      const fileData = await readFile(
-        `${UPLOAD_DIR}/${updateProject.shapeFileName}`,
-      );
+      const fileData = await readFile(localKmlPath);
       const projectNumber =
         updateProject?.projectNumber ?? existProject?.projectNumber;
+      const s3FileName = updateProject.shapeFileName.replace(/^(\d+-)+/, "");
+      const kmlS3Key = `${projectNumber}/${s3FileName}`;
       fileResponse = await this.awsS3Service.createDirectoryORFileUpload(
-        `${projectNumber}/${updateProject.shapeFileName}`,
+        kmlS3Key,
         fileData,
+      );
+      console.log(
+        `[update-project] KML uploaded -> key: ${kmlS3Key} | Location: ${fileResponse?.Location ?? "FAILED"}`,
       );
 
       // Convert KML to GeoJSON
       const { kmlGeoJson } = await convertKmlToGeoJson(fileData);
 
       const fileNameWithGeoJsonExtension = changeFileExtension(
-        updateProject.shapeFileName,
+        s3FileName,
         "geojson",
       );
+      const geoJsonS3Key = `${projectNumber}/${fileNameWithGeoJsonExtension}`;
       fileResponseGeoJson = await this.awsS3Service.createDirectoryORFileUpload(
-        `${projectNumber}/kml-geojson-${fileNameWithGeoJsonExtension}`,
+        geoJsonS3Key,
         kmlGeoJson,
       );
+      console.log(
+        `[update-project] GeoJSON uploaded -> key: ${geoJsonS3Key} | Location: ${fileResponseGeoJson?.Location ?? "FAILED"}`,
+      );
 
-      deleteFile(`${UPLOAD_DIR}/${updateProject.shapeFileName}`);
+      deleteFile(localKmlPath);
     }
 
     const project = await this.projectRepo.updateById(updateProject.projectId, {
@@ -192,6 +262,12 @@ export class ProjectService {
       ...(updateProject.agencyId !== undefined
         ? { agencyId: updateProject.agencyId }
         : {}),
+      ...(updateProject.isLocked !== undefined
+        ? { isLocked: updateProject.isLocked }
+        : {}),
+      ...(updateProject.isDownloaded !== undefined
+        ? { isDownloaded: updateProject.isDownloaded }
+        : {}),
       kmlFileUrl: fileResponse?.Location ?? existProject?.kmlFileUrl,
       geoJsonFileUrl:
         fileResponseGeoJson?.Location ?? existProject?.geoJsonFileUrl,
@@ -203,6 +279,17 @@ export class ProjectService {
 
   async updateIsActiveStatus(projectId: number, isActive: boolean) {
     return this.projectRepo.updateIsActiveStatus(projectId, isActive);
+  }
+
+  async getCollectorCode(projectId: number) {
+    const project: any = (
+      await this.getAllProjects({
+        where: { projectId },
+      })
+    )[0];
+    if (!project) throw new NotFoundException("Project not found");
+    const collectorCode = await this.ensureCollectorCode(project);
+    return { projectId: project.projectId, collectorCode };
   }
 
   async checkProjectNameExists(projectName: string) {

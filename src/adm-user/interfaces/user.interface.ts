@@ -8,4 +8,6 @@ export interface CreateUser {
   cognitoId?: string;
   agencyId?: number;
   userType?: number;
+  dateCreated?: Date;
+  dateUpdated?: Date;
 }

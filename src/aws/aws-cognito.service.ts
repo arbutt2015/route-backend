@@ -25,6 +25,22 @@ export class AWSCognitoService {
     );
     this.cognito = new AWS.CognitoIdentityServiceProvider();
   }
+
+  private async cognitoCall<T>(
+    op: string,
+    call: () => Promise<T>,
+  ): Promise<T> {
+    try {
+      return await call();
+    } catch (error) {
+      console.log(
+        `[cognito] ${op} FAILED -> code: ${error?.code ?? "unknown"} | message: ${error?.message ?? error}`,
+      );
+      this.loggerService.error(`[cognito] ${op} failed:`, error);
+      throw error;
+    }
+  }
+
   generateSecrete(email: string, clientId: string, clientSecret: string) {
     return crypto
       .createHmac("sha256", clientSecret)
@@ -51,7 +67,9 @@ export class AWSCognitoService {
         userType: isVerified ? "internal" : "external",
       },
     };
-    const result = await this.cognito.signUp(params).promise();
+    const result = await this.cognitoCall("signUp", () =>
+      this.cognito.signUp(params).promise(),
+    );
 
     // if (isVerified) {
     //   await this.cognito
@@ -85,7 +103,9 @@ export class AWSCognitoService {
       ConfirmationCode: confirmationCode,
       SecretHash: secretHash,
     };
-    await this.cognito.confirmSignUp(params).promise();
+    await this.cognitoCall("confirmSignUp", () =>
+      this.cognito.confirmSignUp(params).promise(),
+    );
     this.loggerService.log("User confirmed successfully.");
     try {
       await this.verifyEmail(email);
@@ -112,7 +132,9 @@ export class AWSCognitoService {
       SecretHash: secretHash,
     };
 
-    await this.cognito.resendConfirmationCode(params).promise();
+    await this.cognitoCall("resendConfirmationCode", () =>
+      this.cognito.resendConfirmationCode(params).promise(),
+    );
   }
   async verifyEmail(username: string) {
     const params = {
@@ -126,7 +148,9 @@ export class AWSCognitoService {
       ],
     };
 
-    await this.cognito.adminUpdateUserAttributes(params).promise();
+    await this.cognitoCall("adminUpdateUserAttributes", () =>
+      this.cognito.adminUpdateUserAttributes(params).promise(),
+    );
     return { message: "Email verified successfully" };
   }
   async signIn(email: string, password: string) {
@@ -144,7 +168,9 @@ export class AWSCognitoService {
         SECRET_HASH: secretHash,
       },
     };
-    const response = await this.cognito.initiateAuth(params).promise();
+    const response = await this.cognitoCall("signIn", () =>
+      this.cognito.initiateAuth(params).promise(),
+    );
     return response.AuthenticationResult;
   }
 
@@ -160,7 +186,9 @@ export class AWSCognitoService {
       Username: email,
     };
 
-    return await this.cognito.forgotPassword(params).promise();
+    return await this.cognitoCall("forgotPassword", () =>
+      this.cognito.forgotPassword(params).promise(),
+    );
   }
 
   async confirmForgotPassword(
@@ -182,7 +210,9 @@ export class AWSCognitoService {
         Password: newPassword,
       };
 
-    return await this.cognito.confirmForgotPassword(params).promise();
+    return await this.cognitoCall("confirmForgotPassword", () =>
+      this.cognito.confirmForgotPassword(params).promise(),
+    );
   }
 
   async refreshToken(refreshToken: string) {
@@ -196,7 +226,9 @@ export class AWSCognitoService {
     };
 
     try {
-      const response = await this.cognito.initiateAuth(params).promise();
+      const response = await this.cognitoCall("refreshToken", () =>
+        this.cognito.initiateAuth(params).promise(),
+      );
       return {
         access_token: response.AuthenticationResult?.AccessToken,
         ExpiresIn: response.AuthenticationResult?.ExpiresIn,

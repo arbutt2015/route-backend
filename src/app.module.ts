@@ -14,6 +14,8 @@ import { LoggerMiddleware } from "./common/logger.middleware.common";
 import { AuthModule } from "./auth/auth.module";
 import { AdmUserModule } from "./adm-user/adm-user.module";
 import { ProjectModule } from "./project/project.module";
+import { CollectorModule } from "./collector/collector.module";
+import { AuthCollectorModule } from "./collector-auth/auth-collector.module";
 import { ProjectUserRoleModule } from "./adm-project-user-role/adm-project-user-role.module";
 import { APP_GUARD, APP_INTERCEPTOR } from "@nestjs/core";
 import { JwtAuthGuard } from "./auth/jwt-auth.guard";
@@ -127,6 +129,8 @@ import { ServeStaticModule } from "@nestjs/serve-static";
     AdmUserModule,
     ProjectUserRoleModule,
     ProjectModule,
+    CollectorModule,
+    AuthCollectorModule,
     GeneRepoModule,
   ],
 })

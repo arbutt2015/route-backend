@@ -94,6 +94,23 @@ export class ProjectController {
     }
   }
 
+  @Get("get-collector-code")
+  async getCollectorCode(@Query("projectId") projectId: number) {
+    try {
+      const response = await this.projectService.getCollectorCode(
+        Number(projectId),
+      );
+      return {
+        message: "Collector code retrieved successfully",
+        data: response,
+        statusCode: 200,
+      };
+    } catch (error) {
+      this.loggerService.error(error);
+      throw error;
+    }
+  }
+
   @Post("create")
   async createProject(
     @User("userId") userId: number,

@@ -38,6 +38,9 @@ export class Project {
   @Column("varchar", { name: "GEOJSON_FILE_URL", nullable: true, length: 500 })
   geoJsonFileUrl: string | null;
 
+  @Column("varchar", { name: "COLLECTOR_CODE", nullable: true, length: 10 })
+  collectorCode: string | null;
+
   // COLLECTED_FILE_URL column was dropped from the DB — do not re-add
   // unless a new collection/export feature needs it.
 
@@ -46,6 +49,12 @@ export class Project {
 
   @Column("int", { name: "USER_ID", nullable: true })
   userId: number | null;
+
+  @Column("bit", { name: "IS_LOCKED", default: () => "(0)" })
+  isLocked: boolean;
+
+  @Column("bit", { name: "IS_DOWNLOADED", default: () => "(0)" })
+  isDownloaded: boolean;
 
   @Column("bit", { name: "IS_ACTIVE", default: () => "(1)" })
   isActive: boolean;

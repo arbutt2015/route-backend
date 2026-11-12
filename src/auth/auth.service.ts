@@ -103,6 +103,8 @@ export class AuthService {
       cognitoId: res?.UserSub,
       agencyId,
       userType: USER_TYPE.AGENCY_USER,
+      dateCreated: new Date(),
+      dateUpdated: new Date(),
     });
 
     const groupEmail = this.configService.get("NOTIFICATION_EMAIL_GROUP");
