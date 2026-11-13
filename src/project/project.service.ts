@@ -200,7 +200,7 @@ export class ProjectService {
 
     if (existProject?.isDownloaded && updateProject.isLocked === false) {
       throw new BadRequestException(
-        "This project was downloaded in the mobile app and can no longer be unlocked.",
+        "The project data is being used by the mobile application for collection and it cannot be unlocked.",
       );
     }
     if (existProject?.isLocked && updateProject.isLocked !== false) {
